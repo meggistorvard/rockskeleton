@@ -53,14 +53,14 @@ Watchr is required for this command to run.
 Authors
 -------
 
-** Eugene Durand **
+** Meggis Torvard **
 
 + http://techcontactsupport.net
 
 Copyright and license
 ---------------------
 
-Copyright 2012 Eugenetcs, Inc.
+Copyright 2012 TCS, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this work except rock-in compliance with the License.
