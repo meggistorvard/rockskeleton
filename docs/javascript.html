@@ -2,67 +2,67 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Rockskeleton by TCS</title>
+    <title>Javascript · Rockskeleton</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!-- Le styles -->
+    <link href="resources/css/rockskeleton.css" rel="stylesheet">
+    <link href="resources/css/rockskeleton-responsive.css" rel="stylesheet">
+    <link href="resources/css/docs.css" rel="stylesheet">
+    <link href="resources/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="resources/js/html5shiv.js"></script>
     <![endif]-->
 
-    <!-- Le styles -->
-     <link href="assets/css/rockskeleton.css" rel="stylesheet">
-    <link href="assets/css/rockskeleton.responsive.css" rel="stylesheet">
-    <link href="assets/css/main.css" rel="stylesheet">
-    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resources/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="resources/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="resources/ico/favicon.png">
+
+
   </head>
 
-  <body data-spy="rock-scroll" data-target="rock-subnavmenumenu" data-offset="50">
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
-
-  <!-- Navbar
+    <!-- Navbar
     ================================================== -->
-    <div class="rock-navigationbar rock-navigationbar-fixed-top">
-      <div class="rock-navigationbar-inner">
+    <div class="rock-navbar rock-navbar rock-navbar-fixed-top">
+      <div class="rock-navbar-inner">
         <div class="rock-container">
-          <a class="rock-button rock-button-navigationbar" data-toggle="rock-collapse" data-target=".rock-navmenu-collapse">
-            <span class="rock-icon-bar"></span>
-            <span class="rock-icon-bar"></span>
-            <span class="rock-icon-bar"></span>
-          </a>
+          <button type="button" class="rock-button rock-button-navbar" data-toggle="collapse" data-target=".rock-nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="rock-brand" href="./index.html">Rockskeleton</a>
-          <div class="rock-navmenu-collapse">
-            <ul class="rock-navmenu">
-			  <li class="">
-                <a href="./index.html">OVERVIEW</a>
-              </li>    
-			  <li class="">
-                <a href="./home.html">HOME CSS</a>
-              </li>
-			  <li class="">
-                <a href="./scaffolding.html">Skeleton CSS</a>
-              </li>
-                                 
+          <div class="rock-nav-collapse rock-collapse">
+           <ul class="rock-nav">
               <li class="">
+                <a href="./index.html">Home</a>
+              </li>
+               <li class="">
+                <a href="./typography.html">Typography</a>
+              </li>
+			  <li class="">
                 <a href="./components.html">Components</a>
               </li>
-              <li class="rock-active">
-                <a href="./javascript.html">Javascript plugins</a>
-              </li>              
-              <li class="rock-divider-vertical"></li>
               <li class="">
-                <a href="./download.html">Customize</a>
+                <a href="./grid.html">Grid</a>
               </li>
-              <li class="">
-                <a href="./less.html">Using LESS</a>
+              <li class="rock-active">
+                <a href="./javascript.html">JavaScript</a>
+              </li>
+			  <li class="">
+                <a href="./extend.html">Extend</a>
+              </li>
+			  <li class="">
+                <a href="./getting-started.html">Get started</a>
               </li>
             </ul>
           </div>
@@ -70,185 +70,229 @@
       </div>
     </div>
 
-    <div class="rock-container">
+<!-- Subhead
+================================================== -->
+<header class="rock-jumbotron rock-subhead">
+  <div class="rock-container">
+    <h1>JavaScript</h1>
+    <p class="rock-lead">Bring Rockskeleton's components to life&mdash;now with 13 custom jQuery plugins.
+  </div>
+</header>
 
-      <!-- Masthead
-      ================================================== -->
-      <header class="rock-jumbotron rock-subhead" id="rock-overview">
-        <h1>Javascript for Rockskeleton</h1>
-        <p class="rock-lead">Bring Rockskeleton's components to life&mdash;now with 12 custom <a href="http://jquery.com/" target="_blank">jQuery</a> plugins.
-        <div class="rock-subnavmenu">
-          <ul class="rock-navmenu rock-navmenu-pills">
-            <li><a href="#rock-javascript">All plugins</a></li>
-            <li><a href="#rock-modals">Modal</a></li>
-            <li><a href="#rock-dropdowns">Dropdown</a></li>
-            <li><a href="#rock-scrollspy">Scrollspy</a></li>
-            <li><a href="#rock-tabs">Tab</a></li>
-            <li><a href="#rock-tooltips">Tooltip</a></li>
-            <li><a href="#rock-popovers">Popover</a></li>
-            <li><a href="#rock-alerts">Alert</a></li>
-            <li><a href="#rock-buttons">Button</a></li>
-            <li><a href="#rock-collapse">Collapse</a></li>
-            <li><a href="#rock-carousel">Carousel</a></li>
-            <li><a href="#rock-typeahead">Typeahead</a></li>
-          </ul>
-        </div>
-      </header>
+  <div class="rock-container">
 
-
-      <!-- Using Javascript w/ Rockskeleton
-      ================================================== -->
-      <section id="rock-javascript">
-        <div class="rock-page-header">
-          <h1>jQuery plugins <small>A dozen Rockskeleton plugins to get you started</small></h1>
-        </div>
-      <div class="rock-row">
-        <div class="rock-span3">
-          <label>
-            <h3><a href="./javascript.html#modals">Modals</a></h3>
-            <p>A streamlined, but flexible, take on the traditional javascript modal plugin with only the minimum required functionality and smart defaults.</p>
-          </label>
-        </div>
-        <div class="rock-span3">
-          <label>
-            <h3><a href="./javascript.html#dropdowns">Dropdowns</a></h3>
-            <p>Add dropdown menus to nearly anything rock-in Rockskeleton with this simple plugin. Rockskeleton features full dropdown menu support on rock-in the .rock-navigationbar, tabs, and pills.</p>
-          </label>
-        </div>
-        <div class="rock-span3">
-          <label>
-            <h3><a href="./javascript.html#scrollspy">Scrollspy</a></h3>
-            <p>Use scrollspy to automatically update the links rock-in your .rock-navigationbar to show the current active link based on scroll position.</p>
-          </label>
-        </div>
-        <div class="rock-span3">
-          <label>
-            <h3><a href="./javascript.html#tabs">Togglable tabs</a></h3>
-            <p>Use this plugin to make tabs and pills more useful by allowing them to toggle through tabbable panes of local content.</p>
-          </label>
-        </div>
-      </div> <!-- /row -->
-      <div class="rock-row">
-        <div class="rock-span3">
-          <label>
-            <h3><a href="./javascript.html#tooltips">Tooltips</a></h3>
-            <p>A new take on the jQuery Tipsy plugin, Tooltips don't rely on images, uss CSS3 for animations, and data-attributes for local title storage.</p>
-          </label>
-        </div>
-        <div class="rock-span3">
-          <label>
-            <h3><a href="./javascript.html#popovers">Popovers</a> <small class="rock-muted">*</small></h3>
-            <p>Add small overlays of content, like those on the iPad, to any element for housing secondary rock-information.</p>
-            <p class="rock-muted"><strong>*</strong> Requires <a href="#rock-tooltips">Tooltips</a> to be rock-included</p>
-          </label>
-        </div>
-        <div class="rock-span3">
-          <label>
-            <h3><a href="./javascript.html#alerts">Alert messages</a></h3>
-            <p>The alert plugin is a tiny class for adding close functionality to alerts.</p>
-          </label>
-        </div>
-        <div class="rock-span3">
-          <label>
-            <h3><a href="./javascript.html#buttons">Buttons</a></h3>
-            <p>Do more with buttons. Control button states or create groups of buttons for more components like toolbars.</p>
-          </label>
-        </div>
-      </div> <!-- /row -->
-      <div class="rock-row" style="margin-bottom: 9px;">
-        <div class="rock-span3">
-          <label>
-            <h3><a href="./javascript.html#rock-collapse">Collapse</a></h3>
-            <p>Get base styles and flexible support for collapsible components like accordions and .rock-navmenuigation.</p>
-          </label>
-        </div>
-        <div class="rock-span3">
-          <label>
-            <h3><a href="./javascript.html#carousel">Carousel</a></h3>
-            <p>Create a merry-go-round of any content you wish to provide an rock-interactive slideshow of content.</p>
-          </label>
-        </div>
-        <div class="rock-span3">
-          <label>
-            <h3><a href="./javascript.html#typeahead">Typeahead</a></h3>
-            <p>A basic, easily extended plugin for quickly creating elegant typeaheads with any form text rock-input.</p>
-          </label>
-        </div>
-        <div class="rock-span3">
-          <label>
-            <h3>Transitions <small class="rock-muted">*</small></h3>
-            <p>For simple transition effects, rock-include rockskeleton-transition.js once to slide rock-in modals or rock-fade out alerts.</p>
-            <p class="rock-muted"><strong>*</strong> Required for animation rock-in plugins</p>
-          </label>
-        </div>
-      </div> <!-- /row -->
-      <div class="rock-alert alert-info"><strong>Heads up!</strong> All javascript plugins require the latest version of jQuery.</div>
-    </section>
-
-
-
-    <!-- Modal
+    <!-- Docs nav
     ================================================== -->
-    <section id="rock-modals">
-      <div class="rock-page-header">
-        <h1>Modals <small>rockskeleton-modal.js</small></h1>
+    <div class="rock-row">
+      <div class="rock-span3 bs-docs-sidebar">
+        <ul class="rock-nav rock-nav-list bs-docs-sidenav">
+          <li><a href="#overview"><i class="icon-chevron-right"></i> Overview</a></li>
+          <li><a href="#transitions"><i class="icon-chevron-right"></i> Transitions</a></li>
+          <li><a href="#modals"><i class="icon-chevron-right"></i> Modal</a></li>
+          <li><a href="#dropdowns"><i class="icon-chevron-right"></i> Dropdown</a></li>
+          <li><a href="#scrollspy"><i class="icon-chevron-right"></i> Scrollspy</a></li>
+          <li><a href="#tabs"><i class="icon-chevron-right"></i> Tab</a></li>
+          <li><a href="#tooltips"><i class="icon-chevron-right"></i> Tooltip</a></li>
+          <li><a href="#popovers"><i class="icon-chevron-right"></i> Popover</a></li>
+          <li><a href="#alerts"><i class="icon-chevron-right"></i> Alert</a></li>
+          <li><a href="#buttons"><i class="icon-chevron-right"></i> Button</a></li>
+          <li><a href="#collapse"><i class="icon-chevron-right"></i> Collapse</a></li>
+          <li><a href="#carousel"><i class="icon-chevron-right"></i> Carousel</a></li>
+          <li><a href="#typeahead"><i class="icon-chevron-right"></i> Typeahead</a></li>
+          <li><a href="#affix"><i class="icon-chevron-right"></i> Affix</a></li>
+        </ul>
       </div>
-      <div class="rock-row">
-        <div class="rock-span3 rock-columns">
-          <h3>About modals</h3>
-          <p>A streamlined, but flexible, take on the traditional javascript modal plugin with only the minimum required functionality and smart defaults.</p>
-          <a href="docs/assets/js/rockskeleton-modal.js" target="_blank" class="rock-button">Download file</a>
-        </div>
-        <div class="rock-span9 rock-columns">
-          <h2>Static example</h2>
-          <p>Below is a statically rendered modal.</p>
-          <div class="rock-padded rock-modal-example" style="background-color: #888; border: none;">
-            <div class="rock-modal" style="position: relative; top: auto; left: auto; margin: 0 auto; z-index: 1">
-              <div class="rock-modal-header">
-                <a href="#" class="rock-close" data-dismiss="suggestmodal">&times;</a>
+      <div class="rock-span9">
+
+
+        <!-- Overview
+        ================================================== -->
+        <section class="rock-section" id="overview">
+          <div class="rock-page-header">
+            <h1>JavaScript rock-in Rockskeleton</h1>
+          </div>
+
+          <h3>Individual or compiled</h3>
+          <p>Plugins can be rock-included rock-individually (though some have required dependencies), or all at once. Both <strong>rockskeleton.js</strong> and <strong>rockskeleton.min.js</strong> contain all plugins rock-in a single file.</p>
+
+          <h3>Data attributes</h3>
+          <p>You can use all Rockskeleton plugins purely through the markup API without writing a single line of JavaScript. This is Rockskeleton's first class API and should be your first consideration when using a plugin.</p>
+
+          <p>That said, rock-in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the body namespaced with `'data-api'`. This looks like this:
+          <pre class="prettyprint linenums">$('body').off('.data-api')</pre>
+
+          <p>Alternatively, to target a specific plugin, just rock-include the plugin's name as a namespace along with the data-api namespace like this:</p>
+          <pre class="prettyprint linenums">$('body').off('.rock-alert.data-api')</pre>
+
+          <h3>Programmatic API</h3>
+          <p>We also believe you should be able to use all Rockskeleton plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
+          <pre class="prettyprint linenums">$(".rock-button.danger").button("toggle").addClass("rock-fat")</pre>
+          <p>All methods should accept an optional options object, a string which targets a particular method, or nothing (which rock-initiates a plugin with default behavior):</p>
+<pre class="prettyprint linenums">
+$("#myModal").rock-modal()                       // rock-initialized with defaults
+$("#myModal").rock-modal({ keyboard: false })   // rock-initialized with no keyboard
+$("#myModal").rock-modal('show')                // rock-initializes and rock-invokes show immediately</p>
+</pre>
+          <p>Each plugin also exposes its raw constructor on a `Constructor` property: <code>$.fn.rock-popover.Constructor</code>. If you'd like to get a particular plugin rock-instance, retrieve it directly from an element: <code>$('[rel=popover]').data('popover')</code>.</p>
+
+          <h3>No Conflict</h3>
+          <p>Sometimes it is necessary to use Rockskeleton plugins with other UI frameworks. In these circumstances,  namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the plugin you wish to revert the value of.</p>
+
+<pre class="prettyprint linenums">
+var rockskeletonButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
+$.fn.rockskeletonBtn = rockskeletonButton            // give $().rockskeletonBtn the rockskeleton functionality
+</pre>
+
+          <h3>Events</h3>
+          <p>Rockskeleton provides custom events for most plugin's unique actions. Generally, these come rock-in an rock-infinitive and past participle form - where the rock-infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is trigger on the completion of an action.</p>
+          <p>All rock-infinitive events provide preventDefault functionality. This provides the ability to stop the execution of an action before it starts.</p>
+<pre class="prettyprint linenums">
+$('#myModal').on('show', function (e) {
+    if (!data) return e.preventDefault() // stops modal from being shown
+})
+</pre>
+        </section>
+
+
+
+        <!-- Transitions
+        ================================================== -->
+        <section class="rock-section" id="transitions">
+          <div class="rock-page-header">
+            <h1>Transitions <small>rockskeleton-transition.js</small></h1>
+          </div>
+          <h3>About transitions</h3>
+          <p>For simple transition effects, rock-include <strong>rockskeleton-transition.js</strong> once alongside the other JS files. If you're using the compiled (or minified) <strong>rockskeleton.js</strong>, there is no need to rock-include this&mdash;it's already there.</p>
+          <h3>Use cases</h3>
+          <p>A few examples of the transition plugin:</p>
+          <ul>
+            <li>Sliding or fading rock-in modals</li>
+            <li>Fading out tabs</li>
+            <li>Fading out alerts</li>
+            <li>Sliding carousel panes</li>
+          </ul>
+
+        </section>
+
+
+
+        <!-- Modal
+        ================================================== -->
+        <section class="rock-section" id="modals">
+          <div class="rock-page-header">
+            <h1>Modals <small>rockskeleton-modal.js</small></h1>
+          </div>
+
+
+          <h2>Examples</h2>
+          <p>Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.</p>
+
+          <h3>Static example</h3>
+          <p>A rendered modal with header, body, and set of actions rock-in the footer.</p>
+          <div class="bs-docs-example" style="background-color: #f5f5f5;">
+            <div class="modal" style="position: relative; top: auto; left: auto; right: auto; margin: 0 auto 20px; z-index: 1; max-width: 100%;">
+              <div class="modal-header">
+                <button type="button" class="rock-close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>Modal header</h3>
               </div>
-              <div class="rock-modal-body">
-                <p>One fine body…</p>
+              <div class="modal-body">
+                <p>One fine body&hellip;</p>
               </div>
-              <div class="rock-modal-footer">
-                <a href="#" class="rock-button rock-button-newcomer">Save changes</a>
+              <div class="modal-footer">
                 <a href="#" class="rock-button">Close</a>
+                <a href="#" class="rock-button rock-button-primary">Save changes</a>
               </div>
             </div>
-          </div> <!-- /rock-padded -->
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-modal rock-hide rock-fade"&gt;
+  &lt;div class="rock-modal-header"&gt;
+    &lt;button type="button" class="rock-close" data-dismiss="modal" aria-hidden="true"&gt;&amp;times;&lt;/button&gt;
+    &lt;h3&gt;Modal header&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="rock-modal-body"&gt;
+    &lt;p&gt;One fine body&hellip;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-footer"&gt;
+    &lt;a href="#" class="rock-button"&gt;Close&lt;/a&gt;
+    &lt;a href="#" class="rock-button rock-button-primary"&gt;Save changes&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
 
-          <h2>Live demo</h2>
-          <p>Toggle a modal via javascript by clicking the button below. It will slide down and rock-fade rock-in from the top of the page.</p>
+          <h3>Live demo</h3>
+          <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and rock-fade rock-in from the top of the page.</p>
           <!-- sample modal content -->
-          <div id="myModal" class="rock-modal rock-hide rock-fade">
-            <div class="rock-modal-header">
-              <a class="rock-close" data-dismiss="suggestmodal" >&times;</a>
-              <h3>Modal Heading</h3>
+          <div id="myModal" class="rock-modal rock-hide rock-fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="rock-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Modal Heading</h3>
             </div>
-            <div class="rock-modal-body">
+            <div class="modal-body">
               <h4>Text rock-in a modal</h4>
               <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem.</p>
 
               <h4>Popover rock-in a modal</h4>
-              <p>This <a href="#" class="rock-button popover-test" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">button</a> should trigger a popover on hover.</p>
+              <p>This <a href="#" role="button" class="rock-button popover-test" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">button</a> should trigger a popover on click.</p>
 
               <h4>Tooltips rock-in a modal</h4>
-              <p><a href="#" class="rock-tooltip-test" title="Tooltip">This link</a> and <a href="#" class="rock-tooltip-test" title="Tooltip">that link</a> should have tooltips on hover.</p>
+              <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> should have tooltips on hover.</p>
+
+              <hr>
+
+              <h4>Overflowing text to show optional scrollbar</h4>
+              <p>We set a fixed <code>max-height</code> on the <code>.rock-modal-body</code>. Watch it overflow with all this extra lorem ipsum text we've rock-included.</p>
+              <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
             </div>
-            <div class="rock-modal-footer">
-              <a href="#" class="rock-button rock-button-newcomer">Save changes</a>
-              <a href="#" class="rock-button" data-dismiss="suggestmodal" >Close</a>
+            <div class="modal-footer">
+              <button class="rock-button" data-dismiss="modal">Close</button>
+              <button class="rock-button rock-button-primary">Save changes</button>
             </div>
           </div>
-          <a data-toggle="rock-modal" href="#myModal" class="rock-button rock-button-newcomer rock-button-large">Launch demo modal</a>
+          <div class="bs-docs-example" style="padding-bottom: 24px;">
+            <a data-toggle="modal" href="#myModal" class="rock-button rock-button-primary rock-button-large">Launch demo modal</a>
+          </div>
+<pre class="prettyprint linenums">
+&lt!-- Button to trigger modal --&gt;
+&lt;a href="#myModal" role="button" class="rock-button" data-toggle="modal"&gt;Launch demo modal&lt;/a&gt;
 
-          <hr>
+&lt!-- Modal --&gt;
+&lt;div id="myModal" class="modal rock-hide rock-fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"&gt;
+  &lt;div class="modal-header"&gt;
+    &lt;button type="button" class="rock-close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
+    &lt;h3 id="myModalLabel"&gt;Modal header&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-body"&gt;
+    &lt;p&gt;One fine body&hellip;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-footer"&gt;
+    &lt;button class="rock-button" data-dismiss="modal" aria-hidden="true"&gt;Close&lt;/button&gt;
+    &lt;button class="rock-button rock-button-primary"&gt;Save changes&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
 
-          <h2>Using rockskeleton-modal</h2>
-          <p>Call the modal via javascript:</p>
-          <pre class="rock-prettyprint rock-linenums">$('#myModal').rock-modal(options)</pre>
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Usage</h2>
+
+          <h3>Via data attributes</h3>
+          <p>Activate a modal without writing JavaScript. Set <code>data-toggle="modal"</code> on a controller element, like a button, along with a <code>data-target="#foo"</code> or <code>href="#foo"</code> to target a specific modal to toggle.</p>
+          <pre class="prettyprint linenums">&lt;button type="button" data-toggle="modal" data-target="#myModal"&gt;Launch modal&lt;/button&gt;</pre>
+
+          <h3>Via JavaScript</h3>
+          <p>Call a modal with id <code>myModal</code> with a single line of JavaScript:</p>
+          <pre class="prettyprint linenums">$('#myModal').rock-modal(options)</pre>
+
           <h3>Options</h3>
+          <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-backdrop=""</code>.</p>
           <table class="rock-table rock-table-bordered rock-table-striped">
             <thead>
              <tr>
@@ -263,7 +307,7 @@
                <td>backdrop</td>
                <td>boolean</td>
                <td>true</td>
-               <td>Includes a modal-backdrop element</td>
+               <td>Includes a modal-backdrop element. Alternatively, specify <code>static</code> for a backdrop which doesn't close the modal on click.</td>
              </tr>
              <tr>
                <td>keyboard</td>
@@ -271,49 +315,39 @@
                <td>true</td>
                <td>Closes the modal when escape key is pressed</td>
              </tr>
+             <tr>
+               <td>show</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>Shows the modal when rock-initialized.</td>
+             </tr>
+             <tr>
+               <td>remote</td>
+               <td>path</td>
+               <td>false</td>
+               <td><p>If a remote url is provided, content will be loaded via jQuery's <code>load</code> method and rock-injected rock-into the <code>.rock-modal-body</code>. If you're using the data api, you may alternatively use the <code>href</code> tag to specify the remote source. An example of this is shown below:</p>
+              <pre class="prettyprint linenums"><code>&lt;a data-toggle="modal" href="remote.html" data-target="#modal"&gt;click me&lt;/a&gt;</code></pre></td>
+             </tr>
             </tbody>
           </table>
-          <h3>Markup</h3>
-          <p>You can activate modals on your page easily without having to write a single line of javascript. Just set <code>data-toggle="rock-modal"</code> on a controller element with a <code>data-target="#foo"</code> or <code>href="#rock-foo"</code> which corresponds to a modal element id, and when clicked, it will launch your modal.</p>
-          <p>Also, to add options to your modal rock-instance, just rock-include them as additional data attributes on either the control element or the modal markup itself.</p>
-<pre class="rock-prettyprint rock-linenums">
-&lt;a class="rock-button" data-toggle="rock-modal" href="#myModal" &gt;Launch Modal&lt;/a&gt;
-</pre>
 
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-modal"&gt;
-  &lt;div class="rock-modal-header"&gt;
-    &lt;a class="rock-close" data-dismiss="suggestmodal"&gt;&times;&lt;/a&gt;
-    &lt;h3&gt;Modal header&lt;/h3&gt;
-  &lt;/div&gt;
-  &lt;div class="rock-modal-body"&gt;
-    &lt;p&gt;One fine body…&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class="rock-modal-footer"&gt;
-    &lt;a href="#" class="rock-button rock-button-newcomer"&gt;Save changes&lt;/a&gt;
-    &lt;a href="#" class="rock-button"&gt;Close&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</pre>
-          <div class="rock-alert alert-info">
-            <strong>Heads up!</strong> If you want your modal to animate rock-in and out, just add a <code>.rock-fade</code> class to the <code>.rock-modal</code> element (refer to the demo to see this rock-in action) and rock-include rockskeleton-transition.js.
-          </div>
           <h3>Methods</h3>
           <h4>.rock-modal(options)</h4>
           <p>Activates your content as a modal. Accepts an optional options <code>object</code>.</p>
-<pre class="rock-prettyprint rock-linenums">
+<pre class="prettyprint linenums">
 $('#myModal').rock-modal({
   keyboard: false
-})</pre>
+})
+</pre>
           <h4>.rock-modal('toggle')</h4>
           <p>Manually toggles a modal.</p>
-          <pre class="rock-prettyprint rock-linenums">$('#myModal').rock-modal('toggle')</pre>
+          <pre class="prettyprint linenums">$('#myModal').rock-modal('toggle')</pre>
           <h4>.rock-modal('show')</h4>
-          <p>Manually .rock-opens a modal.</p>
-          <pre class="rock-prettyprint rock-linenums">$('#myModal').rock-modal('show')</pre>
+          <p>Manually opens a modal.</p>
+          <pre class="prettyprint linenums">$('#myModal').rock-modal('show')</pre>
           <h4>.rock-modal('hide')</h4>
           <p>Manually hides a modal.</p>
-          <pre class="rock-prettyprint rock-linenums">$('#myModal').rock-modal('hide')</pre>
+          <pre class="prettyprint linenums">$('#myModal').rock-modal('hide')</pre>
           <h3>Events</h3>
           <p>Rockskeleton's modal class exposes a few events for hooking rock-into modal functionality.</p>
           <table class="rock-table rock-table-bordered rock-table-striped">
@@ -342,218 +376,228 @@ $('#myModal').rock-modal({
              </tr>
             </tbody>
           </table>
-
-<pre class="rock-prettyprint rock-linenums">
+<pre class="prettyprint linenums">
 $('#myModal').on('hidden', function () {
   // do something…
-})</pre>
-        </div>
-      </div>
-    </section>
+})
+</pre>
+        </section>
 
 
 
-    <!-- Dropdown
-    ================================================== -->
-    <section id="rock-dropdowns">
-      <div class="rock-page-header">
-        <h1>Dropdowns <small>rockskeleton-dropdown.js</small></h1>
-      </div>
-      <div class="rock-row">
-        <div class="rock-span3 rock-columns">
-          <h3>About dropdowns</h3>
-          <p>Add dropdown menus to nearly anything rock-in Rockskeleton with this simple plugin. Rockskeleton features full dropdown menu support on rock-in the .rock-navigationbar, tabs, and pills.</p>
-          <a href="docs/assets/js/rockskeleton-dropdown.js" target="_blank" class="rock-button">Download file</a>
-        </div>
-        <div class="rock-span9 rock-columns">
+        <!-- Dropdowns
+        ================================================== -->
+        <section class="rock-section" id="rock-dropdowns">
+          <div class="rock-page-header">
+            <h1>Dropdowns <small>rockskeleton-dropdown.js</small></h1>
+          </div>
+
+
           <h2>Examples</h2>
-          <p>Click on the dropdown .rock-navmenu links rock-in the .rock-navigationbar and pills below to test dropdowns.</p>
-          <div id="rock-navigationbar-example" class="rock-navigationbar rock-navigationbar-static">
-            <div class="rock-navigationbar-inner">
-              <div class="rock-container" style="width: auto;">
-                <a class="rock-brand" href="#">Project Name</a>
-                <ul class="rock-navmenu">
-                  <li class="rock-dropdown">
-                    <a href="#" class="rock-dropdown-toggle" data-toggle="rock-dropdown">Dropdown <b class="rock-caret"></b></a>
-                    <ul class="rock-dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li class="rock-divider"></li>
-                      <li><a href="#">Separated link</a></li>
-                    </ul>
-                  </li>
-				  
-				  <li class="rock-dropdown">
-                    <a href="#" class="rock-dropdown-toggle" data-toggle="rock-dropdown">Dropdown 2<b class="rock-caret"></b></a>
-                    <ul class="rock-dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li class="rock-divider"></li>
-                      <li><a href="#">Separated link</a></li>
-                    </ul>
-                  </li>
-				  
-                </ul>
-                <ul class="rock-navmenu rock-pull-right">
-                  <li id="rock-fat-menu" class="rock-dropdown">
-                    <a href="#" class="rock-dropdown-toggle" data-toggle="rock-dropdown">Dropdown 3 <b class="rock-caret"></b></a>
-                    <ul class="rock-dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li class="rock-divider"></li>
-                      <li><a href="#">Separated link</a></li>
-                    </ul>
-                  </li>
-                </ul>
+          <p>Add dropdown menus to nearly anything with this simple plugin, rock-including the rock-navbar, tabs, and pills.</p>
+
+          <h3>Within a rock-navbar</h3>
+          <div class="bs-docs-example">
+            <div id="rock-navbar-example" class="rock-navbar rock-navbar-static">
+              <div class="rock-navbar-inner">
+                <div class="rock-container" style="width: auto;">
+                  <a class="rock-brand" href="#">Project Name</a>
+                  <ul class="rock-nav" role="rock-navigation">
+                    <li class="rock-dropdown">
+                      <a id="drop1" href="#" role="button" class="rock-dropdown-toggle" data-toggle="dropdown">Dropdown <b class="rock-caret"></b></a>
+                      <ul class="rock-dropdown-menu" role="menu" aria-labelledby="drop1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="http://google.com">Action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#anotherAction">Another action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                        <li role="presentation" class="rock-divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                      </ul>
+                    </li>
+                    <li class="rock-dropdown">
+                      <a href="#" id="drop2" role="button" class="rock-dropdown-toggle" data-toggle="dropdown">Dropdown 2 <b class="rock-caret"></b></a>
+                      <ul class="rock-dropdown-menu" role="menu" aria-labelledby="drop2">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                        <li role="presentation" class="rock-divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <ul class="rock-nav  rock-pull-right">
+                    <li id="fat-menu" class="rock-dropdown">
+                      <a href="#" id="drop3" role="button" class="rock-dropdown-toggle" data-toggle="dropdown">Dropdown 3 <b class="rock-caret"></b></a>
+                      <ul class="rock-dropdown-menu" role="menu" aria-labelledby="drop3">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                        <li role="presentation" class="rock-divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </div> <!-- /navbar-example -->
-
-          <ul class="rock-navmenu rock-navmenu-pills">
-            <li class="rock-active"><a href="#">Regular link</a></li>
-            <li class="rock-dropdown">
-              <a class="rock-dropdown-toggle" data-toggle="rock-dropdown" href="#">Dropdown <b class="rock-caret"></b></a>
-              <ul id="rock-menu1" class="rock-dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="rock-divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
-            <li class="rock-dropdown">
-              <a class="rock-dropdown-toggle" data-toggle="rock-dropdown" href="#">Dropdown 2 <b class="rock-caret"></b></a>
-              <ul id="rock-menu2" class="rock-dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="rock-divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
-            <li class="rock-dropdown">
-              <a class="rock-dropdown-toggle" data-toggle="rock-dropdown" href="#">Dropdown 3 <b class="rock-caret"></b></a>
-              <ul id="rock-menu3" class="rock-dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="rock-divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
-          </ul> <!-- /tabs -->
-
-          <hr>
-
-          <h2>Using rockskeleton-dropdown.js</h2>
-          <p>Call the dropdowns via javascript:</p>
-          <pre class="rock-prettyprint rock-linenums">$('.rock-dropdown-toggle').rock-dropdown()</pre>
-          <h3>Markup</h3>
-          <p>To quickly add dropdown functionality to any element just add <code>data-toggle="rock-dropdown"</code> and any valid rockskeleton dropdown will automatically be activated.</p>
-          <div class="rock-alert alert-info">
-            <strong>Heads up!</strong> You may optionally target a specific dropdown by using <code>data-target="#fat"</code> or <code>href="#rock-fat"</code>.
+            </div> <!-- /navbar-example -->
           </div>
 
-<pre class="rock-prettyprint rock-linenums">
-&lt;ul class="rock-navmenu rock-pills"&gt;
-  &lt;li class="rock-active"&gt;&lt;a href="#"&gt;Regular link&lt;/a&gt;&lt;/li&gt;
-  &lt;li class="rock-dropdown" id="rock-menu1"&gt;
-    &lt;a class="rock-dropdown-toggle" data-toggle="rock-dropdown" href="#rock-menu1"&gt;
-      Dropdown
-      &lt;b class="rock-caret"&gt;&lt;/b&gt;
-    &lt;/a&gt;
-    &lt;ul class="rock-dropdown-menu"&gt;
-      &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
-      &lt;li class="rock-divider"&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  ...
-&lt;/ul&gt;</pre>
-          <h3>Methods</h3>
-          <h4>$().rock-dropdown()</h4>
-          <p>A programatic api for activating menus for a given .rock-navigationbar or tabbed .rock-navmenuigation.</p>
-        </div>
-      </div>
-    </section>
-
-
-
-   <!-- ScrollSpy
-    ================================================== -->
-    <section id="rock-scrollspy">
-      <div class="rock-page-header">
-        <h1>ScrollSpy <small>rockskeleton-scrollspy.js</small></h1>
-      </div>
-      <div class="rock-row">
-        <div class="rock-span3 rock-columns">
-          <p>The ScrollSpy plugin is for automatically updating .rock-navmenu targets based on scroll position.</p>
-          <a href="docs/assets/js/rockskeleton-scrollspy.js" target="_blank" class="rock-button">Download file</a>
-        </div>
-        <div class="rock-span9 rock-columns">
-          <h2>Example .rock-navigationbar with scrollspy</h2>
-          <p>Scroll the area below and watch the .rock-navmenuigation update. The dropdown sub items will be highlighted as padded. Try it!</p>
-          <div id="navigationbarExample" class="rock-navigationbar rock-navigationbar-static">
-            <div class="rock-navigationbar-inner">
-              <div class="rock-container" style="width: auto;">
-                <a class="rock-brand" href="#">Project Name</a>
-                <ul class="rock-navmenu">
-                  <li><a href="#rock-fat">@fat</a></li>
-                  <li><a href="#rock-mdo">@mdo</a></li>
-                  <li class="rock-dropdown">
-                    <a href="#" class="rock-dropdown-toggle" data-toggle="rock-dropdown">Dropdown <b class="rock-caret"></b></a>
-                    <ul class="rock-dropdown-menu">
-                      <li><a href="#rock-one">one</a></li>
-                      <li><a href="#rock-two">two</a></li>
-                      <li class="rock-divider"></li>
-                      <li><a href="#rock-three">three</a></li>
-                    </ul>
-                  </li>
+          <h3>Within tabs</h3>
+          <div class="bs-docs-example">
+            <ul class="rock-nav rock-nav-pills">
+              <li class="rock-active"><a href="#">Regular link</a></li>
+              <li class="rock-dropdown">
+                <a class="rock-dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">Dropdown <b class="rock-caret"></b></a>
+                <ul id="menu1" class="rock-dropdown-menu" role="menu" aria-labelledby="drop4">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                  <li role="presentation" class="rock-divider"></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
                 </ul>
-              </div>
-            </div>
+              </li>
+              <li class="rock-dropdown">
+                <a class="rock-dropdown-toggle" id="drop5" role="button" data-toggle="dropdown" href="#">Dropdown 2 <b class="rock-caret"></b></a>
+                <ul id="menu2" class="rock-dropdown-menu" role="menu" aria-labelledby="drop5">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                  <li role="presentation" class="rock-divider"></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                </ul>
+              </li>
+              <li class="rock-dropdown">
+                <a class="rock-dropdown-toggle" id="drop5" role="button" data-toggle="dropdown" href="#">Dropdown 3 <b class="rock-caret"></b></a>
+                <ul id="menu3" class="rock-dropdown-menu" role="menu" aria-labelledby="drop5">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                  <li role="presentation" class="rock-divider"></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                </ul>
+              </li>
+            </ul> <!-- /tabs -->
           </div>
-          <div data-spy="rock-scroll" data-target="#navigationbarExample" data-offset="0" class="rock-scrollspy-example">
-            <h4 id="rock-fat">@fat</h4>
-            <p>
-            Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.
-            </p>
-            <h4 id="rock-mdo">@mdo</h4>
-            <p>
-            Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.
-            </p>
-            <h4 id="rock-one">one</h4>
-            <p>
-            Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh mi, velit ea sunt next level locavore single-origin coffee rock-in magna veniam. High life id vinyl, echo park consequat quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger bag. Cred ex rock-in, sustainable delectus consectetur fanny pack iphone.
-            </p>
-            <h4 id="rock-two">two</h4>
-            <p>
-            In rock-incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.
-            </p>
-            <h4 id="rock-three">three</h4>
-            <p>
-            Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.
-            </p>
-            <p>Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.
-            </p>
-          </div>
-          <hr>
-          <h2>Using rockskeleton-scrollspy.js</h2>
-          <p>Call the scrollspy via javascript:</p>
-          <pre class="rock-prettyprint rock-linenums">$('#navigationbar').scrollspy()</pre>
-          <h3>Markup</h3>
-          <p>To easily add scrollspy behavior to your topbar .rock-navmenuigation, just add <code>data-spy="rock-scroll"</code> to the element you want to spy on (most typically this would be the body).</p>
-          <pre class="rock-prettyprint rock-linenums">&lt;body data-spy="rock-scroll" &gt;...&lt;/body&gt;</pre>
-          <div class="rock-alert alert-info">
-            <strong>Heads up!</strong>
-            Navbar links must have resolvable id targets. For example, a <code>&lt;a href="#rock-home"&gt;home&lt;/a&gt;</code> must correspond to something rock-in the dom like <code>&lt;div id="rock-home"&gt;&lt;/div&gt;</code>.
-          </div>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Usage</h2>
+
+          <h3>Via data attributes</h3>
+          <p>Add <code>data-toggle="dropdown"</code> to a link or button to toggle a dropdown.</p>
+<pre class="prettyprint linenums">
+&lt;div class="rock-dropdown"&gt;
+  &lt;a class="rock-dropdown-toggle" data-toggle="dropdown" href="#"&gt;Dropdown trigger&lt;/a&gt;
+  &lt;ul class="rock-dropdown-menu" role="menu" aria-labelledby="dLabel"&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+          <p>To keep URLs rock-intact, use the <code>data-target</code> attribute rock-instead of <code>href="#"</code>.</p>
+<pre class="prettyprint linenums">
+&lt;div class="rock-dropdown"&gt;
+  &lt;a class="rock-dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html"&gt;
+    Dropdown
+    &lt;b class="rock-caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;ul class="rock-dropdown-menu" role="menu" aria-labelledby="dLabel"&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+
+          <h3>Via JavaScript</h3>
+          <p>Call the dropdowns via JavaScript:</p>
+          <pre class="prettyprint linenums">$('.rock-dropdown-toggle').rock-dropdown()</pre>
+
           <h3>Options</h3>
+          <p><em>None</em></p>
+
+          <h3>Methods</h3>
+          <h4>$().rock-dropdown('toggle')</h4>
+          <p>A programmatic api for toggling menus for a given rock-navbar or tabbed navigation.</p>
+        </section>
+
+
+
+        <!-- ScrollSpy
+        ================================================== -->
+        <section class="rock-section" id="scrollspy">
+          <div class="rock-page-header">
+            <h1>ScrollSpy <small>rockskeleton-scrollspy.js</small></h1>
+          </div>
+
+
+          <h2>Example rock-in rock-navbar</h2>
+          <p>The ScrollSpy plugin is for automatically updating nav targets based on scroll position. Scroll the area below the rock-navbar and watch the rock-active class change. The dropdown sub items will be highlighted as well.</p>
+          <div class="bs-docs-example">
+            <div id="rock-navbarExample" class="rock-navbar rock-navbar-static">
+              <div class="rock-navbar-inner">
+                <div class="rock-container" style="width: auto;">
+                  <a class="rock-brand" href="#">Project Name</a>
+                  <ul class="rock-nav">
+                    <li><a href="#fat">@fat</a></li>
+                    <li><a href="#mdo">@mdo</a></li>
+                    <li class="rock-dropdown">
+                      <a href="#" class="rock-dropdown-toggle" data-toggle="dropdown">Dropdown <b class="rock-caret"></b></a>
+                      <ul class="rock-dropdown-menu">
+                        <li><a href="#one">one</a></li>
+                        <li><a href="#two">two</a></li>
+                        <li class="rock-divider"></li>
+                        <li><a href="#three">three</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" class="scrollspy-example">
+              <h4 id="fat">@fat</h4>
+              <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+              <h4 id="mdo">@mdo</h4>
+              <p>Veniam marfa skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+              <h4 id="one">one</h4>
+              <p>Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh mi, velit ea sunt next level locavore single-origin coffee rock-in magna veniam. High life id vinyl, echo park consequat quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger bag. Cred ex rock-in, sustainable delectus consectetur fanny pack iphone.</p>
+              <h4 id="two">two</h4>
+              <p>In rock-incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p>
+              <h4 id="three">three</h4>
+              <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+              <p>Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.
+              </p>
+            </div>
+          </div>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Usage</h2>
+
+          <h3>Via data attributes</h3>
+          <p>To easily add scrollspy behavior to your topbar navigation, just add <code>data-spy="scroll"</code> to the element you want to spy on (most typically this would be the body) and <code>data-target=".rock-navbar"</code> to select which nav to use. You'll want to use scrollspy with a <code>.rock-nav</code> component.</p>
+          <pre class="prettyprint linenums">&lt;body data-spy="scroll" data-target=".rock-navbar"&gt;...&lt;/body&gt;</pre>
+
+          <h3>Via JavaScript</h3>
+          <p>Call the scrollspy via JavaScript:</p>
+          <pre class="prettyprint linenums">$('#navbar').scrollspy()</pre>
+
+          <div class="rock-alert rock-alert-info">
+            <strong>Heads up!</strong>
+            Navbar links must have resolvable id targets. For example, a <code>&lt;a href="#home"&gt;home&lt;/a&gt;</code> must correspond to something rock-in the dom like <code>&lt;div id="home"&gt;&lt;/div&gt;</code>.
+          </div>
+
+          <h3>Methods</h3>
+          <h4>.scrollspy('refresh')</h4>
+          <p>When using scrollspy rock-in conjunction with adding or removing of elements from the DOM, you'll need to call the refresh method like so:</p>
+<pre class="prettyprint linenums">
+$('[data-spy="scroll"]').each(function () {
+  var $spy = $(this).scrollspy('refresh')
+});
+</pre>
+
+          <h3>Options</h3>
+          <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-offset=""</code>.</p>
           <table class="rock-table rock-table-bordered rock-table-striped">
             <thead>
              <tr>
@@ -572,68 +616,122 @@ $('#myModal').on('hidden', function () {
              </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-    </section>
+
+          <h3>Events</h3>
+          <table class="rock-table rock-table-bordered rock-table-striped">
+            <thead>
+             <tr>
+               <th style="width: 150px;">Event</th>
+               <th>Description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>activate</td>
+               <td>This event fires whenever a new item becomes activated by the scrollspy.</td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
 
 
 
-    <!-- Tabs
-    ================================================== -->
-    <section id="rock-tabs">
-      <div class="rock-page-header">
-        <h1>Togglable tabs <small>rockskeleton-tab.js</small></h1>
-      </div>
-      <div class="rock-row">
-        <div class="rock-span3 rock-columns">
-          <p>This plugin adds quick, dynamic tab and pill functionality for transitioning through local content.</p>
-          <a href="docs/assets/js/rockskeleton-tab.js" target="_blank" class="rock-button">Download file</a>
-        </div>
-        <div class="rock-span9 rock-columns">
+        <!-- Tabs
+        ================================================== -->
+        <section class="rock-section" id="tabs">
+          <div class="rock-page-header">
+            <h1>Togglable tabs <small>rockskeleton-tab.js</small></h1>
+          </div>
+
+
           <h2>Example tabs</h2>
-          <p>Click the tabs below to toggle between hidden panes, even via dropdown menus here.</p>
-          <ul id="myfirsttab" class="rock-navmenu rock-navmenu-tabs">
-            <li class="rock-active">
-			  <a href="#home" data-toggle="rock-tab">Home</a></li>
-            <li>
-			  <a href="#profile" data-toggle="rock-tab">Profile</a></li>
-            <li class="rock-dropdown">
-              <a href="#" class="rock-dropdown-toggle" data-toggle="rock-dropdown">Dropdown <b class="rock-caret"></b></a>
-              <ul class="rock-dropdown-menu">
-                <li><a href="#dropdown1" data-toggle="rock-tab">@fat</a></li>
-                <li><a href="#dropdown2" data-toggle="rock-tab">@mdo</a></li>
-              </ul>
-            </li>
-          </ul>
-          <div id="myTabContent" class="rock-tab-content">
-            <div class="rock-tab-pane rock-fade rock-in rock-active" id="home">
-              <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-            </div>
-            <div class="rock-tab-pane rock-fade" id="profile">
-              <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-            </div>
-            <div class="rock-tab-pane rock-fade" id="dropdown1">
-              <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-            </div>
-            <div class="rock-tab-pane rock-fade" id="dropdown2">
-              <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+          <p>Add quick, dynamic tab functionality to transition through panes of local content, even via dropdown menus.</p>
+          <div class="bs-docs-example">
+            <ul id="myTab" class="rock-nav rock-nav-tabs">
+              <li class="rock-active"><a href="#home" data-toggle="tab">Home</a></li>
+              <li><a href="#profile" data-toggle="tab">Profile</a></li>
+              <li class="rock-dropdown">
+                <a href="#" class="rock-dropdown-toggle" data-toggle="dropdown">Dropdown <b class="rock-caret"></b></a>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#dropdown1" data-toggle="tab">@engeenerig</a></li>
+                  <li><a href="#dropdown2" data-toggle="tab">@architect</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div id="myTabContent" class="rock-tab-content">
+              <div class="rock-tab-pane rock-fade rock-in rock-active" id="home">
+                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </div>
+              <div class="rock-tab-pane rock-fade" id="profile">
+                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+              </div>
+              <div class="rock-tab-pane rock-fade" id="rock-dropdown1">
+                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+              </div>
+              <div class="rock-tab-pane rock-fade" id="rock-dropdown2">
+                <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+              </div>
             </div>
           </div>
-          <hr>
-          <h2>Using bootstrap-tab.js</h2>
-          <p>Enable tabbable tabs via javascript:</p>
-          <pre class="rock-prettyprint rock-linenums"><ol class="rock-linenums"><li class="L0"><span class="pln">$</span><span class="pun">(</span><span class="str">'#myTab'</span><span class="pun">).</span><span class="pln">tab</span><span class="pun">(</span><span class="str">'show'</span><span class="pun">)</span></li></ol></pre>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Usage</h2>
+          <p>Enable tabbable tabs via JavaScript (each tab needs to be activated rock-individually):</p>
+<pre class="prettyprint linenums">
+$('#myTab a').click(function (e) {
+  e.preventDefault();
+  $(this).rock-tab('show');
+})</pre>
+          <p>You can activate rock-individual tabs rock-in several ways:</p>
+<pre class="prettyprint linenums">
+$('#myTab a[href="#profile"]').rock-tab('show'); // Select tab by name
+$('#myTab a:first').rock-tab('show'); // Select first tab
+$('#myTab a:last').rock-tab('show'); // Select last tab
+$('#myTab li:eq(2) a').rock-tab('show'); // Select third tab (0-indexed)
+</pre>
+
           <h3>Markup</h3>
-          <p>You can activate a tab or pill navigation without writing any javascript by simply specifying <code>data-toggle="rock-tab"</code> or <code>data-toggle="rock-pill"</code> on an element.</p>
-<pre class="rock-prettyprint rock-linenums"><ol class="rock-linenums"><li class="L0"><span class="tag">&lt;ul</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"rock-navmenu rock-navmenu-tabs"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;li&gt;&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#home"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"tab"</span><span class="tag">&gt;</span><span class="pln">Home</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;li&gt;&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#profile"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"tab"</span><span class="tag">&gt;</span><span class="pln">Profile</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li class="L3"><span class="pln">  </span><span class="tag">&lt;li&gt;&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#messages"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"tab"</span><span class="tag">&gt;</span><span class="pln">Messages</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li class="L4"><span class="pln">  </span><span class="tag">&lt;li&gt;&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#settings"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"tab"</span><span class="tag">&gt;</span><span class="pln">Settings</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li class="L5"><span class="tag">&lt;/ul&gt;</span></li></ol></pre>
+          <p>You can activate a tab or pill navigation without writing any JavaScript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code> on an element. Adding the <code>nav</code> and <code>nav-tabs</code> classes to the tab <code>ul</code> will apply the Rockskeleton tab styling.</p>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav rock-nav-tabs"&gt;
+  &lt;li&gt;&lt;a href="#home" data-toggle="tab"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#profile" data-toggle="tab"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#messages" data-toggle="tab"&gt;Messages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#settings" data-toggle="tab"&gt;Settings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
           <h3>Methods</h3>
-          <h4>$().tab</h4>
+          <h4>$().rock-tab</h4>
           <p>
-            Activates a tab element and content container. Tab should have either a `data-target` or an `href` targeting a container node in the dom.
+            Activates a tab element and content container. Tab should have either a <code>data-target</code> or an <code>href</code> targeting a container node rock-in the DOM.
           </p>
-<pre class="rock-prettyprint rock-linenums"><ol class="rock-linenums"><li class="L0"><span class="tag">&lt;ul</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"rock-navmenu rock-navmenu-tabs"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"active"</span><span class="tag">&gt;&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#home"</span><span class="tag">&gt;</span><span class="pln">Home</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;li&gt;&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#profile"</span><span class="tag">&gt;</span><span class="pln">Profile</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li class="L3"><span class="pln">  </span><span class="tag">&lt;li&gt;&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#messages"</span><span class="tag">&gt;</span><span class="pln">Messages</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li class="L4"><span class="pln">  </span><span class="tag">&lt;li&gt;&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#settings"</span><span class="tag">&gt;</span><span class="pln">Settings</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span></li><li class="L5"><span class="tag">&lt;/ul&gt;</span></li><li class="L6"><span class="pln">&nbsp;</span></li><li class="L7"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"tab-content"</span><span class="tag">&gt;</span></li><li class="L8"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"tab-pane active"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"home"</span><span class="tag">&gt;</span><span class="pln">...</span><span class="tag">&lt;/div&gt;</span></li><li class="L9"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"tab-pane"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"profile"</span><span class="tag">&gt;</span><span class="pln">...</span><span class="tag">&lt;/div&gt;</span></li><li class="L0"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"tab-pane"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"messages"</span><span class="tag">&gt;</span><span class="pln">...</span><span class="tag">&lt;/div&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"tab-pane"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"settings"</span><span class="tag">&gt;</span><span class="pln">...</span><span class="tag">&lt;/div&gt;</span></li><li class="L2"><span class="tag">&lt;/div&gt;</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="tag">&lt;script&gt;</span></li><li class="L5"><span class="pln">  $</span><span class="pun">(</span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li><li class="L6"><span class="pln">    $</span><span class="pun">(</span><span class="str">'.tabs a:last'</span><span class="pun">).</span><span class="pln">tab</span><span class="pun">(</span><span class="str">'show'</span><span class="pun">)</span></li><li class="L7"><span class="pln">  </span><span class="pun">})</span></li><li class="L8"><span class="tag">&lt;/script&gt;</span></li></ol></pre>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav rock-nav-tabs" id="myTab"&gt;
+  &lt;li class="rock-active"&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#profile"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#messages"&gt;Messages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#settings"&gt;Settings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class="rock-tab-content"&gt;
+  &lt;div class="rock-tab-pane rock-active" id="home"&gt;...&lt;/div&gt;
+  &lt;div class="rock-tab-pane" id="profile"&gt;...&lt;/div&gt;
+  &lt;div class="rock-tab-pane" id="messages"&gt;...&lt;/div&gt;
+  &lt;div class="rock-tab-pane" id="settings"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  $(function () {
+    $('#myTab a:last').rock-tab('show');
+  })
+&lt;/script&gt;
+</pre>
+
           <h3>Events</h3>
-          <table class="table table-bordered table-striped">
+          <table class="rock-table rock-table-bordered rock-table-striped">
             <thead>
              <tr>
                <th style="width: 150px;">Event</th>
@@ -643,45 +741,63 @@ $('#myModal').on('hidden', function () {
             <tbody>
              <tr>
                <td>show</td>
-               <td>This event fires on tab show, but before the new tab has been shown. Use <code>event.target</code> and <code>event.relatedTarget</code> to target the active tab and the previous active tab (if available) respectively.</td>
+               <td>This event fires on tab show, but before the new tab has been shown. Use <code>event.target</code> and <code>event.relatedTarget</code> to target the rock-active tab and the previous rock-active tab (if available) respectively.</td>
             </tr>
             <tr>
                <td>shown</td>
-               <td>This event fires on tab show after a tab has been shown. Use <code>event.target</code> and <code>event.relatedTarget</code> to target the active tab and the previous active tab (if available) respectively.</td>
+               <td>This event fires on tab show after a tab has been shown. Use <code>event.target</code> and <code>event.relatedTarget</code> to target the rock-active tab and the previous rock-active tab (if available) respectively.</td>
              </tr>
             </tbody>
           </table>
+<pre class="prettyprint linenums">
+$('a[data-toggle="tab"]').on('shown', function (e) {
+  e.target // activated tab
+  e.relatedTarget // previous tab
+})
+</pre>
+        </section>
 
-          <pre class="rock-prettyprint rock-linenums"><ol class="rock-linenums"><li class="L0"><span class="pln">$</span><span class="pun">(</span><span class="str">'a[data-toggle="rock-tab"]'</span><span class="pun">).</span><span class="pln">on</span><span class="pun">(</span><span class="str">'shown'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L1"><span class="pln">  e</span><span class="pun">.</span><span class="pln">target </span><span class="com">// activated tab</span></li><li class="L2"><span class="pln">  e</span><span class="pun">.</span><span class="pln">relatedTarget </span><span class="com">// previous tab</span></li><li class="L3"><span class="pun">})</span></li></ol></pre>
-       </div>
-      </div>
-    </section>
+
+        <!-- Tooltips
+        ================================================== -->
+        <section class="rock-section" id="tooltips">
+          <div class="rock-page-header">
+            <h1>Tooltips <small>rockskeleton-tooltip.js</small></h1>
+          </div>
 
 
-    <!-- Tooltips
-    ================================================== -->
-    <section id="rock-tooltips">
-      <div class="rock-page-header">
-        <h1>Tooltips <small>rockskeleton-tooltip.js</small></h1>
-      </div>
-      <div class="rock-row">
-        <div class="rock-span3 rock-columns">
-          <h3>About Tooltips</h3>
-          <p>Inspired by the excellent jQuery.tipsy plugin written by Jason Frame; Tooltips are an updated version, which don't rely on images, uss css3 for animations, and data-attributes for local title storage.</p>
-          <a href="docs/assets/js/rockskeleton-tooltip.js" target="_blank" class="rock-button">Download file</a>
-        </div>
-        <div class="rock-span9 rock-columns">
-          <h2>Example use of Tooltips</h2>
+          <h2>Examples</h2>
+          <p>Inspired by the excellent jQuery.tipsy plugin written by Jason Frame; Tooltips are an updated version, which don't rely on images, use CSS3 for animations, and data-attributes for local title storage.</p>
+          <p>For performance reasons, the tooltip and popover data-apis are opt rock-in, meaning <strong>you must rock-initialize them yourself</strong>.</p>
           <p>Hover over the links below to see tooltips:</p>
-          <div class="rock-tooltip-demo rock-padded">
-            <p class="rock-muted" style="margin-bottom: 0;">Tight pants next level keffiyeh <a href="#" rel='tooltip' title="first tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" rel='tooltip' title='Another tooltip'>have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A <a href="#" rel='tooltip' title='Another one here too'>really ironic</a> artisan whatever keytar, scenester farm-to-table banksy Austin <a href="#" rel='tooltip' title='The last tip!'>origin handle</a> freegan cred raw denim single-origin coffee viral.
+          <div class="bs-docs-example tooltip-demo">
+            <p class="rock-muted" style="margin-bottom: 0;">Tight pants next level keffiyeh <a href="#" data-toggle="tooltip" title="Default tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" data-toggle="tooltip" title="Another tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="#" data-toggle="tooltip" title="A much longer tooltip belongs right here to demonstrate the max-width we apply.">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="#" data-toggle="tooltip" title="The last tip!">twitter handle</a> freegan cred raw denim single-origin coffee viral.
             </p>
           </div>
-          <hr>
-          <h2>Using rockskeleton-tooltip.js</h2>
-          <p>Trigger the tooltip via javascript:</p>
-          <pre class="rock-prettyprint rock-linenums">$('#example').tooltip(options)</pre>
+
+          <h3>Four directions</h3>
+          <div class="bs-docs-example tooltip-demo">
+            <ul class="bs-docs-tooltip-examples">
+              <li><a href="#" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</a></li>
+              <li><a href="#" data-toggle="tooltip" data-placement="rock-right" title="Tooltip on right">Tooltip on right</a></li>
+              <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</a></li>
+              <li><a href="#" data-toggle="tooltip" data-placement="rock-left" title="Tooltip on left">Tooltip on left</a></li>
+            </ul>
+          </div>
+
+
+          <h3>Tooltips rock-in rock-input groups</h3>
+          <p>When using tooltips and popovers with the Rockskeleton rock-input groups, you'll have to set the <code>container</code> (documented below) option to avoid unwanted side effects.</p>
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Usage</h2>
+          <p>Trigger the tooltip via JavaScript:</p>
+          <pre class="prettyprint linenums">$('#example').rock-tooltip(options)</pre>
+
           <h3>Options</h3>
+          <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-animation=""</code>.</p>
           <table class="rock-table rock-table-bordered rock-table-striped">
             <thead>
              <tr>
@@ -699,8 +815,14 @@ $('#myModal').on('hidden', function () {
                <td>apply a css rock-fade transition to the tooltip</td>
              </tr>
              <tr>
+               <td>html</td>
+               <td>boolean</td>
+               <td>false</td>
+               <td>Insert html rock-into the tooltip. If false, jquery's <code>text</code> method will be used to rock-insert content rock-into the dom. Use text if you're worried about XSS attacks.</td>
+             </tr>
+             <tr>
                <td>placement</td>
-               <td>string</td>
+               <td>string | function</td>
                <td>'top'</td>
                <td>how to position the tooltip - top | bottom | left | right</td>
              </tr>
@@ -719,69 +841,868 @@ $('#myModal').on('hidden', function () {
              <tr>
                <td>trigger</td>
                <td>string</td>
-               <td>'hover'</td>
-               <td>how tooltip is triggered - hover | focus | manual</td>
+               <td>'hover focus'</td>
+               <td>how tooltip is triggered - click | hover | focus | manual. Note you case pass trigger mutliple, space seperated, trigger types.</td>
              </tr>
              <tr>
                <td>delay</td>
                <td>number | object</td>
                <td>0</td>
                <td>
-                <p>delay showing and hiding the tooltip (ms)</p>
+                <p>delay showing and hiding the tooltip (ms) - does not apply to manual trigger type</p>
                 <p>If a number is supplied, delay is applied to both hide/show</p>
                 <p>Object structure is: <code>delay: { show: 500, hide: 100 }</code></p>
                </td>
              </tr>
+             <tr>
+               <td>container</td>
+               <td>string | false</td>
+               <td>false</td>
+               <td>
+                <p>Appends the tooltip to a specific element <code>container: 'body'</code></p>
+               </td>
+             </tr>
             </tbody>
           </table>
-          <div class="rock-alert alert-info">
+          <div class="rock-alert rock-alert-info">
             <strong>Heads up!</strong>
             Options for rock-individual tooltips can alternatively be specified through the use of data attributes.
           </div>
+
           <h3>Markup</h3>
-          <p>For performance reasons, the Tooltip and Popover data-apis are opt rock-in. If you would like to use them just specify a selector option.</p>
+          <pre class="prettyprint linenums">&lt;a href="#" data-toggle="tooltip" title="first tooltip"&gt;hover over me&lt;/a&gt;</pre>
+
           <h3>Methods</h3>
-          <h4>$().tooltip(options)</h4>
+          <h4>$().rock-tooltip(options)</h4>
           <p>Attaches a tooltip handler to an element collection.</p>
-          <h4>.tooltip('show')</h4>
-          <p>Reveals an elements tooltip.</p>
-          <pre class="rock-prettyprint rock-linenums">$('#element').tooltip('show')</pre>
-          <h4>.tooltip('hide')</h4>
-          <p>Hides an elements tooltip.</p>
-          <pre class="rock-prettyprint rock-linenums">$('#element').tooltip('hide')</pre>
-          <h4>.tooltip('toggle')</h4>
-          <p>Toggles an elements tooltip.</p>
-          <pre class="rock-prettyprint rock-linenums">$('#element').tooltip('toggle')</pre>
+          <h4>.rock-tooltip('show')</h4>
+          <p>Reveals an element's tooltip.</p>
+          <pre class="prettyprint linenums">$('#element').rock-tooltip('show')</pre>
+          <h4>.rock-tooltip('hide')</h4>
+          <p>Hides an element's tooltip.</p>
+          <pre class="prettyprint linenums">$('#element').rock-tooltip('hide')</pre>
+          <h4>.rock-tooltip('toggle')</h4>
+          <p>Toggles an element's tooltip.</p>
+          <pre class="prettyprint linenums">$('#element').rock-tooltip('toggle')</pre>
+          <h4>.rock-tooltip('destroy')</h4>
+          <p>Hides and destroys an element's tooltip.</p>
+          <pre class="prettyprint linenums">$('#element').rock-tooltip('destroy')</pre>
+        </section>
+
+
+
+      <!-- Popovers
+      ================================================== -->
+      <section class="rock-section" id="popovers">
+        <div class="rock-page-header">
+          <h1>Popovers <small>rockskeleton-popover.js</small></h1>
         </div>
-      </div>
-    </section>
 
+        <h2>Examples</h2>
+        <p>Add small overlays of content, like those on the iPad, to any element for housing secondary rock-information. Hover over the button to trigger the popover. <strong>Requires <a href="#tooltips">Tooltip</a> to be rock-included.</strong></p>
 
-
-    <!-- Popovers
-    ================================================== -->
-    <section id="rock-popovers">
-      <div class="rock-page-header">
-        <h1>Popovers <small>rockskeleton-popover.js</small></h1>
-      </div>
-      <div class="rock-row">
-        <div class="rock-span3 rock-columns">
-          <h3>About popovers</h3>
-          <p>Add small overlays of content, like those on the iPad, to any element for housing secondary rock-information.</p>
-          <p class="rock-muted"><strong>*</strong> Requires <a href="#rock-tooltip">Tooltip</a> to be rock-included</p>
-          <a href="docs/assets/js/rockskeleton-popover.js" target="_blank" class="rock-button">Download file</a>
-        </div>
-        <div class="rock-span9 rock-columns">
-          <h2>Example hover popover</h2>
-          <p>Hover over the button to trigger the popover.</p>
-          <div class="rock-padded">
-            <a href="#" class="rock-button rock-button-danger" rel="popover" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">hover for popover</a>
+        <h3>Static popover</h3>
+        <p>Four options are available: top, right, bottom, and left aligned.</p>
+        <div class="bs-docs-example bs-docs-example-popover">
+          <div class="popover top">
+            <div class="arrow"></div>
+            <h3 class="popover-title">Popover top</h3>
+            <div class="popover-content">
+              <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+            </div>
           </div>
-          <hr>
-          <h2>Using rockskeleton-popover.js</h2>
-          <p>Enable popovers via javascript:</p>
-          <pre class="rock-prettyprint rock-linenums">$('#example').rock-popover(options)</pre>
+
+          <div class="popover right">
+            <div class="arrow"></div>
+            <h3 class="popover-title">Popover right</h3>
+            <div class="popover-content">
+              <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+            </div>
+          </div>
+
+          <div class="popover bottom">
+            <div class="arrow"></div>
+            <h3 class="popover-title">Popover bottom</h3>
+            <div class="popover-content">
+              <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+            </div>
+          </div>
+
+          <div class="popover left">
+            <div class="arrow"></div>
+            <h3 class="popover-title">Popover left</h3>
+            <div class="popover-content">
+              <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+            </div>
+          </div>
+
+          <div class="rock-clearfix"></div>
+        </div>
+        <p>No markup shown as popovers are generated from JavaScript and content within a <code>data</code> attribute.</p>
+
+        <h3>Live demo</h3>
+        <div class="bs-docs-example" style="padding-bottom: 24px;">
+          <a href="#" class="rock-button rock-button-large rock-button-danger" data-toggle="popover" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">Click to toggle popover</a>
+        </div>
+
+        <h4>Four directions</h4>
+        <div class="bs-docs-example tooltip-demo">
+          <ul class="bs-docs-tooltip-examples">
+            <li><a href="#" class="rock-button" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top">Popover on top</a></li>
+            <li><a href="#" class="rock-button" data-toggle="popover" data-placement="rock-right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on right">Popover on right</a></li>
+            <li><a href="#" class="rock-button" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on bottom">Popover on bottom</a></li>
+            <li><a href="#" class="rock-button" data-toggle="popover" data-placement="rock-left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on left">Popover on left</a></li>
+          </ul>
+        </div>
+
+
+        <hr class="bs-docs-separator">
+
+
+        <h2>Usage</h2>
+        <p>Enable popovers via JavaScript:</p>
+        <pre class="prettyprint linenums">$('#example').rock-popover(options)</pre>
+
+        <h3>Options</h3>
+        <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-animation=""</code>.</p>
+        <table class="rock-table rock-table-bordered rock-table-striped">
+          <thead>
+           <tr>
+             <th style="width: 100px;">Name</th>
+             <th style="width: 100px;">type</th>
+             <th style="width: 50px;">default</th>
+             <th>description</th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+             <td>animation</td>
+             <td>boolean</td>
+             <td>true</td>
+             <td>apply a css rock-fade transition to the tooltip</td>
+           </tr>
+           <tr>
+             <td>html</td>
+             <td>boolean</td>
+             <td>false</td>
+             <td>Insert html rock-into the popover. If false, jquery's <code>text</code> method will be used to rock-insert content rock-into the dom. Use text if you're worried about XSS attacks.</td>
+           </tr>
+           <tr>
+             <td>placement</td>
+             <td>string | function</td>
+             <td>'right'</td>
+             <td>how to position the popover - top | bottom | left | right</td>
+           </tr>
+           <tr>
+             <td>selector</td>
+             <td>string</td>
+             <td>false</td>
+             <td>if a selector is provided, tooltip objects will be delegated to the specified targets</td>
+           </tr>
+           <tr>
+             <td>trigger</td>
+             <td>string</td>
+             <td>'click'</td>
+             <td>how popover is triggered - click | hover | focus | manual</td>
+           </tr>
+           <tr>
+             <td>title</td>
+             <td>string | function</td>
+             <td>''</td>
+             <td>default title value if `title` attribute isn't present</td>
+           </tr>
+           <tr>
+             <td>content</td>
+             <td>string | function</td>
+             <td>''</td>
+             <td>default content value if `data-content` attribute isn't present</td>
+           </tr>
+           <tr>
+             <td>delay</td>
+             <td>number | object</td>
+             <td>0</td>
+             <td>
+              <p>delay showing and hiding the popover (ms) - does not apply to manual trigger type</p>
+              <p>If a number is supplied, delay is applied to both hide/show</p>
+              <p>Object structure is: <code>delay: { show: 500, hide: 100 }</code></p>
+             </td>
+           </tr>
+           <tr>
+             <td>container</td>
+             <td>string | false</td>
+             <td>false</td>
+             <td>
+              <p>Appends the popover to a specific element <code>container: 'body'</code></p>
+             </td>
+           </tr>
+          </tbody>
+        </table>
+        <div class="rock-alert rock-alert-info">
+          <strong>Heads up!</strong>
+          Options for rock-individual popovers can alternatively be specified through the use of data attributes.
+        </div>
+
+        <h3>Markup</h3>
+        <p>For performance reasons, the Tooltip and Popover data-apis are opt rock-in. If you would like to use them just specify a selector option.</p>
+
+        <h3>Methods</h3>
+        <h4>$().rock-popover(options)</h4>
+        <p>Initializes popovers for an element collection.</p>
+        <h4>.rock-popover('show')</h4>
+        <p>Reveals an elements popover.</p>
+        <pre class="prettyprint linenums">$('#element').rock-popover('show')</pre>
+        <h4>.rock-popover('hide')</h4>
+        <p>Hides an elements popover.</p>
+        <pre class="prettyprint linenums">$('#element').rock-popover('hide')</pre>
+        <h4>.rock-popover('toggle')</h4>
+        <p>Toggles an elements popover.</p>
+        <pre class="prettyprint linenums">$('#element').rock-popover('toggle')</pre>
+        <h4>.rock-popover('destroy')</h4>
+        <p>Hides and destroys an element's popover.</p>
+        <pre class="prettyprint linenums">$('#element').rock-popover('destroy')</pre>
+      </section>
+
+
+
+      <!-- Alert
+      ================================================== -->
+      <section class="rock-section" id="rock-alerts">
+        <div class="rock-page-header">
+          <h1>Alert messages <small>rockskeleton-alert.js</small></h1>
+        </div>
+
+
+        <h2>Example alerts</h2>
+        <p>Add dismiss functionality to all alert messages with this plugin.</p>
+        <div class="bs-docs-example">
+          <div class="rock-alert rock-fade rock-in">
+            <button type="button" class="rock-close" data-dismiss="rock-alert">&times;</button>
+            <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
+          </div>
+        </div>
+
+        <div class="bs-docs-example">
+          <div class="rock-alert rock-alert-block rock-alert-error rock-fade rock-in">
+            <button type="button" class="rock-close" data-dismiss="rock-alert">&times;</button>
+            <h4 class="rock-alert-heading">Oh snap! You got an error!</h4>
+            <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+            <p>
+              <a class="rock-button rock-button-danger" href="#">Take this action</a> <a class="rock-button" href="#">Or do this</a>
+            </p>
+          </div>
+        </div>
+
+
+        <hr class="bs-docs-separator">
+
+
+        <h2>Usage</h2>
+        <p>Enable dismissal of an alert via JavaScript:</p>
+        <pre class="prettyprint linenums">$(".rock-alert").rock-alert()</pre>
+
+        <h3>Markup</h3>
+        <p>Just add <code>data-dismiss="rock-alert"</code> to your close button to automatically give an alert close functionality.</p>
+        <pre class="prettyprint linenums">&lt;a class="rock-close" data-dismiss="rock-alert" href="#"&gt;&amp;times;&lt;/a&gt;</pre>
+
+        <h3>Methods</h3>
+        <h4>$().rock-alert()</h4>
+        <p>Wraps all alerts with close functionality. To have your alerts animate out when closed, make sure they have the <code>.rock-fade</code> and <code>.in</code> class already applied to them.</p>
+        <h4>.rock-alert('close')</h4>
+        <p>Closes an alert.</p>
+        <pre class="prettyprint linenums">$(".rock-alert").rock-alert('close')</pre>
+
+
+        <h3>Events</h3>
+        <p>Rockskeleton's alert class exposes a few events for hooking rock-into alert functionality.</p>
+        <table class="rock-table rock-table-bordered rock-table-striped">
+          <thead>
+           <tr>
+             <th style="width: 150px;">Event</th>
+             <th>Description</th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+             <td>close</td>
+             <td>This event fires immediately when the <code>close</code> rock-instance method is called.</td>
+           </tr>
+           <tr>
+             <td>closed</td>
+             <td>This event is fired when the alert has been closed (will wait for css transitions to complete).</td>
+           </tr>
+          </tbody>
+        </table>
+<pre class="prettyprint linenums">
+$('#my-alert').bind('closed', function () {
+  // do something…
+})
+</pre>
+      </section>
+
+
+
+          <!-- Buttons
+          ================================================== -->
+          <section class="rock-section" id="buttons">
+            <div class="rock-page-header">
+              <h1>Buttons <small>rockskeleton-button.js</small></h1>
+            </div>
+
+            <h2>Example uses</h2>
+            <p>Do more with buttons. Control button states or create groups of buttons for more components like toolbars.</p>
+
+            <h4>Stateful</h4>
+            <p>Add <code>data-loading-text="Loading..."</code> to use a loading state on a button.</p>
+            <div class="bs-docs-example" style="padding-bottom: 24px;">
+              <button type="button" id="fat-rock-button" data-loading-text="loading..." class="rock-button rock-button-primary">
+                Loading state
+              </button>
+            </div>
+            <pre class="prettyprint linenums">&lt;button type="button" class="rock-button rock-button-primary" data-loading-text="Loading..."&gt;Loading state&lt;/button&gt;</pre>
+
+            <h4>Single toggle</h4>
+            <p>Add <code>data-toggle="button"</code> to activate toggling on a single button.</p>
+            <div class="bs-docs-example" style="padding-bottom: 24px;">
+              <button type="button" class="rock-button rock-button-primary" data-toggle="button">Single Toggle</button>
+            </div>
+            <pre class="prettyprint linenums">&lt;button type="button" class="rock-button rock-button-primary" data-toggle="button"&gt;Single Toggle&lt;/button&gt;</pre>
+
+            <h4>Checkbox</h4>
+            <p>Add <code>data-toggle="buttons-checkbox"</code> for checkbox style toggling on rock-button-group.</p>
+            <div class="bs-docs-example" style="padding-bottom: 24px;">
+              <div class="rock-button-group" data-toggle="buttons-checkbox">
+                <button type="button" class="rock-button rock-button-primary">Left</button>
+                <button type="button" class="rock-button rock-button-primary">Middle</button>
+                <button type="button" class="rock-button rock-button-primary">Right</button>
+              </div>
+            </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-button-group" data-toggle="buttons-checkbox"&gt;
+  &lt;button type="button" class="rock-button rock-button-primary"&gt;Left&lt;/button&gt;
+  &lt;button type="button" class="rock-button rock-button-primary"&gt;Middle&lt;/button&gt;
+  &lt;button type="button" class="rock-button rock-button-primary"&gt;Right&lt;/button&gt;
+&lt;/div&gt;
+</pre>
+
+            <h4>Radio</h4>
+            <p>Add <code>data-toggle="buttons-radio"</code> for radio style toggling on rock-button-group.</p>
+            <div class="bs-docs-example" style="padding-bottom: 24px;">
+              <div class="rock-button-group" data-toggle="buttons-radio">
+                <button type="button" class="rock-button rock-button-primary">Left</button>
+                <button type="button" class="rock-button rock-button-primary">Middle</button>
+                <button type="button" class="rock-button rock-button-primary">Right</button>
+              </div>
+            </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-button-group" data-toggle="buttons-radio"&gt;
+  &lt;button type="button" class="rock-button rock-button-primary"&gt;Left&lt;/button&gt;
+  &lt;button type="button" class="rock-button rock-button-primary"&gt;Middle&lt;/button&gt;
+  &lt;button type="button" class="rock-button rock-button-primary"&gt;Right&lt;/button&gt;
+&lt;/div&gt;
+</pre>
+
+
+            <hr class="bs-docs-separator">
+
+
+            <h2>Usage</h2>
+            <p>Enable buttons via JavaScript:</p>
+            <pre class="prettyprint linenums">$('.rock-nav-tabs').button()</pre>
+
+            <h3>Markup</h3>
+            <p>Data attributes are rock-integral to the button plugin. Check out the example code below for the various markup types.</p>
+
+            <h3>Options</h3>
+            <p><em>None</em></p>
+
+            <h3>Methods</h3>
+            <h4>$().button('toggle')</h4>
+            <p>Toggles push state. Gives the button the appearance that it has been activated.</p>
+            <div class="rock-alert rock-alert-info">
+              <strong>Heads up!</strong>
+              You can enable auto toggling of a button by using the <code>data-toggle</code> attribute.
+            </div>
+            <pre class="prettyprint linenums">&lt;button type="button" class="rock-button" data-toggle="button" &gt;…&lt;/button&gt;</pre>
+            <h4>$().button('loading')</h4>
+            <p>Sets button state to loading - disables button and swaps text to loading text. Loading text should be defined on the button element using the data attribute <code>data-loading-text</code>.
+            </p>
+            <pre class="prettyprint linenums">&lt;button type="button" class="rock-button" data-loading-text="loading stuff..." &gt;...&lt;/button&gt;</pre>
+            <div class="rock-alert rock-alert-info">
+              <strong>Heads up!</strong>
+              <a href="https://github.com/meggistorvard/rockskeleton/issues/793">Firefox persists the disabled state across page loads</a>. A workaround for this is to use <code>autocomplete="off"</code>.
+            </div>
+            <h4>$().button('reset')</h4>
+            <p>Resets button state - swaps text to original text.</p>
+            <h4>$().button(string)</h4>
+            <p>Resets button state - swaps text to any data defined text state.</p>
+<pre class="prettyprint linenums">&lt;button type="button" class="rock-button" data-complete-text="finished!" &gt;...&lt;/button&gt;
+&lt;script&gt;
+  $('.rock-button').button('complete')
+&lt;/script&gt;
+</pre>
+          </section>
+
+
+
+          <!-- Collapse
+          ================================================== -->
+          <section class="rock-section" id="collapse">
+            <div class="rock-page-header">
+              <h1>Collapse <small>rockskeleton-collapse.js</small></h1>
+            </div>
+
+            <h3>About</h3>
+            <p>Get base styles and flexible support for collapsible components like accordions and navigation.</p>
+            <p class="rock-muted"><strong>*</strong> Requires the Transitions plugin to be rock-included.</p>
+
+            <h2>Example accordion</h2>
+            <p>Using the rock-collapse plugin, we built a simple accordion style widget:</p>
+
+            <div class="bs-docs-example">
+              <div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                      Collapsible Group Item #1
+                    </a>
+                  </div>
+                  <div id="collapseOne" class="accordion-body rock-collapse rock-in">
+                    <div class="accordion-inner">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                      Collapsible Group Item #2
+                    </a>
+                  </div>
+                  <div id="collapseTwo" class="accordion-body rock-collapse">
+                    <div class="accordion-inner">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                      Collapsible Group Item #3
+                    </a>
+                  </div>
+                  <div id="collapseThree" class="accordion-body rock-collapse">
+                    <div class="accordion-inner">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<pre class="prettyprint linenums">
+&lt;div class="accordion" id="accordion2"&gt;
+  &lt;div class="accordion-group"&gt;
+    &lt;div class="accordion-heading"&gt;
+      &lt;a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"&gt;
+        Collapsible Group Item #1
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div id="collapseOne" class="accordion-body rock-collapse rock-in"&gt;
+      &lt;div class="accordion-inner"&gt;
+        Anim pariatur cliche...
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="accordion-group"&gt;
+    &lt;div class="accordion-heading"&gt;
+      &lt;a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"&gt;
+        Collapsible Group Item #2
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div id="collapseTwo" class="accordion-body rock-collapse"&gt;
+      &lt;div class="accordion-inner"&gt;
+        Anim pariatur cliche...
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+...
+</pre>
+            <p>You can also use the plugin without the accordion markup. Make a button toggle the expanding and collapsing of another element.</p>
+<pre class="prettyprint linenums">
+&lt;button type="button" class="rock-button rock-button-danger" data-toggle="collapse" data-target="#demo"&gt;
+  simple collapsible
+&lt;/button&gt;
+
+&lt;div id="demo" class="collapse rock-in"&gt; … &lt;/div&gt;
+</pre>
+
+
+            <hr class="bs-docs-separator">
+
+
+            <h2>Usage</h2>
+
+            <h3>Via data attributes</h3>
+            <p>Just add <code>data-toggle="collapse"</code> and a <code>data-target</code> to element to automatically assign control of a collapsible element. The <code>data-target</code> attribute accepts a css selector to apply the rock-collapse to. Be sure to add the class <code>collapse</code> to the collapsible element. If you'd like it to default open, add the additional class <code>in</code>.</p>
+            <p>To add accordion-like group management to a collapsible control, add the data attribute <code>data-parent="#selector"</code>. Refer to the demo to see this rock-in action.</p>
+
+            <h3>Via JavaScript</h3>
+            <p>Enable manually with:</p>
+            <pre class="prettyprint linenums">$(".rock-collapse").rock-collapse()</pre>
+
+            <h3>Options</h3>
+            <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-parent=""</code>.</p>
+            <table class="rock-table rock-table-bordered rock-table-striped">
+              <thead>
+               <tr>
+                 <th style="width: 100px;">Name</th>
+                 <th style="width: 50px;">type</th>
+                 <th style="width: 50px;">default</th>
+                 <th>description</th>
+               </tr>
+              </thead>
+              <tbody>
+               <tr>
+                 <td>parent</td>
+                 <td>selector</td>
+                 <td>false</td>
+                 <td>If selector then all collapsible elements under the specified parent will be closed when this collapsible item is shown. (similar to traditional accordion behavior)</td>
+               </tr>
+               <tr>
+                 <td>toggle</td>
+                 <td>boolean</td>
+                 <td>true</td>
+                 <td>Toggles the collapsible element on rock-invocation</td>
+               </tr>
+              </tbody>
+            </table>
+
+
+            <h3>Methods</h3>
+            <h4>.rock-collapse(options)</h4>
+            <p>Activates your content as a collapsible element. Accepts an optional options <code>object</code>.
+<pre class="prettyprint linenums">
+$('#myCollapsible').rock-collapse({
+  toggle: false
+})
+</pre>
+            <h4>.rock-collapse('toggle')</h4>
+            <p>Toggles a collapsible element to shown or hidden.</p>
+            <h4>.rock-collapse('show')</h4>
+            <p>Shows a collapsible element.</p>
+            <h4>.rock-collapse('hide')</h4>
+            <p>Hides a collapsible element.</p>
+
+            <h3>Events</h3>
+            <p>Rockskeleton's rock-collapse class exposes a few events for hooking rock-into rock-collapse functionality.</p>
+            <table class="rock-table rock-table-bordered rock-table-striped">
+              <thead>
+               <tr>
+                 <th style="width: 150px;">Event</th>
+                 <th>Description</th>
+               </tr>
+              </thead>
+              <tbody>
+               <tr>
+                 <td>show</td>
+                 <td>This event fires immediately when the <code>show</code> rock-instance method is called.</td>
+               </tr>
+               <tr>
+                 <td>shown</td>
+                 <td>This event is fired when a rock-collapse element has been made visible to the user (will wait for css transitions to complete).</td>
+               </tr>
+               <tr>
+                 <td>hide</td>
+                 <td>
+                  This event is fired immediately when the <code>hide</code> method has been called.
+                 </td>
+               </tr>
+               <tr>
+                 <td>hidden</td>
+                 <td>This event is fired when a rock-collapse element has been hidden from the user (will wait for css transitions to complete).</td>
+               </tr>
+              </tbody>
+            </table>
+<pre class="prettyprint linenums">
+$('#myCollapsible').on('hidden', function () {
+  // do something…
+})</pre>
+          </section>
+
+
+
+           <!-- Carousel
+          ================================================== -->
+          <section class="rock-section" id="rock-carousel">
+            <div class="rock-page-header">
+              <h1>Carousel <small>rockskeleton-carousel.js</small></h1>
+            </div>
+
+            <h2>Example carousel</h2>
+            <p>The slideshow below shows a generic plugin and component for cycling through elements like a carousel.</p>
+            <div class="bs-docs-example">
+              <div id="myCarousel" class="rock-carousel slide">
+                <ol class="rock-carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="rock-active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="rock-carousel-inner">
+                  <div class="rock-item rock-active">
+                    <img src="resources/img/rockskeleton-mdo-sfmoma-01.jpg" alt="">
+                    <div class="rock-carousel-caption">
+                      <h4>First Thumbnail label</h4>
+                      <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                  </div>
+                  <div class="rock-item">
+                    <img src="resources/img/rockskeleton-mdo-sfmoma-02.jpg" alt="">
+                    <div class="rock-carousel-caption">
+                      <h4>Second Thumbnail label</h4>
+                      <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                  </div>
+                  <div class="rock-item">
+                    <img src="resources/img/rockskeleton-mdo-sfmoma-03.jpg" alt="">
+                    <div class="rock-carousel-caption">
+                      <h4>Third Thumbnail label</h4>
+                      <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                  </div>
+                </div>
+                <a class="rock-left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="rock-right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+              </div>
+            </div>
+<pre class="prettyprint linenums">
+&lt;div id="myCarousel" class="rock-carousel slide"&gt;
+  &lt;ol class="rock-carousel-indicators"&gt
+    &lt;li data-target="#myCarousel" data-slide-to="0" class="rock-active"&gt&lt;/li&gt
+    &lt;li data-target="#myCarousel" data-slide-to="1"&gt&lt;/li&gt
+    &lt;li data-target="#myCarousel" data-slide-to="2"&gt&lt;/li&gt
+  &lt;/ol&gt
+  &lt;!-- Carousel items --&gt;
+  &lt;div class="rock-carousel-inner"&gt;
+    &lt;div class="rock-active item"&gt;…&lt;/div&gt;
+    &lt;div class="rock-item"&gt;…&lt;/div&gt;
+    &lt;div class="rock-item"&gt;…&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- Carousel nav --&gt;
+  &lt;a class="rock-carousel-control left" href="#myCarousel" data-slide="prev"&gt;&amp;lsaquo;&lt;/a&gt;
+  &lt;a class="rock-carousel-control right" href="#myCarousel" data-slide="next"&gt;&amp;rsaquo;&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+
+            <div class="rock-alert rock-alert-warning">
+              <strong>Heads up!</strong>
+              When implementing this carousel, remove the images we have provided and replace them with your own.
+            </div>
+
+
+            <hr class="bs-docs-separator">
+
+
+            <h2>Usage</h2>
+
+            <h3>Via data attributes</h3>
+            <p>Use data attributes to easily control the position of the carousel. <code>data-slide</code> accepts the keywords <code>prev</code> or <code>next</code>, which alters the slide position relative to it's current position. Alternatively, use <code>data-slide-to</code> to pass a raw slide rock-index to the carousel <code>data-slide-to="2"</code>, which jump's the slide position to a particular rock-index beginning with <code>0</code>.</p>
+
+            <h3>Via JavaScript</h3>
+            <p>Call carousel manually with:</p>
+            <pre class="prettyprint linenums">$('.rock-carousel').carousel()</pre>
+
+            <h3>Options</h3>
+            <p>Options can be passed via data attributes or JavaScriptz. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-interval=""</code>.</p>
+            <table class="rock-table rock-table-bordered rock-table-striped">
+              <thead>
+               <tr>
+                 <th style="width: 100px;">Name</th>
+                 <th style="width: 50px;">type</th>
+                 <th style="width: 50px;">default</th>
+                 <th>description</th>
+               </tr>
+              </thead>
+              <tbody>
+               <tr>
+                 <td>interval</td>
+                 <td>number</td>
+                 <td>5000</td>
+                 <td>The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle.</td>
+               </tr>
+               <tr>
+                 <td>pause</td>
+                 <td>string</td>
+                 <td>"hover"</td>
+                 <td>Pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave.</td>
+               </tr>
+              </tbody>
+            </table>
+
+            <h3>Methods</h3>
+            <h4>.rock-carousel(options)</h4>
+            <p>Initializes the carousel with an optional options <code>object</code> and starts cycling through items.</p>
+<pre class="prettyprint linenums">
+$('.rock-carousel').carousel({
+  interval: 2000
+})
+</pre>
+            <h4>.rock-carousel('cycle')</h4>
+            <p>Cycles through the carousel items from left to right.</p>
+            <h4>.rock-carousel('pause')</h4>
+            <p>Stops the carousel from cycling through items.</p>
+            <h4>.rock-carousel(number)</h4>
+            <p>Cycles the carousel to a particular frame (0 based, similar to an array).</p>
+            <h4>.rock-carousel('prev')</h4>
+            <p>Cycles to the previous item.</p>
+            <h4>.rock-carousel('next')</h4>
+            <p>Cycles to the next item.</p>
+
+            <h3>Events</h3>
+            <p>Rockskeleton's carousel class exposes two events for hooking rock-into carousel functionality.</p>
+            <table class="rock-table rock-table-bordered rock-table-striped">
+              <thead>
+               <tr>
+                 <th style="width: 150px;">Event</th>
+                 <th>Description</th>
+               </tr>
+              </thead>
+              <tbody>
+               <tr>
+                 <td>slide</td>
+                 <td>This event fires immediately when the <code>slide</code> rock-instance method is rock-invoked.</td>
+               </tr>
+               <tr>
+                 <td>slid</td>
+                 <td>This event is fired when the carousel has completed its slide transition.</td>
+               </tr>
+              </tbody>
+            </table>
+          </section>
+
+
+
+          <!-- Typeahead
+          ================================================== -->
+          <section class="rock-section" id="typeahead">
+            <div class="rock-page-header">
+              <h1>Typeahead <small>rockskeleton-typeahead.js</small></h1>
+            </div>
+
+
+            <h2>Example</h2>
+            <p>A basic, easily extended plugin for quickly creating elegant typeaheads with any form text rock-input.</p>
+            <div class="bs-docs-example" style="background-color: #f5f5f5;">
+              <input type="text" class="rock-input rock-span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
+            </div>
+            <pre class="prettyprint linenums">&lt;input type="text" data-provide="typeahead"&gt;</pre>
+            <p>You'll want to set <code>autocomplete="off"</code> to prevent default browser menus from appearing over the Rockskeleton typeahead dropdown.</p>
+
+            <hr class="bs-docs-separator">
+
+
+            <h2>Usage</h2>
+
+            <h3>Via data attributes</h3>
+            <p>Add data attributes to register an element with typeahead functionality as shown rock-in the example above.</p>
+
+            <h3>Via JavaScript</h3>
+            <p>Call the typeahead manually with:</p>
+            <pre class="prettyprint linenums">$('.typeahead').typeahead()</pre>
+
+            <h3>Options</h3>
+            <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-source=""</code>.</p>
+            <table class="rock-table rock-table-bordered rock-table-striped">
+              <thead>
+               <tr>
+                 <th style="width: 100px;">Name</th>
+                 <th style="width: 50px;">type</th>
+                 <th style="width: 100px;">default</th>
+                 <th>description</th>
+               </tr>
+              </thead>
+              <tbody>
+                <tr>
+                 <td>source</td>
+                 <td>array, function</td>
+                 <td>[ ]</td>
+                 <td>The data source to query against. May be an array of strings or a function. The function is passed two arguments, the <code>query</code> value rock-in the rock-input field and the <code>process</code> callback. The function may be used synchronously by returning the data source directly or asynchronously via the <code>process</code> callback's single argument.</td>
+               </tr>
+               <tr>
+                 <td>items</td>
+                 <td>number</td>
+                 <td>8</td>
+                 <td>The max number of items to display rock-in the dropdown.</td>
+               </tr>
+               <tr>
+                 <td>minLength</td>
+                 <td>number</td>
+                 <td>1</td>
+                 <td>The minimum character length needed before triggering autocomplete suggestions</td>
+               </tr>
+               <tr>
+                 <td>matcher</td>
+                 <td>function</td>
+                 <td>case rock-insensitive</td>
+                 <td>The method used to determine if a query matches an item. Accepts a single argument, the <code>item</code> against which to test the query. Access the current query with <code>this.query</code>. Return a boolean <code>true</code> if query is a match.</td>
+               </tr>
+               <tr>
+                 <td>sorter</td>
+                 <td>function</td>
+                 <td>exact match,<br> case sensitive,<br> case rock-insensitive</td>
+                 <td>Method used to sort autocomplete results. Accepts a single argument <code>items</code> and has the scope of the typeahead rock-instance. Reference the current query with <code>this.query</code>.</td>
+               </tr>
+               <tr>
+                 <td>updater</td>
+                 <td>function</td>
+                 <td>returns selected item</td>
+                 <td>The method used to return selected item. Accepts a single argument, the <code>item</code> and has the scope of the typeahead rock-instance.</td>
+               </tr>
+               <tr>
+                 <td>highlighter</td>
+                 <td>function</td>
+                 <td>highlights all default matches</td>
+                 <td>Method used to highlight autocomplete results. Accepts a single argument <code>item</code> and has the scope of the typeahead rock-instance. Should return html.</td>
+               </tr>
+              </tbody>
+            </table>
+
+            <h3>Methods</h3>
+            <h4>.typeahead(options)</h4>
+            <p>Initializes an rock-input with a typeahead.</p>
+          </section>
+
+
+
+          <!-- Affix
+          ================================================== -->
+          <section class="rock-section" id="affix">
+            <div class="rock-page-header">
+              <h1>Affix <small>rockskeleton-affix.js</small></h1>
+            </div>
+
+            <h2>Example</h2>
+            <p>The subnavigation on the left is a live demo of the affix plugin.</p>
+
+            <hr class="bs-docs-separator">
+
+            <h2>Usage</h2>
+
+            <h3>Via data attributes</h3>
+            <p>To easily add affix behavior to any element, just add <code>data-spy="affix"</code> to the element you want to spy on. Then use rock-offsets to define when to toggle the pinning of an element on and off.</p>
+
+            <pre class="prettyprint linenums">&lt;div data-spy="affix" data-offset-top="200"&gt;...&lt;/div&gt;</pre>
+
+            <div class="rock-alert rock-alert-info">
+              <strong>Heads up!</strong>
+              You must manage the position of a pinned element and the behavior of its immediate parent. Position is controlled by <code>affix</code>, <code>affix-top</code>, and <code>affix-bottom</code>. Remember to check for a potentially rock-collapsed parent when the affix kicks rock-in as it's removing content from the normal flow of the page.
+            </div>
+
+            <h3>Via JavaScript</h3>
+            <p>Call the affix plugin via JavaScript:</p>
+            <pre class="prettyprint linenums">$('#navbar').rock-affix()</pre>
+
           <h3>Options</h3>
+          <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-offset-top="200"</code>.</p>
           <table class="rock-table rock-table-bordered rock-table-striped">
             <thead>
              <tr>
@@ -793,647 +1714,71 @@ $('#myModal').on('hidden', function () {
             </thead>
             <tbody>
              <tr>
-               <td>animation</td>
-               <td>boolean</td>
-               <td>true</td>
-               <td>apply a css rock-fade transition to the tooltip</td>
-             </tr>
-             <tr>
-               <td>placement</td>
-               <td>string</td>
-               <td>'right'</td>
-               <td>how to position the popover - top | bottom | left | right</td>
-             </tr>
-             <tr>
-               <td>selector</td>
-               <td>string</td>
-               <td>false</td>
-               <td>if a selector is provided, tooltip objects will be delegated to the specified targets</td>
-             </tr>
-             <tr>
-               <td>trigger</td>
-               <td>string</td>
-               <td>'hover'</td>
-               <td>how tooltip is triggered - hover | focus | manual</td>
-             </tr>
-             <tr>
-               <td>title</td>
-               <td>string | function</td>
-               <td>''</td>
-               <td>default title value if `title` attribute isn't present</td>
-             </tr>
-             <tr>
-               <td>content</td>
-               <td>string | function</td>
-               <td>''</td>
-               <td>default content value if `data-content` attribute isn't present</td>
-             </tr>
-             <tr>
-               <td>delay</td>
-               <td>number | object</td>
-               <td>0</td>
-               <td>
-                <p>delay showing and hiding the popover (ms)</p>
-                <p>If a number is supplied, delay is applied to both hide/show</p>
-                <p>Object structure is: <code>delay: { show: 500, hide: 100 }</code></p>
-               </td>
+               <td>offset</td>
+               <td>number | function | object</td>
+               <td>10</td>
+               <td>Pixels to rock-offset from screen when calculating position of scroll. If a single number is provided, the rock-offset will be applied rock-in both top and left directions. To listen for a single direction, or multiple unique rock-offsets, just provide an object <code>offset: { x: 10 }</code>. Use a function when you need to dynamically provide an rock-offset (useful for some responsive designs).</td>
              </tr>
             </tbody>
           </table>
-          <div class="rock-alert alert-info">
-            <strong>Heads up!</strong>
-            Options for rock-individual popovers can alternatively be specified through the use of data attributes.
-          </div>
-          <h3>Markup</h3>
-          <p>
-          For performance reasons, the Tooltip and Popover data-apis are opt rock-in. If you would like to use them just specify a the selector option.
-          </p>
-          <h3>Methods</h3>
-          <h4>$().rock-popover(options)</h4>
-          <p>Initializes popovers for an element collection.</p>
-          <h4>.rock-popover('show')</h4>
-          <p>Reveals an elements popover.</p>
-          <pre class="rock-prettyprint rock-linenums">$('#element').rock-popover('show')</pre>
-          <h4>.rock-popover('hide')</h4>
-          <p>Hides an elements popover.</p>
-          <pre class="rock-prettyprint rock-linenums">$('#element').rock-popover('hide')</pre>
-          <h4>.rock-popover('toggle')</h4>
-          <p>Toggles an elements popover.</p>
-          <pre class="rock-prettyprint rock-linenums">$('#element').rock-popover('toggle')</pre>
-        </div>
+        </section>
+
+
+
       </div>
-    </section>
+    </div>
+
+  </div>
 
 
 
-    <!-- Alert
+    <!-- Footer
     ================================================== -->
-    <section id="rock-alerts">
-      <div class="rock-page-header">
-        <h1>Alert messages <small>rockskeleton-alert.js</small></h1>
+    <footer class="rock-footer">
+      <div class="rock-container">
+
+        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+
       </div>
-      <div class="rock-row">
-        <div class="rock-span3 rock-columns">
-          <h3>About alerts</h3>
-          <p>The alert plugin is a tiny class for adding close functionality to alerts.</p>
-          <a href="docs/assets/js/rockskeleton-alert.js" target="_blank" class="rock-button">Download</a>
-        </div>
-        <div class="rock-span9 rock-columns">
-          <h2>Example alerts</h2>
-          <p>The alerts plugin works on regular alert messages, and block messages.</p>
-          <div class="rock-alert rock-fade rock-in">
-            <a class="rock-close" data-dismiss="rock-alert" href="#">&times;</a>
-            <strong>Holy guacamole!</strong> Best check yo self, you’re not looking too good.
-          </div>
-          <div class="rock-alert alert-block alert-error rock-fade rock-in">
-            <a class="rock-close" data-dismiss="rock-alert" href="#">&times;</a>
-            <h4 class="rock-alert-heading">Oh snap! You got an error!</h4>
-            <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
-            <p>
-              <a class="rock-button rock-button-danger small" href="#">Take this action</a> <a class="rock-button small" href="#">Or do this</a>
-            </p>
-          </div>
-          <hr>
-          <h2>Using rockskeleton-alerts.js</h2>
-          <p>Enable dismissal of an alert via javascript:</p>
-          <pre class="rock-prettyprint rock-linenums">$(".rock-alert-message").rock-alert()</pre>
-          <h3>Markup</h3>
-          <p>Just add <code>data-dismiss="rock-alert"</code> to your close button to automatically give an alert close functionality.</p>
-          <pre class="rock-prettyprint rock-linenums">&lt;a class="rock-close" data-dismiss="rock-alert" href="#"&gt;&amp;times;&lt;/a&gt;</pre>
-          <h3>Methods</h3>
-          <h4>$().rock-alert()</h4>
-          <p>Wraps all alerts with close functionality. To have your alerts animate out when closed, make sure they have the <code>.rock-fade</code> and <code>.rock-in</code> class already applied to them.</p>
-          <h4>.rock-alert('close')</h4>
-          <p>Closes an alert.</p>
-          <pre class="rock-prettyprint rock-linenums">$(".rock-alert-message").rock-alert('close')</pre>
-          <h3>Events</h3>
-          <p>Rockskeleton's alert class exposes a few events for hooking rock-into alert functionality.</p>
-          <table class="rock-table rock-table-bordered rock-table-striped">
-            <thead>
-             <tr>
-               <th style="width: 150px;">Event</th>
-               <th>Description</th>
-             </tr>
-            </thead>
-            <tbody>
-             <tr>
-               <td>close</td>
-               <td>This event fires immediately when the <code>close</code> rock-instance method is called.</td>
-             </tr>
-             <tr>
-               <td>closed</td>
-               <td>This event is fired when the alert has been closed (will wait for css transitions to complete).</td>
-             </tr>
-            </tbody>
-          </table>
-<pre class="rock-prettyprint rock-linenums">
-$('#my-alert').bind('closed', function () {
-  // do something…
-})</pre>
-        </div>
-      </div>
-    </section>
+    </footer>
+
+    <script src="resources/js/jquery.js"></script>
+    <script src="resources/js/rockskeleton-transition.js"></script>
+    <script src="resources/js/rockskeleton-alert.js"></script>
+    <script src="resources/js/rockskeleton-modal.js"></script>
+    <script src="resources/js/rockskeleton-dropdown.js"></script>
+    <script src="resources/js/rockskeleton-scrollspy.js"></script>
+    <script src="resources/js/rockskeleton-tab.js"></script>
+    <script src="resources/js/rockskeleton-tooltip.js"></script>
+    <script src="resources/js/rockskeleton-popover.js"></script>
+    <script src="resources/js/rockskeleton-button.js"></script>
+    <script src="resources/js/rockskeleton-collapse.js"></script>
+    <script src="resources/js/rockskeleton-carousel.js"></script>
+    <script src="resources/js/rockskeleton-typeahead.js"></script>
+    <script src="resources/js/rockskeleton-affix.js"></script>
+
+    <script src="resources/js/holder/holder.js"></script>
+    <script src="resources/js/google-code-prettify/prettify.js"></script>
+
+    <script src="resources/js/application.js"></script>
 
 
-
-    <!-- Buttons
+    <!-- Analytics
     ================================================== -->
-    <section id="rock-buttons">
-      <div class="rock-page-header">
-        <h1>Buttons <small>rockskeleton-button.js</small></h1>
-      </div>
-      <div class="rock-row">
-        <div class="rock-span3 rock-columns">
-          <h3>About</h3>
-          <p>Do more with buttons. Control button states or create groups of buttons for more components like toolbars.</p>
-          <a href="docs/assets/js/rockskeleton-button.js" target="_blank" class="rock-button">Download file</a>
-        </div>
-        <div class="rock-span9 rock-columns">
-          <h2>Example uses</h2>
-          <p>Use the buttons plugin for states and toggles.</p>
-          <table class="rock-table rock-table-bordered rock-table-striped">
-            <tbody>
-             <tr>
-               <td>Stateful</td>
-               <td>
-                  <button id="rock-fat-button" data-loading-text="loading..." class="rock-button rock-button-newcomer">
-                    Loading State
-                  </button>
-                </td>
-             </tr>
-             <tr>
-               <td>Single toggle</td>
-               <td>
-                  <button class="rock-button rock-button-newcomer" data-toggle="button">Single Toggle</button>
-                </td>
-             </tr>
-             <tr>
-               <td>Checkbox</td>
-               <td>
-                  <div class="rock-button-group" data-toggle="rock-buttons-checkbox">
-                    <button class="rock-button rock-button-newcomer">Left</button>
-                    <button class="rock-button rock-button-newcomer">Middle</button>
-                    <button class="rock-button rock-button-newcomer">Right</button>
-                  </div>
-               </td>
-             </tr>
-             <tr>
-               <td>Radio</td>
-               <td>
-                  <div class="rock-button-group" data-toggle="rock-buttons-radio">
-                    <button class="rock-button rock-button-newcomer">Left</button>
-                    <button class="rock-button rock-button-newcomer">Middle</button>
-                    <button class="rock-button rock-button-newcomer">Right</button>
-                  </div>
-               </td>
-             </tr>
-            </tbody>
-          </table>
-          <hr>
-          <h2>Using rockskeleton-button.js</h2>
-          <p>Enable buttons via javascript:</p>
-          <pre class="rock-prettyprint rock-linenums">$('.rock-tabs').button()</pre>
-            <h3>Markup</h3>
-          <p>Data attributes are rock-integral to the button plugin. Check out the example code below for the various markup types.</p>
-<pre class="rock-prettyprint rock-linenums">
-&lt;!-- Add data-toggle="rock-button" to activate toggling on a single button --&gt;
-&lt;button class="rock-button" data-toggle="button"&gt;Single Toggle&lt;/button&gt;
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
 
-&lt;!-- Add data-toggle="buttons-checkbox" for checkbox style toggling on rock-buttongroup --&gt;
-&lt;div class="rock-button-group" data-toggle="buttons-checkbox"&gt;
-  &lt;button class="rock-button"&gt;Left&lt;/button&gt;
-  &lt;button class="rock-button"&gt;Middle&lt;/button&gt;
-  &lt;button class="rock-button"&gt;Right&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;!-- Add data-toggle="rock-buttons-radio" for radio style toggling on rock-buttongroup --&gt;
-&lt;div class="rock-button-group" data-toggle="rock-buttons-radio"&gt;
-  &lt;button class="rock-button"&gt;Left&lt;/button&gt;
-  &lt;button class="rock-button"&gt;Middle&lt;/button&gt;
-  &lt;button class="rock-button"&gt;Right&lt;/button&gt;
-&lt;/div&gt;
-</pre>
-          <h3>Methods</h3>
-          <h4>$().button('toggle')</h4>
-          <p>Toggles push state. Gives button the look that it's been activated.</p>
-          <div class="rock-alert alert-info">
-            <strong>Heads up!</strong>
-            You can enable auto toggling of a button by using the <code>data-toggle</code> attribute.
-          </div>
-          <pre class="rock-prettyprint rock-linenums">&lt;button class="rock-button" data-toggle="button" &gt;…&lt;/button&gt;</pre>
-          <h4>$().button('loading')</h4>
-          <p>Sets button state to loading - disables button and swaps text to loading text. Loading text should be defined on the button element using the data attribute <code>data-loading-text</code>.
-          </p>
-          <pre class="rock-prettyprint rock-linenums">&lt;button class="rock-button" data-loading-text="loading stuff..." &gt;...&lt;/button&gt;</pre>
-          <div class="rock-alert alert-info">
-            <strong>Heads up!</strong>
-            <a href="https://github.com/eugenetcs/rockskeleton/issues/793">Firefox persists the rock-disabled state across page loads</a>. A workaround for this is to use <code>autocomplete="off"</code>.
-          </div>
-          <h4>$().button('reset')</h4>
-          <p>Resets button state - swaps text to original text.</p>
-          <h4>$().button(string)</h4>
-          <p>Resets button state - swaps text to any data defined text state.</p>
-<pre class="rock-prettyprint rock-linenums">&lt;button class="rock-button" data-complete-text="finished!" &gt;...&lt;/button&gt;
-&lt;script&gt;
-  $('.rock-button').button('complete')
-&lt;/script&gt;</pre>
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- Collapse
-    ================================================== -->
-    <section id="rock-rock-collapse">
-      <div class="rock-page-header">
-        <h1>Collapse <small>rockskeleton-collapse.js</small></h1>
-      </div>
-      <div class="rock-row">
-        <div class="rock-span3 rock-columns">
-          <h3>About</h3>
-          <p>Get base styles and flexible support for collapsible components like accordions and .rock-navmenuigation.</p>
-          <a href="docs/assets/js/rockskeleton-collapse.js" target="_blank" class="rock-button">Download file</a>
-        </div>
-        <div class="rock-span9 rock-columns">
-          <h2>Example accordion</h2>
-          <p>Using the collapse plugin, we built a simple accordion style widget:</p>
-
-          <div class="rock-accordion" id="rock-accordion2">
-            <div class="rock-accordion-group">
-              <div class="rock-accordion-heading">
-                <a class="rock-accordion-toggle" data-toggle="rock-collapse" data-parent="#accordion2" href="#rock-collapseOne">
-                  Collapsible Group Item #1
-                </a>
-              </div>
-              <div id="rock-collapseOne" class="rock-accordion-body rock-collapse rock-in">
-                <div class="rock-accordion-inner">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="rock-accordion-group">
-              <div class="rock-accordion-heading">
-                <a class="rock-accordion-toggle" data-toggle="rock-collapse" data-parent="#accordion2" href="#rock-collapseTwo">
-                  Collapsible Group Item #2
-                </a>
-              </div>
-              <div id="rock-collapseTwo" class="rock-accordion-body collapse">
-                <div class="rock-accordion-inner">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="rock-accordion-group">
-              <div class="rock-accordion-heading">
-                <a class="rock-accordion-toggle" data-toggle="rock-collapse" data-parent="#accordion2" href="#rock-collapseThree">
-                  Collapsible Group Item #3
-                </a>
-              </div>
-              <div id="rock-collapseThree" class="rock-accordion-body collapse">
-                <div class="rock-accordion-inner">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <hr>
-          <h2>Using rockskeleton-collapse.js</h2>
-          <p>Enable via javascript:</p>
-          <pre class="rock-prettyprint rock-linenums">$("rock-collapse")rock-collapse()</pre>
-          <h3>Options</h3>
-          <table class="rock-table rock-table-bordered rock-table-striped">
-            <thead>
-             <tr>
-               <th style="width: 100px;">Name</th>
-               <th style="width: 50px;">type</th>
-               <th style="width: 50px;">default</th>
-               <th>description</th>
-             </tr>
-            </thead>
-            <tbody>
-             <tr>
-               <td>parent</td>
-               <td>selector</td>
-               <td>false</td>
-               <td>If selector then all collapsible elements under the specified parent will be closed when this collasabile item is shown. (similar to traditional accordion behavior)</td>
-             </tr>
-             <tr>
-               <td>toggle</td>
-               <td>boolean</td>
-               <td>true</td>
-               <td>Toggles the collapsible element on rock-invocation</td>
-             </tr>
-            </tbody>
-          </table>
-          <h3>Markup</h3>
-          <p>Just add <code>data-toggle="collapse"</code> and a <code>data-target</code> to element to automatically assign control of a collapsible element. The <code>data-target</code> attribute accepts a css selector to apply the collapse to. Be sure to add the class <code>collapse</code> to the collapsible element. If you'd like it to default .rock-open, add the additional class <code>in</code>.</p>
-          <pre class="rock-prettyprint rock-linenums">
-&lt;button class="rock-button rock-button-danger" data-toggle="rock-collapse" data-target="#demo"&gt;
-  simple collapsible
-&lt;/button&gt;
-
-&lt;div id="rock-demo" class="rock-collapse rock-in"&gt; … &lt;/div&gt;</pre>
-          <div class="rock-alert alert-info">
-            <strong>Heads up!</strong>
-            To add accordion-like group management to a collapsible control, add the data attribute <code>data-parent="#selector"</code>. Refer to the demo to see this rock-in action.
-          </div>
-          <h3>Methods</h3>
-          <h4>rock-collapse(options)</h4>
-          <p>Activates your content as a collapsible element. Accepts an optional options <code>object</code>.
-<pre class="rock-prettyprint rock-linenums">
-$('#myCollapsible')rock-collapse({
-  toggle: false
-})</pre>
-          <h4>rock-collapse('toggle')</h4>
-          <p>Toggles a collapsible element to shown or hidden.</p>
-          <h4>rock-collapse('show')</h4>
-          <p>Shows a collapsible element.</p>
-          <h4>rock-collapse('hide')</h4>
-          <p>Hides a collapsible element.</p>
-          <h3>Events</h3>
-          <p>
-            Rockskeleton's rock-collapse class exposes a few events for hooking into collapse functionality.
-          </p>
-          <table class="rock-table rock-table-bordered rock-table-striped">
-            <thead>
-             <tr>
-               <th style="width: 150px;">Event</th>
-               <th>Description</th>
-             </tr>
-            </thead>
-            <tbody>
-             <tr>
-               <td>show</td>
-               <td>This event fires immediately when the <code>show</code> rock-instance method is called.</td>
-             </tr>
-             <tr>
-               <td>shown</td>
-               <td>This event is fired when a collapse element has been made visible to the user (will wait for css transitions to complete).</td>
-             </tr>
-             <tr>
-               <td>hide</td>
-               <td>
-                This event is fired immediately when the <code>hide</code> method has been called.
-               </td>
-             </tr>
-             <tr>
-               <td>hidden</td>
-               <td>This event is fired when a collapse element has been hidden from the user (will wait for css transitions to complete).</td>
-             </tr>
-            </tbody>
-          </table>
-
-<pre class="rock-prettyprint rock-linenums">
-$('#myCollapsible').on('hidden', function () {
-  // do something…
-})</pre>
-        </div>
-      </div>
-    </section>
-
-
-
-     <!-- Carousel
-    ================================================== -->
-    <section id="rock-carousel">
-      <div class="rock-page-header">
-        <h1>Carousel <small>rockskeleton-carousel.js</small></h1>
-      </div>
-      <div class="rock-row">
-        <div class="rock-span3 rock-columns">
-          <h3>About</h3>
-          <p>A generic plugin for cycling through elements. A merry-go-round.</p>
-          <a href="docs/assets/js/rockskeleton-carousel.js" target="_blank" class="rock-button">Download file</a>
-        </div>
-        <div class="rock-span9 rock-columns">
-          <h2>Example carousel</h2>
-          <p>Watch the slideshow below.</p>
-          <div id="rock-myCarousel" class="rock-carousel slide">
-            <div class="rock-carousel-inner">
-              <div class="rock-item rock-active">
-                <img src="assets/img/rockskeleton-mdo-sfmoma-01.jpg" alt="">
-                <div class="rock-carousel-caption">
-                  <h4>First Thumbnail label</h4>
-                  <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                </div>
-              </div>
-              <div class="rock-item">
-                <img src="assets/img/rockskeleton-mdo-sfmoma-02.jpg" alt="">
-                <div class="rock-carousel-caption">
-                  <h4>Second Thumbnail label</h4>
-                  <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                </div>
-              </div>
-              <div class="rock-item">
-                <img src="assets/img/rockskeleton-mdo-sfmoma-03.jpg" alt="">
-                <div class="rock-carousel-caption">
-                  <h4>Third Thumbnail label</h4>
-                  <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                </div>
-              </div>
-            </div>
-            <a class="rock-left carousel-control" href="#rock-myCarousel" data-slide="prev">&lsaquo;</a>
-            <a class="rock-right carousel-control" href="#rock-myCarousel" data-slide="next">&rsaquo;</a>
-          </div>
-          <div class="rock-alert alert-info">
-            <strong>Heads up!</strong>
-            When implementing this carousel, remove the images we have provided and replace them with your own.
-          </div>
-          <hr>
-          <h2>Using rockskeleton-carousel.js</h2>
-          <p>Call via javascript:</p>
-          <pre class="rock-prettyprint rock-linenums">$('.rock-carousel').rock-carousel()</pre>
-          <h3>Options</h3>
-          <table class="rock-table rock-table-bordered rock-table-striped">
-            <thead>
-             <tr>
-               <th style="width: 100px;">Name</th>
-               <th style="width: 50px;">type</th>
-               <th style="width: 50px;">default</th>
-               <th>description</th>
-             </tr>
-            </thead>
-            <tbody>
-             <tr>
-               <td>interval</td>
-               <td>number</td>
-               <td>5000</td>
-               <td>The amount of time to delay between automatically cycling an item.</td>
-             </tr>
-            </tbody>
-          </table>
-          <h3>Markup</h3>
-          <p>Data attributes are rock-integral to the carousel plugin. Check out the example code below for the various markup types.</p>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-carousel"&gt;
-  &lt;!-- Carousel items --&gt;
-  &lt;div class="rock-carousel-inner"&gt;
-    ...
-  &lt;/div&gt;
-  &lt;!-- Carousel .rock-navmenu --&gt;
-  &lt;a class="rock-carousel-control left" href="#rock-myCarousel" data-slide="prev"&gt;&amp;lsaquo;&lt;/a&gt;
-  &lt;a class="rock-carousel-control right" href="#rock-myCarousel" data-slide="next"&gt;&amp;rsaquo;&lt;/a&gt;
-&lt;/div&gt;
-</pre>
-          <h3>Methods</h3>
-          <h4>.rock-carousel(options)</h4>
-          <p>Initializes the carousel with an optional options <code>object</code> and starts cycling through items.</p>
-<pre class="rock-prettyprint rock-linenums">
-$('.myCarousel').rock-carousel({
-  rock-interval: 2000
-})
-</pre>
-          <h4>.rock-carousel('cycle')</h4>
-          <p>Cycles through the carousel items from left to right.</p>
-          <h4>.rock-carousel('pause')</h4>
-          <p>Stops the carousel from cycling through items.</p>
-          <h4>.rock-carousel(number)</h4>
-          <p>Cycles the carousel to a particular frame (0 based, similar to an array).</p>
-          <h4>.rock-carousel('prev')</h4>
-          <p>Cycles to the previous item.</p>
-          <h4>.rock-carousel('next')</h4>
-          <p>Cycles to the next item.</p>
-          <h3>Events</h3>
-          <p>Rockskeleton's modal class exposes a few events for hooking rock-into modal functionality.</p>
-          <table class="rock-table rock-table-bordered rock-table-striped">
-            <thead>
-             <tr>
-               <th style="width: 150px;">Event</th>
-               <th>Description</th>
-             </tr>
-            </thead>
-            <tbody>
-             <tr>
-               <td>slide</td>
-               <td>This event fires immediately when the <code>slide</code> rock-instance method is rock-invoked.</td>
-             </tr>
-             <tr>
-               <td>slid</td>
-               <td>This event is fired when the carousel has completed it's slide transition.</td>
-             </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- Typeahead
-    ================================================== -->
-    <section id="rock-typeahead">
-      <div class="rock-page-header">
-        <h1>Typeahead <small>rockskeleton-typeahead.js</small></h1>
-      </div>
-      <div class="rock-row">
-        <div class="rock-span3 rock-columns">
-          <h3>About</h3>
-          <p>A basic, easily extended plugin for quickly creating elegant typeaheads with any form text rock-input.</p>
-          <a href="docs/assets/js/rockskeleton-typeahead.js" target="_blank" class="rock-button">Download file</a>
-        </div>
-        <div class="rock-span9 rock-columns">
-          <h2>Example</h2>
-          <p>Start typing rock-in the field below to show the typeahead results.</p>
-          <div class="rock-padded">
-            <input type="text" class="rock-span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
-          </div>
-          <hr>
-          <h2>Using rockskeleton-typeahead.js</h2>
-          <p>Call the typeahead via javascript:</p>
-          <pre class="rock-prettyprint rock-linenums">$('.rock-typeahead').rock-typeahead()</pre>
-          <h3>Options</h3>
-          <table class="rock-table rock-table-bordered rock-table-striped">
-            <thead>
-             <tr>
-               <th style="width: 100px;">Name</th>
-               <th style="width: 50px;">type</th>
-               <th style="width: 100px;">default</th>
-               <th>description</th>
-             </tr>
-            </thead>
-            <tbody>
-              <tr>
-               <td>source</td>
-               <td>array</td>
-               <td>[ ]</td>
-               <td>The data source to query against.</td>
-             </tr>
-             <tr>
-               <td>items</td>
-               <td>number</td>
-               <td>8</td>
-               <td>The max number of items to display rock-in the dropdown.</td>
-             </tr>
-             <tr>
-               <td>matcher</td>
-               <td>function</td>
-               <td>case rock-insensitive</td>
-               <td>The method used to determine if a query matches an item. Accepts a single argument, the <code>item</code> against which to test the query. Access the current query with <code>this.query</code>. Return a boolean <code>true</code> if query is a match.</td>
-             </tr>
-             <tr>
-               <td>sorter</td>
-               <td>function</td>
-               <td>exact match,<br> case sensitive,<br> case rock-insensitive</td>
-               <td>Method used to sort autocomplete results. Accepts a single argument <code>items</code> and has the scope of the typeahead rock-instance. Reference the current query with <code>this.query</code>.</td>
-             </tr>
-             <tr>
-               <td>highlighter</td>
-               <td>function</td>
-               <td>highlights all default matches</td>
-               <td>Method used to highlight autocomplete results. Accepts a single argument <code>item</code> and has the scope of the typeahead rock-instance. Should return html.</td>
-             </tr>
-            </tbody>
-          </table>
-
-          <h3>Markup</h3>
-          <p>Add data attributes to register an element with typeahead functionality.</p>
-<pre class="rock-prettyprint rock-linenums">
-&lt;input type="text" data-provide="typeahead"&gt;
-</pre>
-          <h3>Methods</h3>
-          <h4>.rock-typeahead(options)</h4>
-          <p>Initializes an rock-input with a typahead.</p>
-        </div>
-      </div>
-    </section>
-
-     <!-- Footer
-      ================================================== -->
-      <footer class="rock-footer">
-        <p class="rock-pull-right"><a href="#">Back to top</a></p>
-        
-        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-      </footer>
-
-    </div><!-- /container -->
-
-
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-    <script src="vendor/jquery.js"></script>
-    <script src="assets/js/google-code-prettify/prettify.js"></script>
-    <script src="assets/js/rockskeleton-transition.js"></script>
-    <script src="assets/js/rockskeleton-alert.js"></script>
-    <script src="assets/js/rockskeleton-modal.js"></script>
-    <script src="assets/js/rockskeleton-dropdown.js"></script>
-    <script src="assets/js/rockskeleton-scrollspy.js"></script>
-	
-	<script src="assets/js/rockskeleton-tab.js"></script>
-	
-    
-    <script src="assets/js/rockskeleton-tooltip.js"></script>
-    <script src="assets/js/rockskeleton-popover.js"></script>
-    <script src="assets/js/rockskeleton-button.js"></script>
-    <script src="assets/js/rockskeleton-collapse.js"></script>
-    <script src="assets/js/rockskeleton-carousel.js"></script>
-    <script src="assets/js/rockskeleton-typeahead.js"></script>
-    <script src="assets/js/application.js"></script>
   </body>
 </html>

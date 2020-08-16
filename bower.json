@@ -1,0 +1,8 @@
+{
+  "name": "rockskeleton",
+  "version": "2.3.2",
+  "main": ["./docs/resources/js/rockskeleton.js", "./docs/resources/css/rockskeleton.css"],
+  "dependencies": {
+    "jquery": ">=2.2.1 <2.2.4"
+  }
+}

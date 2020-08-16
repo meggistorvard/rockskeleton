@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Carousel Template &middot; Rockskeleton</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../resources/css/rockskeleton.css" rel="stylesheet">
+    <link href="../resources/css/rockskeleton-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .rock-container surrounding .rock-navbar, used for positioning it rock-into place. */
+    .rock-navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of rock-navbar. */
+    }
+    .rock-navbar-wrapper .rock-navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .rock-navbar .rock-navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .rock-navbar .rock-brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match rock-navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: rock-increase padding for taller rock-navbar */
+    .rock-navbar .rock-nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .rock-navbar .rock-button-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .rock-carousel {
+      margin-bottom: 60px;
+    }
+
+    .rock-carousel .rock-container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .rock-carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .rock-carousel .rock-item {
+      height: 500px;
+    }
+    .rock-carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .rock-carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .rock-carousel-caption h1,
+    .rock-carousel-caption .rock-lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .rock-carousel-caption .rock-button {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .rock-marketing .rock-span4 {
+      text-align: center;
+    }
+    .rock-marketing h2 {
+      font-weight: normal;
+    }
+    .rock-marketing .rock-span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .rock-featurette-divider {
+      margin: 80px 0; /* Space out the Rockskeleton <hr> more */
+    }
+    .rock-featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .rock-featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right rock-into it. */
+    .rock-featurette-image.rock-pull-left {
+      margin-right: 40px;
+    }
+    .rock-featurette-image.rock-pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the rock-marketing headings */
+    .rock-featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .rock-container.rock-navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .rock-navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .rock-carousel .rock-item {
+        height: 500px;
+      }
+      .rock-carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .rock-featurette {
+        height: auto;
+        padding: 0;
+      }
+      .rock-featurette-image.rock-pull-left,
+      .rock-featurette-image.rock-pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .rock-navbar-inner {
+        margin: -20px;
+      }
+
+      .rock-carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .rock-carousel .rock-container {
+
+      }
+      .rock-carousel .rock-item {
+        height: 300px;
+      }
+      .rock-carousel img {
+        height: 300px;
+      }
+      .rock-carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .rock-carousel-caption h1 {
+        font-size: 30px;
+      }
+      .rock-carousel-caption .rock-lead,
+      .rock-carousel-caption .rock-button {
+        font-size: 18px;
+      }
+
+      .rock-marketing .rock-span4 + .rock-span4 {
+        margin-top: 40px;
+      }
+
+      .rock-featurette-heading {
+        font-size: 30px;
+      }
+      .rock-featurette .rock-lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../resources/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../resources/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../resources/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../resources/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../resources/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../resources/ico/favicon.png">
+  </head>
+
+  <body>
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="rock-navbar-wrapper">
+      <!-- Wrap the .rock-navbar rock-in .rock-container to center it within the absolutely positioned parent. -->
+      <div class="rock-container">
+
+        <div class="rock-navbar rock-navbar">
+          <div class="rock-navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive rock-navbar (not covered rock-in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="rock-button rock-button-navbar" data-toggle="collapse" data-target=".rock-nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="rock-brand" href="#">Project name</a>
+            <!-- Responsive Navbar Part 2: Place all rock-navbar contents you want rock-collapsed withing .rock-navbar-collapse.rock-collapse. -->
+            <div class="rock-nav-collapse rock-collapse">
+              <ul class="rock-nav">
+                <li class="rock-active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- Read about Rockskeleton dropdowns at https://github.com/meggistorvard/rockskeleton/javascript.html#dropdowns -->
+                <li class="rock-dropdown">
+                  <a href="#" class="rock-dropdown-toggle" data-toggle="dropdown">Dropdown <b class="rock-caret"></b></a>
+                  <ul class="rock-dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="rock-divider"></li>
+                    <li class="rock-nav-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.rock-nav-collapse -->
+          </div><!-- /.rock-navbar-inner -->
+        </div><!-- /.rock-navbar -->
+
+      </div> <!-- /.rock-container -->
+    </div><!-- /.rock-navbar-wrapper -->
+
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="rock-carousel rock-slide">
+      <div class="rock-carousel-inner">
+        <div class="rock-item rock-active">
+          <img src="../resources/img/examples/slide-01.jpg" alt="">
+          <div class="rock-container">
+            <div class="rock-carousel-caption">
+              <h1>Example headline.</h1>
+              <p class="rock-lead">Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <a class="rock-button rock-button-large rock-button-primary" href="#">Sign up today</a>
+            </div>
+          </div>
+        </div>
+        <div class="rock-item">
+          <img src="../resources/img/examples/slide-02.jpg" alt="">
+          <div class="rock-container">
+            <div class="rock-carousel-caption">
+              <h1>Another example headline.</h1>
+              <p class="rock-lead">Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <a class="rock-button rock-button-large rock-button-primary" href="#">Learn more</a>
+            </div>
+          </div>
+        </div>
+        <div class="rock-item">
+          <img src="../resources/img/examples/slide-03.jpg" alt="">
+          <div class="rock-container">
+            <div class="rock-carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p class="rock-lead">Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <a class="rock-button rock-button-large rock-button-primary" href="#">Browse gallery</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="rock-left rock-carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="rock-right rock-carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.rock-carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page rock-in another container to center all the content. -->
+
+    <div class="rock-container rock-marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="rock-row">
+        <div class="rock-span4">
+          <img class="rockimage-circle" data-src="holder.js/140x140">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+          <p><a class="rock-button" href="#">View details &raquo;</a></p>
+        </div><!-- /.rock-span4 -->
+        <div class="rock-span4">
+          <img class="rockimage-circle" data-src="holder.js/140x140">
+          <h2>Heading</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="rock-button" href="#">View details &raquo;</a></p>
+        </div><!-- /.rock-span4 -->
+        <div class="rock-span4">
+          <img class="rockimage-circle" data-src="holder.js/140x140">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="rock-button" href="#">View details &raquo;</a></p>
+        </div><!-- /.rock-span4 -->
+      </div><!-- /.rock-row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="rock-featurette-divider">
+
+      <div class="rock-featurette">
+        <img class="rock-featurette-image rock-pull-right" width="240" src="../resources/img/examples/browser-icon-chrome.png">
+        <h2 class="rock-featurette-heading">First featurette headling. <span class="rock-muted">It'll blow your mind.</span></h2>
+        <p class="rock-lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+      <hr class="rock-featurette-divider">
+
+      <div class="rock-featurette">
+        <img class="rock-featurette-image pull-left" width="240" src="../resources/img/examples/browser-icon-firefox.png">
+        <h2 class="rock-featurette-heading">Oh yeah, it's that good. <span class="rock-muted">See for yourself.</span></h2>
+        <p class="rock-lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+      <hr class="rock-featurette-divider">
+
+      <div class="rock-featurette">
+        <img class="rock-featurette-image rock-pull-right" width="240" src="../resources/img/examples/browser-icon-safari.png">
+        <h2 class="rock-featurette-heading">And lastly, this one. <span class="rock-muted">Checkmate.</span></h2>
+        <p class="rock-lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+      <hr class="rock-featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="rock-pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.rock-container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../resources/js/jquery.js"></script>
+    <script src="../resources/js/rockskeleton-transition.js"></script>
+    <script src="../resources/js/rockskeleton-alert.js"></script>
+    <script src="../resources/js/rockskeleton-modal.js"></script>
+    <script src="../resources/js/rockskeleton-dropdown.js"></script>
+    <script src="../resources/js/rockskeleton-scrollspy.js"></script>
+    <script src="../resources/js/rockskeleton-tab.js"></script>
+    <script src="../resources/js/rockskeleton-tooltip.js"></script>
+    <script src="../resources/js/rockskeleton-popover.js"></script>
+    <script src="../resources/js/rockskeleton-button.js"></script>
+    <script src="../resources/js/rockskeleton-collapse.js"></script>
+    <script src="../resources/js/rockskeleton-carousel.js"></script>
+    <script src="../resources/js/rockskeleton-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="../resources/js/holder/holder.js"></script>
+  </body>
+</html>

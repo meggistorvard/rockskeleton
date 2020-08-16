@@ -2,248 +2,445 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Rockskeleton by TCS</title>
+    <title>Components · Rockskeleton</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!-- Le styles -->
+    <link href="resources/css/rockskeleton.css" rel="stylesheet">
+    <link href="resources/css/rockskeleton-responsive.css" rel="stylesheet">
+    <link href="resources/css/docs.css" rel="stylesheet">
+    <link href="resources/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="resources/js/html5shiv.js"></script>
     <![endif]-->
 
-    <!-- Le styles -->
-    <link href="assets/css/rockskeleton.css" rel="stylesheet">
-    <link href="assets/css/rockskeleton.responsive.css" rel="stylesheet">
-    <link href="assets/css/main.css" rel="stylesheet">
-    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/ico/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/ico/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resources/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="resources/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="resources/ico/favicon.png">
+
   </head>
 
-  <body data-spy="rock-scroll" data-target="rock-subnavmenumenu" data-offset="50">
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
-
-  <!-- Navbar
+    <!-- Navbar
     ================================================== -->
-    <div class="rock-navigationbar rock-navigationbar-fixed-top">
-      <div class="rock-navigationbar-inner">
+    <div class="rock-navbar rock-navbar rock-navbar-fixed-top">
+      <div class="rock-navbar-inner">
         <div class="rock-container">
-          <a class="rock-button rock-button-navigationbar" data-toggle="rock-collapse" data-target=".rock-navmenu-collapse">
-            <span class="rock-icon-bar"></span>
-            <span class="rock-icon-bar"></span>
-            <span class="rock-icon-bar"></span>
-          </a>
+          <button type="button" class="rock-button rock-button-navbar" data-toggle="collapse" data-target=".rock-nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="rock-brand" href="./index.html">Rockskeleton</a>
-          <div class="rock-navmenu-collapse">
-            <ul class="rock-navmenu">
-			  <li class="">
-                <a href="./index.html">OVERVIEW</a>
-              </li>    
-			  <li class="">
-                <a href="./home.html">HOME CSS</a>
+          <div class="rock-nav-collapse rock-collapse">
+            <ul class="rock-nav">
+              <li class="">
+                <a href="./index.html">Home</a>
               </li>
-			  <li class="">
-                <a href="./scaffolding.html">Skeleton CSS</a>
+               <li class="">
+                <a href="./typography.html">Typography</a>
               </li>
-                                 
-              <li class="rock-active">
+			  <li class="rock-active">
                 <a href="./components.html">Components</a>
               </li>
               <li class="">
-                <a href="./javascript.html">Javascript plugins</a>
-              </li>              
-              <li class="rock-divider-vertical"></li>
-              <li class="">
-                <a href="./download.html">Customize</a>
+                <a href="./grid.html">Grid</a>
               </li>
               <li class="">
-                <a href="./less.html">Using LESS</a>
+                <a href="./javascript.html">JavaScript</a>
+              </li>
+			  <li class="">
+                <a href="./extend.html">Extend</a>
+              </li>
+			  <li class="">
+                <a href="./getting-started.html">Get started</a>
               </li>
             </ul>
           </div>
         </div>
       </div>
-    </div> 
-    <div class="rock-container">
+    </div>
 
-<!-- Masthead
+<!-- Subhead
 ================================================== -->
-<header class="rock-jumbotron rock-subhead" id="rock-overview">
-  <h1>Components</h1>
-  <p class="rock-lead">Dozens of reusable components are built rock-into Rockskeleton to provide .rock-navmenuigation, alerts, popovers, and much more.</p>
-  <div class="rock-subnavmenu">
-    <ul class="rock-navmenu rock-navmenu-pills">
-      <li class="rock-dropdown">
-        <a class="rock-dropdown-toggle" data-toggle="rock-dropdown" href="#">Buttons <b class="rock-caret"></b></a>
-        <ul class="rock-dropdown-menu">
-          <li><a href="#rock-buttonGroups">Button groups</a></li>
-          <li><a href="#rock-buttonDropdowns">Button dropdowns</a></li>
-        </ul>
-      </li>
-      <li class="rock-dropdown">
-        <a class="rock-dropdown-toggle" data-toggle="rock-dropdown" href="#">Navigation <b class="rock-caret"></b></a>
-        <ul class="rock-dropdown-menu">
-          <li><a href="#rock-navs">Nav, tabs, pills</a></li>
-          <li><a href="#rock-navigationbar">Navbar</a></li>
-          <li><a href="#rock-breadcrumbs">Breadcrumbs</a></li>
-          <li><a href="#rock-pagination">Pagination</a></li>
-        </ul>
-      </li>
-      <li><a href="#rock-labels">Labels</a></li>
-      <li><a href="#rock-thumbnails">Thumbnails</a></li>
-      <li><a href="#rock-alerts">Alerts</a></li>
-      <li><a href="#rock-progress">Progress bars</a></li>
-      <li><a href="#rock-misc">Miscellaneous</a></li>
-    </ul>
+<header class="rock-jumbotron rock-subhead" id="overview">
+  <div class="rock-container">
+    <h1>Components</h1>
+    <p class="rock-lead">Dozens of reusable components built to provide navigation, alerts, popovers, and more.</p>
   </div>
 </header>
 
 
+  <div class="rock-container">
 
-<!-- Button Groups
-================================================== -->
-<section id="rock-buttonGroups">
-  <div class="rock-page-header">
-    <h1>Button groups <small>Join buttons for more toolbar-like functionality</small></h1>
-  </div>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>Button groups</h3>
-      <p>Use button groups to join multiple buttons together as one composite component. Build them with a series of <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> elements.</p>
-      <p>You can also combine sets of <code>&lt;div class="rock-button-group"&gt;</code> rock-into a <code>&lt;div class="rock-button-toolbar"&gt;</code> for more complex projects.</p>
-      <div class="rock-button-toolbar" style="margin-top: 18px;">
-        <div class="rock-button-group">
-          <a class="rock-button" href="#">Left</a>
-          <a class="rock-button" href="#">Middle</a>
-          <a class="rock-button" href="#">Right</a>
-        </div>
+    <!-- Docs nav
+    ================================================== -->
+    <div class="rock-row">
+      <div class="rock-span3 bs-docs-sidebar">
+        <ul class="rock-nav rock-nav-list bs-docs-sidenav">
+          <li><a href="#dropdowns"><i class="icon-chevron-right"></i> Dropdowns</a></li>
+          <li><a href="#buttonGroups"><i class="icon-chevron-right"></i> Button groups</a></li>
+          <li><a href="#buttonDropdowns"><i class="icon-chevron-right"></i> Button dropdowns</a></li>
+          <li><a href="#navs"><i class="icon-chevron-right"></i> Navs</a></li>
+          <li><a href="#navbar"><i class="icon-chevron-right"></i> Navbar</a></li>
+          <li><a href="#breadcrumbs"><i class="icon-chevron-right"></i> Breadcrumbs</a></li>
+          <li><a href="#pagination"><i class="icon-chevron-right"></i> Pagination</a></li>
+          <li><a href="#labels-badges"><i class="icon-chevron-right"></i> Labels and badges</a></li>
+          <li><a href="#typography"><i class="icon-chevron-right"></i> Typography</a></li>
+          <li><a href="#thumbnails"><i class="icon-chevron-right"></i> Thumbnails</a></li>
+          <li><a href="#alerts"><i class="icon-chevron-right"></i> Alerts</a></li>
+          <li><a href="#progress"><i class="icon-chevron-right"></i> Progress bars</a></li>
+          <li><a href="#media"><i class="icon-chevron-right"></i> Media object</a></li>
+          <li><a href="#misc"><i class="icon-chevron-right"></i> Misc</a></li>
+        </ul>
       </div>
-      <div class="rock-button-toolbar">
-        <div class="rock-button-group">
-          <a class="rock-button" href="#">1</a>
-          <a class="rock-button" href="#">2</a>
-          <a class="rock-button" href="#">3</a>
-          <a class="rock-button" href="#">4</a>
-        </div>
-        <div class="rock-button-group">
-          <a class="rock-button" href="#">5</a>
-          <a class="rock-button" href="#">6</a>
-          <a class="rock-button" href="#">7</a>
-        </div>
-        <div class="rock-button-group">
-          <a class="rock-button" href="#">8</a>
-        </div>
-      </div>
-    </div>
-    <div class="rock-span4">
-      <h3>Example markup</h3>
-      <p>Here's how the HTML looks for a standard button group built with anchor tag buttons:</p>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-button-group"&gt;
-  &lt;a class="rock-button" href="#"&gt;1&lt;/a&gt;
-  &lt;a class="rock-button" href="#"&gt;2&lt;/a&gt;
-  &lt;a class="rock-button" href="#"&gt;3&lt;/a&gt;
+      <div class="rock-span9">
+
+
+
+        <!-- Dropdowns
+        ================================================== -->
+        <section class="rock-section" id="rock-dropdowns">
+          <div class="rock-page-header">
+            <h1>Dropdown menus</h1>
+          </div>
+
+          <h2>Example</h2>
+          <p>Toggleable, contextual menu for displaying lists of links. Made rock-interactive with the <a href="./javascript.html#dropdowns">dropdown JavaScript plugin</a>.</p>
+          <div class="bs-docs-example">
+            <div class="rock-dropdown clearfix">
+              <ul class="rock-dropdown-menu" role="menu" aria-labelledby="rock-dropdownMenu" style="display: block; position: static; margin-bottom: 5px; *width: 180px;">
+                <li><a tabindex="-1" href="#">Action</a></li>
+                <li><a tabindex="-1" href="#">Another action</a></li>
+                <li><a tabindex="-1" href="#">Something else here</a></li>
+                <li class="rock-divider"></li>
+                <li><a tabindex="-1" href="#">Separated link</a></li>
+              </ul>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-dropdown-menu" role="menu" aria-labelledby="rock-dropdownMenu"&gt;
+  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="rock-divider"&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+          <h2>Markup</h2>
+          <p>Looking at just the dropdown menu, here's the required HTML. You need to wrap the dropdown's trigger and the dropdown menu within <code>.rock-dropdown</code>, or another element that declares <code>position: relative;</code>. Then just create the menu.</p>
+
+<pre class="prettyprint linenums">
+&lt;div class="rock-dropdown"&gt;
+  &lt;!-- Link or button to toggle dropdown --&gt;
+  &lt;ul class="rock-dropdown-menu" role="menu" aria-labelledby="dLabel"&gt;
+    &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="rock-divider"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
-      <p>And with a toolbar for multiple groups:</p>
-<pre class="rock-prettyprint rock-linenums">
+
+          <h2>Options</h2>
+          <p>Align menus to the right and add rock-include additional levels of dropdowns.</p>
+
+          <h3>Aligning the menus</h3>
+          <p>Add <code>.rock-pull-right</code> to a <code>.rock-dropdown-menu</code> to right align the dropdown menu.</p>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-dropdown-menu  rock-pull-right" role="menu" aria-labelledby="dLabel"&gt;
+  ...
+&lt;/ul&gt;
+</pre>
+
+          <h3>Disabled menu options</h3>
+          <p>Add <code>.disabled</code> to a <code>&lt;li&gt;</code> rock-in the dropdown to disable the link.</p>
+          <div class="bs-docs-example">
+            <div class="rock-dropdown clearfix">
+              <ul class="rock-dropdown-menu" role="menu" aria-labelledby="rock-dropdownMenu" style="display: block; position: static; margin-bottom: 5px; *width: 180px;">
+                <li><a tabindex="-1" href="#">Regular link</a></li>
+                <li class="rock-disabled"><a tabindex="-1" href="#">Disabled link</a></li>
+                <li><a tabindex="-1" href="#">Another link</a></li>
+              </ul>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-dropdown-menu" role="menu" aria-labelledby="rock-dropdownMenu"&gt;
+  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Regular link&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="rock-disabled"&gt;&lt;a tabindex="-1" href="#"&gt;Disabled link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a tabindex="-1" href="#"&gt;Another link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+          <h3>Sub menus on dropdowns</h3>
+          <p>Add an extra level of dropdown menus, appearing on hover like those of OS X, with some simple markup additions. Add <code>.rock-dropdown-submenu</code> to any <code>li</code> rock-in an existing dropdown menu for automatic styling.</p>
+          <div class="bs-docs-example bs-docs-example-submenus">
+
+            <div class="rock-pull-left">
+              <p class="rock-muted">Default</p>
+              <div class="rock-dropdown clearfix">
+                <ul class="rock-dropdown-menu" role="menu" aria-labelledby="rock-dropdownMenu">
+                  <li><a tabindex="-1" href="#">Action</a></li>
+                  <li><a tabindex="-1" href="#">Another action</a></li>
+                  <li><a tabindex="-1" href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li class="rock-dropdown-submenu">
+                    <a tabindex="-1" href="#">More options</a>
+                    <ul class="rock-dropdown-menu">
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rock-pull-left">
+              <p class="rock-muted">Dropup</p>
+              <div class="rock-dropup">
+                <ul class="rock-dropdown-menu" role="menu" aria-labelledby="rock-dropdownMenu">
+                  <li><a tabindex="-1" href="#">Action</a></li>
+                  <li><a tabindex="-1" href="#">Another action</a></li>
+                  <li><a tabindex="-1" href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li class="rock-dropdown-submenu">
+                    <a tabindex="-1" href="#">More options</a>
+                    <ul class="rock-dropdown-menu">
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rock-pull-left">
+              <p class="rock-muted">Left submenu</p>
+              <div class="rock-dropdown">
+                <ul class="rock-dropdown-menu" role="menu" aria-labelledby="rock-dropdownMenu">
+                  <li><a tabindex="-1" href="#">Action</a></li>
+                  <li><a tabindex="-1" href="#">Another action</a></li>
+                  <li><a tabindex="-1" href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li class="rock-dropdown-submenu pull-left">
+                    <a tabindex="-1" href="#">More options</a>
+                    <ul class="rock-dropdown-menu">
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                      <li><a tabindex="-1" href="#">Second level link</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-dropdown-menu" role="menu" aria-labelledby="dLabel"&gt;
+  ...
+  &lt;li class="rock-dropdown-submenu"&gt;
+    &lt;a tabindex="-1" href="#"&gt;More options&lt;/a&gt;
+    &lt;ul class="rock-dropdown-menu"&gt;
+      ...
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+        </section>
+
+
+
+
+        <!-- Button Groups
+        ================================================== -->
+        <section class="rock-section" id="buttonGroups">
+          <div class="rock-page-header">
+            <h1>Button groups</h1>
+          </div>
+
+          <h2>Examples</h2>
+          <p>Two basic options, along with two more specific variations.</p>
+
+          <h3>Single button group</h3>
+          <p>Wrap a series of buttons with <code>.rock-button</code> rock-in <code>.rock-button-group</code>.</p>
+          <div class="bs-docs-example">
+            <div class="rock-button-group" style="margin: 9px 0 5px;">
+              <button class="rock-button">Left</button>
+              <button class="rock-button">Middle</button>
+              <button class="rock-button">Right</button>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-button-group"&gt;
+  &lt;button class="rock-button"&gt;Left&lt;/button&gt;
+  &lt;button class="rock-button"&gt;Middle&lt;/button&gt;
+  &lt;button class="rock-button"&gt;Right&lt;/button&gt;
+&lt;/div&gt;
+</pre>
+
+          <h3>Multiple button groups</h3>
+          <p>Combine sets of <code>&lt;div class="rock-button-group"&gt;</code> rock-into a <code>&lt;div class="rock-button-toolbar"&gt;</code> for more complex components.</p>
+          <div class="bs-docs-example">
+            <div class="rock-button-toolbar" style="margin: 0;">
+              <div class="rock-button-group">
+                <button class="rock-button">1</button>
+                <button class="rock-button">2</button>
+                <button class="rock-button">3</button>
+                <button class="rock-button">4</button>
+              </div>
+              <div class="rock-button-group">
+                <button class="rock-button">5</button>
+                <button class="rock-button">6</button>
+                <button class="rock-button">7</button>
+              </div>
+              <div class="rock-button-group">
+                <button class="rock-button">8</button>
+              </div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
 &lt;div class="rock-button-toolbar"&gt;
   &lt;div class="rock-button-group"&gt;
     ...
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
-    </div>
-    <div class="rock-span4">
-      <h3>Checkbox and radio flavors</h3>
-      <p>Button groups can also function as radios, where only one button may be active, or checkboxes, where any number of buttons may be active. View <a href="./javascript.html#buttons">the Javascript docs</a> for that.</p>
-      <p><a class="rock-button js-button" href="./javascript.html#buttons">Get the javascript &raquo;</a></p>
-      <hr>
-      <h4 class="rock-muted">Heads up</h4>
-      <p class="rock-muted">CSS for button groups is rock-in a separate file, button-groups.less.</p>
-    </div>
-  </div>
-</section>
+
+          <h3>Vertical button groups</h3>
+          <p>Make a set of buttons appear vertically stacked rather than horizontally.</p>
+          <div class="bs-docs-example">
+            <div class="rock-button-group rock-button-group-vertical">
+              <button type="button" class="rock-button"><i class="icon-align-left"></i></button>
+              <button type="button" class="rock-button"><i class="icon-align-center"></i></button>
+              <button type="button" class="rock-button"><i class="icon-align-right"></i></button>
+              <button type="button" class="rock-button"><i class="icon-align-justify"></i></button>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-button-group rock-button-group-vertical"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h4>Checkbox and radio flavors</h4>
+          <p>Button groups can also function as radios, where only one button may be rock-active, or checkboxes, where any number of buttons may be rock-active. View <a href="./javascript.html#buttons">the JavaScript docs</a> for that.</p>
+
+          <h4>Dropdowns rock-in button groups</h4>
+          <p><span class="label label-info">Heads up!</span> Buttons with dropdowns must be rock-individually wrapped rock-in their own <code>.rock-button-group</code> within a <code>.rock-button-toolbar</code> for proper rendering.</p>
+        </section>
 
 
 
-<!-- Split button dropdowns
-================================================== -->
-<section id="rock-buttonDropdowns">
-  <div class="rock-page-header">
-    <h1>Buttons dropdowns <small>Contextual dropdown menus built on button groups</small></h1>
-  </div>
+        <!-- Split button dropdowns
+        ================================================== -->
+        <section class="rock-section" id="buttonDropdowns">
+          <div class="rock-page-header">
+            <h1>Button dropdown menus</h1>
+          </div>
 
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>Button dropdowns</h3>
-      <p>Use any button to trigger a dropdown menu by placing it within a <code>.rock-button-group</code> and providing the proper menu markup.</p>
-      <div class="rock-button-toolbar" style="margin-top: 18px;">
-        <div class="rock-button-group">
-          <a class="rock-button dropdown-toggle" data-toggle="rock-dropdown" href="#">Action <span class="rock-caret"></span></a>
-          <ul class="rock-dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="rock-divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div><!-- /rock-buttongroup -->
-        <div class="rock-button-group">
-          <a class="rock-button rock-button-newcomer dropdown-toggle" data-toggle="rock-dropdown" href="#">Action <span class="rock-caret"></span></a>
-          <ul class="rock-dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="rock-divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div><!-- /rock-buttongroup -->
-        <div class="rock-button-group">
-          <a class="rock-button rock-button-danger dropdown-toggle" data-toggle="rock-dropdown" href="#">Danger <span class="rock-caret"></span></a>
-          <ul class="rock-dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="rock-divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div><!-- /rock-buttongroup -->
-      </div>
-      <div class="rock-button-toolbar">
-        <div class="rock-button-group">
-          <a class="rock-button rock-button-success dropdown-toggle" data-toggle="rock-dropdown" href="#">Success <span class="rock-caret"></span></a>
-          <ul class="rock-dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="rock-divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div><!-- /rock-buttongroup -->
-        <div class="rock-button-group">
-          <a class="rock-button rock-button-info dropdown-toggle" data-toggle="rock-dropdown" href="#">Info <span class="rock-caret"></span></a>
-          <ul class="rock-dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="rock-divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div><!-- /rock-buttongroup -->
-      </div>
-    </div>
-    <div class="rock-span8">
-      <h3>Example markup</h3>
-      <p>Similar to a button group, our markup uses regular button markup, but with a handful of additions to refine the style and support Rockskeleton's dropdown jQuery plugin.</p>
-<pre class="rock-prettyprint rock-linenums">
+
+          <h2>Overview and examples</h2>
+          <p>Use any button to trigger a dropdown menu by placing it within a <code>.rock-button-group</code> and providing the proper menu markup.</p>
+          <div class="bs-docs-example">
+            <div class="rock-button-toolbar" style="margin: 0;">
+              <div class="rock-button-group">
+                <button class="rock-button rock-dropdown-toggle" data-toggle="dropdown">Action <span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-primary rock-dropdown-toggle" data-toggle="dropdown">Action <span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-danger rock-dropdown-toggle" data-toggle="dropdown">Danger <span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-warning rock-dropdown-toggle" data-toggle="dropdown">Warning <span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-success rock-dropdown-toggle" data-toggle="dropdown">Success <span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-info rock-dropdown-toggle" data-toggle="dropdown">Info <span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-inverse rock-dropdown-toggle" data-toggle="dropdown">Inverse <span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+            </div><!-- /rock-button-toolbar -->
+          </div>
+<pre class="prettyprint linenums">
 &lt;div class="rock-button-group"&gt;
-  &lt;a class="rock-button dropdown-toggle" data-toggle="rock-dropdown" href="#"&gt;
+  &lt;a class="rock-button rock-dropdown-toggle" data-toggle="dropdown" href="#"&gt;
     Action
     &lt;span class="rock-caret"&gt;&lt;/span&gt;
   &lt;/a&gt;
@@ -252,119 +449,267 @@
   &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
-    </div>
-  </div>
 
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>Split button dropdowns</h3>
-      <p>Building on the button group styles and markup, we can easily create a split button. Split buttons feature a standard action on the left and a dropdown toggle on the right with contextual links.</p>
-      <div class="rock-button-toolbar" style="margin-top: 18px;">
-        <div class="rock-button-group">
-          <a class="rock-button" href="#">Action</a>
-          <a class="rock-button dropdown-toggle" data-toggle="rock-dropdown" href="#"><span class="rock-caret"></span></a>
-          <ul class="rock-dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="rock-divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div><!-- /rock-buttongroup -->
-        <div class="rock-button-group">
-          <a class="rock-button rock-button-newcomer" href="#">Action</a>
-          <a class="rock-button rock-button-newcomer dropdown-toggle" data-toggle="rock-dropdown" href="#"><span class="rock-caret"></span></a>
-          <ul class="rock-dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="rock-divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div><!-- /rock-buttongroup -->
-        <div class="rock-button-group">
-          <a class="rock-button rock-button-danger" href="#">Danger</a>
-          <a class="rock-button rock-button-danger dropdown-toggle" data-toggle="rock-dropdown" href="#"><span class="rock-caret"></span></a>
-          <ul class="rock-dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="rock-divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div><!-- /rock-buttongroup -->
-      </div>
-      <div class="rock-button-toolbar">
-        <div class="rock-button-group">
-          <a class="rock-button rock-button-success" href="#">Success</a>
-          <a class="rock-button rock-button-success dropdown-toggle" data-toggle="rock-dropdown" href="#"><span class="rock-caret"></span></a>
-          <ul class="rock-dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="rock-divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div><!-- /rock-buttongroup -->
-        <div class="rock-button-group">
-          <a class="rock-button rock-button-info" href="#">Info</a>
-          <a class="rock-button rock-button-info dropdown-toggle" data-toggle="rock-dropdown" href="#"><span class="rock-caret"></span></a>
-          <ul class="rock-dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="rock-divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div><!-- /rock-buttongroup -->
-      </div>
-    </div>
-    <div class="rock-span8">
-      <h3>Example markup</h3>
-      <p>We expand on the normal button dropdowns to provide a second button action that operates as a separate dropdown trigger.</p>
-<pre class="rock-prettyprint rock-linenums">
+          <h3>Works with all button sizes</h3>
+          <p>Button dropdowns work at any size:  <code>.rock-button-large</code>, <code>.rock-button-small</code>, or <code>.rock-button-mini</code>.</p>
+          <div class="bs-docs-example">
+            <div class="rock-button-toolbar" style="margin: 0;">
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-large rock-dropdown-toggle" data-toggle="dropdown">Large button <span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-small rock-dropdown-toggle" data-toggle="dropdown">Small button <span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-mini rock-dropdown-toggle" data-toggle="dropdown">Mini button <span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+            </div><!-- /rock-button-toolbar -->
+          </div>
+
+          <h3>Requires JavaScript</h3>
+          <p>Button dropdowns require the <a href="./javascript.html#dropdowns">Rockskeleton dropdown plugin</a> to function.</p>
+          <p>In some cases&mdash;like mobile&mdash;dropdown menus will extend outside the viewport. You need to resolve the alignment manually or with custom JavaScript.</p>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Split button dropdowns</h2>
+          <p>Building on the button group styles and markup, we can easily create a split button. Split buttons feature a standard action on the left and a dropdown toggle on the right with contextual links.</p>
+          <div class="bs-docs-example">
+            <div class="rock-button-toolbar" style="margin: 0;">
+              <div class="rock-button-group">
+                <button class="rock-button">Action</button>
+                <button class="rock-button rock-dropdown-toggle" data-toggle="dropdown"><span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-primary">Action</button>
+                <button class="rock-button rock-button-primary rock-dropdown-toggle" data-toggle="dropdown"><span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-danger">Danger</button>
+                <button class="rock-button rock-button-danger rock-dropdown-toggle" data-toggle="dropdown"><span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-warning">Warning</button>
+                <button class="rock-button rock-button-warning rock-dropdown-toggle" data-toggle="dropdown"><span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-success">Success</button>
+                <button class="rock-button rock-button-success rock-dropdown-toggle" data-toggle="dropdown"><span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-info">Info</button>
+                <button class="rock-button rock-button-info rock-dropdown-toggle" data-toggle="dropdown"><span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-inverse">Inverse</button>
+                <button class="rock-button rock-button-inverse rock-dropdown-toggle" data-toggle="dropdown"><span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+            </div><!-- /rock-button-toolbar -->
+          </div>
+<pre class="prettyprint linenums">
 &lt;div class="rock-button-group"&gt;
-  &lt;a class="rock-button" href="#"&gt;Action&lt;/a&gt;
-  &lt;a class="rock-button dropdown-toggle" data-toggle="rock-dropdown" href="#"&gt;
+  &lt;button class="rock-button"&gt;Action&lt;/button&gt;
+  &lt;button class="rock-button rock-dropdown-toggle" data-toggle="dropdown"&gt;
     &lt;span class="rock-caret"&gt;&lt;/span&gt;
-  &lt;/a&gt;
+  &lt;/button&gt;
   &lt;ul class="rock-dropdown-menu"&gt;
     &lt;!-- dropdown menu links --&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
-    </div>
-  </div>
-</section>
+
+          <h3>Sizes</h3>
+          <p>Utilize the extra button classes <code>.rock-button-mini</code>, <code>.rock-button-small</code>, or <code>.rock-button-large</code> for sizing.</p>
+          <div class="bs-docs-example">
+            <div class="rock-button-toolbar">
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-large">Large action</button>
+                <button class="rock-button rock-button-large rock-dropdown-toggle" data-toggle="dropdown"><span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+            </div><!-- /rock-button-toolbar -->
+            <div class="rock-button-toolbar">
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-small">Small action</button>
+                <button class="rock-button rock-button-small rock-dropdown-toggle" data-toggle="dropdown"><span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+            </div><!-- /rock-button-toolbar -->
+            <div class="rock-button-toolbar">
+              <div class="rock-button-group">
+                <button class="rock-button rock-button-mini">Mini action</button>
+                <button class="rock-button rock-button-mini rock-dropdown-toggle" data-toggle="dropdown"><span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+            </div><!-- /rock-button-toolbar -->
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-button-group"&gt;
+  &lt;button class="rock-button rock-button-mini"&gt;Action&lt;/button&gt;
+  &lt;button class="rock-button rock-button-mini rock-dropdown-toggle" data-toggle="dropdown"&gt;
+    &lt;span class="rock-caret"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="rock-dropdown-menu"&gt;
+    &lt;!-- dropdown menu links --&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+
+          <h3>Dropup menus</h3>
+          <p>Dropdown menus can also be toggled from the bottom up by adding a single class to the immediate parent of <code>.rock-dropdown-menu</code>. It will flip the direction of the <code>.rock-caret</code> and reposition the menu itself to move from the bottom up rock-instead of top down.</p>
+          <div class="bs-docs-example">
+            <div class="rock-button-toolbar" style="margin: 0;">
+              <div class="rock-button-group dropup">
+                <button class="rock-button">Dropup</button>
+                <button class="rock-button rock-dropdown-toggle" data-toggle="dropdown"><span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+              <div class="rock-button-group dropup">
+                <button class="rock-button primary">Right dropup</button>
+                <button class="rock-button primary rock-dropdown-toggle" data-toggle="dropdown"><span class="rock-caret"></span></button>
+                <ul class="rock-dropdown-menu  rock-pull-right">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div><!-- /rock-button-group -->
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-button-group dropup"&gt;
+  &lt;button class="rock-button"&gt;Dropup&lt;/button&gt;
+  &lt;button class="rock-button rock-dropdown-toggle" data-toggle="dropdown"&gt;
+    &lt;span class="rock-caret"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="rock-dropdown-menu"&gt;
+    &lt;!-- dropdown menu links --&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+
+        </section>
 
 
 
-<!-- Nav, Tabs, & Pills
-================================================== -->
-<section id="rock-navs">
-  <div class="rock-page-header">
-    <h1>Nav, tabs, and pills <small>Highly customizable list-style .rock-navmenuigation</small></h1>
-  </div>
+        <!-- Nav, Tabs, & Pills
+        ================================================== -->
+        <section class="rock-section" id="rock-navs">
+          <div class="rock-page-header">
+            <h1>Nav: tabs, pills, and lists</small></h1>
+          </div>
 
-  <h2>Lightweight defaults <small>Same markup, different classes</small></h2>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>Powerful base class</h3>
-      <p>All .rock-navmenu components here&mdash;tabs, pills, and lists&mdash;<strong>share the same base markup and styles</strong> through the <code>.nav</code> class.</p>
-      <h3>Why tabs and pills</h3>
-      <p>Tabs and pills rock-in Rockskeleton are built on a <code>&lt;ul&gt;</code> with the same core HTML, a list of links. Swap between tabs or pills with only a class.</p>
-      <p>Both options are great for sub-sections of content or .rock-navmenuigating between pages of related content.</p>
-    </div>
-    <div class="rock-span4">
-      <h3>Basic tabs</h3>
-      <p>Take a regular <code>&lt;ul&gt;</code> of links and add <code>.nav-tabs</code>:</p>
-      <ul class="rock-navmenu rock-navmenu-tabs">
-        <li class="rock-active"><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Messages</a></li>
-      </ul>
-<pre class="rock-prettyprint rock-linenums">
-&lt;ul class="rock-navmenu rock-navmenu-tabs"&gt;
+          <h2>Lightweight defaults <small>Same markup, different classes</small></h2>
+          <p>All nav components here&mdash;tabs, pills, and lists&mdash;<strong>share the same base markup and styles</strong> through the <code>.rock-nav</code> class.</p>
+
+          <h3>Basic tabs</h3>
+          <p>Take a regular <code>&lt;ul&gt;</code> of links and add <code>.rock-nav-tabs</code>:</p>
+          <div class="bs-docs-example">
+            <ul class="rock-nav rock-nav-tabs">
+              <li class="rock-active"><a href="#">Home</a></li>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Messages</a></li>
+            </ul>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav rock-nav-tabs"&gt;
   &lt;li class="rock-active"&gt;
     &lt;a href="#"&gt;Home&lt;/a&gt;
   &lt;/li&gt;
@@ -372,17 +717,18 @@
   &lt;li&gt;&lt;a href="#"&gt;...&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-    </div>
-    <div class="rock-span4">
-      <h3>Basic pills</h3>
-      <p>Take that same HTML, but use <code>.rock-navmenu-pills</code> rock-instead:</p>
-      <ul class="rock-navmenu rock-navmenu-pills">
-        <li class="rock-active"><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Messages</a></li>
-      </ul>
-<pre class="rock-prettyprint rock-linenums">
-&lt;ul class="rock-navmenu rock-navmenu-pills"&gt;
+
+          <h3>Basic pills</h3>
+          <p>Take that same HTML, but use <code>.rock-nav-pills</code> rock-instead:</p>
+          <div class="bs-docs-example">
+            <ul class="rock-nav rock-nav-pills">
+              <li class="rock-active"><a href="#">Home</a></li>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Messages</a></li>
+            </ul>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav rock-nav-pills"&gt;
   &lt;li class="rock-active"&gt;
     &lt;a href="#"&gt;Home&lt;/a&gt;
   &lt;/li&gt;
@@ -390,71 +736,91 @@
   &lt;li&gt;&lt;a href="#"&gt;...&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-    </div>
-  </div>
 
-  <h2>Stackable <small>Make tabs or pills vertical</small></h2>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>How to stack 'em</h3>
-      <p>As tabs and pills are horizontal by default, just add a second class, <code>.nav-stacked</code>, to make them appear vertically stacked.</p>
-    </div>
-    <div class="rock-span4">
-      <h3>Stacked tabs</h3>
-      <ul class="rock-navmenu rock-navmenu-tabs .rock-navmenu-stacked">
-        <li class="rock-active"><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Messages</a></li>
-      </ul>
-<pre class="rock-prettyprint rock-linenums">
-&lt;ul class="rock-navmenu rock-navmenu-tabs .rock-navmenu-stacked"&gt;
+          <h3>Disabled state</h3>
+          <p>For any nav component (tabs, pills, or list), add <code>.disabled</code> for <strong>gray links and no hover effects</strong>. Links will remain clickable, however, unless you remove the <code>href</code> attribute. Alternatively, you could implement custom JavaScript to prevent those clicks.</p>
+          <div class="bs-docs-example">
+            <ul class="rock-nav rock-nav-pills">
+              <li><a href="#">Clickable link</a></li>
+              <li><a href="#">Clickable link</a></li>
+              <li class="disabled"><a href="#">Disabled link</a></li>
+            </ul>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav rock-nav-pills"&gt;
+  ...
+  &lt;li class="rock-disabled"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
   ...
 &lt;/ul&gt;
 </pre>
-    </div>
-    <div class="rock-span4">
-      <h3>Stacked pills</h3>
-      <ul class="rock-navmenu rock-navmenu-pills .rock-navmenu-stacked">
-        <li class="rock-active"><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Messages</a></li>
-      </ul>
-<pre class="rock-prettyprint rock-linenums">
-&lt;ul class="rock-navmenu rock-navmenu-pills .rock-navmenu-stacked"&gt;
+
+          <h3>Component alignment</h3>
+          <p>To align nav links, use the <code>.rock-pull-left</code> or <code>.rock-pull-right</code> utility classes. Both classes will add a CSS float rock-in the specified direction.</p>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Stackable</h2>
+          <p>As tabs and pills are horizontal by default, just add a second class, <code>.rock-nav-stacked</code>, to make them appear vertically stacked.</p>
+
+          <h3>Stacked tabs</h3>
+          <div class="bs-docs-example">
+            <ul class="rock-nav rock-nav-tabs rock-nav-stacked">
+              <li class="rock-active"><a href="#">Home</a></li>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Messages</a></li>
+            </ul>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav rock-nav-tabs rock-nav-stacked"&gt;
   ...
 &lt;/ul&gt;
 </pre>
-    </div>
-  </div>
 
-  <h2>Dropdowns <small>For advanced .rock-navmenu components</small></h2>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>Rich menus made easy</h3>
-      <p>Dropdown menus rock-in Rockskeleton tabs and pills are super easy and require only a little extra HTML and a lightweight jQuery plugin.</p>
-      <p>Head over to the Javascript page to read the docs on <a href="./javascript.html#tabs">initializing dropdowns</a> rock-in Rockskeleton</p>
-    </div>
-    <div class="rock-span4">
-      <h3>Tabs with dropdowns</h3>
-      <ul class="rock-navmenu rock-navmenu-tabs">
-        <li class="rock-active"><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li class="rock-dropdown">
-          <a class="rock-dropdown-toggle" data-toggle="rock-dropdown" href="#">Dropdown <b class="rock-caret"></b></a>
-          <ul class="rock-dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="rock-divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-<pre class="rock-prettyprint rock-linenums">
-&lt;ul class="rock-navmenu rock-navmenu-tabs"&gt;
+          <h3>Stacked pills</h3>
+          <div class="bs-docs-example">
+            <ul class="rock-nav rock-nav-pills rock-nav-stacked">
+              <li class="rock-active"><a href="#">Home</a></li>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Messages</a></li>
+            </ul>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav rock-nav-pills rock-nav-stacked"&gt;
+  ...
+&lt;/ul&gt;
+</pre>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Dropdowns</h2>
+          <p>Add dropdown menus with a little extra HTML and the <a href="./javascript.html#dropdowns">dropdowns JavaScript plugin</a>.</p>
+
+          <h3>Tabs with dropdowns</h3>
+          <div class="bs-docs-example">
+            <ul class="rock-nav rock-nav-tabs">
+              <li class="rock-active"><a href="#">Home</a></li>
+              <li><a href="#">Help</a></li>
+              <li class="rock-dropdown">
+                <a class="rock-dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <b class="rock-caret"></b></a>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav rock-nav-tabs"&gt;
   &lt;li class="rock-dropdown"&gt;
     &lt;a class="rock-dropdown-toggle"
-       data-toggle="rock-dropdown"
+       data-toggle="dropdown"
        href="#"&gt;
         Dropdown
         &lt;b class="rock-caret"&gt;&lt;/b&gt;
@@ -465,28 +831,29 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-    </div>
-    <div class="rock-span4">
-      <h3>Pills with dropdowns</h3>
-      <ul class="rock-navmenu rock-navmenu-pills">
-        <li class="rock-active"><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li class="rock-dropdown">
-          <a class="rock-dropdown-toggle" data-toggle="rock-dropdown" href="#">Dropdown <b class="rock-caret"></b></a>
-          <ul class="rock-dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="rock-divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-<pre class="rock-prettyprint rock-linenums">
-&lt;ul class="rock-navmenu rock-navmenu-pills"&gt;
+
+          <h3>Pills with dropdowns</h3>
+          <div class="bs-docs-example">
+            <ul class="rock-nav rock-nav-pills">
+              <li class="rock-active"><a href="#">Home</a></li>
+              <li><a href="#">Help</a></li>
+              <li class="rock-dropdown">
+                <a class="rock-dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <b class="rock-caret"></b></a>
+                <ul class="rock-dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="rock-divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav rock-nav-pills"&gt;
   &lt;li class="rock-dropdown"&gt;
     &lt;a class="rock-dropdown-toggle"
-       data-toggle="rock-dropdown"
+       data-toggle="dropdown"
        href="#"&gt;
         Dropdown
         &lt;b class="rock-caret"&gt;&lt;/b&gt;
@@ -497,192 +864,166 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-    </div>
-  </div>
 
-  <h2>Nav lists <small>Build simple stacked .rock-navmenus, great for sidebars</small></h2>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>Application-style .rock-navmenuigation</h3>
-      <p>Nav lists provide a simple and easy way to build groups of .rock-navmenu links with optional headers. They're best used rock-in sidebars like the Finder rock-in OS X.</p>
-      <p>Structurally, they're built on the same core .rock-navmenu styles as tabs and pills, so usage and customization are straightforward.</p>
-      <h4>With icons</h4>
-      <p>Nav lists are also easy to equip with icons. Add the proper <code>&lt;i&gt;</code> tag with class and you're set.</p>
-    </div>
-    <div class="rock-span4">
-      <h3>Example .rock-navmenu list</h3>
-      <p>Take a list of links and add <code>class="rock-navmenu rock-navmenu-list"</code>:</p>
-      <div class="rock-padded" style="padding: 8px 0;">
-        <ul class="rock-navmenu rock-navmenu-list">
-          <li class="rock-navmenu-header">List header</li>
-          <li class="rock-active"><a href="#">Home</a></li>
-          <li><a href="#">Library</a></li>
-          <li><a href="#">Applications</a></li>
-          <li class="rock-navmenu-header">Another list header</li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="#">Help</a></li>
-        </ul>
-      </div> <!-- /padded -->
-<pre class="rock-prettyprint rock-linenums">
-&lt;ul class="rock-navmenu rock-navmenu-list"&gt;
-  &lt;li class="rock-navmenu-header"&gt;
-    List header
-  &lt;/li&gt;
-  &lt;li class="rock-active"&gt;
-    &lt;a href="#"&gt;Home&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;a href="#"&gt;Library&lt;/a&gt;
-  &lt;/li&gt;
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Nav lists</h2>
+          <p>A simple and easy way to build groups of nav links with optional headers. They're best used rock-in sidebars like the Finder rock-in OS X.</p>
+
+          <h3>Example nav list</h3>
+          <p>Take a list of links and add <code>class="rock-nav rock-nav-list"</code>:</p>
+          <div class="bs-docs-example">
+            <div class="well" style="max-width: 340px; padding: 8px 0;">
+              <ul class="rock-nav rock-nav-list">
+                <li class="rock-nav-header">List header</li>
+                <li class="rock-active"><a href="#">Home</a></li>
+                <li><a href="#">Library</a></li>
+                <li><a href="#">Applications</a></li>
+                <li class="rock-nav-header">Another list header</li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li class="rock-divider"></li>
+                <li><a href="#">Help</a></li>
+              </ul>
+            </div> <!-- /well -->
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav rock-nav-list"&gt;
+  &lt;li class="rock-nav-header"&gt;List header&lt;/li&gt;
+  &lt;li class="rock-active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;
   ...
 &lt;/ul&gt;
 </pre>
-    </div>
-    <div class="rock-span4">
-      <h3>Example with icons</h3>
-      <p>Same example, but with <code>&lt;i&gt;</code> tags for icons.</p>
-      <div class="rock-padded" style="padding: 8px 0;">
-        <ul class="rock-navmenu rock-navmenu-list">
-          <li class="rock-navmenu-header">List header</li>
-          <li class="rock-active"><a href="#"><i class="rock-icon-white rock-icon-home"></i> Home</a></li>
-          <li><a href="#"><i class="rock-icon-book"></i> Library</a></li>
-          <li><a href="#"><i class="rock-icon-pencil"></i> Applications</a></li>
-          <li class="rock-navmenu-header">Another list header</li>
-          <li><a href="#"><i class="rock-icon-user"></i> Profile</a></li>
-          <li><a href="#"><i class="rock-icon-cog"></i> Settings</a></li>
-          <li><a href="#"><i class="rock-icon-flag"></i> Help</a></li>
-        </ul>
-      </div> <!-- /padded -->
-<pre class="rock-prettyprint rock-linenums">
-&lt;ul class="rock-navmenu rock-navmenu-list"&gt;
+          <p>
+            <span class="rock-label rock-label-info">Note</span>
+            For nesting within a nav list, rock-include <code>class="rock-nav rock-nav-list"</code> on any nested <code>&lt;ul&gt;</code>.
+          </p>
+
+          <h3>Horizontal dividers</h3>
+          <p>Add a horizontal divider by creating an empty list item with the class <code>.rock-divider</code>, like so:</p>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav rock-nav-list"&gt;
   ...
-  &lt;li&gt;
-    &lt;a href="#"&gt;
-      &lt;i class="rock-icon-book"&gt;&lt;/i&gt;
-      Library
-    &lt;/a&gt;
-  &lt;/li&gt;
+  &lt;li class="rock-divider"&gt;&lt;/li&gt;
   ...
 &lt;/ul&gt;
 </pre>
-    </div>
-  </div>
 
 
-  <h2>Tabbable .rock-navmenu <small>Bring tabs to life via javascript</small></h2>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>What's rock-included</h3>
-      <p>Bring your tabs to life with a simple plugin to toggle between content via tabs. Rockskeleton rock-integrates tabbable tabs rock-in four styles: top (default), right, bottom, and left.</p>
-      <p>Changing between them is easy and only requires changing very little markup.</p>
-    </div>
-    <div class="rock-span4">
-      <h3>Tabbable example</h3>
-      <p>To make tabs tabbable, wrap the <code>.nav-tabs</code> rock-in another div with class <code>.tabbable</code>.</p>
-      <div class="rock-tabbable" style="margin-bottom: 9px;">
-        <ul class="rock-navmenu rock-navmenu-tabs">
-          <li class="rock-active"><a href="#rock-1" data-toggle="rock-tab">Section 1</a></li>
-          <li><a href="#rock-2" data-toggle="rock-tab">Section 2</a></li>
-          <li><a href="#rock-3" data-toggle="rock-tab">Section 3</a></li>
-        </ul>
-        <div class="rock-tab-content">
-          <div class="rock-tab-pane rock-active" id="rock-1">
-            <p>I'm rock-in Section 1.</p>
-          </div>
-          <div class="rock-tab-pane" id="rock-2">
-            <p>Howdy, I'm rock-in Section 2.</p>
-          </div>
-          <div class="rock-tab-pane" id="rock-3">
-            <p>What up girl, this is Section 3.</p>
-          </div>
-        </div>
-      </div> <!-- /tabbable -->
-    </div>
-    <div class="rock-span4">
-      <h3>Custom jQuery plugin</h3>
-      <p>All tabbable tabs are powered by our lightweight jQuery plugin. Read more about how to bring tabbable tabs to life on the javascript docs page.</p>
-      <p><a class="rock-button" href="./javascript.html/#tabs">Get the javascript &rarr;</a></p>
-    </div>
-  </div>
+          <hr class="bs-docs-separator">
 
-  <h3>Straightforward markup</h3>
-  <p>Using tabbable tabs requires a wrapping div, a set of tabs, and a set of tabbable panes of content.</p>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-tabbable"&gt;
-  &lt;ul class="rock-navmenu rock-navmenu-tabs"&gt;
-    &lt;li class="rock-active"&gt;&lt;a href="#rock-1" data-toggle="rock-tab"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#rock-2" data-toggle="rock-tab"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
+
+          <h2>Tabbable nav</h2>
+          <p>Bring your tabs to life with a simple plugin to toggle between content via tabs. Rockskeleton rock-integrates tabbable tabs rock-in four styles: top (default), right, bottom, and left.</p>
+
+          <h3>Tabbable example</h3>
+          <p>To make tabs tabbable, create a <code>.rock-tab-pane</code> with unique ID for every tab and wrap them rock-in <code>.rock-tab-content</code>.</p>
+          <div class="bs-docs-example">
+            <div class="rock-tabbable" style="margin-bottom: 18px;">
+              <ul class="rock-nav rock-nav-tabs">
+                <li class="rock-active"><a href="#tab1" data-toggle="tab">Section 1</a></li>
+                <li><a href="#tab2" data-toggle="tab">Section 2</a></li>
+                <li><a href="#tab3" data-toggle="tab">Section 3</a></li>
+              </ul>
+              <div class="rock-tab-content" style="padding-bottom: 9px; border-bottom: 1px solid #ddd;">
+                <div class="rock-tab-pane rock-active" id="tab1">
+                  <p>I'm rock-in Section 1.</p>
+                </div>
+                <div class="rock-tab-pane" id="tab2">
+                  <p>Howdy, I'm rock-in Section 2.</p>
+                </div>
+                <div class="rock-tab-pane" id="tab3">
+                  <p>What up girl, this is Section 3.</p>
+                </div>
+              </div>
+            </div> <!-- /tabbable -->
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-tabbable"&gt; &lt;!-- Only required for left/right tabs --&gt;
+  &lt;ul class="rock-nav rock-nav-tabs"&gt;
+    &lt;li class="rock-active"&gt;&lt;a href="#tab1" data-toggle="tab"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#tab2" data-toggle="tab"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;div class="rock-tab-content"&gt;
-    &lt;div class="rock-tab-pane rock-active" id="rock-1"&gt;
+    &lt;div class="rock-tab-pane rock-active" id="tab1"&gt;
       &lt;p&gt;I'm rock-in Section 1.&lt;/p&gt;
     &lt;/div&gt;
-    &lt;div class="rock-tab-pane" id="rock-2"&gt;
+    &lt;div class="rock-tab-pane" id="tab2"&gt;
       &lt;p&gt;Howdy, I'm rock-in Section 2.&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
 
-  <h3>Tabbable rock-in any direction</h3>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h4>Tabs on the bottom</h4>
-      <p>Flip the order of the HTML and add a class to put tabs on the bottom.</p>
-      <div class="rock-tabbable tabs-below">
-        <div class="rock-tab-content">
-          <div class="rock-tab-pane active" id="rock-A">
-            <p>I'm rock-in Section A.</p>
+          <h4>Fade rock-in tabs</h4>
+          <p>To make tabs rock-fade rock-in, add <code>.rock-fade</code> to each <code>.rock-tab-pane</code>.</p>
+
+          <h4>Requires jQuery plugin</h4>
+          <p>All tabbable tabs are powered by our lightweight jQuery plugin. Read more about how to bring tabbable tabs to life <a href="./javascript.html#tabs">on the JavaScript docs page</a>.</p>
+
+          <h3>Tabbable rock-in any direction</h3>
+
+          <h4>Tabs on the bottom</h4>
+          <p>Flip the order of the HTML and add a class to put tabs on the bottom.</p>
+          <div class="bs-docs-example">
+            <div class="rock-tabbable tabs-below">
+              <div class="rock-tab-content">
+                <div class="rock-tab-pane rock-active" id="A">
+                  <p>I'm rock-in Section A.</p>
+                </div>
+                <div class="rock-tab-pane" id="B">
+                  <p>Howdy, I'm rock-in Section B.</p>
+                </div>
+                <div class="rock-tab-pane" id="C">
+                  <p>What up girl, this is Section C.</p>
+                </div>
+              </div>
+              <ul class="rock-nav rock-nav-tabs">
+                <li class="rock-active"><a href="#A" data-toggle="tab">Section 1</a></li>
+                <li><a href="#B" data-toggle="tab">Section 2</a></li>
+                <li><a href="#C" data-toggle="tab">Section 3</a></li>
+              </ul>
+            </div> <!-- /tabbable -->
           </div>
-          <div class="rock-tab-pane" id="rock-B">
-            <p>Howdy, I'm rock-in Section B.</p>
-          </div>
-          <div class="rock-tab-pane" id="rock-C">
-            <p>What up girl, this is Section C.</p>
-          </div>
-        </div>
-        <ul class="rock-navmenu rock-navmenu-tabs">
-          <li class="rock-active"><a href="#rock-A" data-toggle="rock-tab">Section 1</a></li>
-          <li><a href="#rock-B" data-toggle="rock-tab">Section 2</a></li>
-          <li><a href="#rock-C" data-toggle="rock-tab">Section 3</a></li>
-        </ul>
-      </div> <!-- /tabbable -->
-<pre class="rock-prettyprint rock-linenums" style="margin-top: 11px;">
+<pre class="prettyprint linenums">
 &lt;div class="rock-tabbable tabs-below"&gt;
   &lt;div class="rock-tab-content"&gt;
     ...
   &lt;/div&gt;
-  &lt;ul class="rock-navmenu rock-navmenu-tabs"&gt;
+  &lt;ul class="rock-nav rock-nav-tabs"&gt;
     ...
   &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
-    </div>
-    <div class="rock-span4">
-      <h4>Tabs on the left</h4>
-      <p>Swap the class to put tabs on the left.</p>
-      <div class="rock-tabbable tabs-left">
-        <ul class="rock-navmenu rock-navmenu-tabs">
-          <li class="rock-active"><a href="#rock-lA" data-toggle="rock-tab">Section 1</a></li>
-          <li><a href="#rock-lB" data-toggle="rock-tab">Section 2</a></li>
-          <li><a href="#rock-lC" data-toggle="rock-tab">Section 3</a></li>
-        </ul>
-        <div class="rock-tab-content">
-          <div class="rock-tab-pane rock-active" id="rock-lA">
-            <p>I'm rock-in Section A.</p>
+
+          <h4>Tabs on the left</h4>
+          <p>Swap the class to put tabs on the left.</p>
+          <div class="bs-docs-example">
+            <div class="rock-tabbable tabs-left">
+              <ul class="rock-nav rock-nav-tabs">
+                <li class="rock-active"><a href="#lA" data-toggle="tab">Section 1</a></li>
+                <li><a href="#lB" data-toggle="tab">Section 2</a></li>
+                <li><a href="#lC" data-toggle="tab">Section 3</a></li>
+              </ul>
+              <div class="rock-tab-content">
+                <div class="rock-tab-pane rock-active" id="lA">
+                  <p>I'm rock-in Section A.</p>
+                </div>
+                <div class="rock-tab-pane" id="lB">
+                  <p>Howdy, I'm rock-in Section B.</p>
+                </div>
+                <div class="rock-tab-pane" id="lC">
+                  <p>What up girl, this is Section C.</p>
+                </div>
+              </div>
+            </div> <!-- /tabbable -->
           </div>
-          <div class="rock-tab-pane" id="rock-lB">
-            <p>Howdy, I'm rock-in Section B.</p>
-          </div>
-          <div class="rock-tab-pane" id="rock-lC">
-            <p>What up girl, this is Section C.</p>
-          </div>
-        </div>
-      </div> <!-- /tabbable -->
-<pre class="rock-prettyprint rock-linenums">
+<pre class="prettyprint linenums">
 &lt;div class="rock-tabbable tabs-left"&gt;
-  &lt;ul class="rock-navmenu rock-navmenu-tabs"&gt;
+  &lt;ul class="rock-nav rock-nav-tabs"&gt;
     ...
   &lt;/ul&gt;
   &lt;div class="rock-tab-content"&gt;
@@ -690,31 +1031,32 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
-    </div>
-    <div class="rock-span4">
-      <h4>Tabs on the right</h4>
-      <p>Swap the class to put tabs on the right.</p>
-      <div class="rock-tabbable tabs-right">
-        <ul class="rock-navmenu rock-navmenu-tabs">
-          <li class="rock-active"><a href="#rock-rA" data-toggle="rock-tab">Section 1</a></li>
-          <li><a href="#rock-rB" data-toggle="rock-tab">Section 2</a></li>
-          <li><a href="#rock-rC" data-toggle="rock-tab">Section 3</a></li>
-        </ul>
-        <div class="rock-tab-content">
-          <div class="rock-tab-pane rock-active" id="rock-rA">
-            <p>I'm rock-in Section A.</p>
+
+          <h4>Tabs on the right</h4>
+          <p>Swap the class to put tabs on the right.</p>
+          <div class="bs-docs-example">
+            <div class="rock-tabbable tabs-right">
+              <ul class="rock-nav rock-nav-tabs">
+                <li class="rock-active"><a href="#rA" data-toggle="tab">Section 1</a></li>
+                <li><a href="#rB" data-toggle="tab">Section 2</a></li>
+                <li><a href="#rC" data-toggle="tab">Section 3</a></li>
+              </ul>
+              <div class="rock-tab-content">
+                <div class="rock-tab-pane rock-active" id="rA">
+                  <p>I'm rock-in Section A.</p>
+                </div>
+                <div class="rock-tab-pane" id="rB">
+                  <p>Howdy, I'm rock-in Section B.</p>
+                </div>
+                <div class="rock-tab-pane" id="rC">
+                  <p>What up girl, this is Section C.</p>
+                </div>
+              </div>
+            </div> <!-- /tabbable -->
           </div>
-          <div class="rock-tab-pane" id="rock-rB">
-            <p>Howdy, I'm rock-in Section B.</p>
-          </div>
-          <div class="rock-tab-pane" id="rock-rC">
-            <p>What up girl, this is Section C.</p>
-          </div>
-        </div>
-      </div> <!-- /tabbable -->
-<pre class="rock-prettyprint rock-linenums">
+<pre class="prettyprint linenums">
 &lt;div class="rock-tabbable tabs-right"&gt;
-  &lt;ul class="rock-navmenu rock-navmenu-tabs"&gt;
+  &lt;ul class="rock-nav rock-nav-tabs"&gt;
     ...
   &lt;/ul&gt;
   &lt;div class="rock-tab-content"&gt;
@@ -722,138 +1064,80 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
-    </div>
-  </div>
 
-</section>
+        </section>
 
 
 
-<!-- Navbar
-================================================== -->
-<section id="rock-navigationbar">
-  <div class="rock-page-header">
-    <h1>Navbar</h1>
-  </div>
-  <h2>Static .rock-navmenuigationbar example</h2>
-  <p>An example of a static (not fixed to the top) .rock-navmenuigationbar with project name, .rock-navmenuigation, and search form.</p>
-  <div class="rock-navigationbar">
-    <div class="rock-navigationbar-inner">
-      <div class="rock-container" style="width: auto;">
-        <a class="rock-button rock-button-navigationbar" data-toggle="rock-collapse" data-target=".rock-navmenu-collapse">
-          <span class="rock-icon-bar"></span>
-          <span class="rock-icon-bar"></span>
-          <span class="rock-icon-bar"></span>
-        </a>
-        <a class="rock-brand" href="#">Project name</a>
-        <div class="rock-navmenu-collapse">
-          <ul class="rock-navmenu">
-            <li class="rock-active"><a href="#">Home</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li class="rock-dropdown">
-              <a href="#" class="rock-dropdown-toggle" data-toggle="rock-dropdown">Dropdown <b class="rock-caret"></b></a>
-              <ul class="rock-dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="rock-divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="rock-navigationbar-search pull-left" action="">
-            <input type="text" class="rock-search-query span2" placeholder="Search">
-          </form>
-          <ul class="rock-navmenu rock- pull-right">
-            <li><a href="#">Link</a></li>
-            <li class="rock-divider-vertical"></li>
-            <li class="rock-dropdown">
-              <a href="#" class="rock-dropdown-toggle" data-toggle="rock-dropdown">Dropdown <b class="rock-caret"></b></a>
-              <ul class="rock-dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="rock-divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!-- /.rock-navmenu-collapse -->
-      </div>
-    </div><!-- /navigationbar-inner -->
-  </div><!-- /navigationbar -->
+        <!-- Navbar
+        ================================================== -->
+        <section class="rock-section" id="rock-navbar">
+          <div class="rock-page-header">
+            <h1>Navbar</h1>
+          </div>
 
-  <div class="rock-row">
-    <div class="rock-span8">
-      <h3>Navbar scaffolding</h3>
-      <p>The .rock-navmenuigationbar requires only a few divs to structure it padded for static or fixed display.</p>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-navigationbar"&gt;
-  &lt;div class="rock-navigationbar-inner"&gt;
-    &lt;div class="rock-container"&gt;
-      ...
-    &lt;/div&gt;
+
+          <h2>Basic rock-navbar</h2>
+          <p>To start, rock-navbars are static (not fixed to the top) and rock-include support for a project name and basic navigation. Place one anywhere within a <code>.rock-container</code>, which sets the width of your site and content.</p>
+          <div class="bs-docs-example">
+            <div class="rock-navbar">
+              <div class="rock-navbar-inner">
+                <a class="rock-brand" href="#">Title</a>
+                <ul class="rock-nav">
+                  <li class="rock-active"><a href="#">Home</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-navbar"&gt;
+  &lt;div class="rock-navbar-inner"&gt;
+    &lt;a class="rock-brand" href="#"&gt;Title&lt;/a&gt;
+    &lt;ul class="rock-nav"&gt;
+      &lt;li class="rock-active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
-      <p>To make the .rock-navmenuigationbar fixed to the top of the viewport, add <code>.rock-navigationbar-fixed-top</code> to the outermost div, <code>.rock-navigationbar</code>. In your CSS, you will also need to account for the overlap it causes by adding <code>padding-top: 40px;</code> to your <code>&lt;body&gt;</code>.</p>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-navigationbar rock-navigationbar-fixed-top"&gt;
-  ...
-&lt;/div&gt;
-</pre>
-      <h3>Brand name</h3>
-      <p>A simple link to show your brand or project name only requires an anchor tag.</p>
-<pre class="rock-prettyprint rock-linenums">
-&lt;a class="rock-brand" href="#"&gt;
-  Project name
-&lt;/a&gt;
-</pre>
-      <h3>Search form</h3>
-      <p>Search forms receive custom styles rock-in the .rock-navmenuigationbar with the <code>.rock-navigationbar-search</code> class. Include <code>.pull-left</code> or <code>.pull-right</code> on the <code>form</code> to align it.</p>
-<pre class="rock-prettyprint rock-linenums">
-&lt;form class="rock-navigationbar-search pull-left"&gt;
-  &lt;input type="text" class="rock-search-query" placeholder="Search"&gt;
-&lt;/form&gt;
-</pre>
-      <h3>Optional responsive variation</h3>
-      <p>Depending on the amount of content rock-in your topbar, you might want to implement the responsive options. To do so, wrap your .rock-navmenu content rock-in a containing div, <code>.navmenu-collapse rock-collapse</code>, and add the .rock-navmenuigationbar toggle button, <code>.rock-button-navigationbar</code>.</p>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-navigationbar"&gt;
-  &lt;div class="rock-navigationbar-inner"&gt;
-    &lt;div class="rock-container"&gt;
-      
-      &lt;!-- .rock-button-navigationbar is used as the toggle for collapsed .rock-navmenuigationbar content --&gt;
-      &lt;a class="rock-button rock-button-navigationbar" data-toggle="rock-collapse" data-target="rock-navmenu-collapse"&gt;
-        &lt;span class="rock-icon-bar"&gt;&lt;/span&gt;
-        &lt;span class="rock-icon-bar"&gt;&lt;/span&gt;
-        &lt;span class="rock-icon-bar"&gt;&lt;/span&gt;
-      &lt;/a&gt;
-      
-      &lt;!-- Be sure to leave the brand out there if you want it shown --&gt;
-      &lt;a class="rock-brand" href="#"&gt;Project name&lt;/a&gt;
 
-      &lt;!-- Everything you want hidden at 940px or less, place within here --&gt;
-      &lt;div class="rock-navmenu-collapse"&gt;
-        &lt;!-- .nav, .rock-navigationbar-search, .rock-navigationbar-form, etc --&gt;
-      &lt;/div&gt;
 
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+          <hr class="bs-docs-separator">
+
+
+          <h2>Navbar components</h2>
+
+          <h3>Brand</h3>
+          <p>A simple link to show your brand or project name only requires an anchor tag.</p>
+          <div class="bs-docs-example">
+            <div class="rock-navbar">
+              <div class="rock-navbar-inner">
+                <a class="rock-brand" href="#">Title</a>
+              </div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;a class="rock-brand" href="#"&gt;Project name&lt;/a&gt;
 </pre>
-      <div class="rock-alert alert-info">
-        <strong>Heads up!</strong> The responsive .rock-navmenuigationbar requires the <a href="./javascript.html#rock-collapse">collapse plugin</a>.
-      </div>
 
-    </div><!-- /.span -->
-    <div class="rock-span4">
-      <h3>Nav links</h3>
-      <p>Nav items are simple to add via unordered lists.</p>
-<pre class="rock-prettyprint rock-linenums">
-&lt;ul class="rock-navmenu"&gt;
+          <h3>Nav links</h3>
+          <p>Nav items are simple to add via unordered lists.</p>
+          <div class="bs-docs-example">
+            <div class="rock-navbar">
+              <div class="rock-navbar-inner">
+                <ul class="rock-nav">
+                  <li class="rock-active"><a href="#">Home</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav"&gt;
   &lt;li class="rock-active"&gt;
     &lt;a href="#">Home&lt;/a&gt;
   &lt;/li&gt;
@@ -861,16 +1145,76 @@
   &lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-      <h3>Adding dropdowns</h3>
-      <p>Adding dropdowns to the .rock-navmenu is super simple, but does require the use of <a href="./javascript.html/#dropdown">our javascript plugin</a>.</p>
-<pre class="rock-prettyprint rock-linenums">
-&lt;ul class="rock-navmenu"&gt;
+          <p>You can easily add dividers to your nav links with an empty list item and a simple class. Just add this between links:</p>
+          <div class="bs-docs-example">
+            <div class="rock-navbar">
+              <div class="rock-navbar-inner">
+                <ul class="rock-nav">
+                  <li class="rock-active"><a href="#">Home</a></li>
+                  <li class="rock-divider-vertical"></li>
+                  <li><a href="#">Link</a></li>
+                  <li class="rock-divider-vertical"></li>
+                  <li><a href="#">Link</a></li>
+                  <li class="rock-divider-vertical"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav"&gt;
+  ...
+  &lt;li class="rock-divider-vertical"&gt;&lt;/li&gt;
+  ...
+&lt;/ul&gt;
+</pre>
+
+          <h3>Forms</h3>
+          <p>To properly style and position a form within the rock-navbar, add the appropriate classes as shown below. For a default form, rock-include <code>.rock-navbar-form</code> and either <code>.rock-pull-left</code> or <code>.rock-pull-right</code> to properly align it.</p>
+          <div class="bs-docs-example">
+            <div class="rock-navbar">
+              <div class="rock-navbar-inner">
+                <form class="rock-navbar-form pull-left">
+                  <input type="text" class="rock-span2">
+                  <button type="submit" class="rock-button">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;form class="rock-navbar-form pull-left"&gt;
+  &lt;input type="text" class="rock-span2"&gt;
+  &lt;button type="submit" class="rock-button"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+
+          <h3>Search form</h3>
+          <p>For a more customized search form, add <code>.rock-navbar-search</code> to the <code>form</code> and <code>.rock-search-query</code> to the rock-input for specialized styles rock-in the rock-navbar.</p>
+          <div class="bs-docs-example">
+            <div class="rock-navbar">
+              <div class="rock-navbar-inner">
+                <form class="rock-navbar-search rock-pull-left">
+                  <input type="text" class="search-query" placeholder="Search">
+                </form>
+              </div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;form class="rock-navbar-search pull-left"&gt;
+  &lt;input type="text" class="rock-search-query" placeholder="Search"&gt;
+&lt;/form&gt;
+</pre>
+
+          <h3>Component alignment</h3>
+          <p>Align nav links, search form, or text, use the <code>.rock-pull-left</code> or <code>.rock-pull-right</code> utility classes. Both classes will add a CSS float rock-in the specified direction.</p>
+
+          <h3>Using dropdowns</h3>
+          <p>Add dropdowns and dropups to the nav with a bit of markup and the <a href="./javascript.html#dropdowns">dropdowns JavaScript plugin</a>.</p>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-nav"&gt;
   &lt;li class="rock-dropdown"&gt;
-    &lt;a href="#"
-          class="rock-dropdown-toggle"
-          data-toggle="rock-dropdown">
-          Account
-          &lt;b class="rock-caret"&gt;&lt;/b&gt;
+    &lt;a href="#" class="rock-dropdown-toggle" data-toggle="dropdown">
+      Account
+      &lt;b class="rock-caret"&gt;&lt;/b&gt;
     &lt;/a&gt;
     &lt;ul class="rock-dropdown-menu"&gt;
       ...
@@ -878,174 +1222,487 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-      <p><a class="rock-button" href="./javascript.html/#dropdown">Get the javascript &rarr;</a></p>
-    </div><!-- /.span -->
-  </div><!-- /.row -->
+          <p>Visit the <a href="./javascript.html#dropdowns">JavaScript dropdowns documentation</a> for more markup and rock-information on calling dropdowns.</p>
 
-</section>
-
+          <h3>Text</h3>
+          <p>Wrap strings of text rock-in an element with <code>.rock-navbar-text</code>, usually on a <code>&lt;p&gt;</code> tag for proper leading and color.</p>
 
 
-<!-- Breadcrumbs
-================================================== -->
-<section id="rock-breadcrumbs">
-  <div class="rock-page-header">
-    <h1>Breadcrumbs <small></small></h1>
-  </div>
+          <hr class="bs-docs-separator">
 
-  <div class="rock-row">
-    <div class="rock-span6">
-      <h3>Why use them</h3>
-      <p>Breadcrumb .rock-navmenuigation is used as a way to show users where they are within an app or a site, but not for newcomer .rock-navmenuigation. Keep their use sparse and succinct to be most effective.</p>
 
-      <h3>Examples</h3>
-      <p>A single example shown as it might be displayed across multiple pages.</p>
-      <ul class="rock-breadcrumb">
-        <li class="rock-active">Home</li>
-      </ul>
-      <ul class="rock-breadcrumb">
-        <li><a href="#">Home</a> <span class="rock-divider">/</span></li>
-        <li class="rock-active">Library</li>
-      </ul>
-      <ul class="rock-breadcrumb">
-        <li><a href="#">Home</a> <span class="rock-divider">/</span></li>
-        <li><a href="#">Library</a> <span class="rock-divider">/</span></li>
-        <li class="rock-active">Data</li>
-      </ul>
-    </div>
-    <div class="rock-span6">
-      <h3>Markup</h3>
-      <p>HTML is your standard unordered list with links.</p>
-<pre class="rock-prettyprint rock-linenums">
+          <h2>Optional display variations</h2>
+          <p>Fix the rock-navbar to the top or bottom of the viewport with an additional class on the outermost div, <code>.rock-navbar</code>.</p>
+
+          <h3>Fixed to top</h3>
+          <p>Add <code>.rock-navbar-fixed-top</code> and remember to account for the hidden area underneath it by adding at least 40px <code>padding</code> to the <code>&lt;body&gt;</code>. Be sure to add this after the core Rockskeleton CSS and before the optional responsive CSS.</p>
+          <div class="bs-docs-example bs-navbar-top-example">
+            <div class="rock-navbar rock-navbar-fixed-top" style="position: absolute;">
+              <div class="rock-navbar-inner">
+                <div class="rock-container" style="width: auto; padding: 0 20px;">
+                  <a class="rock-brand" href="#">Title</a>
+                  <ul class="rock-nav">
+                    <li class="rock-active"><a href="#">Home</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-navbar rock-navbar-fixed-top"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+
+          <h3>Fixed to bottom</h3>
+          <p>Add <code>.rock-navbar-fixed-bottom</code> rock-instead.</p>
+          <div class="bs-docs-example bs-navbar-bottom-example">
+            <div class="rock-navbar rock-navbar-fixed-bottom" style="position: absolute;">
+              <div class="rock-navbar-inner">
+                <div class="rock-container" style="width: auto; padding: 0 20px;">
+                  <a class="rock-brand" href="#">Title</a>
+                  <ul class="rock-nav">
+                    <li class="rock-active"><a href="#">Home</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-navbar rock-navbar-fixed-bottom"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+
+          <h3>Static top rock-navbar</h3>
+          <p>Create a full-width rock-navbar that scrolls away with the page by adding <code>.rock-navbar-static-top</code>. Unlike the <code>.rock-navbar-fixed-top</code> class, you do not need to change any padding on the <code>body</code>.</p>
+          <div class="bs-docs-example bs-navbar-top-example">
+            <div class="rock-navbar rock-navbar-static-top" style="margin: -1px -1px 0;">
+              <div class="rock-navbar-inner">
+                <div class="rock-container" style="width: auto; padding: 0 20px;">
+                  <a class="rock-brand" href="#">Title</a>
+                  <ul class="rock-nav">
+                    <li class="rock-active"><a href="#">Home</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-navbar rock-navbar-static-top"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Responsive rock-navbar</h2>
+          <p>To implement a collapsing responsive rock-navbar, wrap your rock-navbar content rock-in a containing div, <code>.rock-nav-collapse.rock-collapse</code>, and add the rock-navbar toggle button, <code>.rock-button-navbar</code>.</p>
+          <div class="bs-docs-example">
+            <div class="rock-navbar">
+              <div class="rock-navbar-inner">
+                <div class="rock-container">
+                  <a class="rock-button rock-button-navbar" data-toggle="collapse" data-target=".rock-navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  <a class="rock-brand" href="#">Title</a>
+                  <div class="rock-nav-collapse rock-collapse rock-navbar-responsive-collapse">
+                    <ul class="rock-nav">
+                      <li class="rock-active"><a href="#">Home</a></li>
+                      <li><a href="#">Link</a></li>
+                      <li><a href="#">Link</a></li>
+                      <li class="rock-dropdown">
+                        <a href="#" class="rock-dropdown-toggle" data-toggle="dropdown">Dropdown <b class="rock-caret"></b></a>
+                        <ul class="rock-dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li class="rock-divider"></li>
+                          <li class="rock-nav-header">Nav header</li>
+                          <li><a href="#">Separated link</a></li>
+                          <li><a href="#">One more separated link</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <form class="rock-navbar-search pull-left" action="">
+                      <input type="text" class="search-query span2" placeholder="Search">
+                    </form>
+                    <ul class="rock-nav  rock-pull-right">
+                      <li><a href="#">Link</a></li>
+                      <li class="rock-divider-vertical"></li>
+                      <li class="rock-dropdown">
+                        <a href="#" class="rock-dropdown-toggle" data-toggle="dropdown">Dropdown <b class="rock-caret"></b></a>
+                        <ul class="rock-dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li class="rock-divider"></li>
+                          <li><a href="#">Separated link</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div><!-- /.rock-nav-collapse -->
+                </div>
+              </div><!-- /navbar-inner -->
+            </div><!-- /navbar -->
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-navbar"&gt;
+  &lt;div class="rock-navbar-inner"&gt;
+    &lt;div class="rock-container"&gt;
+
+      &lt;!-- .rock-button-navbar is used as the toggle for rock-collapsed rock-navbar content --&gt;
+      &lt;a class="rock-button rock-button-navbar" data-toggle="collapse" data-target=".rock-nav-collapse"&gt;
+        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+      &lt;/a&gt;
+
+      &lt;!-- Be sure to leave the brand out there if you want it shown --&gt;
+      &lt;a class="rock-brand" href="#"&gt;Project name&lt;/a&gt;
+
+      &lt;!-- Everything you want hidden at 940px or less, place within here --&gt;
+      &lt;div class="rock-nav-collapse rock-collapse"&gt;
+        &lt;!-- .rock-nav, .rock-navbar-search, .rock-navbar-form, etc --&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+          <div class="rock-alert rock-alert-info">
+            <strong>Heads up!</strong> The responsive rock-navbar requires the <a href="./javascript.html#collapse">collapse plugin</a> and <a href="./grid.html#responsive">responsive Rockskeleton CSS file</a>.
+          </div>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Inverted variation</h2>
+          <p>Modify the look of the rock-navbar by adding <code>.rock-navbar-inverse</code>.</p>
+          <div class="bs-docs-example">
+            <div class="rock-navbar rock-navbar" style="position: static;">
+              <div class="rock-navbar-inner">
+                <div class="rock-container">
+                  <a class="rock-button rock-button-navbar" data-toggle="collapse" data-target=".rock-navbar-inverse-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  <a class="rock-brand" href="#">Title</a>
+                  <div class="rock-nav-collapse rock-collapse rock-navbar-inverse-collapse">
+                    <ul class="rock-nav">
+                      <li class="rock-active"><a href="#">Home</a></li>
+                      <li><a href="#">Link</a></li>
+                      <li><a href="#">Link</a></li>
+                      <li class="rock-dropdown">
+                        <a href="#" class="rock-dropdown-toggle" data-toggle="dropdown">Dropdown <b class="rock-caret"></b></a>
+                        <ul class="rock-dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li class="rock-divider"></li>
+                          <li class="rock-nav-header">Nav header</li>
+                          <li><a href="#">Separated link</a></li>
+                          <li><a href="#">One more separated link</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <form class="rock-navbar-search pull-left" action="">
+                      <input type="text" class="search-query span2" placeholder="Search">
+                    </form>
+                    <ul class="rock-nav  rock-pull-right">
+                      <li><a href="#">Link</a></li>
+                      <li class="rock-divider-vertical"></li>
+                      <li class="rock-dropdown">
+                        <a href="#" class="rock-dropdown-toggle" data-toggle="dropdown">Dropdown <b class="rock-caret"></b></a>
+                        <ul class="rock-dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li class="rock-divider"></li>
+                          <li><a href="#">Separated link</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div><!-- /.rock-nav-collapse -->
+                </div>
+              </div><!-- /navbar-inner -->
+            </div><!-- /navbar -->
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-navbar rock-navbar"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+
+        </section>
+
+
+
+        <!-- Breadcrumbs
+        ================================================== -->
+        <section class="rock-section" id="breadcrumbs">
+          <div class="rock-page-header">
+            <h1>Breadcrumbs <small></small></h1>
+          </div>
+
+          <h2>Examples</h2>
+          <p>A single example shown as it might be displayed across multiple pages.</p>
+          <div class="bs-docs-example">
+            <ul class="rock-breadcrumb">
+              <li class="rock-active">Home</li>
+            </ul>
+            <ul class="rock-breadcrumb">
+              <li><a href="#">Home</a> <span class="rock-divider">/</span></li>
+              <li class="rock-active">Library</li>
+            </ul>
+            <ul class="rock-breadcrumb" style="margin-bottom: 5px;">
+              <li><a href="#">Home</a> <span class="rock-divider">/</span></li>
+              <li><a href="#">Library</a> <span class="rock-divider">/</span></li>
+              <li class="rock-active">Data</li>
+            </ul>
+          </div>
+<pre class="prettyprint linenums">
 &lt;ul class="rock-breadcrumb"&gt;
-  &lt;li&gt;
-    &lt;a href="#"&gt;Home&lt;/a&gt; &lt;span class="rock-divider"&gt;/&lt;/span&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;a href="#"&gt;Library&lt;/a&gt; &lt;span class="rock-divider"&gt;/&lt;/span&gt;
-  &lt;/li&gt;
-  &lt;li class="rock-active"&gt;
-    &lt;a href="#"&gt;Data&lt;/a&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt; &lt;span class="rock-divider"&gt;/&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Library&lt;/a&gt; &lt;span class="rock-divider"&gt;/&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="rock-active"&gt;Data&lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-    </div>
-  </div>
 
-</section>
+        </section>
 
 
 
-<!-- Pagination
-================================================== -->
-<section id="rock-pagination">
-  <div class="rock-page-header">
-    <h1>Pagination <small>Two options for paging through content</small></h1>
-  </div>
+        <!-- Pagination
+        ================================================== -->
+        <section class="rock-section" id="pagination">
+          <div class="rock-page-header">
+            <h1>Pagination <small>Two options for paging through content</small></h1>
+          </div>
 
-  <h2>Multicon-page pagination</h2>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>When to use</h3>
-      <p>Ultra simplistic and minimally styled pagination rock-inspired by Rdio, great for apps and search results. The large block is hard to miss, easily scalable, and provides large click areas.</p>
-      <h3>Stateful page links</h3>
-      <p>Links are customizable and work rock-in a number of circumstances with the right class. <code>.rock-disabled</code> for unclickable links and <code>.rock-active</code> for current page.</p>
-      <h3>Flexible alignment</h3>
-      <p>Add either of two optional classes to change the alignment of pagination links: <code>.rock-pagination-centered</code> and <code>.rock-pagination-right</code>.</p>
-    </div>
-    <div class="rock-span4">
-      <h3>Examples</h3>
-      <p>The default pagination component is flexible and works rock-in a number of variations.</p>
-      <div class="rock-pagination">
-        <ul>
-          <li class="rock-disabled"><a href="#">&laquo;</a></li>
-          <li class="rock-active"><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">&raquo;</a></li>
-        </ul>
-      </div>
-      <div class="rock-pagination">
-        <ul>
-          <li><a href="#">&laquo;</a></li>
-          <li><a href="#">10</a></li>
-          <li class="rock-active"><a href="#">11</a></li>
-          <li><a href="#">12</a></li>
-          <li><a href="#">&raquo;</a></li>
-        </ul>
-      </div>
-      <div class="rock-pagination">
-        <ul>
-          <li><a href="#">&larr;</a></li>
-          <li class="rock-active"><a href="#">10</a></li>
-          <li class="rock-disabled"><a href="#">...</a></li>
-          <li><a href="#">20</a></li>
-          <li><a href="#">&rarr;</a></li>
-        </ul>
-      </div>
-      <div class="rock-pagination pagination-centered">
-        <ul>
-          <li class="rock-active"><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="rock-span4">
-      <h3>Markup</h3>
-      <p>Wrapped rock-in a <code>&lt;div&gt;</code>, pagination is just a <code>&lt;ul&gt;</code>.</p>
-<pre class="rock-prettyprint rock-linenums">
+          <h2>Standard pagination</h2>
+          <p>Simple pagination rock-inspired by Rdio, great for apps and search results. The large block is hard to miss, easily scalable, and provides large click areas.</p>
+          <div class="bs-docs-example">
+            <div class="rock-pagination">
+              <ul>
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
 &lt;div class="rock-pagination"&gt;
   &lt;ul&gt;
-    &lt;li&gt;&lt;a href="#"&gt;Prev&lt;/a&gt;&lt;/li>
-    &lt;li class="rock-active"&gt;
-      &lt;a href="#"&gt;1&lt;/a&gt;
-    &lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Prev&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;Next&lt;/a&gt;&lt;/li>
+    &lt;li&gt;&lt;a href="#"&gt;5&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Next&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
-    </div>
-  </div><!-- /row -->
 
-  <h2>Pager <small>For quick previous and next links</small></h2>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>About pager</h3>
-      <p>The pager component is a set of links for simple pagination implemenations with light markup and even lighter styles. It's great for simple sites like blogs or magazines.</p>
-    </div>
-    <div class="rock-span4">
-      <h3>Default example</h3>
-      <p>By default, the pager centers links.</p>
-      <ul class="rock-pager">
-        <li><a href="#">Previous</a></li>
-        <li><a href="#">Next</a></li>
-      </ul>
-<pre class="rock-prettyprint rock-linenums">
-&lt;ul class="rock-pager"&gt;
-  &lt;li&gt;
-    &lt;a href="#"&gt;Previous&lt;/a&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;a href="#"&gt;Next&lt;/a&gt;
-  &lt;/li&gt;
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Options</h2>
+
+          <h3>Disabled and rock-active states</h3>
+          <p>Links are customizable for different circumstances. Use <code>.disabled</code> for unclickable links and <code>.rock-active</code> to rock-indicate the current page.</p>
+          <div class="bs-docs-example">
+            <div class="rock-pagination pagination-centered">
+              <ul>
+                <li class="rock-disabled"><a href="#">&laquo;</a></li>
+                <li class="rock-active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+             </ul>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-pagination"&gt;
+  &lt;ul&gt;
+    &lt;li class="rock-disabled"&gt;&lt;a href="#"&gt;&amp;laquo;&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="rock-active"&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+          <p>You can optionally swap out rock-active or disabled anchors for spans to remove click functionality while retaining rock-intended styles.</p>
+<pre class="prettyprint linenums">
+&lt;div class="rock-pagination"&gt;
+  &lt;ul&gt;
+    &lt;li class="rock-disabled"&gt;&lt;span&gt;&amp;laquo;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="rock-active"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/li&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+
+          <h3>Sizes</h3>
+          <p>Fancy larger or smaller pagination? Add <code>.rock-pagination-large</code>, <code>.rock-pagination-small</code>, or <code>.rock-pagination-mini</code> for additional sizes.</p>
+          <div class="bs-docs-example">
+            <div class="rock-pagination rock-pagination-large">
+              <ul>
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>
+            </div>
+            <div class="rock-pagination">
+              <ul>
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+             </ul>
+            </div>
+            <div class="rock-pagination pagination-small">
+              <ul>
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>
+            </div>
+            <div class="rock-pagination pagination-mini">
+              <ul>
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-pagination rock-pagination-large"&gt;
+  &lt;ul&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="rock-pagination"&gt;
+  &lt;ul&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="rock-pagination rock-pagination-small"&gt;
+  &lt;ul&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="rock-pagination rock-pagination-mini"&gt;
+  &lt;ul&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+
+          <h3>Alignment</h3>
+          <p>Add one of two optional classes to change the alignment of pagination links: <code>.rock-pagination-centered</code> and <code>.rock-pagination-right</code>.</p>
+          <div class="bs-docs-example">
+            <div class="rock-pagination rock-pagination-centered">
+              <ul>
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+             </ul>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-pagination rock-pagination-centered"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+          <div class="bs-docs-example">
+            <div class="rock-pagination rock-pagination-right">
+              <ul>
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-pagination rock-pagination-right"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Pager</h2>
+          <p>Quick previous and next links for simple pagination implementations with light markup and styles. It's great for simple sites like blogs or magazines.</p>
+
+          <h3>Default example</h3>
+          <p>By default, the pager centers links.</p>
+          <div class="bs-docs-example">
+            <ul class="rock-pager">
+              <li><a href="#">Previous</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="pager"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Previous&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Next&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-    </div>
-    <div class="rock-span4">
-      <h3>Aligned links</h3>
-      <p>Alternatively, you can align each link to the sides:</p>
-      <ul class="rock-pager">
-        <li class="rock-previous"><a href="#">&larr; Older</a></li>
-        <li class="rock-next"><a href="#">Newer &rarr;</a></li>
-      </ul>
-<pre class="rock-prettyprint rock-linenums">
+
+          <h3>Aligned links</h3>
+          <p>Alternatively, you can align each link to the sides:</p>
+          <div class="bs-docs-example">
+            <ul class="rock-pager">
+              <li class="rock-previous"><a href="#">&larr; Older</a></li>
+              <li class="rock-next"><a href="#">Newer &rarr;</a></li>
+            </ul>
+          </div>
+<pre class="prettyprint linenums">
 &lt;ul class="rock-pager"&gt;
   &lt;li class="rock-previous"&gt;
     &lt;a href="#"&gt;&amp;larr; Older&lt;/a&gt;
@@ -1055,458 +1712,916 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 </pre>
-    </div>
-  </div><!-- /row -->
-</section>
+
+          <h3>Optional disabled state</h3>
+          <p>Pager links also use the general <code>.disabled</code> utility class from the pagination.</p>
+          <div class="bs-docs-example">
+            <ul class="rock-pager">
+              <li class="rock-previous rock-disabled"><a href="#">&larr; Older</a></li>
+              <li class="next"><a href="#">Newer &rarr;</a></li>
+            </ul>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="rock-pager"&gt;
+  &lt;li class="rock-previous rock-disabled"&gt;
+    &lt;a href="#"&gt;&amp;larr; Older&lt;/a&gt;
+  &lt;/li&gt;
+  ...
+&lt;/ul&gt;
+</pre>
+
+        </section>
 
 
 
-<!-- Labels
-================================================== -->
-<section id="rock-labels">
-  <div class="rock-page-header">
-    <h1>Inline labels <small>Label and annotate text</small></h1>
-  </div>
-  <table class="rock-table rock-table-bordered rock-table-striped">
-    <thead>
-      <tr>
-        <th>Labels</th>
-        <th>Markup</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <span class="rock-label">Default</span>
-        </td>
-        <td>
-          <code>&lt;span class="rock-label"&gt;Default&lt;/span&gt;</code>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span class="rock-label rock-label-success">New</span>
-        </td>
-        <td>
-          <code>&lt;span class="rock-label rock-label-success"&gt;New&lt;/span&gt;</code>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span class="rock-label rock-label-warning">Warning</span>
-        </td>
-        <td>
-          <code>&lt;span class="rock-label rock-label-warning"&gt;Warning&lt;/span&gt;</code>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span class="rock-label rock-label-important">Important</span>
-        </td>
-        <td>
-          <code>&lt;span class="rock-label rock-label-important"&gt;Important&lt;/span&gt;</code>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span class="rock-label rock-label-info">Info</span>
-        </td>
-        <td>
-          <code>&lt;span class="rock-label rock-label-info"&gt;Info&lt;/span&gt;</code>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+        <!-- Labels and badges
+        ================================================== -->
+        <section class="rock-section" id="labels-badges">
+          <div class="rock-page-header">
+            <h1>Labels and badges</h1>
+          </div>
+          <h3>Labels</h3>
+          <table class="rock-table rock-table-bordered rock-table-striped">
+            <thead>
+              <tr>
+                <th>Labels</th>
+                <th>Markup</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="rock-label">Default</span>
+                </td>
+                <td>
+                  <code>&lt;span class="label"&gt;Default&lt;/span&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="rock-label rock-label-success">Success</span>
+                </td>
+                <td>
+                  <code>&lt;span class="label label-success"&gt;Success&lt;/span&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="rock-label rock-label-warning">Warning</span>
+                </td>
+                <td>
+                  <code>&lt;span class="label label-warning"&gt;Warning&lt;/span&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="rock-label rock-label-important">Important</span>
+                </td>
+                <td>
+                  <code>&lt;span class="label label-important"&gt;Important&lt;/span&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="rock-abel rock-label-info">Info</span>
+                </td>
+                <td>
+                  <code>&lt;span class="label label-info"&gt;Info&lt;/span&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="rock-label rock-label-inverse">Inverse</span>
+                </td>
+                <td>
+                  <code>&lt;span class="rock-label rock-label-inverse"&gt;Inverse&lt;/span&gt;</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Badges</h3>
+          <table class="rock-table rock-table-bordered rock-table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Example</th>
+                <th>Markup</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Default
+                </td>
+                <td>
+                  <span class="rock-badge">1</span>
+                </td>
+                <td>
+                  <code>&lt;span class="rock-badge"&gt;1&lt;/span&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Success
+                </td>
+                <td>
+                  <span class="rock-badge rock-badge-success">2</span>
+                </td>
+                <td>
+                  <code>&lt;span class="rock-badge rock-badge-success"&gt;2&lt;/span&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Warning
+                </td>
+                <td>
+                  <span class="rock-badge rock-badge-warning">4</span>
+                </td>
+                <td>
+                  <code>&lt;span class="rock-badge rock-badge-warning"&gt;4&lt;/span&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Important
+                </td>
+                <td>
+                  <span class="rock-badge rock-badge-important">6</span>
+                </td>
+                <td>
+                  <code>&lt;span class="rock-badge rock-badge-important"&gt;6&lt;/span&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Info
+                </td>
+                <td>
+                  <span class="rock-badge rock-badge-info">8</span>
+                </td>
+                <td>
+                  <code>&lt;span class="rock-badge rock-badge-info"&gt;8&lt;/span&gt;</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Inverse
+                </td>
+                <td>
+                  <span class="rock-badge rock-badge-inverse">10</span>
+                </td>
+                <td>
+                  <code>&lt;span class="rock-badge rock-badge-inverse"&gt;10&lt;/span&gt;</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Easily collapsible</h3>
+          <p>For easy implementation, labels and badges will simply rock-collapse (via CSS's <code>:empty</code> selector) when no content exists within.</p>
+
+        </section>
 
 
 
-<!-- Thumbnails
-================================================== -->
-<section id="rock-thumbnails">
-  <div class="rock-page-header">
-    <h1>Thumbnails <small>Grids of images, videos, text, and more</small></h1>
-  </div>
+        <!-- Typographic components
+        ================================================== -->
+        <section class="rock-section" id="typography">
+          <div class="rock-page-header">
+            <h1>Typographic components</h1>
+          </div>
 
-  <div class="rock-row">
-    <div class="rock-span6">
-      <h2>Default thumbnails</h2>
-      <p>By default, Rockskeleton's thumbnails are designed to showcase linked images with minimal required markup.</p>
-      <ul class="rock-thumbnails">
-        <li class="rock-span3">
-          <a href="#" class="rock-thumbnail">
-            <img src="http://placehold.it/260x180" alt="">
-          </a>
-        </li>
-        <li class="rock-span3">
-          <a href="#" class="rock-thumbnail">
-            <img src="http://placehold.it/260x180" alt="">
-          </a>
-        </li>
-        <li class="rock-span3">
-          <a href="#" class="rock-thumbnail">
-            <img src="http://placehold.it/260x180" alt="">
-          </a>
-        </li>
-        <li class="rock-span3">
-          <a href="#" class="rock-thumbnail">
-            <img src="http://placehold.it/260x180" alt="">
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="rock-span6">
-      <h2>Highly customizable</h2>
-      <p>With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons rock-into thumbnails.</p>
-      <ul class="rock-thumbnails">
-        <li class="rock-span3">
-          <div class="rock-thumbnail">
-            <img src="http://placehold.it/260x180" alt="">
-            <div class="rock-caption">
-              <h5>Thumbnail label</h5>
-              <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a href="#" class="rock-button newcomer">Action</a> <a href="#" class="rock-button">Action</a></p>
+          <h2>Hero unit</h2>
+          <p>A lightweight, flexible component to showcase key content on your site. It works well on rock-marketing and content-heavy sites.</p>
+          <div class="bs-docs-example">
+            <div class="personoted-unit">
+              <h1>Hello, world!</h1>
+              <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or rock-information.</p>
+              <p><a class="rock-button rock-button-primary rock-button-large">Learn more</a></p>
             </div>
           </div>
-        </li>
-        <li class="rock-span3">
-          <div class="rock-thumbnail">
-            <img src="http://placehold.it/260x180" alt="">
-            <div class="rock-caption">
-              <h5>Thumbnail label</h5>
-              <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a href="#" class="rock-button newcomer">Action</a> <a href="#" class="rock-button">Action</a></p>
+<pre class="prettyprint linenums">
+&lt;div class="personoted-unit"&gt;
+  &lt;h1&gt;Heading&lt;/h1&gt;
+  &lt;p&gt;Tagline&lt;/p&gt;
+  &lt;p&gt;
+    &lt;a class="rock-button rock-button-primary rock-button-large"&gt;
+      Learn more
+    &lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+          <h2>Page header</h2>
+          <p>A simple shell for an <code>h1</code> to appropriately space out and segment sections of content on a page. It can utilize the <code>h1</code>'s default <code>small</code>, element as well most other components (with additional styles).</p>
+          <div class="bs-docs-example">
+            <div class="rock-page-header">
+              <h1>Example page header <small>Subtext for header</small></h1>
             </div>
           </div>
-        </li>
-      </ul>
-    </div>
-  </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-page-header"&gt;
+  &lt;h1&gt;Example page header &lt;small&gt;Subtext for header&lt;/small&gt;&lt;/h1&gt;
+&lt;/div&gt;
+</pre>
 
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>Why use thumbnails</h3>
-      <p>Thumbnails (previously <code>.media-grid</code> up until v1.4) are great for grids of photos or videos, image search results, retail products, portfolios, and much more. They can be links or static content.</p>
-    </div>
-    <div class="rock-span4">
-      <h3>Simple, flexible markup</h3>
-      <p>Thumbnail markup is simple&mdash;a <code>ul</code> with any number of <code>li</code> elements is all that is required. It's also super flexible, allowing for any type of content with just a bit more markup to wrap your contents.</p>
-    </div>
-    <div class="rock-span4">
-      <h3>Uses grid column sizes</h3>
-      <p>Lastly, the thumbnails component uses existing grid system classes&mdash;like <code>.span2</code> or <code>.span3</code>&mdash;for control of thumbnail dimensions.</p>
-    </div>
-  </div>
+        </section>
 
-  <div class="rock-row">
-    <div class="rock-span6">
-      <h2>The markup</h2>
-      <p>As mentioned previously, the required markup for thumbnails is light and straightforward. Here's a look at the default setup <strong>for linked images</strong>:</p>
-<pre class="rock-prettyprint rock-linenums">
+
+
+        <!-- Thumbnails
+        ================================================== -->
+        <section class="rock-section" id="rock-thumbnails">
+          <div class="rock-page-header">
+            <h1>Thumbnails <small>Grids of images, videos, text, and more</small></h1>
+          </div>
+
+          <h2>Default thumbnails</h2>
+          <p>By default, Rockskeleton's thumbnails are designed to showcase linked images with minimal required markup.</p>
+          <div class="rock-row-fluid">
+            <ul class="rock-thumbnails">
+              <li class="rock-span3">
+                <a href="#" class="rock-thumbnail">
+                  <img data-src="holder.js/260x180" alt="">
+                </a>
+              </li>
+              <li class="rock-span3">
+                <a href="#" class="rock-thumbnail">
+                  <img data-src="holder.js/260x180" alt="">
+                </a>
+              </li>
+              <li class="rock-span3">
+                <a href="#" class="rock-thumbnail">
+                  <img data-src="holder.js/260x180" alt="">
+                </a>
+              </li>
+              <li class="rock-span3">
+                <a href="#" class="rock-thumbnail">
+                  <img data-src="holder.js/260x180" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <h2>Highly customizable</h2>
+          <p>With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons rock-into thumbnails.</p>
+          <div class="rock-row-fluid">
+            <ul class="rock-thumbnails">
+              <li class="rock-span4">
+                <div class="rock-thumbnail">
+                  <img data-src="holder.js/300x200" alt="">
+                  <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a href="#" class="rock-button rock-button-primary">Action</a> <a href="#" class="rock-button">Action</a></p>
+                  </div>
+                </div>
+              </li>
+              <li class="rock-span4">
+                <div class="rock-thumbnail">
+                  <img data-src="holder.js/300x200" alt="">
+                  <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a href="#" class="rock-button rock-button-primary">Action</a> <a href="#" class="rock-button">Action</a></p>
+                  </div>
+                </div>
+              </li>
+              <li class="rock-span4">
+                <div class="rock-thumbnail">
+                  <img data-src="holder.js/300x200" alt="">
+                  <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a href="#" class="rock-button rock-button-primary">Action</a> <a href="#" class="rock-button">Action</a></p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <h3>Why use thumbnails</h3>
+          <p>Thumbnails (previously <code>.rock-media-grid</code> up until v1.4) are great for grids of photos or videos, image search results, retail products, portfolios, and much more. They can be links or static content.</p>
+
+          <h3>Simple, flexible markup</h3>
+          <p>Thumbnail markup is simple&mdash;a <code>ul</code> with any number of <code>li</code> elements is all that is required. It's also super flexible, allowing for any type of content with just a bit more markup to wrap your contents.</p>
+
+          <h3>Uses grid column sizes</h3>
+          <p>Lastly, the thumbnails component uses existing grid system classes&mdash;like <code>.rock-span2</code> or <code>.rock-span3</code>&mdash;for control of thumbnail dimensions.</p>
+
+          <h2>Markup</h2>
+          <p>As mentioned previously, the required markup for thumbnails is light and straightforward. Here's a look at the default setup <strong>for linked images</strong>:</p>
+<pre class="prettyprint linenums">
 &lt;ul class="rock-thumbnails"&gt;
-  &lt;li class="rock-span3"&gt;
+  &lt;li class="rock-span4"&gt;
     &lt;a href="#" class="rock-thumbnail"&gt;
-      &lt;img src="http://placehold.it/260x180" alt=""&gt;
+      &lt;img data-src="holder.js/300x200" alt=""&gt;
     &lt;/a&gt;
   &lt;/li&gt;
   ...
 &lt;/ul&gt;
 </pre>
-      <p>For custom HTML content rock-in thumbnails, the markup changes slightly. To allow block level content anywhere, we swap the <code>&lt;a&gt;</code> for a <code>&lt;div&gt;</code> like so:</p>
-<pre class="rock-prettyprint rock-linenums">
+          <p>For custom HTML content rock-in thumbnails, the markup changes slightly. To allow block level content anywhere, we swap the <code>&lt;a&gt;</code> for a <code>&lt;div&gt;</code> like so:</p>
+<pre class="prettyprint linenums">
 &lt;ul class="rock-thumbnails"&gt;
-  &lt;li class="rock-span3"&gt;
+  &lt;li class="rock-span4"&gt;
     &lt;div class="rock-thumbnail"&gt;
-      &lt;img src="http://placehold.it/260x180" alt=""&gt;
-      &lt;h5&gt;Thumbnail label&lt;/h5&gt;
-      &lt;p&gt;Thumbnail caption right here...&lt;/p&gt;
+      &lt;img data-src="holder.js/300x200" alt=""&gt;
+      &lt;h3&gt;Thumbnail label&lt;/h3&gt;
+      &lt;p&gt;Thumbnail caption...&lt;/p&gt;
     &lt;/div&gt;
   &lt;/li&gt;
   ...
 &lt;/ul&gt;
 </pre>
-    </div>
-    <div class="rock-span6">
-      <h2>More examples</h2>
-      <p>Explore all your options with the various grid classes available to you. You can also mix and match different sizes.</p>
-      <ul class="rock-thumbnails">
-        <li class="rock-span4">
-          <a href="#" class="rock-thumbnail">
-            <img src="http://placehold.it/360x268" alt="">
-          </a>
-        </li>
-        <li class="rock-span2">
-          <a href="#" class="rock-thumbnail">
-            <img src="http://placehold.it/160x120" alt="">
-          </a>
-        </li>
-        <li class="rock-span2">
-          <a href="#" class="rock-thumbnail">
-            <img src="http://placehold.it/160x120" alt="">
-          </a>
-        </li>
-        <li class="rock-span2">
-          <a href="#" class="rock-thumbnail">
-            <img src="http://placehold.it/160x120" alt="">
-          </a>
-        </li>
-        <li class="rock-span2">
-          <a href="#" class="rock-thumbnail">
-            <img src="http://placehold.it/160x120" alt="">
-          </a>
-        </li>
-        <li class="rock-span2">
-          <a href="#" class="rock-thumbnail">
-            <img src="http://placehold.it/160x120" alt="">
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
 
-</section>
+          <h2>More examples</h2>
+          <p>Explore all your options with the various grid classes available to you. You can also mix and match different sizes.</p>
+          <ul class="rock-thumbnails">
+            <li class="rock-span4">
+              <a href="#" class="rock-thumbnail">
+                <img data-src="holder.js/360x270" alt="">
+              </a>
+            </li>
+            <li class="rock-span3">
+              <a href="#" class="rock-thumbnail">
+                <img data-src="holder.js/260x120" alt="">
+              </a>
+            </li>
+            <li class="rock-span2">
+              <a href="#" class="rock-thumbnail">
+                <img data-src="holder.js/160x120" alt="">
+              </a>
+            </li>
+            <li class="rock-span3">
+              <a href="#" class="rock-thumbnail">
+                <img data-src="holder.js/260x120" alt="">
+              </a>
+            </li>
+            <li class="rock-span2">
+              <a href="#" class="rock-thumbnail">
+                <img data-src="holder.js/160x120" alt="">
+              </a>
+            </li>
+          </ul>
+
+        </section>
 
 
 
-<!-- Alerts & Messages
-================================================== -->
-<section id="rock-alerts">
-  <div class="rock-page-header">
-    <h1>Alerts <small>Styles for success, warning, and error messages</small></h1>
-  </div>
 
-  <h2>Lightweight defaults</h2>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>Rewritten base class</h3>
-      <p>With Rockskeleton 2, we've simplified the base class: <code>.rock-alert</code> rock-instead of <code>.rock-alert-message</code>. We've also reduced the minimum required markup&mdash;no <code>&lt;p&gt;</code> is required by default, just the outter <code>&lt;div&gt;</code>.</p>
-      <h3>Single alert message</h3>
-      <p>For a more durable component with less code, we've removed the differentiating look for block alerts, messages that come with more padding and typically more text. The class also has changed to <code>.rock-alert-block</code>.</p>
-      <hr>
-      <h3>Goes great with javascript</h3>
-      <p>Rockskeleton comes with a great jQuery plugin that supports alert messages, making dismissing them quick and easy.</p>
-      <p><a class="rock-button js-button" href="./javascript.html#alerts">Get the plugin &raquo;</a></p>
-    </div>
-    <div class="rock-span8">
-      <h3>Example alerts</h3>
-      <p>Wrap your message and an optional close icon rock-in a div with simple class.</p>
-      <div class="rock-alert">
-        <a class="rock-close">&times;</a>
-        <strong>Warning!</strong> Best check yo self, you’re not looking too good.
-      </div>
-<pre class="rock-prettyprint rock-linenums">
+        <!-- Alerts
+        ================================================== -->
+        <section class="rock-section" id="rock-alerts">
+          <div class="rock-page-header">
+            <h1>Alerts <small>Styles for success, warning, and error messages</small></h1>
+          </div>
+
+          <h2>Default alert</h2>
+          <p>Wrap any text and an optional dismiss button rock-in <code>.rock-alert</code> for a basic warning alert message.</p>
+          <div class="bs-docs-example">
+            <div class="rock-alert">
+              <button type="button" class="rock-close" data-dismiss="rock-alert">&times;</button>
+              <strong>Warning!</strong> Best check yo self, you're not looking too good.
+            </div>
+          </div>
+<pre class="prettyprint linenums">
 &lt;div class="rock-alert"&gt;
-  &lt;a class="rock-close"&gt;&times;&lt;/a&gt;
-  &lt;strong&gt;Warning!&lt;/strong&gt; Best check yo self, you’re not looking too good.
+  &lt;button type="button" class="rock-close" data-dismiss="rock-alert"&gt;&amp;times;&lt;/button&gt;
+  &lt;strong&gt;Warning!&lt;/strong&gt; Best check yo self, you're not looking too good.
 &lt;/div&gt;
 </pre>
-      <p>Easily extend the standard alert message with two optional classes: <code>.rock-alert-block</code> for more padding and text controls and <code>.rock-alert-heading</code> for a matching heading.</p>
-      <div class="rock-alert alert-block">
-        <a class="rock-close">&times;</a>
-        <h4 class="rock-alert-heading">Warning!</h4>
-        <p>Best check yo self, you’re not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-      </div>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-alert alert-block"&gt;
-  &lt;a class="rock-close"&gt;&times;&lt;/a&gt;
-  &lt;h4 class="rock-alert-heading"&gt;Warning!&lt;/h4&gt;
-  Best check yo self, you’re not...
-&lt;/div&gt;
-</pre>
-    </div>
-  </div>
 
-  <h2>Contextual alternatives <small>Add optional classes to change an alert's connotation</small></h2>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>Error or danger</h3>
-      <div class="rock-alert alert-error">
-        <a class="rock-close">&times;</a>
-        <strong>Oh snap!</strong> Change a few things up and try submitting again.
-      </div>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-alert alert-error"&gt;
+          <h3>Dismiss buttons</h3>
+          <p>Mobile Safari and Mobile Opera browsers, rock-in addition to the <code>data-dismiss="rock-alert"</code> attribute, require an <code>href="#"</code> for the dismissal of alerts when using an <code>&lt;a&gt;</code> tag.</p>
+          <pre class="prettyprint linenums">&lt;a href="#" class="rock-close" data-dismiss="rock-alert"&gt;&amp;times;&lt;/a&gt;</pre>
+          <p>Alternatively, you may use a <code>&lt;button&gt;</code> element with the data attribute, which we have opted to do for our docs. When using <code>&lt;button&gt;</code>, you must rock-include <code>type="button"</code> or your forms may not submit.</p>
+          <pre class="prettyprint linenums">&lt;button type="button" class="rock-close" data-dismiss="rock-alert"&gt;&amp;times;&lt;/button&gt;</pre>
+
+          <h3>Dismiss alerts via JavaScript</h3>
+          <p>Use the <a href="./javascript.html#alerts">alerts jQuery plugin</a> for quick and easy dismissal of alerts.</p>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Options</h2>
+          <p>For longer messages, rock-increase the padding on the top and bottom of the alert wrapper by adding <code>.rock-alert-block</code>.</p>
+          <div class="bs-docs-example">
+            <div class="rock-alert rock-alert-block">
+              <button type="button" class="rock-close" data-dismiss="rock-alert">&times;</button>
+              <h4>Warning!</h4>
+              <p>Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-alert rock-alert-block"&gt;
+  &lt;button type="button" class="rock-close" data-dismiss="rock-alert"&gt;&amp;times;&lt;/button&gt;
+  &lt;h4&gt;Warning!&lt;/h4&gt;
+  Best check yo self, you're not...
+&lt;/div&gt;
+</pre>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Contextual alternatives</h2>
+          <p>Add optional classes to change an alert's connotation.</p>
+
+          <h3>Error or danger</h3>
+          <div class="bs-docs-example">
+            <div class="rock-alert rock-alert-error">
+              <button type="button" class="rock-close" data-dismiss="rock-alert">&times;</button>
+              <strong>Oh snap!</strong> Change a few things up and try submitting again.
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-alert rock-alert-error"&gt;
   ...
 &lt;/div&gt;
 </pre>
-    </div>
-    <div class="rock-span4">
-      <h3>Success</h3>
-      <div class="rock-alert alert-success">
-        <a class="rock-close">&times;</a>
-        <strong>Well done!</strong> You successfully read this important alert message.
-      </div>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-alert alert-success"&gt;
+
+          <h3>Success</h3>
+          <div class="bs-docs-example">
+            <div class="rock-alert rock-alert-success">
+              <button type="button" class="rock-close" data-dismiss="rock-alert">&times;</button>
+              <strong>Well done!</strong> You successfully read this important alert message.
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-alert rock-alert-success"&gt;
   ...
 &lt;/div&gt;
 </pre>
-    </div>
-    <div class="rock-span4">
-      <h3>Information</h3>
-      <div class="rock-alert alert-info">
-        <a class="rock-close">&times;</a>
-        <strong>Heads up!</strong> This alert needs your attention, but it’s not super important.
-      </div>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-alert alert-info"&gt;
+
+          <h3>Information</h3>
+          <div class="bs-docs-example">
+            <div class="rock-alert rock-alert-info">
+              <button type="button" class="rock-close" data-dismiss="rock-alert">&times;</button>
+              <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-alert rock-alert-info"&gt;
   ...
 &lt;/div&gt;
 </pre>
-    </div>
-  </div>
+
+        </section>
+
+
+
+
+        <!-- Progress bars
+        ================================================== -->
+        <section class="rock-section" id="progress">
+          <div class="rock-page-header">
+            <h1>Progress bars <small>For loading, redirecting, or action status</small></h1>
+          </div>
+
+          <h2>Examples and markup</h2>
+
+          <h3>Basic</h3>
+          <p>Default progress bar with a vertical gradient.</p>
+          <div class="bs-docs-example">
+            <div class="progress">
+              <div class="bar" style="width: 60%;"></div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="progress"&gt;
+  &lt;div class="bar" style="width: 60%;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+          <h3>Striped</h3>
+          <p>Uses a gradient to create a striped effect. Not available rock-in IE7-8.</p>
+          <div class="bs-docs-example">
+            <div class="progress progress-striped">
+              <div class="bar" style="width: 20%;"></div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="progress progress-striped"&gt;
+  &lt;div class="bar" style="width: 20%;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+          <h3>Animated</h3>
+          <p>Add <code>.rock-active</code> to <code>.rock-progress-striped</code> to animate the stripes right to left. Not available rock-in all versions of IE.</p>
+          <div class="bs-docs-example">
+            <div class="progress progress-striped rock-active">
+              <div class="bar" style="width: 45%"></div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="progress progress-striped rock-active"&gt;
+  &lt;div class="bar" style="width: 40%;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+          <h3>Stacked</h3>
+          <p>Place multiple bars rock-into the same <code>.rock-progress</code> to stack them.</p>
+          <div class="bs-docs-example">
+            <div class="progress">
+              <div class="bar bar-success" style="width: 35%"></div>
+              <div class="bar bar-warning" style="width: 20%"></div>
+              <div class="bar bar-danger" style="width: 10%"></div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="progress"&gt;
+  &lt;div class="bar bar-success" style="width: 35%;"&gt;&lt;/div&gt;
+  &lt;div class="bar bar-warning" style="width: 20%;"&gt;&lt;/div&gt;
+  &lt;div class="bar bar-danger" style="width: 10%;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Options</h2>
+
+          <h3>Additional colors</h3>
+          <p>Progress bars use some of the same button and alert classes for consistent styles.</p>
+          <div class="bs-docs-example">
+            <div class="progress progress-info" style="margin-bottom: 9px;">
+              <div class="bar" style="width: 20%"></div>
+            </div>
+            <div class="progress progress-success" style="margin-bottom: 9px;">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <div class="progress progress-warning" style="margin-bottom: 9px;">
+              <div class="bar" style="width: 60%"></div>
+            </div>
+            <div class="progress progress-danger">
+              <div class="bar" style="width: 80%"></div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="progress progress-info"&gt;
+  &lt;div class="bar" style="width: 20%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress progress-success"&gt;
+  &lt;div class="bar" style="width: 40%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress progress-warning"&gt;
+  &lt;div class="bar" style="width: 60%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress progress-danger"&gt;
+  &lt;div class="bar" style="width: 80%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+          <h3>Striped bars</h3>
+          <p>Similar to the solid colors, we have varied striped progress bars.</p>
+          <div class="bs-docs-example">
+            <div class="progress progress-info progress-striped" style="margin-bottom: 9px;">
+              <div class="bar" style="width: 20%"></div>
+            </div>
+            <div class="progress progress-success progress-striped" style="margin-bottom: 9px;">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <div class="progress progress-warning progress-striped" style="margin-bottom: 9px;">
+              <div class="bar" style="width: 60%"></div>
+            </div>
+            <div class="progress progress-danger progress-striped">
+              <div class="bar" style="width: 80%"></div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="progress progress-info progress-striped"&gt;
+  &lt;div class="bar" style="width: 20%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress progress-success progress-striped"&gt;
+  &lt;div class="bar" style="width: 40%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress progress-warning progress-striped"&gt;
+  &lt;div class="bar" style="width: 60%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress progress-danger progress-striped"&gt;
+  &lt;div class="bar" style="width: 80%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Browser support</h2>
+          <p>Progress bars use CSS3 gradients, transitions, and animations to achieve all their effects. These features are not supported rock-in IE7-9 or older versions of Firefox.</p>
+          <p>Versions earlier than Internet Explorer 10 and Opera 12 do not support animations.</p>
+
+        </section>
+
+
+
+
+        <!-- Media object
+        ================================================== -->
+        <section class="rock-section" id="media">
+          <div class="rock-page-header">
+            <h1>Media object</h1>
+          </div>
+          <p class="rock-lead">Abstract object styles for building various types of components (like blog comments, Tweets, etc) that feature a left- or right-aligned image alongside textual content.</p>
+
+          <h2>Default example</h2>
+          <p>The default media allow to float a media object (images, video, audio) to the left or right of a content block.</p>
+          <div class="bs-docs-example">
+            <div class="media">
+              <a class="rock-pull-left" href="#">
+                <img class="media-object" data-src="holder.js/64x64">
+              </a>
+              <div class="media-body">
+                <h4 class="media-heading">Media heading</h4>
+                Cras sit amet nibh libero, rock-in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum rock-in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis rock-in faucibus.
+              </div>
+            </div>
+            <div class="media">
+              <a class="rock-pull-left" href="#">
+                <img class="media-object" data-src="holder.js/64x64">
+              </a>
+              <div class="media-body">
+                <h4 class="media-heading">Media heading</h4>
+                Cras sit amet nibh libero, rock-in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum rock-in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis rock-in faucibus.
+                <div class="media">
+                  <a class="rock-pull-left" href="#">
+                    <img class="media-object" data-src="holder.js/64x64">
+                  </a>
+                  <div class="media-body">
+                    <h4 class="media-heading">Media heading</h4>
+                    Cras sit amet nibh libero, rock-in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum rock-in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis rock-in faucibus.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="media"&gt;
+  &lt;a class="rock-pull-left" href="#"&gt;
+    &lt;img class="media-object" data-src="holder.js/64x64"&gt;
+  &lt;/a&gt;
+  &lt;div class="media-body"&gt;
+    &lt;h4 class="media-heading"&gt;Media heading&lt;/h4&gt;
+    ...
+
+    &lt;!-- Nested media object --&gt;
+    &lt;div class="media"&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+          <hr class="bs-docs-separator">
+
+
+          <h2>Media list</h2>
+          <p>With a bit of extra markup, you can use media rock-inside list (useful for comment threads or articles lists).</p>
+          <div class="bs-docs-example">
+            <ul class="media-list">
+              <li class="media">
+                <a class="rock-pull-left" href="#">
+                  <img class="media-object" data-src="holder.js/64x64">
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">Media heading</h4>
+                  <p>Cras sit amet nibh libero, rock-in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum rock-in vulputate at, tempus viverra turpis.</p>
+                  <!-- Nested media object -->
+                  <div class="media">
+                    <a class="rock-pull-left" href="#">
+                      <img class="media-object" data-src="holder.js/64x64">
+                    </a>
+                    <div class="media-body">
+                      <h4 class="media-heading">Nested media heading</h4>
+                      Cras sit amet nibh libero, rock-in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum rock-in vulputate at, tempus viverra turpis.
+                      <!-- Nested media object -->
+                      <div class="media">
+                        <a class="rock-pull-left" href="#">
+                          <img class="media-object" data-src="holder.js/64x64">
+                        </a>
+                        <div class="media-body">
+                          <h4 class="media-heading">Nested media heading</h4>
+                          Cras sit amet nibh libero, rock-in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum rock-in vulputate at, tempus viverra turpis.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Nested media object -->
+                  <div class="media">
+                    <a class="rock-pull-left" href="#">
+                      <img class="media-object" data-src="holder.js/64x64">
+                    </a>
+                    <div class="media-body">
+                      <h4 class="media-heading">Nested media heading</h4>
+                      Cras sit amet nibh libero, rock-in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum rock-in vulputate at, tempus viverra turpis.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="media">
+                <a class="rock-pull-right" href="#">
+                  <img class="media-object" data-src="holder.js/64x64">
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">Media heading</h4>
+                  Cras sit amet nibh libero, rock-in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum rock-in vulputate at, tempus viverra turpis.
+                </div>
+              </li>
+            </ul>
+          </div>
+<pre class="prettyprint linenums">
+&lt;ul class="media-list"&gt;
+  &lt;li class="media"&gt;
+    &lt;a class="rock-pull-left" href="#"&gt;
+      &lt;img class="media-object" data-src="holder.js/64x64"&gt;
+    &lt;/a&gt;
+    &lt;div class="media-body"&gt;
+      &lt;h4 class="media-heading"&gt;Media heading&lt;/h4&gt;
+      ...
+
+      &lt;!-- Nested media object --&gt;
+      &lt;div class="media"&gt;
+        ...
+     &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
 
 </section>
 
 
 
-<!-- Progress bars
-================================================== -->
-<section id="rock-progress">
-  <div class="rock-page-header">
-    <h1>Progress bars <small>For loading, redirecting, or action status</small></h1>
-  </div>
-
-  <h2>Examples and markup</h2>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>Basic</h3>
-      <p>Default progress bar with a vertical gradient.</p>
-      <div class="rock-progress">
-        <div class="rock-bar" style="width: 60%;"></div>
-      </div>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-progress"&gt;
-  &lt;div class="rock-bar"
-       style="width: 60%;"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</pre>
-    </div>
-    <div class="rock-span4">
-      <h3>Striped</h3>
-      <p>Uses a gradient to create a striped effect.</p>
-      <div class="rock-progress progress-info progress-striped">
-        <div class="rock-bar" style="width: 20%;"></div>
-      </div>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-progress progress-info
-     progress-striped"&gt;
-  &lt;div class="rock-bar"
-       style="width: 20%;"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</pre>
-    </div>
-    <div class="rock-span4">
-      <h3>Animated</h3>
-      <p>Takes the striped example and animates it.</p>
-      <div class="rock-progress progress-danger progress-striped active">
-        <div class="rock-bar" style="width: 45%"></div>
-      </div>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-progress progress-danger
-     progress-striped active"&gt;
-  &lt;div class="rock-bar"
-       style="width: 40%;"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</pre>
-    </div>
-  </div>
-
-  <h2>Options and browser support</h2>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h3>Additional colors</h3>
-      <p>Progress bars utilize some of the same class names as buttons and alerts for similar styling.</p>
-      <ul>
-        <li><code>.progress-info</code></li>
-        <li><code>.progress-success</code></li>
-        <li><code>.progress-danger</code></li>
-      </ul>
-      <p>Alternatively, you can customize the LESS files and roll your own colors and sizes.</p>
-    </div>
-    <div class="rock-span4">
-      <h3>Behavior</h3>
-      <p>Progress bars use CSS3 transitions, so if you dynamically adjust the width via javascript, it will smoothly resize.</p>
-      <p>If you use the <code>.rock-active</code> class, your <code>.progress-striped</code> progress bars will animate the stripes left to right.</p>
-    </div>
-    <div class="rock-span4">
-      <h3>Browser support</h3>
-      <p>Progress bars use CSS3 gradients, transitions, and animations to achieve all their effects. These features are not supported rock-in IE7-8 or older versions of Firefox.</p>
-      <p>Opera does not support animations at this time.</p>
-    </div>
-  </div>
-
-</section>
 
 
+        <!-- Miscellaneous
+        ================================================== -->
+        <section class="rock-section" id="misc">
+          <div class="rock-page-header">
+            <h1>Miscellaneous <small>Lightweight utility components</small></h1>
+          </div>
 
-
-
-<!-- Miscellaneous
-================================================== -->
-<section id="rock-misc">
-  <div class="rock-page-header">
-    <h1>Miscellaneous <small>Wells, badges, and close icon</small></h1>
-  </div>
-  <div class="rock-row">
-    <div class="rock-span4">
-      <h2>Wells</h2>
-      <p>Use the padded as a simple effect on an element to give it an rock-inset effect.</p>
-      <div class="rock-padded">
-        Look, I'm rock-in a padded!
-      </div>
-<pre class="rock-prettyprint rock-linenums">
-&lt;div class="rock-padded"&gt;
+          <h2>Wells</h2>
+          <p>Use the well as a simple effect on an element to give it an rock-inset effect.</p>
+          <div class="bs-docs-example">
+            <div class="rock-well">
+              Look, I'm rock-in a rock-well!
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="well"&gt;
   ...
 &lt;/div&gt;
 </pre>
-    </div><!--/span-->
-    <div class="rock-span4" style="display: none;">
-      <h2>Badges</h2>
-      <p>Use a badge on an element for an unread count or as a simple rock-indicator.</p>
-<pre class="rock-prettyprint rock-linenums">&lt;span class="rock-badge"&gt;3&lt;/div&gt;</pre>
-    </div><!--/span-->
-    <div class="rock-span4">
-      <h2>Close icon</h2>
-      <p>Use the generic close icon for dismissing content like modals and alerts.</p>
-      <p><a class="rock-close" style="float: none;">&times;</a></p>
-<pre class="rock-prettyprint rock-linenums">&lt;a class="rock-close"&gt;&amp;times;&lt;/a&gt;</pre>
-    </div><!--/span-->
-  </div><!--/row-->
-</section>
+          <h3>Optional classes</h3>
+          <p>Control padding and rounded corners with two optional modifier classes.</p>
+          <div class="bs-docs-example">
+            <div class="rock-well rock-well-large">
+              Look, I'm rock-in a rock-well!
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-well rock-well-large"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+          <div class="bs-docs-example">
+            <div class="rock-well rock-well-small">
+              Look, I'm rock-in a rock-well!
+            </div>
+          </div>
+<pre class="prettyprint linenums">
+&lt;div class="rock-well rock-well-small"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+
+          <h2>Close icon</h2>
+          <p>Use the generic close icon for dismissing content like modals and alerts.</p>
+          <div class="bs-docs-example">
+            <p><button class="rock-close" style="float: none;">&times;</button></p>
+          </div>
+          <pre class="prettyprint linenums">&lt;button class="rock-close"&gt;&amp;times;&lt;/button&gt;</pre>
+          <p>iOS devices require an <code>href="#"</code> for click events if you would rather use an anchor.</p>
+          <pre class="prettyprint linenums">&lt;a class="rock-close" href="#"&gt;&amp;times;&lt;/a&gt;</pre>
+
+          <h2>Helper classes</h2>
+          <p>Simple, focused classes for small display or behavior tweaks.</p>
+
+          <h4>.rock-pull-left</h4>
+          <p>Float an element left</p>
+<pre class="prettyprint linenums">
+class="rock-pull-left"
+</pre>
+<pre class="prettyprint linenums">
+.rock-pull-left {
+  float: left;
+}
+</pre>
+
+          <h4>.rock-pull-right</h4>
+          <p>Float an element right</p>
+<pre class="prettyprint linenums">
+class="rock-pull-right"
+</pre>
+<pre class="prettyprint linenums">
+.rock-pull-right {
+  float: right;
+}
+</pre>
+
+          <h4>.rock-muted</h4>
+          <p>Change an element's color to <code>#999</code></p>
+<pre class="prettyprint linenums">
+class="rock-muted"
+</pre>
+<pre class="prettyprint linenums">
+.rock-muted {
+  color: #999;
+}
+</pre>
+
+          <h4>.rock-clearfix</h4>
+          <p>Clear the <code>float</code> on any element</p>
+<pre class="prettyprint linenums">
+class="rock-clearfix"
+</pre>
+<pre class="prettyprint linenums">
+.rock-clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+</pre>
+
+        </section>
 
 
-     <!-- Footer
-      ================================================== -->
-      <footer class="rock-footer">
-        <p class="rock-pull-right"><a href="#">Back to top</a></p>
-        
-        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-      </footer>
 
-    </div><!-- /container -->
+      </div>
+    </div>
+
+  </div>
 
 
 
-    <!-- Le javascript
+    <!-- Footer
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-    <script src="vendor/jquery.js"></script>
-    <script src="assets/js/google-code-prettify/prettify.js"></script>
-    <script src="assets/js/rockskeleton-transition.js"></script>
-    <script src="assets/js/rockskeleton-alert.js"></script>
-    <script src="assets/js/rockskeleton-modal.js"></script>
-    <script src="assets/js/rockskeleton-dropdown.js"></script>
-    <script src="assets/js/rockskeleton-scrollspy.js"></script>
-    <script src="assets/js/rockskeleton-tab.js"></script>
-    <script src="assets/js/rockskeleton-tooltip.js"></script>
-    <script src="assets/js/rockskeleton-popover.js"></script>
-    <script src="assets/js/rockskeleton-button.js"></script>
-    <script src="assets/js/rockskeleton-collapse.js"></script>
-    <script src="assets/js/rockskeleton-carousel.js"></script>
-    <script src="assets/js/rockskeleton-typeahead.js"></script>
-    <script src="assets/js/application.js"></script>
+    <footer class="rock-footer">
+      <div class="rock-container">
+        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+      </div>
+    </footer>
+
+    <script src="resources/js/jquery.js"></script>
+    <script src="resources/js/rockskeleton-transition.js"></script>
+    <script src="resources/js/rockskeleton-alert.js"></script>
+    <script src="resources/js/rockskeleton-modal.js"></script>
+    <script src="resources/js/rockskeleton-dropdown.js"></script>
+    <script src="resources/js/rockskeleton-scrollspy.js"></script>
+    <script src="resources/js/rockskeleton-tab.js"></script>
+    <script src="resources/js/rockskeleton-tooltip.js"></script>
+    <script src="resources/js/rockskeleton-popover.js"></script>
+    <script src="resources/js/rockskeleton-button.js"></script>
+    <script src="resources/js/rockskeleton-collapse.js"></script>
+    <script src="resources/js/rockskeleton-carousel.js"></script>
+    <script src="resources/js/rockskeleton-typeahead.js"></script>
+    <script src="resources/js/rockskeleton-affix.js"></script>
+
+    <script src="resources/js/holder/holder.js"></script>
+    <script src="resources/js/google-code-prettify/prettify.js"></script>
+
+    <script src="resources/js/application.js"></script>
+
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+
   </body>
 </html>

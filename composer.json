@@ -1,0 +1,9 @@
+{
+    "name": "meggistorvard/rockskeleton"
+  , "description": "Simple front-end framework for faster web development."
+  , "keywords": ["rockskeleton", "css"]
+  , "homepage": "https://github.com/meggistorvard/rockskeleton/"
+  , "author": "Meggis"
+  , "license": "Apache-2.0"
+
+}

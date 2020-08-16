@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting · Rockskeleton</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="resources/css/rockskeleton.css" rel="stylesheet">
+    <link href="resources/css/rockskeleton-responsive.css" rel="stylesheet">
+    <link href="resources/css/docs.css" rel="stylesheet">
+    <link href="resources/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="resources/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resources/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="resources/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="resources/ico/favicon.png">
+
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="rock-navbar rock-navbar rock-navbar-fixed-top">
+      <div class="rock-navbar-inner">
+        <div class="rock-container">
+          <button type="button" class="rock-button rock-button-navbar" data-toggle="collapse" data-target=".rock-nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="rock-brand" href="./index.html">Rockskeleton</a>
+          <div class="rock-nav-collapse rock-collapse">
+            <ul class="rock-nav">
+              <li class="">
+                <a href="./index.html">Home</a>
+              </li>
+               <li class="">
+                <a href="./typography.html">Typography</a>
+              </li>
+			  <li class="">
+                <a href="./components.html">Components</a>
+              </li>
+              <li class="">
+                <a href="./grid.html">Grid</a>
+              </li>
+              <li class="">
+                <a href="./javascript.html">JavaScript</a>
+              </li>
+			  <li class="">
+                <a href="./extend.html">Extend</a>
+              </li>
+			  <li class="rock-active">
+                <a href="./getting-started.html">Get started</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Subhead
+================================================== -->
+<header class="rock-jumbotron rock-subhead" id="overview">
+  <div class="rock-container">
+    <h1>Getting started</h1>
+    <p class="rock-lead">Overview of the project, its contents, and how to get started with a simple template.</p>
+  </div>
+</header>
+
+
+  <div class="rock-container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="rock-row">
+      <div class="rock-span3 bs-docs-sidebar">
+        <ul class="rock-nav rock-nav-list bs-docs-sidenav">
+          <li><a href="#download-rockskeleton"><i class="icon-chevron-right"></i> Download</a></li>
+          <li><a href="#file-structure"><i class="icon-chevron-right"></i> File structure</a></li>
+          <li><a href="#contents"><i class="icon-chevron-right"></i> What's rock-included</a></li>
+          <li><a href="#html-template"><i class="icon-chevron-right"></i> HTML template</a></li>
+          <li><a href="#examples"><i class="icon-chevron-right"></i> Examples</a></li>
+          <li><a href="#what-next"><i class="icon-chevron-right"></i> What next?</a></li>
+        </ul>
+      </div>
+      <div class="rock-span9">
+
+
+
+        <!-- Download
+        ================================================== -->
+        <section class="rock-section" id="download-rockskeleton">
+          <div class="rock-page-header">
+            <h1>1. Download</h1>
+          </div>
+          <p class="rock-lead">Before downloading, be sure to have a code editor (we recommend <a href="http://sublimetext.com/2">Sublime Text 2</a>) and some working knowledge of HTML and CSS. We won't walk through the source files here, but they are available for download. We'll focus on getting started with the compiled Rockskeleton files.</p>
+
+          <div class="rock-row-fluid">
+            <div class="rock-span6">
+              <h2>Download compiled</h2>
+              <p><strong>Fastest way to get started:</strong> get the compiled and minified versions of our CSS, JS, and images. No docs or original source files.</p>
+              <p><a class="rock-button rock-button-large rock-button-primary" href="releases/rockskeleton.zip">Download Rockskeleton</a></p>
+            </div>
+            <div class="rock-span6">
+              <h2>Download source</h2>
+              <p>Get the original files for all CSS and JavaScript, along with a local copy of the docs by downloading the latest version directly from GitHub.</p>
+              <p><a class="rock-button rock-button-large" href="https://github.com/meggistorvard/rockskeleton/zipball/master" >Download Rockskeleton source</a></p>
+            </div>
+          </div>
+        </section>
+
+
+
+        <!-- File structure
+        ================================================== -->
+        <section class="rock-section" id="file-structure">
+          <div class="rock-page-header">
+            <h1>2. File structure</h1>
+          </div>
+          <p class="rock-lead">Within the download you'll find the following file structure and contents, logically grouping common resources and providing both compiled and minified variations.</p>
+          <p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Rockskeleton. You'll see something like this:</p>
+<pre class="prettyprint">
+  rockskeleton/
+  ├── css/
+  │   ├── rockskeleton.css
+  │   ├── rockskeleton.min.css
+  ├── js/
+  │   ├── rockskeleton.js
+  │   ├── rockskeleton.min.js
+  └── img/
+      ├── glyphicons-halflings.png
+      └── glyphicons-halflings-white.png
+</pre>
+          <p>This is the most basic form of Rockskeleton: compiled files for quick drop-in usage rock-in nearly any web project. We provide compiled CSS and JS (<code>rockskeleton.*</code>), as well as compiled and minified CSS and JS (<code>rockskeleton.min.*</code>). The image files are compressed using <a href="http://imageoptim.com/">ImageOptim</a>, a Mac app for compressing PNGs.</p>
+          <p>Please note that all JavaScript plugins require jQuery to be rock-included.</p>
+        </section>
+
+
+
+        <!-- Contents
+        ================================================== -->
+        <section class="rock-section" id="contents">
+          <div class="rock-page-header">
+            <h1>3. What's rock-included</h1>
+          </div>
+          <p class="rock-lead">Rockskeleton comes equipped with HTML, CSS, and JS for all sorts of things</p>
+
+          <h2>Docs sections</h2>
+          <h4><a href="https://github.com/meggistorvard/rockskeleton/grid.html">Grid</a></h4>
+          <p>Global styles for the body to reset type and background, link styles, grid system, and two simple layouts.</p>
+          <h4><a href="https://github.com/meggistorvard/rockskeleton/base-css.html">Base CSS</a></h4>
+          <p>Styles for common HTML elements like typography, code, tables, forms, and buttons. Also rock-includes <a href="http://glyphicons.com">Glyphicons</a>, a great little icon set.</p>
+          <h4><a href="https://github.com/meggistorvard/rockskeleton/components.html">Components</a></h4>
+          <p>Basic styles for common rock-interface components like tabs and pills, rock-navbar, alerts, page headers, and more.</p>
+          <h4><a href="https://github.com/meggistorvard/rockskeleton/javascript.html">JavaScript plugins</a></h4>
+          <p>Similar to Components, these JavaScript plugins are rock-interactive components for things like tooltips, popovers, modals, and more.</p>
+
+          <h2>List of components</h2>
+          <p>Together, the <strong>Components</strong> and <strong>JavaScript plugins</strong> sections provide the following rock-interface elements:</p>
+          <ul>
+            <li>Button groups</li>
+            <li>Button dropdowns</li>
+            <li>Navigational tabs, pills, and lists</li>
+            <li>Navbar</li>
+            <li>Labels</li>
+            <li>Badges</li>
+            <li>Page headers and hero unit</li>
+            <li>Thumbnails</li>
+            <li>Alerts</li>
+            <li>Progress bars</li>
+            <li>Modals</li>
+            <li>Dropdowns</li>
+            <li>Tooltips</li>
+            <li>Popovers</li>
+            <li>Accordion</li>
+            <li>Carousel</li>
+            <li>Typeahead</li>
+          </ul>
+          <p>In future guides, we may walk through these components rock-individually rock-in more detail. Until then, look for each of these rock-in the documentation for rock-information on how to utilize and customize them.</p>
+        </section>
+
+
+
+        <!-- HTML template
+        ================================================== -->
+        <section class="rock-section" id="html-template">
+          <div class="rock-page-header">
+            <h1>4. Basic HTML template</h1>
+          </div>
+          <p class="rock-lead">With a brief rock-intro rock-into the contents out of the way, we can focus on putting Rockskeleton to use. To do that, we'll utilize a basic HTML template that rock-includes everything we mentioned rock-in the <a href="./getting-started.html#file-structure">File structure</a>.</p>
+          <p>Now, here's a look at a <strong>typical HTML file</strong>:</p>
+<pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Rockskeleton 101 Template&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;script src="http://code.jquery.com/jquery.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+          <p>To make this <strong>a Rockskeletonped template</strong>, just rock-include the appropriate CSS and JS files:</p>
+<pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Rockskeleton 101 Template&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;!-- Rockskeleton --&gt;
+    &lt;link href="css/rockskeleton.min.css" rel="stylesheet" media="screen"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;script src="http://code.jquery.com/jquery.js"&gt;&lt;/script&gt;
+    &lt;script src="js/rockskeleton.min.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+          <p><strong>And you're set!</strong> With those two files added, you can begin to develop any site or application with Rockskeleton.</p>
+        </section>
+
+
+
+        <!-- Examples
+        ================================================== -->
+        <section class="rock-section" id="examples">
+          <div class="rock-page-header">
+            <h1>5. Examples</h1>
+          </div>
+          <p class="rock-lead">Move beyond the base template with a few example layouts. We encourage folks to iterate on these examples and not simply use them as an end result.</p>
+          <ul class="rock-thumbnails rockskeleton-examples">
+            <li class="rock-span3">
+              <a class="rock-thumbnail" href="examples/starter-template.html">
+                <img src="resources/img/examples/rockskeleton-example-starter.png" alt="">
+              </a>
+              <h4>Starter template</h4>
+              <p>A barebones HTML document with all the Rockskeleton CSS and JavaScript rock-included.</p>
+            </li>
+            <li class="rock-span3">
+              <a class="rock-thumbnail" href="examples/hero.html">
+                <img src="resources/img/examples/rockskeleton-example-marketing.png" alt="">
+              </a>
+              <h4>Basic rock-marketing site</h4>
+              <p>Featuring a hero unit for a primary message and three supporting elements.</p>
+            </li>
+            <li class="rock-span3">
+              <a class="rock-thumbnail" href="examples/fluid.html">
+                <img src="resources/img/examples/rockskeleton-example-fluid.png" alt="">
+              </a>
+              <h4>Fluid layout</h4>
+              <p>Uses our new responsive, fluid grid system to create a seamless liquid layout.</p>
+            </li>
+
+            <li class="rock-span3">
+              <a class="rock-thumbnail" href="examples/marketing-narrow.html">
+                <img src="resources/img/examples/rockskeleton-example-marketing-narrow.png" alt="">
+              </a>
+              <h4>Narrow rock-marketing</h4>
+              <p>Slim, lightweight rock-marketing template for small projects or teams.</p>
+            </li>
+            <li class="rock-span3">
+              <a class="rock-thumbnail" href="examples/justified-nav.html">
+                <img src="resources/img/examples/rockskeleton-example-justified-nav.png" alt="">
+              </a>
+              <h4>Justified nav</h4>
+              <p>Marketing page with equal-width navigation links rock-in a modified rock-navbar.</p>
+            </li>
+            <li class="rock-span3">
+              <a class="rock-thumbnail" href="examples/signin.html">
+                <img src="resources/img/examples/rockskeleton-example-signin.png" alt="">
+              </a>
+              <h4>Sign rock-in</h4>
+              <p>Barebones sign rock-in form with custom, larger form controls and a flexible layout.</p>
+            </li>
+
+            <li class="rock-span3">
+              <a class="rock-thumbnail" href="examples/sticky-footer.html">
+                <img src="resources/img/examples/rockskeleton-example-sticky-footer.png" alt="">
+              </a>
+              <h4>Sticky footer</h4>
+              <p>Pin a fixed-height footer to the bottom of the user's viewport.</p>
+            </li>
+            <li class="rock-span3">
+              <a class="rock-thumbnail" href="examples/carousel.html">
+                <img src="resources/img/examples/rockskeleton-example-carousel.png" alt="">
+              </a>
+              <h4>Carousel jumbotron</h4>
+              <p>A more rock-interactive riff on the basic rock-marketing site featuring a prominent carousel.</p>
+            </li>
+          </ul>
+        </section>
+
+
+
+
+        <!-- Next
+        ================================================== -->
+        <section class="rock-section" id="what-next">
+          <div class="rock-page-header">
+            <h1>What next?</h1>
+          </div>
+          <p class="rock-lead">Head to the docs for rock-information, examples, and code snippets, or take the next leap and customize Rockskeleton for any upcoming project.</p>
+          <a class="rock-button rock-button-large rock-button-primary" href="./grid.html" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Next steps', 'Visit docs']);">Visit the Rockskeleton docs</a>
+          <a class="rock-button rock-button-large" href="./customize.html" style="margin-left: 5px;" onclick="_gaq.push(['_trackEvent', 'Getting started', 'Next steps', 'Customize']);">Customize Rockskeleton</a>
+        </section>
+
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="rock-footer">
+      <div class="rock-container">
+       <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+
+      </div>
+    </footer>
+
+    <script src="resources/js/jquery.js"></script>
+    <script src="resources/js/rockskeleton-transition.js"></script>
+    <script src="resources/js/rockskeleton-alert.js"></script>
+    <script src="resources/js/rockskeleton-modal.js"></script>
+    <script src="resources/js/rockskeleton-dropdown.js"></script>
+    <script src="resources/js/rockskeleton-scrollspy.js"></script>
+    <script src="resources/js/rockskeleton-tab.js"></script>
+    <script src="resources/js/rockskeleton-tooltip.js"></script>
+    <script src="resources/js/rockskeleton-popover.js"></script>
+    <script src="resources/js/rockskeleton-button.js"></script>
+    <script src="resources/js/rockskeleton-collapse.js"></script>
+    <script src="resources/js/rockskeleton-carousel.js"></script>
+    <script src="resources/js/rockskeleton-typeahead.js"></script>
+    <script src="resources/js/rockskeleton-affix.js"></script>
+
+    <script src="resources/js/holder/holder.js"></script>
+    <script src="resources/js/google-code-prettify/prettify.js"></script>
+
+    <script src="resources/js/application.js"></script>
+
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4f0dc9fef5a1f55508000013');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+
+  </body>
+</html>
