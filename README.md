@@ -55,6 +55,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 
+## License
+
+ MIT license, which puts almost no restrictions on how you can use it. Read the license text
+ <a href="https://fullcalendar.io/license/" target="_blank">`https://fullcalendar.io/license/`</a>.
+
 ## Donations (Optional)
 
 Donate to Meggis and help us improve free software
@@ -71,4 +76,4 @@ WAYS YOU CAN SUPPORT US
 	Become an ambassador
 
 Supporting further development	
- <a href="https://techcontactsupport.net/?q=donations-free-software" target="_blank">`https://techcontactsupport.net/?q=donations-free-software`</a>
+ <a href="https://www.techsupport.gradiscake.com/?q=donations-free-software" target="_blank">https://www.techsupport.gradiscake.com/?q=donations-free-software</a>
