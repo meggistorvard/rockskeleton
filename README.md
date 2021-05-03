@@ -9,7 +9,7 @@ Using a framework to construct your website’s front-end has a lot of advantage
 <a href="https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-2.0.zip" target="_blank">`https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-2.0.zip`</a> 
 
 - Demo:
-<a target="_blank" href="meggistorvard.github.io" target="_blank">`meggistorvard.github.io`</a> 
+<a target="_blank" href="https://meggistorvard.github.io" target="_blank">`https://meggistorvard.github.io`</a> 
 
 Let’s go over what front-end frameworks are and why you should consider incorporating them into your web development work.
 
