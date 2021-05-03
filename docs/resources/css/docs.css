@@ -65,12 +65,12 @@ body > .rock-navbar .rock-brand:hover {
 }
 
 /* Separators (hr) */
-.bs-docs-separator {
+.rock-bs-docs-separator {
   margin: 40px 0 39px;
 }
 
 /* Faded out hr */
-hr.soften {
+hr.rock-soften {
   height: 1px;
   margin: 70px 0;
   background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
@@ -442,7 +442,7 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
 }
 
 /* Variables section */
-#variables label {
+#variables rock-label {
   margin-bottom: 0;
 }
 
@@ -568,7 +568,7 @@ h2 + .rock-row {
           border-radius: 4px;
 }
 
-/* Echo out a label for the example */
+/* Echo out a rock-label for the example */
 .bs-docs-example:after {
   content: "Example";
   position: absolute;

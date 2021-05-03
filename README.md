@@ -8,7 +8,7 @@ Using a framework to construct your website’s front-end has a lot of advantage
 
 <a href="https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-2.0.zip" target="_blank">`https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-2.0.zip`</a> 
 
-- Demo:
+**Demo**:
 <a target="_blank" href="https://meggistorvard.github.io" target="_blank">`https://meggistorvard.github.io`</a> 
 
 Let’s go over what front-end frameworks are and why you should consider incorporating them into your web development work.
@@ -21,6 +21,11 @@ Frameworks are incredibly helpful tools for front-end design, especially if you 
 Just to refresh, front-end development is all about the parts of a website that users see, while the back-end is more about the “behind the scenes” functionality.
 
 Using a framework to construct your website’s front-end has a lot of advantages (and is pretty easy to boot!). Let’s go over what front-end frameworks are and why you should consider incorporating them into your web development work.
+
+
+## No conflict
+
+### Fantastic! No conflict between stylesheets and javascript scripts because rockskeleton uses the rock- prefix.
 
 
 ## Contributing

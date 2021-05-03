@@ -909,7 +909,7 @@
   rock-input[type="radio"] {
     border: 1px solid #ccc;
   }
-  .form-horizontal .control-label {
+  .form-horizontal .control-rock-label {
     float: none;
     width: auto;
     padding-top: 0;

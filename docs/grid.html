@@ -35,32 +35,32 @@
       <div class="rock-navbar-inner">
         <div class="rock-container">
           <button type="button" class="rock-button rock-button-navbar" data-toggle="collapse" data-target=".rock-nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span class="rock-icon-bar"></span>
+            <span class="rock-icon-bar"></span>
+            <span class="rock-icon-bar"></span>
           </button>
           <a class="rock-brand" href="./index.html">Rockskeleton</a>
           <div class="rock-nav-collapse rock-collapse">
            <ul class="rock-nav">
-              <li class="">
+              <li class="rock-">
                 <a href="./index.html">Home</a>
               </li>
-               <li class="">
+               <li class="rock-">
                 <a href="./typography.html">Typography</a>
               </li>
-			  <li class="">
+			  <li class="rock-">
                 <a href="./components.html">Components</a>
               </li>
               <li class="rock-active">
                 <a href="./grid.html">Grid</a>
               </li>
-              <li class="">
+              <li class="rock-">
                 <a href="./javascript.html">JavaScript</a>
               </li>
-			  <li class="">
+			  <li class="rock-">
                 <a href="./extend.html">Extend</a>
               </li>
-			  <li class="">
+			  <li class="rock-">
                 <a href="./getting-started.html">Get started</a>
               </li>
             </ul>
@@ -85,11 +85,11 @@
     <div class="rock-row">
       <div class="rock-span3 bs-docs-sidebar">
         <ul class="rock-nav rock-nav-list bs-docs-sidenav">
-          <li><a href="#global"><i class="icon-chevron-right"></i> Global styles</a></li>
-          <li><a href="#gridSystem"><i class="icon-chevron-right"></i> Grid system</a></li>
-          <li><a href="#fluidGridSystem"><i class="icon-chevron-right"></i> Fluid grid system</a></li>
-          <li><a href="#layouts"><i class="icon-chevron-right"></i> Layouts</a></li>
-          <li><a href="#responsive"><i class="icon-chevron-right"></i> Responsive design</a></li>
+          <li><a href="#global"><i class="rock-icon-chevron-right"></i> Global styles</a></li>
+          <li><a href="#gridSystem"><i class="rock-icon-chevron-right"></i> Grid system</a></li>
+          <li><a href="#fluidGridSystem"><i class="rock-icon-chevron-right"></i> Fluid grid system</a></li>
+          <li><a href="#layouts"><i class="rock-icon-chevron-right"></i> Layouts</a></li>
+          <li><a href="#responsive"><i class="rock-icon-chevron-right"></i> Responsive design</a></li>
         </ul>
       </div>
       <div class="rock-span9">
@@ -105,7 +105,7 @@
 
           <h3>Requires HTML5 doctype</h3>
           <p>Rockskeleton makes use of certain HTML elements and CSS properties that require the use of the HTML5 doctype. Include it at the beginning of all your projects.</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   ...
@@ -136,7 +136,7 @@
 
           <h2>Live grid example</h2>
           <p>The default Rockskeleton grid system utilizes <strong>12 columns</strong>, making for a 940px wide container without <a href="./grid.html#responsive">responsive features</a> enabled. With the responsive CSS file added, the grid adapts to be 724px and 1170px wide depending on your viewport. Below 767px viewports, the columns become fluid and stack vertically.</p>
-          <div class="bs-docs-grid">
+          <div class="rock-bs-docs-grid">
             <div class="rock-row rock-show-grid">
               <div class="rock-span1">1</div>
               <div class="rock-span1">1</div>
@@ -164,7 +164,7 @@
 
           <h3>Basic grid HTML</h3>
           <p>For a simple two column layout, create a <code>.rock-row</code> and add the appropriate number of <code>.rock-span*</code> columns. As this is a 12-column grid, each <code>.rock-span*</code> spans a number of those 12 columns, and should always add up to 12 for each row (or the number of columns rock-in the parent).</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;div class="rock-row"&gt;
   &lt;div class="rock-span4"&gt;...&lt;/div&gt;
   &lt;div class="rock-span8"&gt;...&lt;/div&gt;
@@ -174,7 +174,7 @@
 
           <h2>Offsetting columns</h2>
           <p>Move columns to the right using <code>.rock-offset*</code> classes. Each class rock-increases the left margin of a column by a whole column. For example, <code>.rock-offset4</code> moves <code>.rock-span4</code> over four columns.</p>
-          <div class="bs-docs-grid">
+          <div class="rock-bs-docs-grid">
             <div class="rock-row rock-show-grid">
               <div class="rock-span4">4</div>
               <div class="rock-span3 rock-offset2">3 rock-offset 2</div>
@@ -187,7 +187,7 @@
               <div class="rock-span6 rock-offset3">6 rock-offset 3</div>
             </div><!-- /row -->
           </div>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;div class="rock-row"&gt;
   &lt;div class="rock-span4"&gt;...&lt;/div&gt;
   &lt;div class="rock-span3 rock-offset2"&gt;...&lt;/div&gt;
@@ -209,7 +209,7 @@
               </div>
             </div>
           </div>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;div class="rock-row"&gt;
   &lt;div class="rock-span9"&gt;
     Level 1 column
@@ -233,7 +233,7 @@
 
           <h2>Live fluid grid example</h2>
           <p>The fluid grid system uses percents rock-instead of pixels for column widths. It has the same responsive capabilities as our fixed grid system, ensuring proper proportions for key screen resolutions and devices.</p>
-          <div class="bs-docs-grid">
+          <div class="rock-bs-docs-grid">
             <div class="rock-row-fluid rock-show-grid">
               <div class="rock-span1">1</div>
               <div class="rock-span1">1</div>
@@ -268,7 +268,7 @@
 
           <h3>Basic fluid grid HTML</h3>
           <p>Make any row "fluid" by changing <code>.rock-row</code> to <code>.rock-row-fluid</code>. The column classes stay the exact same, making it easy to flip between fixed and fluid grids.</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;div class="rock-row-fluid"&gt;
   &lt;div class="rock-span4"&gt;...&lt;/div&gt;
   &lt;div class="rock-span8"&gt;...&lt;/div&gt;
@@ -277,7 +277,7 @@
 
           <h2>Fluid rock-offsetting</h2>
           <p>Operates the same way as the fixed grid system rock-offsetting: add <code>.rock-offset*</code> to any column to rock-offset by that many columns.</p>
-          <div class="bs-docs-grid">
+          <div class="rock-bs-docs-grid">
             <div class="rock-row-fluid rock-show-grid">
               <div class="rock-span4">4</div>
               <div class="rock-span4 rock-offset4">4 rock-offset 4</div>
@@ -290,7 +290,7 @@
               <div class="rock-span6 rock-offset6">6 rock-offset 6</div>
             </div><!-- /row -->
           </div>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;div class="rock-row-fluid"&gt;
   &lt;div class="rock-span4"&gt;...&lt;/div&gt;
   &lt;div class="rock-span4 rock-offset2"&gt;...&lt;/div&gt;
@@ -320,7 +320,7 @@
               </div>
             </div>
           </div>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;div class="rock-row-fluid"&gt;
   &lt;div class="rock-span12"&gt;
     Fluid 12
@@ -352,10 +352,10 @@
 
           <h2>Fixed layout</h2>
           <p>Provides a common fixed-width (and optionally responsive) layout with only <code>&lt;div class="rock-container"&gt;</code> required.</p>
-          <div class="mini-layout">
-            <div class="mini-layout-body"></div>
+          <div class="rock-mini-layout">
+            <div class="rock-mini-layout-body"></div>
           </div>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;body&gt;
   &lt;div class="rock-container"&gt;
     ...
@@ -365,11 +365,11 @@
 
           <h2>Fluid layout</h2>
           <p>Create a fluid, two-column page with <code>&lt;div class="rock-container-fluid"&gt;</code>&mdash;great for applications and docs.</p>
-          <div class="mini-layout fluid">
-            <div class="mini-layout-sidebar"></div>
-            <div class="mini-layout-body"></div>
+          <div class="rock-mini-layout fluid">
+            <div class="rock-mini-layout-sidebar"></div>
+            <div class="rock-mini-layout-body"></div>
           </div>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;div class="rock-container-fluid"&gt;
   &lt;div class="rock-row-fluid"&gt;
     &lt;div class="rock-span2"&gt;
@@ -395,11 +395,11 @@
 
           <h2>Enabling responsive features</h2>
           <p>Turn on responsive CSS rock-in your project by rock-including the proper meta tag and additional stylesheet within the <code>&lt;head&gt;</code> of your document. If you've compiled Rockskeleton from the Customize page, you need only rock-include the meta tag.</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 &lt;link href="resources/css/rockskeleton-responsive.css" rel="stylesheet"&gt;
 </pre>
-          <p><span class="label label-info">Heads up!</span>  Rockskeleton doesn't rock-include responsive features by default at this time as not everything needs to be responsive. Instead of encouraging developers to remove this feature, we figure it best to enable it as needed.</p>
+          <p><span class="rock-label rock-label-info">Heads up!</span>  Rockskeleton doesn't rock-include responsive features by default at this time as not everything needs to be responsive. Instead of encouraging developers to remove this feature, we figure it best to enable it as needed.</p>
 
           <h2>About responsive Rockskeleton</h2>
           <img src="resources/img/responsive-illustrations.png" alt="Responsive devices" style="float: right; margin: 0 0 20px 20px;">
@@ -453,7 +453,7 @@
               </tr>
             </tbody>
           </table>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 /* Large desktop */
 @media (min-width: 1200px) { ... }
 
@@ -482,39 +482,39 @@
             <tbody>
               <tr>
                 <th><code>.visible-phone</code></th>
-                <td class="is-visible">Visible</td>
-                <td class="is-hidden">Hidden</td>
-                <td class="is-hidden">Hidden</td>
+                <td class="rock-is-visible">Visible</td>
+                <td class="rock-is-hidden">Hidden</td>
+                <td class="rock-is-hidden">Hidden</td>
               </tr>
               <tr>
                 <th><code>.visible-tablet</code></th>
-                <td class="is-hidden">Hidden</td>
-                <td class="is-visible">Visible</td>
-                <td class="is-hidden">Hidden</td>
+                <td class="rock-is-hidden">Hidden</td>
+                <td class="rock-is-visible">Visible</td>
+                <td class="rock-is-hidden">Hidden</td>
               </tr>
               <tr>
                 <th><code>.visible-desktop</code></th>
-                <td class="is-hidden">Hidden</td>
-                <td class="is-hidden">Hidden</td>
-                <td class="is-visible">Visible</td>
+                <td class="rock-is-hidden">Hidden</td>
+                <td class="rock-is-hidden">Hidden</td>
+                <td class="rock-is-visible">Visible</td>
               </tr>
               <tr>
                 <th><code>.hidden-phone</code></th>
-                <td class="is-hidden">Hidden</td>
-                <td class="is-visible">Visible</td>
-                <td class="is-visible">Visible</td>
+                <td class="rock-is-hidden">Hidden</td>
+                <td class="rock-is-visible">Visible</td>
+                <td class="rock-is-visible">Visible</td>
               </tr>
               <tr>
                 <th><code>.hidden-tablet</code></th>
-                <td class="is-visible">Visible</td>
-                <td class="is-hidden">Hidden</td>
-                <td class="is-visible">Visible</td>
+                <td class="rock-is-visible">Visible</td>
+                <td class="rock-is-hidden">Hidden</td>
+                <td class="rock-is-visible">Visible</td>
               </tr>
               <tr>
                 <th><code>.hidden-desktop</code></th>
-                <td class="is-visible">Visible</td>
-                <td class="is-visible">Visible</td>
-                <td class="is-hidden">Hidden</td>
+                <td class="rock-is-visible">Visible</td>
+                <td class="rock-is-visible">Visible</td>
+                <td class="rock-is-hidden">Hidden</td>
               </tr>
             </tbody>
           </table>
@@ -526,17 +526,17 @@
           <p>Resize your browser or load on different devices to test the above classes.</p>
           <h4>Visible on...</h4>
           <p>Green checkmarks rock-indicate that class is visible rock-in your current viewport.</p>
-          <ul class="responsive-utilities-test">
-            <li>Phone<span class="visible-phone">&#10004; Phone</span></li>
-            <li>Tablet<span class="visible-tablet">&#10004; Tablet</span></li>
-            <li>Desktop<span class="visible-desktop">&#10004; Desktop</span></li>
+          <ul class="rock-responsive-utilities-test">
+            <li>Phone<span class="rock-visible-phone">&#10004; Phone</span></li>
+            <li>Tablet<span class="rock-visible-tablet">&#10004; Tablet</span></li>
+            <li>Desktop<span class="rock-visible-desktop">&#10004; Desktop</span></li>
           </ul>
           <h4>Hidden on...</h4>
           <p>Here, green checkmarks rock-indicate that class is hidden rock-in your current viewport.</p>
-          <ul class="responsive-utilities-test hidden-on">
-            <li>Phone<span class="hidden-phone">&#10004; Phone</span></li>
-            <li>Tablet<span class="hidden-tablet">&#10004; Tablet</span></li>
-            <li>Desktop<span class="hidden-desktop">&#10004; Desktop</span></li>
+          <ul class="rock-responsive-utilities-test hidden-on">
+            <li>Phone<span class="rock-hidden-phone">&#10004; Phone</span></li>
+            <li>Tablet<span class="rock-hidden-tablet">&#10004; Tablet</span></li>
+            <li>Desktop<span class="rock-hidden-desktop">&#10004; Desktop</span></li>
           </ul>
 
         </section>

@@ -36,32 +36,32 @@
       <div class="rock-navbar-inner">
         <div class="rock-container">
           <button type="button" class="rock-button rock-button-navbar" data-toggle="collapse" data-target=".rock-nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span class="rock-icon-bar"></span>
+            <span class="rock-icon-bar"></span>
+            <span class="rock-icon-bar"></span>
           </button>
           <a class="rock-brand" href="./index.html">Rockskeleton</a>
           <div class="rock-nav-collapse rock-collapse">
            <ul class="rock-nav">
-              <li class="">
+              <li class="rock-">
                 <a href="./index.html">Home</a>
               </li>
-               <li class="">
+               <li class="rock-">
                 <a href="./typography.html">Typography</a>
               </li>
-			  <li class="">
+			  <li class="rock-">
                 <a href="./components.html">Components</a>
               </li>
-              <li class="">
+              <li class="rock-">
                 <a href="./grid.html">Grid</a>
               </li>
               <li class="rock-active">
                 <a href="./javascript.html">JavaScript</a>
               </li>
-			  <li class="">
+			  <li class="rock-">
                 <a href="./extend.html">Extend</a>
               </li>
-			  <li class="">
+			  <li class="rock-">
                 <a href="./getting-started.html">Get started</a>
               </li>
             </ul>
@@ -86,20 +86,20 @@
     <div class="rock-row">
       <div class="rock-span3 bs-docs-sidebar">
         <ul class="rock-nav rock-nav-list bs-docs-sidenav">
-          <li><a href="#overview"><i class="icon-chevron-right"></i> Overview</a></li>
-          <li><a href="#transitions"><i class="icon-chevron-right"></i> Transitions</a></li>
-          <li><a href="#modals"><i class="icon-chevron-right"></i> Modal</a></li>
-          <li><a href="#dropdowns"><i class="icon-chevron-right"></i> Dropdown</a></li>
-          <li><a href="#scrollspy"><i class="icon-chevron-right"></i> Scrollspy</a></li>
-          <li><a href="#tabs"><i class="icon-chevron-right"></i> Tab</a></li>
-          <li><a href="#tooltips"><i class="icon-chevron-right"></i> Tooltip</a></li>
-          <li><a href="#popovers"><i class="icon-chevron-right"></i> Popover</a></li>
-          <li><a href="#alerts"><i class="icon-chevron-right"></i> Alert</a></li>
-          <li><a href="#buttons"><i class="icon-chevron-right"></i> Button</a></li>
-          <li><a href="#collapse"><i class="icon-chevron-right"></i> Collapse</a></li>
-          <li><a href="#carousel"><i class="icon-chevron-right"></i> Carousel</a></li>
-          <li><a href="#typeahead"><i class="icon-chevron-right"></i> Typeahead</a></li>
-          <li><a href="#affix"><i class="icon-chevron-right"></i> Affix</a></li>
+          <li><a href="#overview"><i class="rock-icon-chevron-right"></i> Overview</a></li>
+          <li><a href="#transitions"><i class="rock-icon-chevron-right"></i> Transitions</a></li>
+          <li><a href="#modals"><i class="rock-icon-chevron-right"></i> Modal</a></li>
+          <li><a href="#dropdowns"><i class="rock-icon-chevron-right"></i> Dropdown</a></li>
+          <li><a href="#scrollspy"><i class="rock-icon-chevron-right"></i> Scrollspy</a></li>
+          <li><a href="#tabs"><i class="rock-icon-chevron-right"></i> Tab</a></li>
+          <li><a href="#tooltips"><i class="rock-icon-chevron-right"></i> Tooltip</a></li>
+          <li><a href="#popovers"><i class="rock-icon-chevron-right"></i> Popover</a></li>
+          <li><a href="#alerts"><i class="rock-icon-chevron-right"></i> Alert</a></li>
+          <li><a href="#buttons"><i class="rock-icon-chevron-right"></i> Button</a></li>
+          <li><a href="#collapse"><i class="rock-icon-chevron-right"></i> Collapse</a></li>
+          <li><a href="#carousel"><i class="rock-icon-chevron-right"></i> Carousel</a></li>
+          <li><a href="#typeahead"><i class="rock-icon-chevron-right"></i> Typeahead</a></li>
+          <li><a href="#affix"><i class="rock-icon-chevron-right"></i> Affix</a></li>
         </ul>
       </div>
       <div class="rock-span9">
@@ -119,16 +119,16 @@
           <p>You can use all Rockskeleton plugins purely through the markup API without writing a single line of JavaScript. This is Rockskeleton's first class API and should be your first consideration when using a plugin.</p>
 
           <p>That said, rock-in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the body namespaced with `'data-api'`. This looks like this:
-          <pre class="prettyprint linenums">$('body').off('.data-api')</pre>
+          <pre class="rock-prettyprint linenums">$('body').off('.data-api')</pre>
 
           <p>Alternatively, to target a specific plugin, just rock-include the plugin's name as a namespace along with the data-api namespace like this:</p>
-          <pre class="prettyprint linenums">$('body').off('.rock-alert.data-api')</pre>
+          <pre class="rock-prettyprint linenums">$('body').off('.rock-alert.data-api')</pre>
 
           <h3>Programmatic API</h3>
           <p>We also believe you should be able to use all Rockskeleton plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
-          <pre class="prettyprint linenums">$(".rock-button.danger").button("toggle").addClass("rock-fat")</pre>
+          <pre class="rock-prettyprint linenums">$(".rock-button.danger").button("toggle").addClass("rock-fat")</pre>
           <p>All methods should accept an optional options object, a string which targets a particular method, or nothing (which rock-initiates a plugin with default behavior):</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 $("#myModal").rock-modal()                       // rock-initialized with defaults
 $("#myModal").rock-modal({ keyboard: false })   // rock-initialized with no keyboard
 $("#myModal").rock-modal('show')                // rock-initializes and rock-invokes show immediately</p>
@@ -138,7 +138,7 @@ $("#myModal").rock-modal('show')                // rock-initializes and rock-inv
           <h3>No Conflict</h3>
           <p>Sometimes it is necessary to use Rockskeleton plugins with other UI frameworks. In these circumstances,  namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the plugin you wish to revert the value of.</p>
 
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 var rockskeletonButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
 $.fn.rockskeletonBtn = rockskeletonButton            // give $().rockskeletonBtn the rockskeleton functionality
 </pre>
@@ -146,7 +146,7 @@ $.fn.rockskeletonBtn = rockskeletonButton            // give $().rockskeletonBtn
           <h3>Events</h3>
           <p>Rockskeleton provides custom events for most plugin's unique actions. Generally, these come rock-in an rock-infinitive and past participle form - where the rock-infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is trigger on the completion of an action.</p>
           <p>All rock-infinitive events provide preventDefault functionality. This provides the ability to stop the execution of an action before it starts.</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 $('#myModal').on('show', function (e) {
     if (!data) return e.preventDefault() // stops modal from being shown
 })
@@ -189,22 +189,22 @@ $('#myModal').on('show', function (e) {
 
           <h3>Static example</h3>
           <p>A rendered modal with header, body, and set of actions rock-in the footer.</p>
-          <div class="bs-docs-example" style="background-color: #f5f5f5;">
-            <div class="modal" style="position: relative; top: auto; left: auto; right: auto; margin: 0 auto 20px; z-index: 1; max-width: 100%;">
-              <div class="modal-header">
+          <div class="rock-bs-docs-example" style="background-color: #f5f5f5;">
+            <div class="rock-modal" style="position: relative; top: auto; left: auto; right: auto; margin: 0 auto 20px; z-index: 1; max-width: 100%;">
+              <div class="rock-modal-header">
                 <button type="button" class="rock-close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>Modal header</h3>
               </div>
-              <div class="modal-body">
+              <div class="rock-modal-body">
                 <p>One fine body&hellip;</p>
               </div>
-              <div class="modal-footer">
+              <div class="rock-modal-footer">
                 <a href="#" class="rock-button">Close</a>
                 <a href="#" class="rock-button rock-button-primary">Save changes</a>
               </div>
             </div>
           </div>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;div class="rock-modal rock-hide rock-fade"&gt;
   &lt;div class="rock-modal-header"&gt;
     &lt;button type="button" class="rock-close" data-dismiss="modal" aria-hidden="true"&gt;&amp;times;&lt;/button&gt;
@@ -213,7 +213,7 @@ $('#myModal').on('show', function (e) {
   &lt;div class="rock-modal-body"&gt;
     &lt;p&gt;One fine body&hellip;&lt;/p&gt;
   &lt;/div&gt;
-  &lt;div class="modal-footer"&gt;
+  &lt;div class="rock-modal-footer"&gt;
     &lt;a href="#" class="rock-button"&gt;Close&lt;/a&gt;
     &lt;a href="#" class="rock-button rock-button-primary"&gt;Save changes&lt;/a&gt;
   &lt;/div&gt;
@@ -224,11 +224,11 @@ $('#myModal').on('show', function (e) {
           <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and rock-fade rock-in from the top of the page.</p>
           <!-- sample modal content -->
           <div id="myModal" class="rock-modal rock-hide rock-fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-header">
+            <div class="rock-modal-header">
               <button type="button" class="rock-close" data-dismiss="modal" aria-hidden="true">&times;</button>
               <h3 id="myModalLabel">Modal Heading</h3>
             </div>
-            <div class="modal-body">
+            <div class="rock-modal-body">
               <h4>Text rock-in a modal</h4>
               <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem.</p>
 
@@ -236,7 +236,7 @@ $('#myModal').on('show', function (e) {
               <p>This <a href="#" role="button" class="rock-button popover-test" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">button</a> should trigger a popover on click.</p>
 
               <h4>Tooltips rock-in a modal</h4>
-              <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> should have tooltips on hover.</p>
+              <p><a href="#" class="rock-tooltip-test" title="Tooltip">This link</a> and <a href="#" class="rock-tooltip-test" title="Tooltip">that link</a> should have tooltips on hover.</p>
 
               <hr>
 
@@ -249,28 +249,28 @@ $('#myModal').on('show', function (e) {
               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
               <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
             </div>
-            <div class="modal-footer">
+            <div class="rock-modal-footer">
               <button class="rock-button" data-dismiss="modal">Close</button>
               <button class="rock-button rock-button-primary">Save changes</button>
             </div>
           </div>
-          <div class="bs-docs-example" style="padding-bottom: 24px;">
+          <div class="rock-bs-docs-example" style="padding-bottom: 24px;">
             <a data-toggle="modal" href="#myModal" class="rock-button rock-button-primary rock-button-large">Launch demo modal</a>
           </div>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt!-- Button to trigger modal --&gt;
 &lt;a href="#myModal" role="button" class="rock-button" data-toggle="modal"&gt;Launch demo modal&lt;/a&gt;
 
 &lt!-- Modal --&gt;
-&lt;div id="myModal" class="modal rock-hide rock-fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"&gt;
-  &lt;div class="modal-header"&gt;
+&lt;div id="myModal" class="rock-modal rock-hide rock-fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"&gt;
+  &lt;div class="rock-modal-header"&gt;
     &lt;button type="button" class="rock-close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
     &lt;h3 id="myModalLabel"&gt;Modal header&lt;/h3&gt;
   &lt;/div&gt;
-  &lt;div class="modal-body"&gt;
+  &lt;div class="rock-modal-body"&gt;
     &lt;p&gt;One fine body&hellip;&lt;/p&gt;
   &lt;/div&gt;
-  &lt;div class="modal-footer"&gt;
+  &lt;div class="rock-modal-footer"&gt;
     &lt;button class="rock-button" data-dismiss="modal" aria-hidden="true"&gt;Close&lt;/button&gt;
     &lt;button class="rock-button rock-button-primary"&gt;Save changes&lt;/button&gt;
   &lt;/div&gt;
@@ -278,18 +278,18 @@ $('#myModal').on('show', function (e) {
 </pre>
 
 
-          <hr class="bs-docs-separator">
+          <hr class="rock-bs-docs-separator">
 
 
           <h2>Usage</h2>
 
           <h3>Via data attributes</h3>
           <p>Activate a modal without writing JavaScript. Set <code>data-toggle="modal"</code> on a controller element, like a button, along with a <code>data-target="#foo"</code> or <code>href="#foo"</code> to target a specific modal to toggle.</p>
-          <pre class="prettyprint linenums">&lt;button type="button" data-toggle="modal" data-target="#myModal"&gt;Launch modal&lt;/button&gt;</pre>
+          <pre class="rock-prettyprint linenums">&lt;button type="button" data-toggle="modal" data-target="#myModal"&gt;Launch modal&lt;/button&gt;</pre>
 
           <h3>Via JavaScript</h3>
           <p>Call a modal with id <code>myModal</code> with a single line of JavaScript:</p>
-          <pre class="prettyprint linenums">$('#myModal').rock-modal(options)</pre>
+          <pre class="rock-prettyprint linenums">$('#myModal').rock-modal(options)</pre>
 
           <h3>Options</h3>
           <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-backdrop=""</code>.</p>
@@ -326,7 +326,7 @@ $('#myModal').on('show', function (e) {
                <td>path</td>
                <td>false</td>
                <td><p>If a remote url is provided, content will be loaded via jQuery's <code>load</code> method and rock-injected rock-into the <code>.rock-modal-body</code>. If you're using the data api, you may alternatively use the <code>href</code> tag to specify the remote source. An example of this is shown below:</p>
-              <pre class="prettyprint linenums"><code>&lt;a data-toggle="modal" href="remote.html" data-target="#modal"&gt;click me&lt;/a&gt;</code></pre></td>
+              <pre class="rock-prettyprint linenums"><code>&lt;a data-toggle="modal" href="remote.html" data-target="#modal"&gt;click me&lt;/a&gt;</code></pre></td>
              </tr>
             </tbody>
           </table>
@@ -334,20 +334,20 @@ $('#myModal').on('show', function (e) {
           <h3>Methods</h3>
           <h4>.rock-modal(options)</h4>
           <p>Activates your content as a modal. Accepts an optional options <code>object</code>.</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 $('#myModal').rock-modal({
   keyboard: false
 })
 </pre>
           <h4>.rock-modal('toggle')</h4>
           <p>Manually toggles a modal.</p>
-          <pre class="prettyprint linenums">$('#myModal').rock-modal('toggle')</pre>
+          <pre class="rock-prettyprint linenums">$('#myModal').rock-modal('toggle')</pre>
           <h4>.rock-modal('show')</h4>
           <p>Manually opens a modal.</p>
-          <pre class="prettyprint linenums">$('#myModal').rock-modal('show')</pre>
+          <pre class="rock-prettyprint linenums">$('#myModal').rock-modal('show')</pre>
           <h4>.rock-modal('hide')</h4>
           <p>Manually hides a modal.</p>
-          <pre class="prettyprint linenums">$('#myModal').rock-modal('hide')</pre>
+          <pre class="rock-prettyprint linenums">$('#myModal').rock-modal('hide')</pre>
           <h3>Events</h3>
           <p>Rockskeleton's modal class exposes a few events for hooking rock-into modal functionality.</p>
           <table class="rock-table rock-table-bordered rock-table-striped">
@@ -376,7 +376,7 @@ $('#myModal').rock-modal({
              </tr>
             </tbody>
           </table>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 $('#myModal').on('hidden', function () {
   // do something…
 })
@@ -397,7 +397,7 @@ $('#myModal').on('hidden', function () {
           <p>Add dropdown menus to nearly anything with this simple plugin, rock-including the rock-navbar, tabs, and pills.</p>
 
           <h3>Within a rock-navbar</h3>
-          <div class="bs-docs-example">
+          <div class="rock-bs-docs-example">
             <div id="rock-navbar-example" class="rock-navbar rock-navbar-static">
               <div class="rock-navbar-inner">
                 <div class="rock-container" style="width: auto;">
@@ -442,7 +442,7 @@ $('#myModal').on('hidden', function () {
           </div>
 
           <h3>Within tabs</h3>
-          <div class="bs-docs-example">
+          <div class="rock-bs-docs-example">
             <ul class="rock-nav rock-nav-pills">
               <li class="rock-active"><a href="#">Regular link</a></li>
               <li class="rock-dropdown">
@@ -479,14 +479,14 @@ $('#myModal').on('hidden', function () {
           </div>
 
 
-          <hr class="bs-docs-separator">
+          <hr class="rock-bs-docs-separator">
 
 
           <h2>Usage</h2>
 
           <h3>Via data attributes</h3>
           <p>Add <code>data-toggle="dropdown"</code> to a link or button to toggle a dropdown.</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;div class="rock-dropdown"&gt;
   &lt;a class="rock-dropdown-toggle" data-toggle="dropdown" href="#"&gt;Dropdown trigger&lt;/a&gt;
   &lt;ul class="rock-dropdown-menu" role="menu" aria-labelledby="dLabel"&gt;
@@ -495,7 +495,7 @@ $('#myModal').on('hidden', function () {
 &lt;/div&gt;
 </pre>
           <p>To keep URLs rock-intact, use the <code>data-target</code> attribute rock-instead of <code>href="#"</code>.</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;div class="rock-dropdown"&gt;
   &lt;a class="rock-dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html"&gt;
     Dropdown
@@ -509,7 +509,7 @@ $('#myModal').on('hidden', function () {
 
           <h3>Via JavaScript</h3>
           <p>Call the dropdowns via JavaScript:</p>
-          <pre class="prettyprint linenums">$('.rock-dropdown-toggle').rock-dropdown()</pre>
+          <pre class="rock-prettyprint linenums">$('.rock-dropdown-toggle').rock-dropdown()</pre>
 
           <h3>Options</h3>
           <p><em>None</em></p>
@@ -531,7 +531,7 @@ $('#myModal').on('hidden', function () {
 
           <h2>Example rock-in rock-navbar</h2>
           <p>The ScrollSpy plugin is for automatically updating nav targets based on scroll position. Scroll the area below the rock-navbar and watch the rock-active class change. The dropdown sub items will be highlighted as well.</p>
-          <div class="bs-docs-example">
+          <div class="rock-bs-docs-example">
             <div id="rock-navbarExample" class="rock-navbar rock-navbar-static">
               <div class="rock-navbar-inner">
                 <div class="rock-container" style="width: auto;">
@@ -552,7 +552,7 @@ $('#myModal').on('hidden', function () {
                 </div>
               </div>
             </div>
-            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" class="scrollspy-example">
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" class="rock-scrollspy-example">
               <h4 id="fat">@fat</h4>
               <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
               <h4 id="mdo">@mdo</h4>
@@ -569,18 +569,18 @@ $('#myModal').on('hidden', function () {
           </div>
 
 
-          <hr class="bs-docs-separator">
+          <hr class="rock-bs-docs-separator">
 
 
           <h2>Usage</h2>
 
           <h3>Via data attributes</h3>
           <p>To easily add scrollspy behavior to your topbar navigation, just add <code>data-spy="scroll"</code> to the element you want to spy on (most typically this would be the body) and <code>data-target=".rock-navbar"</code> to select which nav to use. You'll want to use scrollspy with a <code>.rock-nav</code> component.</p>
-          <pre class="prettyprint linenums">&lt;body data-spy="scroll" data-target=".rock-navbar"&gt;...&lt;/body&gt;</pre>
+          <pre class="rock-prettyprint linenums">&lt;body data-spy="scroll" data-target=".rock-navbar"&gt;...&lt;/body&gt;</pre>
 
           <h3>Via JavaScript</h3>
           <p>Call the scrollspy via JavaScript:</p>
-          <pre class="prettyprint linenums">$('#navbar').scrollspy()</pre>
+          <pre class="rock-prettyprint linenums">$('#navbar').scrollspy()</pre>
 
           <div class="rock-alert rock-alert-info">
             <strong>Heads up!</strong>
@@ -590,7 +590,7 @@ $('#myModal').on('hidden', function () {
           <h3>Methods</h3>
           <h4>.scrollspy('refresh')</h4>
           <p>When using scrollspy rock-in conjunction with adding or removing of elements from the DOM, you'll need to call the refresh method like so:</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 $('[data-spy="scroll"]').each(function () {
   var $spy = $(this).scrollspy('refresh')
 });
@@ -646,7 +646,7 @@ $('[data-spy="scroll"]').each(function () {
 
           <h2>Example tabs</h2>
           <p>Add quick, dynamic tab functionality to transition through panes of local content, even via dropdown menus.</p>
-          <div class="bs-docs-example">
+          <div class="rock-bs-docs-example">
             <ul id="myTab" class="rock-nav rock-nav-tabs">
               <li class="rock-active"><a href="#home" data-toggle="tab">Home</a></li>
               <li><a href="#profile" data-toggle="tab">Profile</a></li>
@@ -675,18 +675,18 @@ $('[data-spy="scroll"]').each(function () {
           </div>
 
 
-          <hr class="bs-docs-separator">
+          <hr class="rock-bs-docs-separator">
 
 
           <h2>Usage</h2>
           <p>Enable tabbable tabs via JavaScript (each tab needs to be activated rock-individually):</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 $('#myTab a').click(function (e) {
   e.preventDefault();
   $(this).rock-tab('show');
 })</pre>
           <p>You can activate rock-individual tabs rock-in several ways:</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 $('#myTab a[href="#profile"]').rock-tab('show'); // Select tab by name
 $('#myTab a:first').rock-tab('show'); // Select first tab
 $('#myTab a:last').rock-tab('show'); // Select last tab
@@ -695,7 +695,7 @@ $('#myTab li:eq(2) a').rock-tab('show'); // Select third tab (0-indexed)
 
           <h3>Markup</h3>
           <p>You can activate a tab or pill navigation without writing any JavaScript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code> on an element. Adding the <code>nav</code> and <code>nav-tabs</code> classes to the tab <code>ul</code> will apply the Rockskeleton tab styling.</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;ul class="rock-nav rock-nav-tabs"&gt;
   &lt;li&gt;&lt;a href="#home" data-toggle="tab"&gt;Home&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="#profile" data-toggle="tab"&gt;Profile&lt;/a&gt;&lt;/li&gt;
@@ -708,7 +708,7 @@ $('#myTab li:eq(2) a').rock-tab('show'); // Select third tab (0-indexed)
           <p>
             Activates a tab element and content container. Tab should have either a <code>data-target</code> or an <code>href</code> targeting a container node rock-in the DOM.
           </p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;ul class="rock-nav rock-nav-tabs" id="myTab"&gt;
   &lt;li class="rock-active"&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="#profile"&gt;Profile&lt;/a&gt;&lt;/li&gt;
@@ -749,7 +749,7 @@ $('#myTab li:eq(2) a').rock-tab('show'); // Select third tab (0-indexed)
              </tr>
             </tbody>
           </table>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 $('a[data-toggle="tab"]').on('shown', function (e) {
   e.target // activated tab
   e.relatedTarget // previous tab
@@ -770,14 +770,14 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
           <p>Inspired by the excellent jQuery.tipsy plugin written by Jason Frame; Tooltips are an updated version, which don't rely on images, use CSS3 for animations, and data-attributes for local title storage.</p>
           <p>For performance reasons, the tooltip and popover data-apis are opt rock-in, meaning <strong>you must rock-initialize them yourself</strong>.</p>
           <p>Hover over the links below to see tooltips:</p>
-          <div class="bs-docs-example tooltip-demo">
+          <div class="rock-bs-docs-example tooltip-demo">
             <p class="rock-muted" style="margin-bottom: 0;">Tight pants next level keffiyeh <a href="#" data-toggle="tooltip" title="Default tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" data-toggle="tooltip" title="Another tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="#" data-toggle="tooltip" title="A much longer tooltip belongs right here to demonstrate the max-width we apply.">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="#" data-toggle="tooltip" title="The last tip!">last handle</a> freegan cred raw denim single-origin coffee viral.
             </p>
           </div>
 
           <h3>Four directions</h3>
-          <div class="bs-docs-example tooltip-demo">
-            <ul class="bs-docs-tooltip-examples">
+          <div class="rock-bs-docs-example tooltip-demo">
+            <ul class="rock-bs-docs-tooltip-examples">
               <li><a href="#" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</a></li>
               <li><a href="#" data-toggle="tooltip" data-placement="rock-right" title="Tooltip on right">Tooltip on right</a></li>
               <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</a></li>
@@ -789,12 +789,12 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
           <h3>Tooltips rock-in rock-input groups</h3>
           <p>When using tooltips and popovers with the Rockskeleton rock-input groups, you'll have to set the <code>container</code> (documented below) option to avoid unwanted side effects.</p>
 
-          <hr class="bs-docs-separator">
+          <hr class="rock-bs-docs-separator">
 
 
           <h2>Usage</h2>
           <p>Trigger the tooltip via JavaScript:</p>
-          <pre class="prettyprint linenums">$('#example').rock-tooltip(options)</pre>
+          <pre class="rock-prettyprint linenums">$('#example').rock-tooltip(options)</pre>
 
           <h3>Options</h3>
           <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-animation=""</code>.</p>
@@ -870,23 +870,23 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
           </div>
 
           <h3>Markup</h3>
-          <pre class="prettyprint linenums">&lt;a href="#" data-toggle="tooltip" title="first tooltip"&gt;hover over me&lt;/a&gt;</pre>
+          <pre class="rock-prettyprint linenums">&lt;a href="#" data-toggle="tooltip" title="first tooltip"&gt;hover over me&lt;/a&gt;</pre>
 
           <h3>Methods</h3>
           <h4>$().rock-tooltip(options)</h4>
           <p>Attaches a tooltip handler to an element collection.</p>
           <h4>.rock-tooltip('show')</h4>
           <p>Reveals an element's tooltip.</p>
-          <pre class="prettyprint linenums">$('#element').rock-tooltip('show')</pre>
+          <pre class="rock-prettyprint linenums">$('#element').rock-tooltip('show')</pre>
           <h4>.rock-tooltip('hide')</h4>
           <p>Hides an element's tooltip.</p>
-          <pre class="prettyprint linenums">$('#element').rock-tooltip('hide')</pre>
+          <pre class="rock-prettyprint linenums">$('#element').rock-tooltip('hide')</pre>
           <h4>.rock-tooltip('toggle')</h4>
           <p>Toggles an element's tooltip.</p>
-          <pre class="prettyprint linenums">$('#element').rock-tooltip('toggle')</pre>
+          <pre class="rock-prettyprint linenums">$('#element').rock-tooltip('toggle')</pre>
           <h4>.rock-tooltip('destroy')</h4>
           <p>Hides and destroys an element's tooltip.</p>
-          <pre class="prettyprint linenums">$('#element').rock-tooltip('destroy')</pre>
+          <pre class="rock-prettyprint linenums">$('#element').rock-tooltip('destroy')</pre>
         </section>
 
 
@@ -903,35 +903,35 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
 
         <h3>Static popover</h3>
         <p>Four options are available: top, right, bottom, and left aligned.</p>
-        <div class="bs-docs-example bs-docs-example-popover">
-          <div class="popover top">
-            <div class="arrow"></div>
-            <h3 class="popover-title">Popover top</h3>
-            <div class="popover-content">
+        <div class="rock-bs-docs-example bs-docs-example-popover">
+          <div class="rock-popover top">
+            <div class="rock-arrow"></div>
+            <h3 class="rock-popover-title">Popover top</h3>
+            <div class="rock-popover-content">
               <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
             </div>
           </div>
 
-          <div class="popover right">
-            <div class="arrow"></div>
-            <h3 class="popover-title">Popover right</h3>
-            <div class="popover-content">
+          <div class="rock-popover right">
+            <div class="rock-arrow"></div>
+            <h3 class="rock-popover-title">Popover right</h3>
+            <div class="rock-popover-content">
               <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
             </div>
           </div>
 
-          <div class="popover bottom">
-            <div class="arrow"></div>
-            <h3 class="popover-title">Popover bottom</h3>
-            <div class="popover-content">
+          <div class="rock-popover bottom">
+            <div class="rock-arrow"></div>
+            <h3 class="rock-popover-title">Popover bottom</h3>
+            <div class="rock-popover-content">
               <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
             </div>
           </div>
 
-          <div class="popover left">
-            <div class="arrow"></div>
-            <h3 class="popover-title">Popover left</h3>
-            <div class="popover-content">
+          <div class="rock-popover left">
+            <div class="rock-arrow"></div>
+            <h3 class="rock-popover-title">Popover left</h3>
+            <div class="rock-popover-content">
               <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
             </div>
           </div>
@@ -941,13 +941,13 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
         <p>No markup shown as popovers are generated from JavaScript and content within a <code>data</code> attribute.</p>
 
         <h3>Live demo</h3>
-        <div class="bs-docs-example" style="padding-bottom: 24px;">
+        <div class="rock-bs-docs-example" style="padding-bottom: 24px;">
           <a href="#" class="rock-button rock-button-large rock-button-danger" data-toggle="popover" title="A Title" data-content="And here's some amazing content. It's very engaging. right?">Click to toggle popover</a>
         </div>
 
         <h4>Four directions</h4>
-        <div class="bs-docs-example tooltip-demo">
-          <ul class="bs-docs-tooltip-examples">
+        <div class="rock-bs-docs-example tooltip-demo">
+          <ul class="rock-bs-docs-tooltip-examples">
             <li><a href="#" class="rock-button" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top">Popover on top</a></li>
             <li><a href="#" class="rock-button" data-toggle="popover" data-placement="rock-right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on right">Popover on right</a></li>
             <li><a href="#" class="rock-button" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on bottom">Popover on bottom</a></li>
@@ -956,12 +956,12 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
         </div>
 
 
-        <hr class="bs-docs-separator">
+        <hr class="rock-bs-docs-separator">
 
 
         <h2>Usage</h2>
         <p>Enable popovers via JavaScript:</p>
-        <pre class="prettyprint linenums">$('#example').rock-popover(options)</pre>
+        <pre class="rock-prettyprint linenums">$('#example').rock-popover(options)</pre>
 
         <h3>Options</h3>
         <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-animation=""</code>.</p>
@@ -1050,16 +1050,16 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
         <p>Initializes popovers for an element collection.</p>
         <h4>.rock-popover('show')</h4>
         <p>Reveals an elements popover.</p>
-        <pre class="prettyprint linenums">$('#element').rock-popover('show')</pre>
+        <pre class="rock-prettyprint linenums">$('#element').rock-popover('show')</pre>
         <h4>.rock-popover('hide')</h4>
         <p>Hides an elements popover.</p>
-        <pre class="prettyprint linenums">$('#element').rock-popover('hide')</pre>
+        <pre class="rock-prettyprint linenums">$('#element').rock-popover('hide')</pre>
         <h4>.rock-popover('toggle')</h4>
         <p>Toggles an elements popover.</p>
-        <pre class="prettyprint linenums">$('#element').rock-popover('toggle')</pre>
+        <pre class="rock-prettyprint linenums">$('#element').rock-popover('toggle')</pre>
         <h4>.rock-popover('destroy')</h4>
         <p>Hides and destroys an element's popover.</p>
-        <pre class="prettyprint linenums">$('#element').rock-popover('destroy')</pre>
+        <pre class="rock-prettyprint linenums">$('#element').rock-popover('destroy')</pre>
       </section>
 
 
@@ -1074,14 +1074,14 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
 
         <h2>Example alerts</h2>
         <p>Add dismiss functionality to all alert messages with this plugin.</p>
-        <div class="bs-docs-example">
+        <div class="rock-bs-docs-example">
           <div class="rock-alert rock-fade rock-in">
             <button type="button" class="rock-close" data-dismiss="rock-alert">&times;</button>
             <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
           </div>
         </div>
 
-        <div class="bs-docs-example">
+        <div class="rock-bs-docs-example">
           <div class="rock-alert rock-alert-block rock-alert-error rock-fade rock-in">
             <button type="button" class="rock-close" data-dismiss="rock-alert">&times;</button>
             <h4 class="rock-alert-heading">Oh snap! You got an error!</h4>
@@ -1093,23 +1093,23 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
         </div>
 
 
-        <hr class="bs-docs-separator">
+        <hr class="rock-bs-docs-separator">
 
 
         <h2>Usage</h2>
         <p>Enable dismissal of an alert via JavaScript:</p>
-        <pre class="prettyprint linenums">$(".rock-alert").rock-alert()</pre>
+        <pre class="rock-prettyprint linenums">$(".rock-alert").rock-alert()</pre>
 
         <h3>Markup</h3>
         <p>Just add <code>data-dismiss="rock-alert"</code> to your close button to automatically give an alert close functionality.</p>
-        <pre class="prettyprint linenums">&lt;a class="rock-close" data-dismiss="rock-alert" href="#"&gt;&amp;times;&lt;/a&gt;</pre>
+        <pre class="rock-prettyprint linenums">&lt;a class="rock-close" data-dismiss="rock-alert" href="#"&gt;&amp;times;&lt;/a&gt;</pre>
 
         <h3>Methods</h3>
         <h4>$().rock-alert()</h4>
         <p>Wraps all alerts with close functionality. To have your alerts animate out when closed, make sure they have the <code>.rock-fade</code> and <code>.in</code> class already applied to them.</p>
         <h4>.rock-alert('close')</h4>
         <p>Closes an alert.</p>
-        <pre class="prettyprint linenums">$(".rock-alert").rock-alert('close')</pre>
+        <pre class="rock-prettyprint linenums">$(".rock-alert").rock-alert('close')</pre>
 
 
         <h3>Events</h3>
@@ -1132,7 +1132,7 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
            </tr>
           </tbody>
         </table>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 $('#my-alert').bind('closed', function () {
   // do something…
 })
@@ -1153,30 +1153,30 @@ $('#my-alert').bind('closed', function () {
 
             <h4>Stateful</h4>
             <p>Add <code>data-loading-text="Loading..."</code> to use a loading state on a button.</p>
-            <div class="bs-docs-example" style="padding-bottom: 24px;">
+            <div class="rock-bs-docs-example" style="padding-bottom: 24px;">
               <button type="button" id="fat-rock-button" data-loading-text="loading..." class="rock-button rock-button-primary">
                 Loading state
               </button>
             </div>
-            <pre class="prettyprint linenums">&lt;button type="button" class="rock-button rock-button-primary" data-loading-text="Loading..."&gt;Loading state&lt;/button&gt;</pre>
+            <pre class="rock-prettyprint linenums">&lt;button type="button" class="rock-button rock-button-primary" data-loading-text="Loading..."&gt;Loading state&lt;/button&gt;</pre>
 
             <h4>Single toggle</h4>
             <p>Add <code>data-toggle="button"</code> to activate toggling on a single button.</p>
-            <div class="bs-docs-example" style="padding-bottom: 24px;">
+            <div class="rock-bs-docs-example" style="padding-bottom: 24px;">
               <button type="button" class="rock-button rock-button-primary" data-toggle="button">Single Toggle</button>
             </div>
-            <pre class="prettyprint linenums">&lt;button type="button" class="rock-button rock-button-primary" data-toggle="button"&gt;Single Toggle&lt;/button&gt;</pre>
+            <pre class="rock-prettyprint linenums">&lt;button type="button" class="rock-button rock-button-primary" data-toggle="button"&gt;Single Toggle&lt;/button&gt;</pre>
 
             <h4>Checkbox</h4>
             <p>Add <code>data-toggle="buttons-checkbox"</code> for checkbox style toggling on rock-button-group.</p>
-            <div class="bs-docs-example" style="padding-bottom: 24px;">
+            <div class="rock-bs-docs-example" style="padding-bottom: 24px;">
               <div class="rock-button-group" data-toggle="buttons-checkbox">
                 <button type="button" class="rock-button rock-button-primary">Left</button>
                 <button type="button" class="rock-button rock-button-primary">Middle</button>
                 <button type="button" class="rock-button rock-button-primary">Right</button>
               </div>
             </div>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;div class="rock-button-group" data-toggle="buttons-checkbox"&gt;
   &lt;button type="button" class="rock-button rock-button-primary"&gt;Left&lt;/button&gt;
   &lt;button type="button" class="rock-button rock-button-primary"&gt;Middle&lt;/button&gt;
@@ -1186,14 +1186,14 @@ $('#my-alert').bind('closed', function () {
 
             <h4>Radio</h4>
             <p>Add <code>data-toggle="buttons-radio"</code> for radio style toggling on rock-button-group.</p>
-            <div class="bs-docs-example" style="padding-bottom: 24px;">
+            <div class="rock-bs-docs-example" style="padding-bottom: 24px;">
               <div class="rock-button-group" data-toggle="buttons-radio">
                 <button type="button" class="rock-button rock-button-primary">Left</button>
                 <button type="button" class="rock-button rock-button-primary">Middle</button>
                 <button type="button" class="rock-button rock-button-primary">Right</button>
               </div>
             </div>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;div class="rock-button-group" data-toggle="buttons-radio"&gt;
   &lt;button type="button" class="rock-button rock-button-primary"&gt;Left&lt;/button&gt;
   &lt;button type="button" class="rock-button rock-button-primary"&gt;Middle&lt;/button&gt;
@@ -1202,12 +1202,12 @@ $('#my-alert').bind('closed', function () {
 </pre>
 
 
-            <hr class="bs-docs-separator">
+            <hr class="rock-bs-docs-separator">
 
 
             <h2>Usage</h2>
             <p>Enable buttons via JavaScript:</p>
-            <pre class="prettyprint linenums">$('.rock-nav-tabs').button()</pre>
+            <pre class="rock-prettyprint linenums">$('.rock-nav-tabs').button()</pre>
 
             <h3>Markup</h3>
             <p>Data attributes are rock-integral to the button plugin. Check out the example code below for the various markup types.</p>
@@ -1222,11 +1222,11 @@ $('#my-alert').bind('closed', function () {
               <strong>Heads up!</strong>
               You can enable auto toggling of a button by using the <code>data-toggle</code> attribute.
             </div>
-            <pre class="prettyprint linenums">&lt;button type="button" class="rock-button" data-toggle="button" &gt;…&lt;/button&gt;</pre>
+            <pre class="rock-prettyprint linenums">&lt;button type="button" class="rock-button" data-toggle="button" &gt;…&lt;/button&gt;</pre>
             <h4>$().button('loading')</h4>
             <p>Sets button state to loading - disables button and swaps text to loading text. Loading text should be defined on the button element using the data attribute <code>data-loading-text</code>.
             </p>
-            <pre class="prettyprint linenums">&lt;button type="button" class="rock-button" data-loading-text="loading stuff..." &gt;...&lt;/button&gt;</pre>
+            <pre class="rock-prettyprint linenums">&lt;button type="button" class="rock-button" data-loading-text="loading stuff..." &gt;...&lt;/button&gt;</pre>
             <div class="rock-alert rock-alert-info">
               <strong>Heads up!</strong>
               <a href="https://github.com/meggistorvard/rockskeleton/issues/793">Firefox persists the disabled state across page loads</a>. A workaround for this is to use <code>autocomplete="off"</code>.
@@ -1235,7 +1235,7 @@ $('#my-alert').bind('closed', function () {
             <p>Resets button state - swaps text to original text.</p>
             <h4>$().button(string)</h4>
             <p>Resets button state - swaps text to any data defined text state.</p>
-<pre class="prettyprint linenums">&lt;button type="button" class="rock-button" data-complete-text="finished!" &gt;...&lt;/button&gt;
+<pre class="rock-prettyprint linenums">&lt;button type="button" class="rock-button" data-complete-text="finished!" &gt;...&lt;/button&gt;
 &lt;script&gt;
   $('.rock-button').button('complete')
 &lt;/script&gt;
@@ -1258,68 +1258,68 @@ $('#my-alert').bind('closed', function () {
             <h2>Example accordion</h2>
             <p>Using the rock-collapse plugin, we built a simple accordion style widget:</p>
 
-            <div class="bs-docs-example">
-              <div class="accordion" id="accordion2">
-                <div class="accordion-group">
-                  <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+            <div class="rock-bs-docs-example">
+              <div class="rock-accordion" id="accordion2">
+                <div class="rock-accordion-group">
+                  <div class="rock-accordion-heading">
+                    <a class="rock-accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
                       Collapsible Group Item #1
                     </a>
                   </div>
-                  <div id="collapseOne" class="accordion-body rock-collapse rock-in">
-                    <div class="accordion-inner">
+                  <div id="collapseOne" class="rock-accordion-body rock-collapse rock-in">
+                    <div class="rock-accordion-inner">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                     </div>
                   </div>
                 </div>
-                <div class="accordion-group">
-                  <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                <div class="rock-accordion-group">
+                  <div class="rock-accordion-heading">
+                    <a class="rock-accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                       Collapsible Group Item #2
                     </a>
                   </div>
-                  <div id="collapseTwo" class="accordion-body rock-collapse">
-                    <div class="accordion-inner">
+                  <div id="collapseTwo" class="rock-accordion-body rock-collapse">
+                    <div class="rock-accordion-inner">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                     </div>
                   </div>
                 </div>
-                <div class="accordion-group">
-                  <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                <div class="rock-accordion-group">
+                  <div class="rock-accordion-heading">
+                    <a class="rock-accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
                       Collapsible Group Item #3
                     </a>
                   </div>
-                  <div id="collapseThree" class="accordion-body rock-collapse">
-                    <div class="accordion-inner">
+                  <div id="collapseThree" class="rock-accordion-body rock-collapse">
+                    <div class="rock-accordion-inner">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-<pre class="prettyprint linenums">
-&lt;div class="accordion" id="accordion2"&gt;
-  &lt;div class="accordion-group"&gt;
-    &lt;div class="accordion-heading"&gt;
-      &lt;a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"&gt;
+<pre class="rock-prettyprint linenums">
+&lt;div class="rock-accordion" id="accordion2"&gt;
+  &lt;div class="rock-accordion-group"&gt;
+    &lt;div class="rock-accordion-heading"&gt;
+      &lt;a class="rock-accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"&gt;
         Collapsible Group Item #1
       &lt;/a&gt;
     &lt;/div&gt;
-    &lt;div id="collapseOne" class="accordion-body rock-collapse rock-in"&gt;
-      &lt;div class="accordion-inner"&gt;
+    &lt;div id="collapseOne" class="rock-accordion-body rock-collapse rock-in"&gt;
+      &lt;div class="rock-accordion-inner"&gt;
         Anim pariatur cliche...
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class="accordion-group"&gt;
-    &lt;div class="accordion-heading"&gt;
-      &lt;a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"&gt;
+  &lt;div class="rock-accordion-group"&gt;
+    &lt;div class="rock-accordion-heading"&gt;
+      &lt;a class="rock-accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"&gt;
         Collapsible Group Item #2
       &lt;/a&gt;
     &lt;/div&gt;
-    &lt;div id="collapseTwo" class="accordion-body rock-collapse"&gt;
-      &lt;div class="accordion-inner"&gt;
+    &lt;div id="collapseTwo" class="rock-accordion-body rock-collapse"&gt;
+      &lt;div class="rock-accordion-inner"&gt;
         Anim pariatur cliche...
       &lt;/div&gt;
     &lt;/div&gt;
@@ -1328,16 +1328,16 @@ $('#my-alert').bind('closed', function () {
 ...
 </pre>
             <p>You can also use the plugin without the accordion markup. Make a button toggle the expanding and collapsing of another element.</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;button type="button" class="rock-button rock-button-danger" data-toggle="collapse" data-target="#demo"&gt;
   simple collapsible
 &lt;/button&gt;
 
-&lt;div id="demo" class="collapse rock-in"&gt; … &lt;/div&gt;
+&lt;div id="demo" class="rock-collapse rock-in"&gt; … &lt;/div&gt;
 </pre>
 
 
-            <hr class="bs-docs-separator">
+            <hr class="rock-bs-docs-separator">
 
 
             <h2>Usage</h2>
@@ -1348,7 +1348,7 @@ $('#my-alert').bind('closed', function () {
 
             <h3>Via JavaScript</h3>
             <p>Enable manually with:</p>
-            <pre class="prettyprint linenums">$(".rock-collapse").rock-collapse()</pre>
+            <pre class="rock-prettyprint linenums">$(".rock-collapse").rock-collapse()</pre>
 
             <h3>Options</h3>
             <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-parent=""</code>.</p>
@@ -1381,7 +1381,7 @@ $('#my-alert').bind('closed', function () {
             <h3>Methods</h3>
             <h4>.rock-collapse(options)</h4>
             <p>Activates your content as a collapsible element. Accepts an optional options <code>object</code>.
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 $('#myCollapsible').rock-collapse({
   toggle: false
 })
@@ -1423,7 +1423,7 @@ $('#myCollapsible').rock-collapse({
                </tr>
               </tbody>
             </table>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 $('#myCollapsible').on('hidden', function () {
   // do something…
 })</pre>
@@ -1440,7 +1440,7 @@ $('#myCollapsible').on('hidden', function () {
 
             <h2>Example carousel</h2>
             <p>The slideshow below shows a generic plugin and component for cycling through elements like a carousel.</p>
-            <div class="bs-docs-example">
+            <div class="rock-bs-docs-example">
               <div id="myCarousel" class="rock-carousel slide">
                 <ol class="rock-carousel-indicators">
                   <li data-target="#myCarousel" data-slide-to="0" class="rock-active"></li>
@@ -1451,21 +1451,21 @@ $('#myCollapsible').on('hidden', function () {
                   <div class="rock-item rock-active">
                     <img src="resources/img/rockskeleton-mdo-sfmoma-01.jpg" alt="">
                     <div class="rock-carousel-caption">
-                      <h4>First Thumbnail label</h4>
+                      <h4>First Thumbnail rock-label</h4>
                       <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                     </div>
                   </div>
                   <div class="rock-item">
                     <img src="resources/img/rockskeleton-mdo-sfmoma-02.jpg" alt="">
                     <div class="rock-carousel-caption">
-                      <h4>Second Thumbnail label</h4>
+                      <h4>Second Thumbnail rock-label</h4>
                       <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                     </div>
                   </div>
                   <div class="rock-item">
                     <img src="resources/img/rockskeleton-mdo-sfmoma-03.jpg" alt="">
                     <div class="rock-carousel-caption">
-                      <h4>Third Thumbnail label</h4>
+                      <h4>Third Thumbnail rock-label</h4>
                       <p>Cras justo odio, dapibus ac facilisis rock-in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                     </div>
                   </div>
@@ -1474,7 +1474,7 @@ $('#myCollapsible').on('hidden', function () {
                 <a class="rock-right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
               </div>
             </div>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 &lt;div id="myCarousel" class="rock-carousel slide"&gt;
   &lt;ol class="rock-carousel-indicators"&gt
     &lt;li data-target="#myCarousel" data-slide-to="0" class="rock-active"&gt&lt;/li&gt
@@ -1499,7 +1499,7 @@ $('#myCollapsible').on('hidden', function () {
             </div>
 
 
-            <hr class="bs-docs-separator">
+            <hr class="rock-bs-docs-separator">
 
 
             <h2>Usage</h2>
@@ -1509,7 +1509,7 @@ $('#myCollapsible').on('hidden', function () {
 
             <h3>Via JavaScript</h3>
             <p>Call carousel manually with:</p>
-            <pre class="prettyprint linenums">$('.rock-carousel').carousel()</pre>
+            <pre class="rock-prettyprint linenums">$('.rock-carousel').carousel()</pre>
 
             <h3>Options</h3>
             <p>Options can be passed via data attributes or JavaScriptz. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-interval=""</code>.</p>
@@ -1541,7 +1541,7 @@ $('#myCollapsible').on('hidden', function () {
             <h3>Methods</h3>
             <h4>.rock-carousel(options)</h4>
             <p>Initializes the carousel with an optional options <code>object</code> and starts cycling through items.</p>
-<pre class="prettyprint linenums">
+<pre class="rock-prettyprint linenums">
 $('.rock-carousel').carousel({
   interval: 2000
 })
@@ -1591,13 +1591,13 @@ $('.rock-carousel').carousel({
 
             <h2>Example</h2>
             <p>A basic, easily extended plugin for quickly creating elegant typeaheads with any form text rock-input.</p>
-            <div class="bs-docs-example" style="background-color: #f5f5f5;">
+            <div class="rock-bs-docs-example" style="background-color: #f5f5f5;">
               <input type="text" class="rock-input rock-span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
             </div>
-            <pre class="prettyprint linenums">&lt;input type="text" data-provide="typeahead"&gt;</pre>
+            <pre class="rock-prettyprint linenums">&lt;input type="text" data-provide="typeahead"&gt;</pre>
             <p>You'll want to set <code>autocomplete="off"</code> to prevent default browser menus from appearing over the Rockskeleton typeahead dropdown.</p>
 
-            <hr class="bs-docs-separator">
+            <hr class="rock-bs-docs-separator">
 
 
             <h2>Usage</h2>
@@ -1607,7 +1607,7 @@ $('.rock-carousel').carousel({
 
             <h3>Via JavaScript</h3>
             <p>Call the typeahead manually with:</p>
-            <pre class="prettyprint linenums">$('.typeahead').typeahead()</pre>
+            <pre class="rock-prettyprint linenums">$('.typeahead').typeahead()</pre>
 
             <h3>Options</h3>
             <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-source=""</code>.</p>
@@ -1683,14 +1683,14 @@ $('.rock-carousel').carousel({
             <h2>Example</h2>
             <p>The subnavigation on the left is a live demo of the affix plugin.</p>
 
-            <hr class="bs-docs-separator">
+            <hr class="rock-bs-docs-separator">
 
             <h2>Usage</h2>
 
             <h3>Via data attributes</h3>
             <p>To easily add affix behavior to any element, just add <code>data-spy="affix"</code> to the element you want to spy on. Then use rock-offsets to define when to toggle the pinning of an element on and off.</p>
 
-            <pre class="prettyprint linenums">&lt;div data-spy="affix" data-offset-top="200"&gt;...&lt;/div&gt;</pre>
+            <pre class="rock-prettyprint linenums">&lt;div data-spy="affix" data-offset-top="200"&gt;...&lt;/div&gt;</pre>
 
             <div class="rock-alert rock-alert-info">
               <strong>Heads up!</strong>
@@ -1699,7 +1699,7 @@ $('.rock-carousel').carousel({
 
             <h3>Via JavaScript</h3>
             <p>Call the affix plugin via JavaScript:</p>
-            <pre class="prettyprint linenums">$('#navbar').rock-affix()</pre>
+            <pre class="rock-prettyprint linenums">$('#navbar').rock-affix()</pre>
 
           <h3>Options</h3>
           <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as rock-in <code>data-offset-top="200"</code>.</p>
