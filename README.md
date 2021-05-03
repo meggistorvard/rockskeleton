@@ -4,7 +4,12 @@ Rockskeleton is a sleek, intuitive, and powerful front-end framework for faster 
 Using a framework to construct your website’s front-end has a lot of advantages (and is pretty easy to boot!).
 
 
-##  To get started download release from <a href="https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-2.0.zip" target="_blank">`https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-2.0.zip`</a> 
+##  To get started download release from 
+
+<a href="https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-2.0.zip" target="_blank">`https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-2.0.zip`</a> 
+
+- Demo:
+<a target="_blank" href="meggistorvard.github.io" target="_blank">`meggistorvard.github.io`</a> 
 
 Let’s go over what front-end frameworks are and why you should consider incorporating them into your web development work.
 
@@ -28,7 +33,10 @@ Using a framework to construct your website’s front-end has a lot of advantage
     - Fork this repo!
 
 - **Option 2**
-    - Clone this repo to your local machine using `https://github.com/meggistorvard/rockskeleton.git`
+    - Clone this repo to your local machine using 
+	```
+	git clone https://github.com/meggistorvard/rockskeleton.git
+	```
 
 ### Step 2
 
@@ -56,11 +64,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-
-## License
-
- MIT license, which puts almost no restrictions on how you can use it. Read the license text
- <a href="https://fullcalendar.io/license/" target="_blank">`https://fullcalendar.io/license/`</a>.
 
 ## Donations (Optional)
 
