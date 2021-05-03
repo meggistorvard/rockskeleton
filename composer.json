@@ -1,6 +1,6 @@
 {
     "name": "meggistorvard/rockskeleton"
-  , "description": "Simple front-end framework for faster web development."
+  , "description": "Simple front-end framework for faster web development with prefix roxk- in each css selectors."
   , "keywords": ["rockskeleton", "css"]
   , "homepage": "https://github.com/meggistorvard/rockskeleton/"
   , "author": "Meggis"

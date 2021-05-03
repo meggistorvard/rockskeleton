@@ -1,0 +1,23 @@
+h4 {
+  margin-top: 25px;
+}
+.rock-row {
+  margin-bottom: 20px;
+}
+.rock-row .rock-row {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+[class*="rock-col-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #f7f0c1;
+  background-color: rgba(247 240 193,.15);
+  border: 1px solid #ffff99;
+  border: 1px solid rgba(86,61,124,.2);
+}
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../favicon.ico">
+    <title>Starter Template for Rockskeleton</title>
+    <!-- Rockskeleton core CSS -->
+    <link href="../../dist/css/rockskeleton.css" rel="stylesheet">
+    <link href="panels.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="rock-navbar rock-navbar-inverse rock-navbar-fixed-top">
+      <div class="rock-container">
+        <div class="rock-navbar-header">
+          <button type="button" class="rock-navbar-toggle rock-collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="rock-screenreader-only">Toggle navigation</span>
+          <span class="rock-icon-bar"></span>
+          <span class="rock-icon-bar"></span>
+          <span class="rock-icon-bar"></span>
+          </button>
+          <a class="rock-navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="rock-collapse navbar-collapse">
+          <ul class="rock-nav rock-navbar-nav">
+            <li class="rock-active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <!--/.rock-nav-collapse -->
+      </div>
+    </nav>
+    <div class="rock-container">
+      <div class="rock-starter-template">
+        <div class="rock-page-header">
+          <h1>Panels</h1>
+        </div>
+        <div class="rock-row">
+          <div class="rock-col-sm-12">
+            <div class="rock-panel rock-panel-default">
+              <div class="rock-panel-heading">
+                <h4 class="rock-panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseBase" class="" aria-expanded="true"><span class="glyphicon glyphicon-th-list">
+                  </span>SOME CONTENT</a>
+                </h4>
+              </div>
+              <div id="collapseBase" class="rock-panel-collapse collapse rock-collapse rock-in" aria-expanded="true" style="">
+                <div class="rock-panel-body">
+                  <div class="rock-row">
+                    <div class="rock-col-md-12">
+                      <div class="rock-well well-sm well-primary">
+                        Lorem Ipsum. "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." "There is no one who loves pain itself, who seeks .
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rock-col-sm-12">
+            <div class="rock-panel-group" id="accordion">
+              <div class="rock-panel rock-panel-default">
+                <div class="rock-panel-heading">
+                  <h4 class="rock-panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-file">
+                    </span>POST NEW ARTICLE</a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="rock-panel-collapse rock-collapse rock-in">
+                  <div class="rock-panel-body">
+                    <div class="rock-row">
+                      <div class="rock-col-md-12">
+                        <div class="rock-form-group">
+                          <input type="text" class="rock-form-control" placeholder="Title" required />
+                        </div>
+                        <div class="rock-form-group">
+                          <textarea class="rock-form-control" placeholder="Content" rows="5" required></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rock-row">
+                      <div class="rock-col-md-6">
+                        <div class="rock-form-group">
+                          <label for="category">
+                          Category</label>
+                          <select class="rock-form-control" id="category">
+                            <option>Articles</option>
+                            <option>Tutorials</option>
+                            <option>Freebies</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="rock-col-md-6">
+                        <div class="rock-form-group">
+                          <label for="tags">
+                          Tags</label>
+                          <input type="text" class="rock-form-control" id="tags" placeholder="Tags" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rock-row">
+                      <div class="rock-col-md-6">
+                        <div class="rock-well well-sm">
+                          <div class="rock-input-group">
+                            <span class="rock-input-group-addon">www.jquery2dotnet.com/</span>
+                            <input type="text" class="rock-form-control" placeholder="Custom url" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="rock-col-md-6">
+                        <div class="rock-well rock-well-sm rock-well-primary">
+                          <form class="rock-form form-inline " role="form">
+                            <div class="rock-form-group">
+                              <input type="text" class="rock-form-control" value="" placeholder="Date" required />
+                            </div>
+                            <div class="rock-form-group">
+                              <select class="rock-form-control">
+                                <option>Draft</option>
+                                <option>Published</option>
+                              </select>
+                            </div>
+                            <div class="rock-form-group">
+                              <button type="submit" class="rock-button rock-button-success rock-button-sm">
+                              <span class="glyphicon glyphicon-floppy-disk"></span>Save</button>
+                              <button type="button" class="rock-button rock-button-default rock-button-sm">
+                              <span class="glyphicon glyphicon-eye-open"></span>Preview</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="rock-panel rock-panel-default">
+                <div class="rock-panel-heading">
+                  <h4 class="rock-panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th-list">
+                    </span>META DATA</a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="rock-panel-collapse rock-collapse">
+                  <div class="rock-panel-body">
+                    <div class="rock-row">
+                      <div class="rock-col-md-12">
+                        <div class="rock-form-group">
+                          <input type="text" class="rock-form-control" placeholder="Title" required />
+                        </div>
+                        <div class="rock-form-group">
+                          <input type="text" class="rock-form-control" placeholder="Description" required />
+                        </div>
+                        <div class="rock-form-group">
+                          <textarea class="rock-form-control" placeholder="Keywords" required></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="rock-row">
+                      <div class="rock-col-md-12">
+                        <div class="rock-well rock-well-sm rock-well-primary">
+                          <form class="rock-form rock-form-inline " role="form">
+                            <div class="rock-form-group">
+                              <a href="http://www.jquery2dotnet.com" class="rock-button rock-button-success rock-button-sm"><span class="glyphicon glyphicon-floppy-disk">
+                              </span>Save</a>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Rockskeleton core JavaScript
+      ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../dist/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/rockskeleton.min.js"></script>    
+  </body>
+</html>

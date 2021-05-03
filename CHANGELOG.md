@@ -1,6 +1,8 @@
-## 2.3.2 re-release (August 16, 2020)
+## v3.3.5
+- See for changelogs for each release version.
 
-Patch to update jQuery in Bower
+## v2.0
+- Patch to update jQuery in Bower
 
 ## v1.1.0
 - **Added support for IE7 and IE8**

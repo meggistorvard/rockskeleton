@@ -1,0 +1,18 @@
+body {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.rock-theme-dropdown .rock-dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.rock-theme-showcase > p > .rock-button {
+  margin: 5px 0;
+}
+
+.rock-theme-showcase .rock-navbar .rock-container {
+  width: auto;
+}
