@@ -6,19 +6,19 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  */
 if (typeof jQuery === 'undefined') {
-  throw new Error('Bootstrap\'s JavaScript requires jQuery')
+  throw new Error('Rockskeleton\'s JavaScript requires jQuery')
 }
 + function($) {
   'use strict';
   var version = $.fn.jquery.split(' ')[0].split('.')
   if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 3)) {
-    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4')
+    throw new Error('Rockskeleton\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4')
   }
 }(jQuery);
 + function($) {
   'use strict';
   function transitionEnd() {
-    var el = document.createElement('bootstrap')
+    var el = document.createElement('rockskeleton')
     var transEndEventNames = {
       WebkitTransition: 'webkitTransitionEnd',
       MozTransition: 'transitionend',
@@ -1150,15 +1150,12 @@ if (typeof jQuery === 'undefined') {
     var isBody = el.tagName == 'BODY'
     var elRect = el.getBoundingClientRect()
     if (elRect.width == null) {
-      // width and height are missing in IE8, so compute them manually; see https://github.com/twbs/bootstrap/issues/14093
       elRect = $.extend({}, elRect, {
         width: elRect.right - elRect.left,
         height: elRect.bottom - elRect.top
       })
     }
     var isSvg = window.SVGElement && el instanceof window.SVGElement
-      // Avoid using $.offset() on SVGs since it gives incorrect results in jQuery 3.
-      // See https://github.com/twbs/bootstrap/issues/20280
     var elOffset = isBody ? {
       top: 0,
       left: 0
