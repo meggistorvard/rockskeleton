@@ -5931,7 +5931,7 @@ display:inline!important
 display:inline-block!important
 }
 
-.hidden-sm {
+.rock-hidden-sm {
 display:none!important
 }
 }
@@ -5969,7 +5969,7 @@ display:inline-block!important
 width:900px
 }
 
-.hidden-md {
+.rock-hidden-md {
 display:none!important
 }
 }
@@ -6007,7 +6007,7 @@ display:inline!important
 display:inline-block!important
 }
 
-.hidden-lg {
+.rock-hidden-lg {
 display:none!important
 }
 }
@@ -6098,7 +6098,7 @@ th.rock-visible-xs,td.rock-visible-xs {
 display:table-cell!important
 }
 
-.hidden-xs {
+.rock-hidden-xs {
 display:none!important
 }
 
@@ -6220,7 +6220,7 @@ th.rock-visible-print,td.rock-visible-print {
 display:table-cell!important
 }
 
-.hidden-print {
+.rock-hidden-print {
 display:none!important
 }
 
