@@ -1,1688 +1,875 @@
-/*!
- * Rockskeleton
- *
+/**
  * Copyright 2020 Meggis
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
+ * Rockskeleton 1.3.7
  */
-if (typeof jQuery === 'undefined') {
-  throw new Error('Rockskeleton\'s JavaScript requires jQuery')
-}
-+ function($) {
-  'use strict';
-  var version = $.fn.jquery.split(' ')[0].split('.')
-  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 3)) {
-    throw new Error('Rockskeleton\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4')
-  }
-}(jQuery);
-+ function($) {
-  'use strict';
-  function transitionEnd() {
-    var el = document.createElement('rockskeleton')
-    var transEndEventNames = {
-      WebkitTransition: 'webkitTransitionEnd',
-      MozTransition: 'transitionend',
-      OTransition: 'oTransitionEnd otransitionend',
-      transition: 'transitionend'
-    }
-    for (var name in transEndEventNames) {
-      if (el.style[name] !== undefined) {
-        return {
-          end: transEndEventNames[name]
-        }
+if ("undefined" == typeof jQuery) throw new Error("The jQuery file reference must come before the Rockskeleton 1.3.7 reference");
+! function() {
+  "use strict";
+  var t = jQuery.fn.jquery.split(" ")[0].split(".");
+  if (t[0] < 2 && t[1] < 9 || 1 == t[0] && 9 == t[1] && t[2] < 1 || 3 < t[0]) throw new Error("According to description, Rockskeleton requires jQuery version >1.9.1 and <4.0")
+}(),
+function(i) {
+  "use strict";
+  i.fn.emulateTransitionEnd = function(t) {
+    var e = !1,
+      o = this;
+    i(this).one("bsTransitionEnd", function() {
+      e = !0
+    });
+    return setTimeout(function() {
+      e || i(o).trigger(i.support.transition.end)
+    }, t), this
+  }, i(function() {
+    i.support.transition = function() {
+      var t, e = document.createElement("rockskeleton"),
+        o = {
+          WebkitTransition: "webkitTransitionEnd",
+          MozTransition: "transitionend",
+          OTransition: "oTransitionEnd otransitionend",
+          transition: "transitionend"
+        };
+      for (t in o)
+        if (void 0 !== e.style[t]) return {
+          end: o[t]
+        };
+      return !1
+    }(), i.support.transition && (i.event.special.bsTransitionEnd = {
+      bindType: i.support.transition.end,
+      delegateType: i.support.transition.end,
+      handle: function(t) {
+        if (i(t.target).is(this)) return t.handleObj.handler.apply(this, arguments)
       }
-    }
-    return false // explicit for ie8 (  ._.)
-  }
-  $.fn.emulateTransitionEnd = function(duration) {
-    var called = false
-    var $el = this
-    $(this).one('bsTransitionEnd', function() {
-      called = true
     })
-    var callback = function() {
-      if (!called) $($el).trigger($.support.transition.end)
-    }
-    setTimeout(callback, duration)
-    return this
-  }
-  $(function() {
-    $.support.transition = transitionEnd()
-    if (!$.support.transition) return
-    $.event.special.bsTransitionEnd = {
-      bindType: $.support.transition.end,
-      delegateType: $.support.transition.end,
-      handle: function(e) {
-        if ($(e.target).is(this)) return e.handleObj.handler.apply(this, arguments)
-      }
-    }
   })
-}(jQuery);
-+ function($) {
-  'use strict';
-  // ALERT CLASS DEFINITION
-  // ======================
-  var dismiss = '[data-dismiss="alert"]'
-  var Alert = function(el) {
-    $(el).on('click', dismiss, this.close)
+}(jQuery),
+function(r) {
+  "use strict";
+
+  function s(t) {
+    r(t).on("click", e, this.close)
   }
-  Alert.VERSION = '3.3.7'
-  Alert.TRANSITION_DURATION = 150
-  Alert.prototype.close = function(e) {
-    var $this = $(this)
-    var selector = $this.attr('data-target')
-    if (!selector) {
-      selector = $this.attr('href')
-      selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+  var e = '[data-dismiss="alert"]';
+  s.VERSION = "1.3", s.TRANSITION_DURATION = 150, s.prototype.close = function(t) {
+    var e = r(this),
+      o = (o = e.attr("data-target")) || (o = e.attr("href")) && o.replace(/.*(?=#[^\s]*$)/, ""),
+      i = r("#" === o ? [] : o);
+
+    function n() {
+      i.detach().trigger("closed.rk.alert").remove()
     }
-    var $parent = $(selector === '#' ? [] : selector)
-    if (e) e.preventDefault()
-    if (!$parent.length) {
-      $parent = $this.closest('.rock-alert')
-    }
-    $parent.trigger(e = $.Event('close.bs.alert'))
-    if (e.isDefaultPrevented()) return
-    $parent.removeClass('rock-in')
-    function removeElement() {
-      // detach from parent, fire event then clean up data
-      $parent.detach().trigger('closed.bs.alert').remove()
-    }
-    $.support.transition && $parent.hasClass('rock-fade') ?
-      $parent
-      .one('bsTransitionEnd', removeElement)
-      .emulateTransitionEnd(Alert.TRANSITION_DURATION) :
-      removeElement()
-  }
-  function Plugin(option) {
+    t && t.preventDefault(), i.length || (i = e.closest(".rock-alert")), i.trigger(t = r.Event("close.rk.alert")), t.isDefaultPrevented() || (i.removeClass("rock-in"), r.support.transition && i.hasClass("rock-fade") ? i.one("bsTransitionEnd", n).emulateTransitionEnd(s.TRANSITION_DURATION) : n())
+  };
+  var t = r.fn.alert;
+  r.fn.alert = function(o) {
     return this.each(function() {
-      var $this = $(this)
-      var data = $this.data('bs.alert')
-      if (!data) $this.data('bs.alert', (data = new Alert(this)))
-      if (typeof option == 'string') data[option].call($this)
+      var t = r(this),
+        e = t.data("rk.alert");
+      e || t.data("rk.alert", e = new s(this)), "string" == typeof o && e[o].call(t)
+    })
+  }, r.fn.alert.Constructor = s, r.fn.alert.noConflict = function() {
+    return r.fn.alert = t, this
+  }, r(document).on("click.rk.alert.data-api", e, s.prototype.close)
+}(jQuery),
+function(r) {
+  "use strict";
+  var n = function(t, e) {
+    this.$element = r(t), this.options = r.extend({}, n.DEFAULTS, e), this.isLoading = !1
+  };
+
+  function o(i) {
+    return this.each(function() {
+      var t = r(this),
+        e = t.data("rk.button"),
+        o = "object" == typeof i && i;
+      e || t.data("rk.button", e = new n(this, o)), "toggle" == i ? e.toggle() : i && e.setState(i)
     })
   }
-  var old = $.fn.alert
-  $.fn.alert = Plugin
-  $.fn.alert.Constructor = Alert
-  $.fn.alert.noConflict = function() {
-    $.fn.alert = old
-    return this
-  }
-  $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
-}(jQuery);
-+ function($) {
-  'use strict';
-  var Button = function(element, options) {
-    this.$element = $(element)
-    this.options = $.extend({}, Button.DEFAULTS, options)
-    this.isLoading = false
-  }
-  Button.VERSION = '3.3.7'
-  Button.DEFAULTS = {
-    loadingText: 'loading...'
-  }
-  Button.prototype.setState = function(state) {
-    var d = 'disabled'
-    var $el = this.$element
-    var val = $el.is('input') ? 'val' : 'html'
-    var data = $el.data()
-    state += 'Text'
-    if (data.resetText == null) $el.data('resetText', $el[val]())
-    // push to event loop to allow forms to submit
-    setTimeout($.proxy(function() {
-      $el[val](data[state] == null ? this.options[state] : data[state])
-      if (state == 'loadingText') {
-        this.isLoading = true
-        $el.addClass(d).attr(d, d).prop(d, true)
-      } else if (this.isLoading) {
-        this.isLoading = false
-        $el.removeClass(d).removeAttr(d).prop(d, false)
-      }
+  n.VERSION = "1.3", n.DEFAULTS = {
+    loadingText: "loading..."
+  }, n.prototype.setState = function(t) {
+    var e = "disabled",
+      o = this.$element,
+      i = o.is("input") ? "val" : "html",
+      n = o.data();
+    t += "Text", null == n.resetText && o.data("resetText", o[i]()), setTimeout(r.proxy(function() {
+      o[i]((null == n[t] ? this.options : n)[t]), "loadingText" == t ? (this.isLoading = !0, o.addClass(e).attr(e, e).prop(e, !0)) : this.isLoading && (this.isLoading = !1, o.removeClass(e).removeAttr(e).prop(e, !1))
     }, this), 0)
-  }
-  Button.prototype.toggle = function() {
-    var changed = true
-    var $parent = this.$element.closest('[data-toggle="buttons"]')
-    if ($parent.length) {
-      var $input = this.$element.find('input')
-      if ($input.prop('type') == 'radio') {
-        if ($input.prop('checked')) changed = false
-        $parent.find('.rock-active').removeClass('rock-active')
-        this.$element.addClass('rock-active')
-      } else if ($input.prop('type') == 'checkbox') {
-        if (($input.prop('checked')) !== this.$element.hasClass('rock-active')) changed = false
-        this.$element.toggleClass('rock-active')
-      }
-      $input.prop('checked', this.$element.hasClass('rock-active'))
-      if (changed) $input.trigger('change')
-    } else {
-      this.$element.attr('aria-pressed', !this.$element.hasClass('rock-active'))
-      this.$element.toggleClass('rock-active')
-    }
-  }
-  function Plugin(option) {
-    return this.each(function() {
-      var $this = $(this)
-      var data = $this.data('bs.button')
-      var options = typeof option == 'object' && option
-      if (!data) $this.data('bs.button', (data = new Button(this, options)))
-      if (option == 'toggle') data.toggle()
-      else if (option) data.setState(option)
-    })
-  }
-  var old = $.fn.button
-  $.fn.button = Plugin
-  $.fn.button.Constructor = Button
-  $.fn.button.noConflict = function() {
-    $.fn.button = old
-    return this
-  }
-  $(document)
-    .on('click.bs.button.data-api', '[data-toggle^="button"]', function(e) {
-      var $btn = $(e.target).closest('.rock-button')
-      Plugin.call($btn, 'toggle')
-      if (!($(e.target).is('input[type="radio"], input[type="checkbox"]'))) {
-        // Prevent double click on radios, and the double selections (so cancellation) on checkboxes
-        e.preventDefault()
-          // The target component still receive the focus
-        if ($btn.is('input,button')) $btn.trigger('focus')
-        else $btn.find('input:visible,button:visible').first().trigger('focus')
-      }
-    })
-    .on('focus.bs.button.data-api blur.bs.button.data-api', '[data-toggle^="button"]', function(e) {
-      $(e.target).closest('.rock-button').toggleClass('rock-focus', /^focus(in)?$/.test(e.type))
-    })
-}(jQuery);
-+ function($) {
-  'use strict';
-  var Carousel = function(element, options) {
-    this.$element = $(element)
-    this.$indicators = this.$element.find('.rock-carousel-indicators')
-    this.options = options
-    this.paused = null
-    this.sliding = null
-    this.interval = null
-    this.$active = null
-    this.$items = null
-    this.options.keyboard && this.$element.on('keydown.bs.carousel', $.proxy(this.keydown, this))
-    this.options.pause == 'hover' && !('ontouchstart' in document.documentElement) && this.$element
-      .on('mouseenter.bs.carousel', $.proxy(this.pause, this))
-      .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
-  }
-  Carousel.VERSION = '3.3.7'
-  Carousel.TRANSITION_DURATION = 600
-  Carousel.DEFAULTS = {
-    interval: 5000,
-    pause: 'hover',
-    wrap: true,
-    keyboard: true
-  }
-  Carousel.prototype.keydown = function(e) {
-    if (/input|textarea/i.test(e.target.tagName)) return
-    switch (e.which) {
-      case 37:
-        this.prev();
-        break
-      case 39:
-        this.next();
-        break
-      default:
-        return
-    }
-    e.preventDefault()
-  }
-  Carousel.prototype.cycle = function(e) {
-    e || (this.paused = false)
-    this.interval && clearInterval(this.interval)
-    this.options.interval && !this.paused && (this.interval = setInterval($.proxy(this.next, this), this.options.interval))
-    return this
-  }
-  Carousel.prototype.getItemIndex = function(item) {
-    this.$items = item.parent().children('.item')
-    return this.$items.index(item || this.$active)
-  }
-  Carousel.prototype.getItemForDirection = function(direction, active) {
-    var activeIndex = this.getItemIndex(active)
-    var willWrap = (direction == 'prev' && activeIndex === 0) || (direction == 'next' && activeIndex == (this.$items.length - 1))
-    if (willWrap && !this.options.wrap) return active
-    var delta = direction == 'prev' ? -1 : 1
-    var itemIndex = (activeIndex + delta) % this.$items.length
-    return this.$items.eq(itemIndex)
-  }
-  Carousel.prototype.to = function(pos) {
-    var that = this
-    var activeIndex = this.getItemIndex(this.$active = this.$element.find('.rock-item.rock-active'))
-    if (pos > (this.$items.length - 1) || pos < 0) return
-    if (this.sliding) return this.$element.one('slid.bs.carousel', function() {
-        that.to(pos)
-      }) // yes, "slid"
-    if (activeIndex == pos) return this.pause().cycle()
-    return this.slide(pos > activeIndex ? 'next' : 'prev', this.$items.eq(pos))
-  }
-  Carousel.prototype.pause = function(e) {
-    e || (this.paused = true)
-    if (this.$element.find('.rock-next, .rock-prev').length && $.support.transition) {
-      this.$element.trigger($.support.transition.end)
-      this.cycle(true)
-    }
-    this.interval = clearInterval(this.interval)
-    return this
-  }
-  Carousel.prototype.next = function() {
-    if (this.sliding) return
-    return this.slide('next')
-  }
-  Carousel.prototype.prev = function() {
-    if (this.sliding) return
-    return this.slide('prev')
-  }
-  Carousel.prototype.slide = function(type, next) {
-    var $active = this.$element.find('.rock-item.rock-active')
-    var $next = next || this.getItemForDirection(type, $active)
-    var isCycling = this.interval
-    var direction = type == 'next' ? 'left' : 'right'
-    var that = this
-    if ($next.hasClass('rock-active')) return (this.sliding = false)
-    var relatedTarget = $next[0]
-    var slideEvent = $.Event('slide.bs.carousel', {
-      relatedTarget: relatedTarget,
-      direction: direction
-    })
-    this.$element.trigger(slideEvent)
-    if (slideEvent.isDefaultPrevented()) return
-    this.sliding = true
-    isCycling && this.pause()
-    if (this.$indicators.length) {
-      this.$indicators.find('.rock-active').removeClass('rock-active')
-      var $nextIndicator = $(this.$indicators.children()[this.getItemIndex($next)])
-      $nextIndicator && $nextIndicator.addClass('rock-active')
-    }
-    var slidEvent = $.Event('slid.bs.carousel', {
-        relatedTarget: relatedTarget,
-        direction: direction
-      }) // yes, "slid"
-    if ($.support.transition && this.$element.hasClass('rock-slide')) {
-      $next.addClass(type)
-      $next[0].offsetWidth // force reflow
-      $active.addClass(direction)
-      $next.addClass(direction)
-      $active
-        .one('bsTransitionEnd', function() {
-          $next.removeClass([type, direction].join(' ')).addClass('rock-active')
-          $active.removeClass(['rock-active', direction].join(' '))
-          that.sliding = false
-          setTimeout(function() {
-            that.$element.trigger(slidEvent)
-          }, 0)
-        })
-        .emulateTransitionEnd(Carousel.TRANSITION_DURATION)
-    } else {
-      $active.removeClass('rock-active')
-      $next.addClass('active')
-      this.sliding = false
-      this.$element.trigger(slidEvent)
-    }
-    isCycling && this.cycle()
-    return this
-  }
-  function Plugin(option) {
-    return this.each(function() {
-      var $this = $(this)
-      var data = $this.data('bs.carousel')
-      var options = $.extend({}, Carousel.DEFAULTS, $this.data(), typeof option == 'object' && option)
-      var action = typeof option == 'string' ? option : options.slide
-      if (!data) $this.data('bs.carousel', (data = new Carousel(this, options)))
-      if (typeof option == 'number') data.to(option)
-      else if (action) data[action]()
-      else if (options.interval) data.pause().cycle()
-    })
-  }
-  var old = $.fn.carousel
-  $.fn.carousel = Plugin
-  $.fn.carousel.Constructor = Carousel
-  $.fn.carousel.noConflict = function() {
-    $.fn.carousel = old
-    return this
-  }
-  var clickHandler = function(e) {
-    var href
-    var $this = $(this)
-    var $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) // strip for ie7
-    if (!$target.hasClass('rock-carousel')) return
-    var options = $.extend({}, $target.data(), $this.data())
-    var slideIndex = $this.attr('data-slide-to')
-    if (slideIndex) options.interval = false
-    Plugin.call($target, options)
-    if (slideIndex) {
-      $target.data('bs.carousel').to(slideIndex)
-    }
-    e.preventDefault()
-  }
-  $(document)
-    .on('click.bs.carousel.data-api', '[data-slide]', clickHandler)
-    .on('click.bs.carousel.data-api', '[data-slide-to]', clickHandler)
-  $(window).on('load', function() {
-    $('[data-ride="carousel"]').each(function() {
-      var $carousel = $(this)
-      Plugin.call($carousel, $carousel.data())
-    })
+  }, n.prototype.toggle = function() {
+    var t, e = !0,
+      o = this.$element.closest('[data-toggle="buttons"]');
+    o.length ? ("radio" == (t = this.$element.find("input")).prop("type") ? (t.prop("checked") && (e = !1), o.find(".rock-active").removeClass("rock-active"), this.$element.addClass("rock-active")) : "checkbox" == t.prop("type") && (t.prop("checked") !== this.$element.hasClass("rock-active") && (e = !1), this.$element.toggleClass("rock-active")), t.prop("checked", this.$element.hasClass("rock-active")), e && t.trigger("change")) : (this.$element.attr("aria-pressed", !this.$element.hasClass("rock-active")), this.$element.toggleClass("rock-active"))
+  };
+  var t = r.fn.button;
+  r.fn.button = o, r.fn.button.Constructor = n, r.fn.button.noConflict = function() {
+    return r.fn.button = t, this
+  }, r(document).on("click.rk.button.data-api", '[data-toggle^="button"]', function(t) {
+    var e = r(t.target).closest(".rock-button");
+    o.call(e, "toggle"), r(t.target).is('input[type="radio"], input[type="checkbox"]') || (t.preventDefault(), (e.is("input,button") ? e : e.find("input:visible,button:visible").first()).trigger("focus"))
+  }).on("focus.rk.button.data-api blur.rk.button.data-api", '[data-toggle^="button"]', function(t) {
+    r(t.target).closest(".rock-button").toggleClass("rock-focus", /^rock-focus(rock-in)?$/.test(t.type))
   })
-}(jQuery);
-+ function($) {
-  'use strict';
-  var Collapse = function(element, options) {
-    this.$element = $(element)
-    this.options = $.extend({}, Collapse.DEFAULTS, options)
-    this.$trigger = $('[data-toggle="collapse"][href="#' + element.id + '"],' +
-      '[data-toggle="collapse"][data-target="#' + element.id + '"]')
-    this.transitioning = null
-    if (this.options.parent) {
-      this.$parent = this.getParent()
-    } else {
-      this.addAriaAndCollapsedClass(this.$element, this.$trigger)
-    }
-    if (this.options.toggle) this.toggle()
+}(jQuery),
+function(c) {
+  function h(t, e) {
+    this.$element = c(t), this.$indicators = this.$element.find(".rock-carousel-indicators"), this.options = e, this.paused = null, this.sliding = null, this.interval = null, this.$active = null, this.$items = null, this.options.keyboard && this.$element.on("keydown.rk.carousel", c.proxy(this.keydown, this)), "hover" != this.options.pause || "ontouchstart" in document.documentElement || this.$element.on("mouseenter.rk.carousel", c.proxy(this.pause, this)).on("mouseleave.rk.carousel", c.proxy(this.cycle, this))
   }
-  Collapse.VERSION = '3.3.7'
-  Collapse.TRANSITION_DURATION = 350
-  Collapse.DEFAULTS = {
-    toggle: true
-  }
-  Collapse.prototype.dimension = function() {
-    var hasWidth = this.$element.hasClass('rock-width')
-    return hasWidth ? 'width' : 'height'
-  }
-  Collapse.prototype.show = function() {
-    if (this.transitioning || this.$element.hasClass('rock-in')) return
-    var activesData
-    var actives = this.$parent && this.$parent.children('.panel').children('.in, .collapsing')
-    if (actives && actives.length) {
-      activesData = actives.data('bs.collapse')
-      if (activesData && activesData.transitioning) return
-    }
-    var startEvent = $.Event('show.bs.collapse')
-    this.$element.trigger(startEvent)
-    if (startEvent.isDefaultPrevented()) return
-    if (actives && actives.length) {
-      Plugin.call(actives, 'hide')
-      activesData || actives.data('bs.collapse', null)
-    }
-    var dimension = this.dimension()
-    this.$element
-      .removeClass('rock-collapse')
-      .addClass('rock-collapsing')[dimension](0)
-      .attr('aria-expanded', true)
-    this.$trigger
-      .removeClass('rock-collapsed')
-      .attr('aria-expanded', true)
-    this.transitioning = 1
-    var complete = function() {
-      this.$element
-        .removeClass('rock-collapsing')
-        .addClass('rock-collapse rock-in')[dimension]('')
-      this.transitioning = 0
-      this.$element
-        .trigger('shown.bs.collapse')
-    }
-    if (!$.support.transition) return complete.call(this)
-    var scrollSize = $.camelCase(['scroll', dimension].join('-'))
-    this.$element
-      .one('bsTransitionEnd', $.proxy(complete, this))
-      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize])
-  }
-  Collapse.prototype.hide = function() {
-    if (this.transitioning || !this.$element.hasClass('rock-in')) return
-    var startEvent = $.Event('hide.bs.collapse')
-    this.$element.trigger(startEvent)
-    if (startEvent.isDefaultPrevented()) return
-    var dimension = this.dimension()
-    this.$element[dimension](this.$element[dimension]())[0].offsetHeight
-    this.$element
-      .addClass('rock-collapsing')
-      .removeClass('rock-collapse rock-in')
-      .attr('aria-expanded', false)
-    this.$trigger
-      .addClass('rock-collapsed')
-      .attr('aria-expanded', false)
-    this.transitioning = 1
-    var complete = function() {
-      this.transitioning = 0
-      this.$element
-        .removeClass('rock-collapsing')
-        .addClass('rock-collapse')
-        .trigger('hidden.bs.collapse')
-    }
-    if (!$.support.transition) return complete.call(this)
-    this.$element[dimension](0)
-      .one('bsTransitionEnd', $.proxy(complete, this))
-      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)
-  }
-  Collapse.prototype.toggle = function() {
-    this[this.$element.hasClass('rock-in') ? 'hide' : 'show']()
-  }
-  Collapse.prototype.getParent = function() {
-    return $(this.options.parent)
-      .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
-      .each($.proxy(function(i, element) {
-        var $element = $(element)
-        this.addAriaAndCollapsedClass(getTargetFromTrigger($element), $element)
-      }, this))
-      .end()
-  }
-  Collapse.prototype.addAriaAndCollapsedClass = function($element, $trigger) {
-    var isOpen = $element.hasClass('rock-in')
-    $element.attr('aria-expanded', isOpen)
-    $trigger
-      .toggleClass('rock-collapsed', !isOpen)
-      .attr('aria-expanded', isOpen)
-  }
-  function getTargetFromTrigger($trigger) {
-    var href
-    var target = $trigger.attr('data-target') || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
-    return $(target)
-  }
-  function Plugin(option) {
+
+  function n(n) {
     return this.each(function() {
-      var $this = $(this)
-      var data = $this.data('bs.collapse')
-      var options = $.extend({}, Collapse.DEFAULTS, $this.data(), typeof option == 'object' && option)
-      if (!data && options.toggle && /show|hide/.test(option)) options.toggle = false
-      if (!data) $this.data('bs.collapse', (data = new Collapse(this, options)))
-      if (typeof option == 'string') data[option]()
+      var t = c(this),
+        e = t.data("rk.carousel"),
+        o = c.extend({}, h.DEFAULTS, t.data(), "object" == typeof n && n),
+        i = "string" == typeof n ? n : o.slide;
+      e || t.data("rk.carousel", e = new h(this, o)), "number" == typeof n ? e.to(n) : i ? e[i]() : o.interval && e.pause().cycle()
     })
   }
-  var old = $.fn.collapse
-  $.fn.collapse = Plugin
-  $.fn.collapse.Constructor = Collapse
-  $.fn.collapse.noConflict = function() {
-    $.fn.collapse = old
-    return this
-  }
-  $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function(e) {
-    var $this = $(this)
-    if (!$this.attr('data-target')) e.preventDefault()
-    var $target = getTargetFromTrigger($this)
-    var data = $target.data('bs.collapse')
-    var option = data ? 'toggle' : $this.data()
-    Plugin.call($target, option)
-  })
-}(jQuery);
-+ function($) {
-  'use strict';
-  var backdrop = '.rock-dropdown-backdrop'
-  var toggle = '[data-toggle="dropdown"]'
-  var Dropdown = function(element) {
-    $(element).on('click.bs.dropdown', this.toggle)
-  }
-  Dropdown.VERSION = '3.3.7'
-  function getParent($this) {
-    var selector = $this.attr('data-target')
-    if (!selector) {
-      selector = $this.attr('href')
-      selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
-    }
-    var $parent = selector && $(selector)
-    return $parent && $parent.length ? $parent : $this.parent()
-  }
-  function clearMenus(e) {
-    if (e && e.which === 3) return
-    $(backdrop).remove()
-    $(toggle).each(function() {
-      var $this = $(this)
-      var $parent = getParent($this)
-      var relatedTarget = {
-        relatedTarget: this
-      }
-      if (!$parent.hasClass('rock-open')) return
-      if (e && e.type == 'click' && /input|textarea/i.test(e.target.tagName) && $.contains($parent[0], e.target)) return
-      $parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget))
-      if (e.isDefaultPrevented()) return
-      $this.attr('aria-expanded', 'false')
-      $parent.removeClass('rock-open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
-    })
-  }
-  Dropdown.prototype.toggle = function(e) {
-    var $this = $(this)
-    if ($this.is('.rock-disabled, :disabled')) return
-    var $parent = getParent($this)
-    var isActive = $parent.hasClass('rock-open')
-    clearMenus()
-    if (!isActive) {
-      if ('ontouchstart' in document.documentElement && !$parent.closest('.rock-navbar-nav').length) {
-        // if mobile we use a backdrop because click events don't delegate
-        $(document.createElement('div'))
-          .addClass('rock-dropdown-backdrop')
-          .insertAfter($(this))
-          .on('click', clearMenus)
-      }
-      var relatedTarget = {
-        relatedTarget: this
-      }
-      $parent.trigger(e = $.Event('show.bs.dropdown', relatedTarget))
-      if (e.isDefaultPrevented()) return
-      $this
-        .trigger('focus')
-        .attr('aria-expanded', 'true')
-      $parent
-        .toggleClass('rock-open')
-        .trigger($.Event('shown.bs.dropdown', relatedTarget))
-    }
-    return false
-  }
-  Dropdown.prototype.keydown = function(e) {
-    if (!/(38|40|27|32)/.test(e.which) || /input|textarea/i.test(e.target.tagName)) return
-    var $this = $(this)
-    e.preventDefault()
-    e.stopPropagation()
-    if ($this.is('.disabled, :disabled')) return
-    var $parent = getParent($this)
-    var isActive = $parent.hasClass('rock-open')
-    if (!isActive && e.which != 27 || isActive && e.which == 27) {
-      if (e.which == 27) $parent.find(toggle).trigger('focus')
-      return $this.trigger('click')
-    }
-    var desc = ' li:not(.disabled):visible a'
-    var $items = $parent.find('.rock-dropdown-menu' + desc)
-    if (!$items.length) return
-    var index = $items.index(e.target)
-    if (e.which == 38 && index > 0) index-- // up
-      if (e.which == 40 && index < $items.length - 1) index++ // down
-        if (!~index) index = 0
-    $items.eq(index).trigger('focus')
-  }
-  // DROPDOWN PLUGIN DEFINITION
-  // ==========================
-  function Plugin(option) {
-    return this.each(function() {
-      var $this = $(this)
-      var data = $this.data('bs.dropdown')
-      if (!data) $this.data('bs.dropdown', (data = new Dropdown(this)))
-      if (typeof option == 'string') data[option].call($this)
-    })
-  }
-  var old = $.fn.dropdown
-  $.fn.dropdown = Plugin
-  $.fn.dropdown.Constructor = Dropdown
-  $.fn.dropdown.noConflict = function() {
-    $.fn.dropdown = old
-    return this
-  }
-  $(document)
-    .on('click.bs.dropdown.data-api', clearMenus)
-    .on('click.bs.dropdown.data-api', '.rock-dropdown form', function(e) {
-      e.stopPropagation()
-    })
-    .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
-    .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
-    .on('keydown.bs.dropdown.data-api', '.rock-dropdown-menu', Dropdown.prototype.keydown)
-}(jQuery);
-+ function($) {
-  'use strict';
-  var Modal = function(element, options) {
-    this.options = options
-    this.$body = $(document.body)
-    this.$element = $(element)
-    this.$dialog = this.$element.find('.rock-modal-dialog')
-    this.$backdrop = null
-    this.isShown = null
-    this.originalBodyPad = null
-    this.scrollbarWidth = 0
-    this.ignoreBackdropClick = false
-    if (this.options.remote) {
-      this.$element
-        .find('.rock-modal-content')
-        .load(this.options.remote, $.proxy(function() {
-          this.$element.trigger('loaded.bs.modal')
-        }, this))
-    }
-  }
-  Modal.VERSION = '3.3.7'
-  Modal.TRANSITION_DURATION = 300
-  Modal.BACKDROP_TRANSITION_DURATION = 150
-  Modal.DEFAULTS = {
-    backdrop: true,
-    keyboard: true,
-    show: true
-  }
-  Modal.prototype.toggle = function(_relatedTarget) {
-    return this.isShown ? this.hide() : this.show(_relatedTarget)
-  }
-  Modal.prototype.show = function(_relatedTarget) {
-    var that = this
-    var e = $.Event('show.bs.modal', {
-      relatedTarget: _relatedTarget
-    })
-    this.$element.trigger(e)
-    if (this.isShown || e.isDefaultPrevented()) return
-    this.isShown = true
-    this.checkScrollbar()
-    this.setScrollbar()
-    this.$body.addClass('rock-modal-open')
-    this.escape()
-    this.resize()
-    this.$element.on('click.dismiss.bs.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
-    this.$dialog.on('mousedown.dismiss.bs.modal', function() {
-      that.$element.one('mouseup.dismiss.bs.modal', function(e) {
-        if ($(e.target).is(that.$element)) that.ignoreBackdropClick = true
-      })
-    })
-    this.backdrop(function() {
-      var transition = $.support.transition && that.$element.hasClass('rock-fade')
-      if (!that.$element.parent().length) {
-        that.$element.appendTo(that.$body) // don't move modals dom position
-      }
-      that.$element
-        .show()
-        .scrollTop(0)
-      that.adjustDialog()
-      if (transition) {
-        that.$element[0].offsetWidth // force reflow
-      }
-      that.$element.addClass('rock-in')
-      that.enforceFocus()
-      var e = $.Event('shown.bs.modal', {
-        relatedTarget: _relatedTarget
-      })
-      transition ?
-        that.$dialog // wait for modal to slide in
-        .one('bsTransitionEnd', function() {
-          that.$element.trigger('focus').trigger(e)
-        })
-        .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
-        that.$element.trigger('focus').trigger(e)
-    })
-  }
-  Modal.prototype.hide = function(e) {
-    if (e) e.preventDefault()
-    e = $.Event('hide.bs.modal')
-    this.$element.trigger(e)
-    if (!this.isShown || e.isDefaultPrevented()) return
-    this.isShown = false
-    this.escape()
-    this.resize()
-    $(document).off('focusin.bs.modal')
-    this.$element
-      .removeClass('rock-in')
-      .off('click.dismiss.bs.modal')
-      .off('mouseup.dismiss.bs.modal')
-    this.$dialog.off('mousedown.dismiss.bs.modal')
-    $.support.transition && this.$element.hasClass('rock-fade') ?
-      this.$element
-      .one('bsTransitionEnd', $.proxy(this.hideModal, this))
-      .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
-      this.hideModal()
-  }
-  Modal.prototype.enforceFocus = function() {
-    $(document)
-      .off('focusin.bs.modal') // guard against infinite focus loop
-      .on('focusin.bs.modal', $.proxy(function(e) {
-        if (document !== e.target &&
-          this.$element[0] !== e.target &&
-          !this.$element.has(e.target).length) {
-          this.$element.trigger('focus')
-        }
-      }, this))
-  }
-  Modal.prototype.escape = function() {
-    if (this.isShown && this.options.keyboard) {
-      this.$element.on('keydown.dismiss.bs.modal', $.proxy(function(e) {
-        e.which == 27 && this.hide()
-      }, this))
-    } else if (!this.isShown) {
-      this.$element.off('keydown.dismiss.bs.modal')
-    }
-  }
-  Modal.prototype.resize = function() {
-    if (this.isShown) {
-      $(window).on('resize.bs.modal', $.proxy(this.handleUpdate, this))
-    } else {
-      $(window).off('resize.bs.modal')
-    }
-  }
-  Modal.prototype.hideModal = function() {
-    var that = this
-    this.$element.hide()
-    this.backdrop(function() {
-      that.$body.removeClass('rock-modal-open')
-      that.resetAdjustments()
-      that.resetScrollbar()
-      that.$element.trigger('hidden.bs.modal')
-    })
-  }
-  Modal.prototype.removeBackdrop = function() {
-    this.$backdrop && this.$backdrop.remove()
-    this.$backdrop = null
-  }
-  Modal.prototype.backdrop = function(callback) {
-    var that = this
-    var animate = this.$element.hasClass('rock-fade') ? 'fade' : ''
-    if (this.isShown && this.options.backdrop) {
-      var doAnimate = $.support.transition && animate
-      this.$backdrop = $(document.createElement('div'))
-        .addClass('rock-modal-backdrop ' + animate)
-        .appendTo(this.$body)
-      this.$element.on('click.dismiss.bs.modal', $.proxy(function(e) {
-        if (this.ignoreBackdropClick) {
-          this.ignoreBackdropClick = false
+  h.VERSION = "1.3", h.TRANSITION_DURATION = 600, h.DEFAULTS = {
+    interval: 5e3,
+    pause: "hover",
+    wrap: !0,
+    keyboard: !0
+  }, h.prototype.keydown = function(t) {
+    if (!/input|textarea/i.test(t.target.tagName)) {
+      switch (t.which) {
+        case 37:
+          this.prev();
+          break;
+        case 39:
+          this.next();
+          break;
+        default:
           return
-        }
-        if (e.target !== e.currentTarget) return
-        this.options.backdrop == 'static' ? this.$element[0].focus() : this.hide()
-      }, this))
-      if (doAnimate) this.$backdrop[0].offsetWidth // force reflow
-      this.$backdrop.addClass('rock-in')
-      if (!callback) return
-      doAnimate ?
-        this.$backdrop
-        .one('bsTransitionEnd', callback)
-        .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :
-        callback()
-    } else if (!this.isShown && this.$backdrop) {
-      this.$backdrop.removeClass('rock-in')
-      var callbackRemove = function() {
-        that.removeBackdrop()
-        callback && callback()
       }
-      $.support.transition && this.$element.hasClass('rock-fade') ?
-        this.$backdrop
-        .one('bsTransitionEnd', callbackRemove)
-        .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :
-        callbackRemove()
-    } else if (callback) {
-      callback()
+      t.preventDefault()
     }
-  }
-  // these following methods are used to handle overflowing modals
-  Modal.prototype.handleUpdate = function() {
-    this.adjustDialog()
-  }
-  Modal.prototype.adjustDialog = function() {
-    var modalIsOverflowing = this.$element[0].scrollHeight > document.documentElement.clientHeight
-    this.$element.css({
-      paddingLeft: !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
-      paddingRight: this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : ''
-    })
-  }
-  Modal.prototype.resetAdjustments = function() {
-    this.$element.css({
-      paddingLeft: '',
-      paddingRight: ''
-    })
-  }
-  Modal.prototype.checkScrollbar = function() {
-    var fullWindowWidth = window.innerWidth
-    if (!fullWindowWidth) { // workaround for missing window.innerWidth in IE8
-      var documentElementRect = document.documentElement.getBoundingClientRect()
-      fullWindowWidth = documentElementRect.right - Math.abs(documentElementRect.left)
+  }, h.prototype.cycle = function(t) {
+    return t || (this.paused = !1), this.interval && clearInterval(this.interval), this.options.interval && !this.paused && (this.interval = setInterval(c.proxy(this.next, this), this.options.interval)), this
+  }, h.prototype.getItemIndex = function(t) {
+    return this.$items = t.parent().children(".rock-item"), this.$items.index(t || this.$active)
+  }, h.prototype.getItemForDirection = function(t, e) {
+    var o = this.getItemIndex(e);
+    if (("prev" == t && 0 === o || "next" == t && o == this.$items.length - 1) && !this.options.wrap) return e;
+    t = (o + ("prev" == t ? -1 : 1)) % this.$items.length;
+    return this.$items.eq(t)
+  }, h.prototype.to = function(t) {
+    var e = this,
+      o = this.getItemIndex(this.$active = this.$element.find(".rock-item.rock-active"));
+    if (!(t > this.$items.length - 1 || t < 0)) return this.sliding ? this.$element.one("slid.rk.carousel", function() {
+      e.to(t)
+    }) : o == t ? this.pause().cycle() : this.slide(o < t ? "next" : "prev", this.$items.eq(t))
+  }, h.prototype.pause = function(t) {
+    return t || (this.paused = !0), this.$element.find(".rock-next, .rock-prev").length && c.support.transition && (this.$element.trigger(c.support.transition.end), this.cycle(!0)), this.interval = clearInterval(this.interval), this
+  }, h.prototype.next = function() {
+    if (!this.sliding) return this.slide("next")
+  }, h.prototype.prev = function() {
+    if (!this.sliding) return this.slide("prev")
+  }, h.prototype.slide = function(t, e) {
+    var o = this.$element.find(".rock-item.rock-active"),
+      i = e || this.getItemForDirection(t, o),
+      n = this.interval,
+      r = "next" == t ? "left" : "right",
+      s = this;
+    if (i.hasClass("rock-active")) return this.sliding = !1;
+    var a = i[0],
+      e = c.Event("slide.rk.carousel", {
+        relatedTarget: a,
+        direction: r
+      });
+    if (this.$element.trigger(e), !e.isDefaultPrevented()) {
+      this.sliding = !0, n && this.pause(), this.$indicators.length && (this.$indicators.find(".rock-active").removeClass("rock-active"), (e = c(this.$indicators.children()[this.getItemIndex(i)])) && e.addClass("rock-active"));
+      var l = c.Event("slid.rk.carousel", {
+        relatedTarget: a,
+        direction: r
+      });
+      return c.support.transition && this.$element.hasClass("rock-slide") ? (i.addClass(t), i[0].offsetWidth, o.addClass(r), i.addClass(r), o.one("bsTransitionEnd", function() {
+        i.removeClass([t, r].join(" ")).addClass("rock-active"), o.removeClass(["rock-active", r].join(" ")), s.sliding = !1, setTimeout(function() {
+          s.$element.trigger(l)
+        }, 0)
+      }).emulateTransitionEnd(h.TRANSITION_DURATION)) : (o.removeClass("rock-active"), i.addClass("rock-active"), this.sliding = !1, this.$element.trigger(l)), n && this.cycle(), this
     }
-    this.bodyIsOverflowing = document.body.clientWidth < fullWindowWidth
-    this.scrollbarWidth = this.measureScrollbar()
+  };
+  var t = c.fn.carousel;
+
+  function e(t) {
+    var e, o = c(this),
+      i = c(o.attr("data-target") || (e = o.attr("href")) && e.replace(/.*(?=#[^\s]+$)/, ""));
+    i.hasClass("rock-carousel") && (e = c.extend({}, i.data(), o.data()), (o = o.attr("data-slide-to")) && (e.interval = !1), n.call(i, e), o && i.data("rk.carousel").to(o), t.preventDefault())
   }
-  Modal.prototype.setScrollbar = function() {
-    var bodyPad = parseInt((this.$body.css('padding-right') || 0), 10)
-    this.originalBodyPad = document.body.style.paddingRight || ''
-    if (this.bodyIsOverflowing) this.$body.css('padding-right', bodyPad + this.scrollbarWidth)
-  }
-  Modal.prototype.resetScrollbar = function() {
-    this.$body.css('padding-right', this.originalBodyPad)
-  }
-  Modal.prototype.measureScrollbar = function() { // thx walsh
-    var scrollDiv = document.createElement('div')
-    scrollDiv.className = 'modal-scrollbar-measure'
-    this.$body.append(scrollDiv)
-    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
-    this.$body[0].removeChild(scrollDiv)
-    return scrollbarWidth
-  }
-  // MODAL PLUGIN DEFINITION
-  // =======================
-  function Plugin(option, _relatedTarget) {
-    return this.each(function() {
-      var $this = $(this)
-      var data = $this.data('bs.modal')
-      var options = $.extend({}, Modal.DEFAULTS, $this.data(), typeof option == 'object' && option)
-      if (!data) $this.data('bs.modal', (data = new Modal(this, options)))
-      if (typeof option == 'string') data[option](_relatedTarget)
-      else if (options.show) data.show(_relatedTarget)
+  c.fn.carousel = n, c.fn.carousel.Constructor = h, c.fn.carousel.noConflict = function() {
+    return c.fn.carousel = t, this
+  }, c(document).on("click.rk.carousel.data-api", "[data-slide]", e).on("click.rk.carousel.data-api", "[data-slide-to]", e), c(window).on("load", function() {
+    c('[data-ride="carousel"]').each(function() {
+      var t = c(this);
+      n.call(t, t.data())
     })
-  }
-  var old = $.fn.modal
-  $.fn.modal = Plugin
-  $.fn.modal.Constructor = Modal
-  // MODAL NO CONFLICT
-  // =================
-  $.fn.modal.noConflict = function() {
-    $.fn.modal = old
-    return this
-  }
-  // MODAL DATA-API
-  // ==============
-  $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function(e) {
-    var $this = $(this)
-    var href = $this.attr('href')
-    var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) // strip for ie7
-    var option = $target.data('bs.modal') ? 'toggle' : $.extend({
-      remote: !/#/.test(href) && href
-    }, $target.data(), $this.data())
-    if ($this.is('a')) e.preventDefault()
-    $target.one('show.bs.modal', function(showEvent) {
-      if (showEvent.isDefaultPrevented()) return // only register focus restorer if modal will actually get shown
-      $target.one('hidden.bs.modal', function() {
-        $this.is(':visible') && $this.trigger('focus')
-      })
-    })
-    Plugin.call($target, option, this)
   })
-}(jQuery);
-+ function($) {
-  'use strict';
-  var Tooltip = function(element, options) {
-    this.type = null
-    this.options = null
-    this.enabled = null
-    this.timeout = null
-    this.hoverState = null
-    this.$element = null
-    this.inState = null
-    this.init('tooltip', element, options)
+}(jQuery),
+function(n) {
+  "use strict";
+  var r = function(t, e) {
+    this.$element = n(t), this.options = n.extend({}, r.DEFAULTS, e), this.$trigger = n('[data-toggle="collapse"][href="#' + t.id + '"],[data-toggle="collapse"][data-target="#' + t.id + '"]'), this.transitioning = null, this.options.parent ? this.$parent = this.getParent() : this.addAriaAndCollapsedClass(this.$element, this.$trigger), this.options.toggle && this.toggle()
+  };
+
+  function o(t) {
+    var e = t.attr("data-target") || (e = t.attr("href")) && e.replace(/.*(?=#[^\s]+$)/, "");
+    return n(e)
   }
-  Tooltip.VERSION = '3.3.7'
-  Tooltip.TRANSITION_DURATION = 150
-  Tooltip.DEFAULTS = {
-    animation: true,
-    placement: 'top',
-    selector: false,
-    template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
-    trigger: 'hover focus',
-    title: '',
+
+  function s(i) {
+    return this.each(function() {
+      var t = n(this),
+        e = t.data("rk.collapse"),
+        o = n.extend({}, r.DEFAULTS, t.data(), "object" == typeof i && i);
+      !e && o.toggle && /show|hide/.test(i) && (o.toggle = !1), e || t.data("rk.collapse", e = new r(this, o)), "string" == typeof i && e[i]()
+    })
+  }
+  r.VERSION = "1.3", r.TRANSITION_DURATION = 350, r.DEFAULTS = {
+    toggle: !0
+  }, r.prototype.dimension = function() {
+    return this.$element.hasClass("width") ? "width" : "height"
+  }, r.prototype.show = function() {
+    if (!this.transitioning && !this.$element.hasClass("rock-in")) {
+      var t = this.$parent && this.$parent.children(".rock-panel").children(".rock-in, .rock-collapsing");
+      if (!(t && t.length && (i = t.data("rk.collapse")) && i.transitioning)) {
+        var e = n.Event("show.rk.collapse");
+        if (this.$element.trigger(e), !e.isDefaultPrevented()) {
+          t && t.length && (s.call(t, "hide"), i || t.data("rk.collapse", null));
+          var o = this.dimension();
+          this.$element.removeClass("rock-collapse").addClass("rock-collapsing")[o](0).attr("aria-expanded", !0), this.$trigger.removeClass("rock-collapsed").attr("aria-expanded", !0), this.transitioning = 1;
+          var i = function() {
+            this.$element.removeClass("rock-collapsing").addClass("rock-collapse rock-in")[o](""), this.transitioning = 0, this.$element.trigger("shown.rk.collapse")
+          };
+          if (!n.support.transition) return i.call(this);
+          t = n.camelCase(["scroll", o].join("-"));
+          this.$element.one("bsTransitionEnd", n.proxy(i, this)).emulateTransitionEnd(r.TRANSITION_DURATION)[o](this.$element[0][t])
+        }
+      }
+    }
+  }, r.prototype.hide = function() {
+    if (!this.transitioning && this.$element.hasClass("rock-in")) {
+      var t = n.Event("hide.rk.collapse");
+      if (this.$element.trigger(t), !t.isDefaultPrevented()) {
+        var e = this.dimension();
+        this.$element[e](this.$element[e]())[0].offsetHeight, this.$element.addClass("rock-collapsing").removeClass("rock-collapse rock-in").attr("aria-expanded", !1), this.$trigger.addClass("rock-collapsed").attr("aria-expanded", !1), this.transitioning = 1;
+        t = function() {
+          this.transitioning = 0, this.$element.removeClass("rock-collapsing").addClass("rock-collapse").trigger("hidden.rk.collapse")
+        };
+        if (!n.support.transition) return t.call(this);
+        this.$element[e](0).one("bsTransitionEnd", n.proxy(t, this)).emulateTransitionEnd(r.TRANSITION_DURATION)
+      }
+    }
+  }, r.prototype.toggle = function() {
+    this[this.$element.hasClass("rock-in") ? "hide" : "show"]()
+  }, r.prototype.getParent = function() {
+    return n(this.options.parent).find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]').each(n.proxy(function(t, e) {
+      e = n(e);
+      this.addAriaAndCollapsedClass(o(e), e)
+    }, this)).end()
+  }, r.prototype.addAriaAndCollapsedClass = function(t, e) {
+    var o = t.hasClass("rock-in");
+    t.attr("aria-expanded", o), e.toggleClass("rock-collapsed", !o).attr("aria-expanded", o)
+  };
+  var t = n.fn.collapse;
+  n.fn.collapse = s, n.fn.collapse.Constructor = r, n.fn.collapse.noConflict = function() {
+    return n.fn.collapse = t, this
+  }, n(document).on("click.rk.collapse.data-api", '[data-toggle="collapse"]', function(t) {
+    var e = n(this);
+    e.attr("data-target") || t.preventDefault();
+    t = o(e), e = t.data("rk.collapse") ? "toggle" : e.data();
+    s.call(t, e)
+  })
+}(jQuery),
+function(n) {
+  "use strict";
+
+  function i(t) {
+    n(t).on("click.rk.dropdown", this.toggle)
+  }
+  var r = '[data-toggle="dropdown"]';
+
+  function s(t) {
+    var e = t.attr("data-target"),
+      e = (e = e || (e = t.attr("href")) && /#[A-Za-z]/.test(e) && e.replace(/.*(?=#[^\s]*$)/, "")) && n(e);
+    return e && e.length ? e : t.parent()
+  }
+
+  function a(i) {
+    i && 3 === i.which || (n(".rock-dropdown-backdrop").remove(), n(r).each(function() {
+      var t = n(this),
+        e = s(t),
+        o = {
+          relatedTarget: this
+        };
+      e.hasClass("rock-open") && (i && "click" == i.type && /input|textarea/i.test(i.target.tagName) && n.contains(e[0], i.target) || (e.trigger(i = n.Event("hide.rk.dropdown", o)), i.isDefaultPrevented() || (t.attr("aria-expanded", "false"), e.removeClass("rock-open").trigger(n.Event("hidden.rk.dropdown", o)))))
+    }))
+  }
+  i.VERSION = "1.3", i.prototype.toggle = function(t) {
+    var e = n(this);
+    if (!e.is(".disabled, :disabled")) {
+      var o = s(e),
+        i = o.hasClass("rock-open");
+      if (a(), !i) {
+        "ontouchstart" in document.documentElement && !o.closest(".rock-navbar-nav").length && n(document.createElement("div")).addClass("rock-dropdown-backdrop").insertAfter(n(this)).on("click", a);
+        i = {
+          relatedTarget: this
+        };
+        if (o.trigger(t = n.Event("show.rk.dropdown", i)), t.isDefaultPrevented()) return;
+        e.trigger("focus").attr("aria-expanded", "true"), o.toggleClass("rock-open").trigger(n.Event("shown.rk.dropdown", i))
+      }
+      return !1
+    }
+  }, i.prototype.keydown = function(t) {
+    if (/(38|40|27|32)/.test(t.which) && !/input|textarea/i.test(t.target.tagName)) {
+      var e = n(this);
+      if (t.preventDefault(), t.stopPropagation(), !e.is(".disabled, :disabled")) {
+        var o = s(e),
+          i = o.hasClass("rock-open");
+        if (!i && 27 != t.which || i && 27 == t.which) return 27 == t.which && o.find(r).trigger("focus"), e.trigger("click");
+        e = o.find(".rock-dropdown-menu li:not(.disabled):visible a");
+        e.length && (o = e.index(t.target), 38 == t.which && 0 < o && o--, 40 == t.which && o < e.length - 1 && o++, ~o || (o = 0), e.eq(o).trigger("focus"))
+      }
+    }
+  };
+  var t = n.fn.dropdown;
+  n.fn.dropdown = function(o) {
+    return this.each(function() {
+      var t = n(this),
+        e = t.data("rk.dropdown");
+      e || t.data("rk.dropdown", e = new i(this)), "string" == typeof o && e[o].call(t)
+    })
+  }, n.fn.dropdown.Constructor = i, n.fn.dropdown.noConflict = function() {
+    return n.fn.dropdown = t, this
+  }, n(document).on("click.rk.dropdown.data-api", a).on("click.rk.dropdown.data-api", ".rock-dropdown rock-form", function(t) {
+    t.stopPropagation()
+  }).on("click.rk.dropdown.data-api", r, i.prototype.toggle).on("keydown.rk.dropdown.data-api", r, i.prototype.keydown).on("keydown.rk.dropdown.data-api", ".rock-dropdown-menu", i.prototype.keydown)
+}(jQuery),
+function(r) {
+  "use strict";
+
+  function s(t, e) {
+    this.options = e, this.$body = r(document.body), this.$element = r(t), this.$dialog = this.$element.find(".rock-modal-dialog"), this.$backdrop = null, this.isShown = null, this.originalBodyPad = null, this.scrollbarWidth = 0, this.ignoreBackdropClick = !1, this.options.remote && this.$element.find(".rock-modal-content").load(this.options.remote, r.proxy(function() {
+      this.$element.trigger("loaded.rk.modal")
+    }, this))
+  }
+
+  function n(i, n) {
+    return this.each(function() {
+      var t = r(this),
+        e = t.data("rk.modal"),
+        o = r.extend({}, s.DEFAULTS, t.data(), "object" == typeof i && i);
+      e || t.data("rk.modal", e = new s(this, o)), "string" == typeof i ? e[i](n) : o.show && e.show(n)
+    })
+  }
+  s.VERSION = "1.3", s.TRANSITION_DURATION = 300, s.BACKDROP_TRANSITION_DURATION = 150, s.DEFAULTS = {
+    backdrop: !0,
+    keyboard: !0,
+    show: !0
+  }, s.prototype.toggle = function(t) {
+    return this.isShown ? this.hide() : this.show(t)
+  }, s.prototype.show = function(o) {
+    var i = this,
+      t = r.Event("show.rk.modal", {
+        relatedTarget: o
+      });
+    this.$element.trigger(t), this.isShown || t.isDefaultPrevented() || (this.isShown = !0, this.checkScrollbar(), this.setScrollbar(), this.$body.addClass("rock-modal-open"), this.escape(), this.resize(), this.$element.on("click.dismiss.rk.modal", '[data-dismiss="modal"]', r.proxy(this.hide, this)), this.$dialog.on("mousedown.dismiss.rk.modal", function() {
+      i.$element.one("mouseup.dismiss.rk.modal", function(t) {
+        r(t.target).is(i.$element) && (i.ignoreBackdropClick = !0)
+      })
+    }), this.backdrop(function() {
+      var t = r.support.transition && i.$element.hasClass("rock-fade");
+      i.$element.parent().length || i.$element.appendTo(i.$body), i.$element.show().scrollTop(0), i.adjustDialog(), t && i.$element[0].offsetWidth, i.$element.addClass("rock-in"), i.enforceFocus();
+      var e = r.Event("shown.rk.modal", {
+        relatedTarget: o
+      });
+      t ? i.$dialog.one("bsTransitionEnd", function() {
+        i.$element.trigger("focus").trigger(e)
+      }).emulateTransitionEnd(s.TRANSITION_DURATION) : i.$element.trigger("focus").trigger(e)
+    }))
+  }, s.prototype.hide = function(t) {
+    t && t.preventDefault(), t = r.Event("hide.rk.modal"), this.$element.trigger(t), this.isShown && !t.isDefaultPrevented() && (this.isShown = !1, this.escape(), this.resize(), r(document).off("focusin.rk.modal"), this.$element.removeClass("rock-in").off("click.dismiss.rk.modal").off("mouseup.dismiss.rk.modal"), this.$dialog.off("mousedown.dismiss.rk.modal"), r.support.transition && this.$element.hasClass("rock-fade") ? this.$element.one("bsTransitionEnd", r.proxy(this.hideModal, this)).emulateTransitionEnd(s.TRANSITION_DURATION) : this.hideModal())
+  }, s.prototype.enforceFocus = function() {
+    r(document).off("focusin.rk.modal").on("focusin.rk.modal", r.proxy(function(t) {
+      document === t.target || this.$element[0] === t.target || this.$element.has(t.target).length || this.$element.trigger("focus")
+    }, this))
+  }, s.prototype.escape = function() {
+    this.isShown && this.options.keyboard ? this.$element.on("keydown.dismiss.rk.modal", r.proxy(function(t) {
+      27 == t.which && this.hide()
+    }, this)) : this.isShown || this.$element.off("keydown.dismiss.rk.modal")
+  }, s.prototype.resize = function() {
+    this.isShown ? r(window).on("resize.rk.modal", r.proxy(this.handleUpdate, this)) : r(window).off("resize.rk.modal")
+  }, s.prototype.hideModal = function() {
+    var t = this;
+    this.$element.hide(), this.backdrop(function() {
+      t.$body.removeClass("rock-modal-open"), t.resetAdjustments(), t.resetScrollbar(), t.$element.trigger("hidden.rk.rock-modal")
+    })
+  }, s.prototype.removeBackdrop = function() {
+    this.$backdrop && this.$backdrop.remove(), this.$backdrop = null
+  }, s.prototype.backdrop = function(t) {
+    var e, o = this,
+      i = this.$element.hasClass("rock-fade") ? "rock-fade" : "";
+    this.isShown && this.options.backdrop ? (e = r.support.transition && i, this.$backdrop = r(document.createElement("div")).addClass("rock-modal-backdrop " + i).appendTo(this.$body), this.$element.on("click.dismiss.rk.modal", r.proxy(function(t) {
+      this.ignoreBackdropClick ? this.ignoreBackdropClick = !1 : t.target === t.currentTarget && ("static" == this.options.backdrop ? this.$element[0].focus() : this.hide())
+    }, this)), e && this.$backdrop[0].offsetWidth, this.$backdrop.addClass("rock-in"), t && (e ? this.$backdrop.one("bsTransitionEnd", t).emulateTransitionEnd(s.BACKDROP_TRANSITION_DURATION) : t())) : !this.isShown && this.$backdrop ? (this.$backdrop.removeClass("rock-in"), e = function() {
+      o.removeBackdrop(), t && t()
+    }, r.support.transition && this.$element.hasClass("rock-fade") ? this.$backdrop.one("bsTransitionEnd", e).emulateTransitionEnd(s.BACKDROP_TRANSITION_DURATION) : e()) : t && t()
+  }, s.prototype.handleUpdate = function() {
+    this.adjustDialog()
+  }, s.prototype.adjustDialog = function() {
+    var t = this.$element[0].scrollHeight > document.documentElement.clientHeight;
+    this.$element.css({
+      paddingLeft: !this.bodyIsOverflowing && t ? this.scrollbarWidth : "",
+      paddingRight: this.bodyIsOverflowing && !t ? this.scrollbarWidth : ""
+    })
+  }, s.prototype.resetAdjustments = function() {
+    this.$element.css({
+      paddingLeft: "",
+      paddingRight: ""
+    })
+  }, s.prototype.checkScrollbar = function() {
+    var t, e = window.innerWidth;
+    e || (e = (t = document.documentElement.getBoundingClientRect()).right - Math.abs(t.left)), this.bodyIsOverflowing = document.body.clientWidth < e, this.scrollbarWidth = this.measureScrollbar()
+  }, s.prototype.setScrollbar = function() {
+    var t = parseInt(this.$body.css("padding-right") || 0, 10);
+    this.originalBodyPad = document.body.style.paddingRight || "", this.bodyIsOverflowing && this.$body.css("padding-right", t + this.scrollbarWidth)
+  }, s.prototype.resetScrollbar = function() {
+    this.$body.css("padding-right", this.originalBodyPad)
+  }, s.prototype.measureScrollbar = function() {
+    var t = document.createElement("div");
+    t.className = "rock-modal-scrollbar-measure", this.$body.append(t);
+    var e = t.offsetWidth - t.clientWidth;
+    return this.$body[0].removeChild(t), e
+  };
+  var t = r.fn.modal;
+  r.fn.modal = n, r.fn.modal.Constructor = s, r.fn.modal.noConflict = function() {
+    return r.fn.modal = t, this
+  }, r(document).on("click.rk.modal.data-api", '[data-toggle="modal"]', function(t) {
+    var e = r(this),
+      o = e.attr("href"),
+      i = r(e.attr("data-target") || o && o.replace(/.*(?=#[^\s]+$)/, "")),
+      o = i.data("rk.modal") ? "toggle" : r.extend({
+        remote: !/#/.test(o) && o
+      }, i.data(), e.data());
+    e.is("a") && t.preventDefault(), i.one("show.rk.modal", function(t) {
+      t.isDefaultPrevented() || i.one("hidden.rk.modal", function() {
+        e.is(":visible") && e.trigger("focus")
+      })
+    }), n.call(i, o, this)
+  })
+}(jQuery),
+function(l) {
+  "use strict";
+
+  function c(t, e) {
+    this.type = null, this.options = null, this.enabled = null, this.timeout = null, this.hoverState = null, this.$element = null, this.inState = null, this.init("tooltip", t, e)
+  }
+  c.VERSION = "1.3", c.TRANSITION_DURATION = 150, c.DEFAULTS = {
+    animation: !0,
+    placement: "top",
+    selector: !1,
+    template: '<div class="rock-tooltip" role="tooltip"><div class="rock-tooltip-arrow"></div><div class="rock-tooltip-inner"></div></div>',
+    trigger: "hover focus",
+    title: "",
     delay: 0,
-    html: false,
-    container: false,
+    html: !1,
+    container: !1,
     viewport: {
-      selector: 'body',
+      selector: "body",
       padding: 0
     }
-  }
-  Tooltip.prototype.init = function(type, element, options) {
-    this.enabled = true
-    this.type = type
-    this.$element = $(element)
-    this.options = this.getOptions(options)
-    this.$viewport = this.options.viewport && $($.isFunction(this.options.viewport) ? this.options.viewport.call(this, this.$element) : (this.options.viewport.selector || this.options.viewport))
-    this.inState = {
-      click: false,
-      hover: false,
-      focus: false
+  }, c.prototype.init = function(t, e, o) {
+    if (this.enabled = !0, this.type = t, this.$element = l(e), this.options = this.getOptions(o), this.$viewport = this.options.viewport && l(l.isFunction(this.options.viewport) ? this.options.viewport.call(this, this.$element) : this.options.viewport.selector || this.options.viewport), this.inState = {
+        click: !1,
+        hover: !1,
+        focus: !1
+      }, this.$element[0] instanceof document.constructor && !this.options.selector) throw new Error("`selector` option must be specified when initializing " + this.type + " on the window.document object!");
+    for (var i = this.options.trigger.split(" "), n = i.length; n--;) {
+      var r, s = i[n];
+      "click" == s ? this.$element.on("click." + this.type, this.options.selector, l.proxy(this.toggle, this)) : "manual" != s && (r = "hover" == s ? "mouseenter" : "focusin", s = "hover" == s ? "mouseleave" : "focusout", this.$element.on(r + "." + this.type, this.options.selector, l.proxy(this.enter, this)), this.$element.on(s + "." + this.type, this.options.selector, l.proxy(this.leave, this)))
     }
-    if (this.$element[0] instanceof document.constructor && !this.options.selector) {
-      throw new Error('`selector` option must be specified when initializing ' + this.type + ' on the window.document object!')
+    this.options.selector ? this._options = l.extend({}, this.options, {
+      trigger: "manual",
+      selector: ""
+    }) : this.fixTitle()
+  }, c.prototype.getDefaults = function() {
+    return c.DEFAULTS
+  }, c.prototype.getOptions = function(t) {
+    return (t = l.extend({}, this.getDefaults(), this.$element.data(), t)).delay && "number" == typeof t.delay && (t.delay = {
+      show: t.delay,
+      hide: t.delay
+    }), t
+  }, c.prototype.getDelegateOptions = function() {
+    var o = {},
+      i = this.getDefaults();
+    return this._options && l.each(this._options, function(t, e) {
+      i[t] != e && (o[t] = e)
+    }), o
+  }, c.prototype.enter = function(t) {
+    var e = t instanceof this.constructor ? t : l(t.currentTarget).data("rk." + this.type);
+    if (e || (e = new this.constructor(t.currentTarget, this.getDelegateOptions()), l(t.currentTarget).data("rk." + this.type, e)), t instanceof l.Event && (e.inState["focusin" == t.type ? "focus" : "hover"] = !0), e.tip().hasClass("rock-in") || "rock-in" == e.hoverState) e.hoverState = "in";
+    else {
+      if (clearTimeout(e.timeout), e.hoverState = "in", !e.options.delay || !e.options.delay.show) return e.show();
+      e.timeout = setTimeout(function() {
+        "in" == e.hoverState && e.show()
+      }, e.options.delay.show)
     }
-    var triggers = this.options.trigger.split(' ')
-    for (var i = triggers.length; i--;) {
-      var trigger = triggers[i]
-      if (trigger == 'click') {
-        this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.toggle, this))
-      } else if (trigger != 'manual') {
-        var eventIn = trigger == 'hover' ? 'mouseenter' : 'focusin'
-        var eventOut = trigger == 'hover' ? 'mouseleave' : 'focusout'
-        this.$element.on(eventIn + '.' + this.type, this.options.selector, $.proxy(this.enter, this))
-        this.$element.on(eventOut + '.' + this.type, this.options.selector, $.proxy(this.leave, this))
-      }
+  }, c.prototype.isInStateTrue = function() {
+    for (var t in this.inState)
+      if (this.inState[t]) return !0;
+    return !1
+  }, c.prototype.leave = function(t) {
+    var e = t instanceof this.constructor ? t : l(t.currentTarget).data("rk." + this.type);
+    if (e || (e = new this.constructor(t.currentTarget, this.getDelegateOptions()), l(t.currentTarget).data("rk." + this.type, e)), t instanceof l.Event && (e.inState["focusout" == t.type ? "focus" : "hover"] = !1), !e.isInStateTrue()) {
+      if (clearTimeout(e.timeout), e.hoverState = "out", !e.options.delay || !e.options.delay.hide) return e.hide();
+      e.timeout = setTimeout(function() {
+        "out" == e.hoverState && e.hide()
+      }, e.options.delay.hide)
     }
-    this.options.selector ?
-      (this._options = $.extend({}, this.options, {
-        trigger: 'manual',
-        selector: ''
-      })) :
-      this.fixTitle()
-  }
-  Tooltip.prototype.getDefaults = function() {
-    return Tooltip.DEFAULTS
-  }
-  Tooltip.prototype.getOptions = function(options) {
-    options = $.extend({}, this.getDefaults(), this.$element.data(), options)
-    if (options.delay && typeof options.delay == 'number') {
-      options.delay = {
-        show: options.delay,
-        hide: options.delay
-      }
-    }
-    return options
-  }
-  Tooltip.prototype.getDelegateOptions = function() {
-    var options = {}
-    var defaults = this.getDefaults()
-    this._options && $.each(this._options, function(key, value) {
-      if (defaults[key] != value) options[key] = value
-    })
-    return options
-  }
-  Tooltip.prototype.enter = function(obj) {
-    var self = obj instanceof this.constructor ?
-      obj : $(obj.currentTarget).data('bs.' + this.type)
-    if (!self) {
-      self = new this.constructor(obj.currentTarget, this.getDelegateOptions())
-      $(obj.currentTarget).data('bs.' + this.type, self)
-    }
-    if (obj instanceof $.Event) {
-      self.inState[obj.type == 'focusin' ? 'focus' : 'hover'] = true
-    }
-    if (self.tip().hasClass('rock-in') || self.hoverState == 'in') {
-      self.hoverState = 'in'
-      return
-    }
-    clearTimeout(self.timeout)
-    self.hoverState = 'in'
-    if (!self.options.delay || !self.options.delay.show) return self.show()
-    self.timeout = setTimeout(function() {
-      if (self.hoverState == 'in') self.show()
-    }, self.options.delay.show)
-  }
-  Tooltip.prototype.isInStateTrue = function() {
-    for (var key in this.inState) {
-      if (this.inState[key]) return true
-    }
-    return false
-  }
-  Tooltip.prototype.leave = function(obj) {
-    var self = obj instanceof this.constructor ?
-      obj : $(obj.currentTarget).data('bs.' + this.type)
-    if (!self) {
-      self = new this.constructor(obj.currentTarget, this.getDelegateOptions())
-      $(obj.currentTarget).data('bs.' + this.type, self)
-    }
-    if (obj instanceof $.Event) {
-      self.inState[obj.type == 'focusout' ? 'focus' : 'hover'] = false
-    }
-    if (self.isInStateTrue()) return
-    clearTimeout(self.timeout)
-    self.hoverState = 'out'
-    if (!self.options.delay || !self.options.delay.hide) return self.hide()
-    self.timeout = setTimeout(function() {
-      if (self.hoverState == 'out') self.hide()
-    }, self.options.delay.hide)
-  }
-  Tooltip.prototype.show = function() {
-    var e = $.Event('show.bs.' + this.type)
-    if (this.hasContent() && this.enabled) {
-      this.$element.trigger(e)
-      var inDom = $.contains(this.$element[0].ownerDocument.documentElement, this.$element[0])
-      if (e.isDefaultPrevented() || !inDom) return
-      var that = this
-      var $tip = this.tip()
-      var tipId = this.getUID(this.type)
-      this.setContent()
-      $tip.attr('id', tipId)
-      this.$element.attr('aria-describedby', tipId)
-      if (this.options.animation) $tip.addClass('rock-fade')
-      var placement = typeof this.options.placement == 'function' ?
-        this.options.placement.call(this, $tip[0], this.$element[0]) :
-        this.options.placement
-      var autoToken = /\s?auto?\s?/i
-      var autoPlace = autoToken.test(placement)
-      if (autoPlace) placement = placement.replace(autoToken, '') || 'top'
-      $tip
-        .detach()
-        .css({
-          top: 0,
-          left: 0,
-          display: 'block'
-        })
-        .addClass(placement)
-        .data('bs.' + this.type, this)
-      this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element)
-      this.$element.trigger('inserted.bs.' + this.type)
-      var pos = this.getPosition()
-      var actualWidth = $tip[0].offsetWidth
-      var actualHeight = $tip[0].offsetHeight
-      if (autoPlace) {
-        var orgPlacement = placement
-        var viewportDim = this.getPosition(this.$viewport)
-        placement = placement == 'bottom' && pos.bottom + actualHeight > viewportDim.bottom ? 'top' :
-          placement == 'top' && pos.top - actualHeight < viewportDim.top ? 'bottom' :
-          placement == 'right' && pos.right + actualWidth > viewportDim.width ? 'left' :
-          placement == 'left' && pos.left - actualWidth < viewportDim.left ? 'right' :
-          placement
-        $tip
-          .removeClass(orgPlacement)
-          .addClass(placement)
-      }
-      var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight)
-      this.applyPlacement(calculatedOffset, placement)
-      var complete = function() {
-        var prevHoverState = that.hoverState
-        that.$element.trigger('shown.bs.' + that.type)
-        that.hoverState = null
-        if (prevHoverState == 'out') that.leave(that)
-      }
-      $.support.transition && this.$tip.hasClass('rock-fade') ?
-        $tip
-        .one('bsTransitionEnd', complete)
-        .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
-        complete()
-    }
-  }
-  Tooltip.prototype.applyPlacement = function(offset, placement) {
-    var $tip = this.tip()
-    var width = $tip[0].offsetWidth
-    var height = $tip[0].offsetHeight
-    // manually read margins because getBoundingClientRect includes difference
-    var marginTop = parseInt($tip.css('margin-top'), 10)
-    var marginLeft = parseInt($tip.css('margin-left'), 10)
-    // we must check for NaN for ie 8/9
-    if (isNaN(marginTop)) marginTop = 0
-    if (isNaN(marginLeft)) marginLeft = 0
-    offset.top += marginTop
-    offset.left += marginLeft
-    // $.fn.offset doesn't round pixel values
-    // so we use setOffset directly with our own function B-0
-    $.offset.setOffset($tip[0], $.extend({
-      using: function(props) {
-        $tip.css({
-          top: Math.round(props.top),
-          left: Math.round(props.left)
+  }, c.prototype.show = function() {
+    var e, t, o, i, n, r, s, a = l.Event("show.rk." + this.type);
+    this.hasContent() && this.enabled && (this.$element.trigger(a), o = l.contains(this.$element[0].ownerDocument.documentElement, this.$element[0]), !a.isDefaultPrevented() && o && (t = (e = this).tip(), r = this.getUID(this.type), this.setContent(), t.attr("id", r), this.$element.attr("aria-describedby", r), this.options.animation && t.addClass("rock-fade"), s = "function" == typeof this.options.placement ? this.options.placement.call(this, t[0], this.$element[0]) : this.options.placement, (n = (i = /\s?auto?\s?/i).test(s)) && (s = s.replace(i, "") || "top"), t.detach().css({
+      top: 0,
+      left: 0,
+      display: "block"
+    }).addClass(s).data("rk." + this.type, this), this.options.container ? t.appendTo(this.options.container) : t.insertAfter(this.$element), this.$element.trigger("inserted.rk." + this.type), a = this.getPosition(), o = t[0].offsetWidth, r = t[0].offsetHeight, n && (i = s, n = this.getPosition(this.$viewport), s = "bottom" == s && a.bottom + r > n.bottom ? "top" : "top" == s && a.top - r < n.top ? "bottom" : "right" == s && a.right + o > n.width ? "left" : "left" == s && a.left - o < n.left ? "right" : s, t.removeClass(i).addClass(s)), r = this.getCalculatedOffset(s, a, o, r), this.applyPlacement(r, s), s = function() {
+      var t = e.hoverState;
+      e.$element.trigger("shown.rk." + e.type), e.hoverState = null, "out" == t && e.leave(e)
+    }, l.support.transition && this.$tip.hasClass("rock-fade") ? t.one("bsTransitionEnd", s).emulateTransitionEnd(c.TRANSITION_DURATION) : s()))
+  }, c.prototype.applyPlacement = function(t, e) {
+    var o = this.tip(),
+      i = o[0].offsetWidth,
+      n = o[0].offsetHeight,
+      r = parseInt(o.css("margin-top"), 10),
+      s = parseInt(o.css("margin-left"), 10);
+    isNaN(r) && (r = 0), isNaN(s) && (s = 0), t.top += r, t.left += s, l.offset.setOffset(o[0], l.extend({
+      using: function(t) {
+        o.css({
+          top: Math.round(t.top),
+          left: Math.round(t.left)
         })
       }
-    }, offset), 0)
-    $tip.addClass('rock-in')
-    // check to see if placing tip in new offset caused the tip to resize itself
-    var actualWidth = $tip[0].offsetWidth
-    var actualHeight = $tip[0].offsetHeight
-    if (placement == 'top' && actualHeight != height) {
-      offset.top = offset.top + height - actualHeight
+    }, t), 0), o.addClass("rock-in");
+    var a = o[0].offsetWidth,
+      r = o[0].offsetHeight;
+    "top" == e && r != n && (t.top = t.top + n - r);
+    s = this.getViewportAdjustedDelta(e, t, a, r);
+    s.left ? t.left += s.left : t.top += s.top;
+    e = /top|bottom/.test(e), n = e ? 2 * s.left - i + a : 2 * s.top - n + r, r = e ? "offsetWidth" : "offsetHeight";
+    o.offset(t), this.replaceArrow(n, o[0][r], e)
+  }, c.prototype.replaceArrow = function(t, e, o) {
+    this.arrow().css(o ? "left" : "top", 50 * (1 - t / e) + "%").css(o ? "top" : "left", "")
+  }, c.prototype.setContent = function() {
+    var t = this.tip(),
+      e = this.getTitle();
+    t.find(".rock-tooltip-inner")[this.options.html ? "html" : "text"](e), t.removeClass("rock-fade rock-in rock-top rock-bottom rock-left rock-right")
+  }, c.prototype.hide = function(t) {
+    var e = this,
+      o = l(this.$tip),
+      i = l.Event("hide.rk." + this.type);
+
+    function n() {
+      "in" != e.hoverState && o.detach(), e.$element && e.$element.removeAttr("aria-describedby").trigger("hidden.rk." + e.type), t && t()
     }
-    var delta = this.getViewportAdjustedDelta(placement, offset, actualWidth, actualHeight)
-    if (delta.left) offset.left += delta.left
-    else offset.top += delta.top
-    var isVertical = /top|bottom/.test(placement)
-    var arrowDelta = isVertical ? delta.left * 2 - width + actualWidth : delta.top * 2 - height + actualHeight
-    var arrowOffsetPosition = isVertical ? 'offsetWidth' : 'offsetHeight'
-    $tip.offset(offset)
-    this.replaceArrow(arrowDelta, $tip[0][arrowOffsetPosition], isVertical)
-  }
-  Tooltip.prototype.replaceArrow = function(delta, dimension, isVertical) {
-    this.arrow()
-      .css(isVertical ? 'left' : 'top', 50 * (1 - delta / dimension) + '%')
-      .css(isVertical ? 'top' : 'left', '')
-  }
-  Tooltip.prototype.setContent = function() {
-    var $tip = this.tip()
-    var title = this.getTitle()
-    $tip.find('.rock-tooltip-inner')[this.options.html ? 'html' : 'text'](title)
-    $tip.removeClass('rock-fade in top bottom left right')
-  }
-  Tooltip.prototype.hide = function(callback) {
-    var that = this
-    var $tip = $(this.$tip)
-    var e = $.Event('hide.bs.' + this.type)
-    function complete() {
-      if (that.hoverState != 'in') $tip.detach()
-      if (that.$element) { // TODO: Check whether guarding this code with this `if` is really necessary.
-        that.$element
-          .removeAttr('aria-describedby')
-          .trigger('hidden.bs.' + that.type)
-      }
-      callback && callback()
-    }
-    this.$element.trigger(e)
-    if (e.isDefaultPrevented()) return
-    $tip.removeClass('rock-in')
-    $.support.transition && $tip.hasClass('rock-fade') ?
-      $tip
-      .one('bsTransitionEnd', complete)
-      .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
-      complete()
-    this.hoverState = null
-    return this
-  }
-  Tooltip.prototype.fixTitle = function() {
-    var $e = this.$element
-    if ($e.attr('title') || typeof $e.attr('data-original-title') != 'string') {
-      $e.attr('data-original-title', $e.attr('title') || '').attr('title', '')
-    }
-  }
-  Tooltip.prototype.hasContent = function() {
+    if (this.$element.trigger(i), !i.isDefaultPrevented()) return o.removeClass("rock-in"), l.support.transition && o.hasClass("rock-fade") ? o.one("bsTransitionEnd", n).emulateTransitionEnd(c.TRANSITION_DURATION) : n(), this.hoverState = null, this
+  }, c.prototype.fixTitle = function() {
+    var t = this.$element;
+    !t.attr("title") && "string" == typeof t.attr("data-original-title") || t.attr("data-original-title", t.attr("title") || "").attr("title", "")
+  }, c.prototype.hasContent = function() {
     return this.getTitle()
-  }
-  Tooltip.prototype.getPosition = function($element) {
-    $element = $element || this.$element
-    var el = $element[0]
-    var isBody = el.tagName == 'BODY'
-    var elRect = el.getBoundingClientRect()
-    if (elRect.width == null) {
-      elRect = $.extend({}, elRect, {
-        width: elRect.right - elRect.left,
-        height: elRect.bottom - elRect.top
-      })
-    }
-    var isSvg = window.SVGElement && el instanceof window.SVGElement
-    var elOffset = isBody ? {
+  }, c.prototype.getPosition = function(t) {
+    var e = (t = t || this.$element)[0],
+      o = "BODY" == e.tagName,
+      i = e.getBoundingClientRect();
+    null == i.width && (i = l.extend({}, i, {
+      width: i.right - i.left,
+      height: i.bottom - i.top
+    }));
+    e = window.SVGElement && e instanceof window.SVGElement, e = o ? {
       top: 0,
       left: 0
-    } : (isSvg ? null : $element.offset())
-    var scroll = {
-      scroll: isBody ? document.documentElement.scrollTop || document.body.scrollTop : $element.scrollTop()
+    } : e ? null : t.offset(), t = {
+      scroll: o ? document.documentElement.scrollTop || document.body.scrollTop : t.scrollTop()
+    }, o = o ? {
+      width: l(window).width(),
+      height: l(window).height()
+    } : null;
+    return l.extend({}, i, t, o, e)
+  }, c.prototype.getCalculatedOffset = function(t, e, o, i) {
+    return "bottom" == t ? {
+      top: e.top + e.height,
+      left: e.left + e.width / 2 - o / 2
+    } : "top" == t ? {
+      top: e.top - i,
+      left: e.left + e.width / 2 - o / 2
+    } : "left" == t ? {
+      top: e.top + e.height / 2 - i / 2,
+      left: e.left - o
+    } : {
+      top: e.top + e.height / 2 - i / 2,
+      left: e.left + e.width
     }
-    var outerDims = isBody ? {
-      width: $(window).width(),
-      height: $(window).height()
-    } : null
-    return $.extend({}, elRect, scroll, outerDims, elOffset)
-  }
-  Tooltip.prototype.getCalculatedOffset = function(placement, pos, actualWidth, actualHeight) {
-    return placement == 'bottom' ? {
-        top: pos.top + pos.height,
-        left: pos.left + pos.width / 2 - actualWidth / 2
-      } :
-      placement == 'top' ? {
-        top: pos.top - actualHeight,
-        left: pos.left + pos.width / 2 - actualWidth / 2
-      } :
-      placement == 'left' ? {
-        top: pos.top + pos.height / 2 - actualHeight / 2,
-        left: pos.left - actualWidth
-      } :
-      /* placement == 'right' */
-      {
-        top: pos.top + pos.height / 2 - actualHeight / 2,
-        left: pos.left + pos.width
-      }
-  }
-  Tooltip.prototype.getViewportAdjustedDelta = function(placement, pos, actualWidth, actualHeight) {
-    var delta = {
+  }, c.prototype.getViewportAdjustedDelta = function(t, e, o, i) {
+    var n = {
       top: 0,
       left: 0
-    }
-    if (!this.$viewport) return delta
-    var viewportPadding = this.options.viewport && this.options.viewport.padding || 0
-    var viewportDimensions = this.getPosition(this.$viewport)
-    if (/right|left/.test(placement)) {
-      var topEdgeOffset = pos.top - viewportPadding - viewportDimensions.scroll
-      var bottomEdgeOffset = pos.top + viewportPadding - viewportDimensions.scroll + actualHeight
-      if (topEdgeOffset < viewportDimensions.top) { // top overflow
-        delta.top = viewportDimensions.top - topEdgeOffset
-      } else if (bottomEdgeOffset > viewportDimensions.top + viewportDimensions.height) { // bottom overflow
-        delta.top = viewportDimensions.top + viewportDimensions.height - bottomEdgeOffset
-      }
-    } else {
-      var leftEdgeOffset = pos.left - viewportPadding
-      var rightEdgeOffset = pos.left + viewportPadding + actualWidth
-      if (leftEdgeOffset < viewportDimensions.left) { // left overflow
-        delta.left = viewportDimensions.left - leftEdgeOffset
-      } else if (rightEdgeOffset > viewportDimensions.right) { // right overflow
-        delta.left = viewportDimensions.left + viewportDimensions.width - rightEdgeOffset
-      }
-    }
-    return delta
-  }
-  Tooltip.prototype.getTitle = function() {
-    var title
-    var $e = this.$element
-    var o = this.options
-    title = $e.attr('data-original-title') || (typeof o.title == 'function' ? o.title.call($e[0]) : o.title)
-    return title
-  }
-  Tooltip.prototype.getUID = function(prefix) {
-    do prefix += ~~(Math.random() * 1000000)
-    while (document.getElementById(prefix))
-    return prefix
-  }
-  Tooltip.prototype.tip = function() {
-    if (!this.$tip) {
-      this.$tip = $(this.options.template)
-      if (this.$tip.length != 1) {
-        throw new Error(this.type + ' `template` option must consist of exactly 1 top-level element!')
-      }
-    }
+    };
+    if (!this.$viewport) return n;
+    var r, s = this.options.viewport && this.options.viewport.padding || 0,
+      a = this.getPosition(this.$viewport);
+    return /right|left/.test(t) ? (t = e.top - s - a.scroll, r = e.top + s - a.scroll + i, t < a.top ? n.top = a.top - t : r > a.top + a.height && (n.top = a.top + a.height - r)) : (r = e.left - s, o = e.left + s + o, r < a.left ? n.left = a.left - r : o > a.right && (n.left = a.left + a.width - o)), n
+  }, c.prototype.getTitle = function() {
+    var t = this.$element,
+      e = this.options;
+    return t.attr("data-original-title") || ("function" == typeof e.title ? e.title.call(t[0]) : e.title)
+  }, c.prototype.getUID = function(t) {
+    for (; t += ~~(1e6 * Math.random()), document.getElementById(t););
+    return t
+  }, c.prototype.tip = function() {
+    if (!this.$tip && (this.$tip = l(this.options.template), 1 != this.$tip.length)) throw new Error(this.type + " `template` option must consist of exactly 1 top-level element!");
     return this.$tip
-  }
-  Tooltip.prototype.arrow = function() {
-    return (this.$arrow = this.$arrow || this.tip().find('.rock-tooltip-arrow'))
-  }
-  Tooltip.prototype.enable = function() {
-    this.enabled = true
-  }
-  Tooltip.prototype.disable = function() {
-    this.enabled = false
-  }
-  Tooltip.prototype.toggleEnabled = function() {
+  }, c.prototype.arrow = function() {
+    return this.$arrow = this.$arrow || this.tip().find(".rock-tooltip-arrow")
+  }, c.prototype.enable = function() {
+    this.enabled = !0
+  }, c.prototype.disable = function() {
+    this.enabled = !1
+  }, c.prototype.toggleEnabled = function() {
     this.enabled = !this.enabled
-  }
-  Tooltip.prototype.toggle = function(e) {
-    var self = this
-    if (e) {
-      self = $(e.currentTarget).data('bs.' + this.type)
-      if (!self) {
-        self = new this.constructor(e.currentTarget, this.getDelegateOptions())
-        $(e.currentTarget).data('bs.' + this.type, self)
-      }
-    }
-    if (e) {
-      self.inState.click = !self.inState.click
-      if (self.isInStateTrue()) self.enter(self)
-      else self.leave(self)
-    } else {
-      self.tip().hasClass('rock-in') ? self.leave(self) : self.enter(self)
-    }
-  }
-  Tooltip.prototype.destroy = function() {
-    var that = this
-    clearTimeout(this.timeout)
-    this.hide(function() {
-      that.$element.off('.' + that.type).removeData('bs.' + that.type)
-      if (that.$tip) {
-        that.$tip.detach()
-      }
-      that.$tip = null
-      that.$arrow = null
-      that.$viewport = null
-      that.$element = null
+  }, c.prototype.toggle = function(t) {
+    var e = this;
+    t && ((e = l(t.currentTarget).data("rk." + this.type)) || (e = new this.constructor(t.currentTarget, this.getDelegateOptions()), l(t.currentTarget).data("rk." + this.type, e))), t ? (e.inState.click = !e.inState.click, e.isInStateTrue() ? e.enter(e) : e.leave(e)) : e.tip().hasClass("rock-in") ? e.leave(e) : e.enter(e)
+  }, c.prototype.destroy = function() {
+    var t = this;
+    clearTimeout(this.timeout), this.hide(function() {
+      t.$element.off("." + t.type).removeData("rk." + t.type), t.$tip && t.$tip.detach(), t.$tip = null, t.$arrow = null, t.$viewport = null, t.$element = null
     })
-  }
-  // TOOLTIP PLUGIN DEFINITION
-  // =========================
-  function Plugin(option) {
+  };
+  var t = l.fn.tooltip;
+  l.fn.tooltip = function(i) {
     return this.each(function() {
-      var $this = $(this)
-      var data = $this.data('bs.tooltip')
-      var options = typeof option == 'object' && option
-      if (!data && /destroy|hide/.test(option)) return
-      if (!data) $this.data('bs.tooltip', (data = new Tooltip(this, options)))
-      if (typeof option == 'string') data[option]()
+      var t = l(this),
+        e = t.data("rk.tooltip"),
+        o = "object" == typeof i && i;
+      !e && /destroy|hide/.test(i) || (e || t.data("rk.tooltip", e = new c(this, o)), "string" == typeof i && e[i]())
     })
+  }, l.fn.tooltip.Constructor = c, l.fn.tooltip.noConflict = function() {
+    return l.fn.tooltip = t, this
   }
-  var old = $.fn.tooltip
-  $.fn.tooltip = Plugin
-  $.fn.tooltip.Constructor = Tooltip
-  // TOOLTIP NO CONFLICT
-  // ===================
-  $.fn.tooltip.noConflict = function() {
-    $.fn.tooltip = old
-    return this
+}(jQuery),
+function(n) {
+  "use strict";
+
+  function r(t, e) {
+    this.init("popover", t, e)
   }
-}(jQuery);
-+ function($) {
-  'use strict';
-  var Popover = function(element, options) {
-    this.init('popover', element, options)
-  }
-  if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
-  Popover.VERSION = '3.3.7'
-  Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
-    placement: 'right',
-    trigger: 'click',
-    content: '',
-    template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
-  })
-  Popover.prototype = $.extend({}, $.fn.tooltip.Constructor.prototype)
-  Popover.prototype.constructor = Popover
-  Popover.prototype.getDefaults = function() {
-    return Popover.DEFAULTS
-  }
-  Popover.prototype.setContent = function() {
-    var $tip = this.tip()
-    var title = this.getTitle()
-    var content = this.getContent()
-    $tip.find('.rock-popover-title')[this.options.html ? 'html' : 'text'](title)
-    $tip.find('.rock-popover-content').children().detach().end()[ // we use append for html objects to maintain js events
-      this.options.html ? (typeof content == 'string' ? 'html' : 'append') : 'text'
-    ](content)
-    $tip.removeClass('rock-fade top bottom left right in')
-    if (!$tip.find('.rock-popover-title').html()) $tip.find('.rock-popover-title').hide()
-  }
-  Popover.prototype.hasContent = function() {
+  if (!n.fn.tooltip) throw new Error("Popover requires tooltip.js");
+  r.VERSION = "1.3", r.DEFAULTS = n.extend({}, n.fn.tooltip.Constructor.DEFAULTS, {
+    placement: "right",
+    trigger: "click",
+    content: "",
+    template: '<div class="rock-popover" role="tooltip"><div class="rock-arrow"></div><h3 class="rock-popover-title"></h3><div class="rock-popover-content"></div></div>'
+  }), ((r.prototype = n.extend({}, n.fn.tooltip.Constructor.prototype)).constructor = r).prototype.getDefaults = function() {
+    return r.DEFAULTS
+  }, r.prototype.setContent = function() {
+    var t = this.tip(),
+      e = this.getTitle(),
+      o = this.getContent();
+    t.find(".rock-popover-title")[this.options.html ? "html" : "text"](e), t.find(".rock-popover-content").children().detach().end()[this.options.html ? "string" == typeof o ? "html" : "append" : "text"](o), t.removeClass("rock-fade rock-top rock-bottom rock-left rock-right rock-in"), t.find(".rock-popover-title").html() || t.find(".rock-popover-title").hide()
+  }, r.prototype.hasContent = function() {
     return this.getTitle() || this.getContent()
-  }
-  Popover.prototype.getContent = function() {
-    var $e = this.$element
-    var o = this.options
-    return $e.attr('data-content') || (typeof o.content == 'function' ?
-      o.content.call($e[0]) :
-      o.content)
-  }
-  Popover.prototype.arrow = function() {
-    return (this.$arrow = this.$arrow || this.tip().find('.rock-arrow'))
-  }
-  function Plugin(option) {
+  }, r.prototype.getContent = function() {
+    var t = this.$element,
+      e = this.options;
+    return t.attr("data-content") || ("function" == typeof e.content ? e.content.call(t[0]) : e.content)
+  }, r.prototype.arrow = function() {
+    return this.$arrow = this.$arrow || this.tip().find(".rock-arrow")
+  };
+  var t = n.fn.popover;
+  n.fn.popover = function(i) {
     return this.each(function() {
-      var $this = $(this)
-      var data = $this.data('bs.popover')
-      var options = typeof option == 'object' && option
-      if (!data && /destroy|hide/.test(option)) return
-      if (!data) $this.data('bs.popover', (data = new Popover(this, options)))
-      if (typeof option == 'string') data[option]()
+      var t = n(this),
+        e = t.data("rk.popover"),
+        o = "object" == typeof i && i;
+      !e && /destroy|hide/.test(i) || (e || t.data("rk.popover", e = new r(this, o)), "string" == typeof i && e[i]())
+    })
+  }, n.fn.popover.Constructor = r, n.fn.popover.noConflict = function() {
+    return n.fn.popover = t, this
+  }
+}(jQuery),
+function(n) {
+  "use strict";
+
+  function r(t, e) {
+    this.$body = n(document.body), this.$scrollElement = n(t).is(document.body) ? n(window) : n(t), this.options = n.extend({}, r.DEFAULTS, e), this.selector = (this.options.target || "") + " .rock-nav li > a", this.offsets = [], this.targets = [], this.activeTarget = null, this.scrollHeight = 0, this.$scrollElement.on("scroll.rk.scrollspy", n.proxy(this.process, this)), this.refresh(), this.process()
+  }
+
+  function e(i) {
+    return this.each(function() {
+      var t = n(this),
+        e = t.data("rk.scrollspy"),
+        o = "object" == typeof i && i;
+      e || t.data("rk.scrollspy", e = new r(this, o)), "string" == typeof i && e[i]()
     })
   }
-  var old = $.fn.popover
-  $.fn.popover = Plugin
-  $.fn.popover.Constructor = Popover
-  $.fn.popover.noConflict = function() {
-    $.fn.popover = old
-    return this
-  }
-}(jQuery);
-+ function($) {
-  'use strict';
-  function ScrollSpy(element, options) {
-    this.$body = $(document.body)
-    this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
-    this.options = $.extend({}, ScrollSpy.DEFAULTS, options)
-    this.selector = (this.options.target || '') + ' .nav li > a'
-    this.offsets = []
-    this.targets = []
-    this.activeTarget = null
-    this.scrollHeight = 0
-    this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
-    this.refresh()
-    this.process()
-  }
-  ScrollSpy.VERSION = '3.3.7'
-  ScrollSpy.DEFAULTS = {
+  r.VERSION = "1.3", r.DEFAULTS = {
     offset: 10
-  }
-  ScrollSpy.prototype.getScrollHeight = function() {
+  }, r.prototype.getScrollHeight = function() {
     return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
-  }
-  ScrollSpy.prototype.refresh = function() {
-    var that = this
-    var offsetMethod = 'offset'
-    var offsetBase = 0
-    this.offsets = []
-    this.targets = []
-    this.scrollHeight = this.getScrollHeight()
-    if (!$.isWindow(this.$scrollElement[0])) {
-      offsetMethod = 'position'
-      offsetBase = this.$scrollElement.scrollTop()
-    }
-    this.$body
-      .find(this.selector)
-      .map(function() {
-        var $el = $(this)
-        var href = $el.data('target') || $el.attr('href')
-        var $href = /^#./.test(href) && $(href)
-        return ($href && $href.length && $href.is(':visible') && [
-          [$href[offsetMethod]().top + offsetBase, href]
-        ]) || null
-      })
-      .sort(function(a, b) {
-        return a[0] - b[0]
-      })
-      .each(function() {
-        that.offsets.push(this[0])
-        that.targets.push(this[1])
-      })
-  }
-  ScrollSpy.prototype.process = function() {
-    var scrollTop = this.$scrollElement.scrollTop() + this.options.offset
-    var scrollHeight = this.getScrollHeight()
-    var maxScroll = this.options.offset + scrollHeight - this.$scrollElement.height()
-    var offsets = this.offsets
-    var targets = this.targets
-    var activeTarget = this.activeTarget
-    var i
-    if (this.scrollHeight != scrollHeight) {
-      this.refresh()
-    }
-    if (scrollTop >= maxScroll) {
-      return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
-    }
-    if (activeTarget && scrollTop < offsets[0]) {
-      this.activeTarget = null
-      return this.clear()
-    }
-    for (i = offsets.length; i--;) {
-      activeTarget != targets[i] && scrollTop >= offsets[i] && (offsets[i + 1] === undefined || scrollTop < offsets[i + 1]) && this.activate(targets[i])
-    }
-  }
-  ScrollSpy.prototype.activate = function(target) {
-    this.activeTarget = target
-    this.clear()
-    var selector = this.selector +
-      '[data-target="' + target + '"],' +
-      this.selector + '[href="' + target + '"]'
-    var active = $(selector)
-      .parents('li')
-      .addClass('rock-active')
-    if (active.parent('.rock-dropdown-menu').length) {
-      active = active
-        .closest('li.rock-dropdown')
-        .addClass('rock-active')
-    }
-    active.trigger('activate.bs.scrollspy')
-  }
-  ScrollSpy.prototype.clear = function() {
-    $(this.selector)
-      .parentsUntil(this.options.target, '.active')
-      .removeClass('rock-active')
-  }
-  // SCROLLSPY PLUGIN DEFINITION
-  // ===========================
-  function Plugin(option) {
-    return this.each(function() {
-      var $this = $(this)
-      var data = $this.data('bs.scrollspy')
-      var options = typeof option == 'object' && option
-      if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
-      if (typeof option == 'string') data[option]()
+  }, r.prototype.refresh = function() {
+    var t = this,
+      o = "offset",
+      i = 0;
+    this.offsets = [], this.targets = [], this.scrollHeight = this.getScrollHeight(), n.isWindow(this.$scrollElement[0]) || (o = "position", i = this.$scrollElement.scrollTop()), this.$body.find(this.selector).map(function() {
+      var t = n(this),
+        e = t.data("target") || t.attr("href"),
+        t = /^#./.test(e) && n(e);
+      return t && t.length && t.is(":visible") ? [
+        [t[o]().top + i, e]
+      ] : null
+    }).sort(function(t, e) {
+      return t[0] - e[0]
+    }).each(function() {
+      t.offsets.push(this[0]), t.targets.push(this[1])
     })
-  }
-  var old = $.fn.scrollspy
-  $.fn.scrollspy = Plugin
-  $.fn.scrollspy.Constructor = ScrollSpy
-  // SCROLLSPY NO CONFLICT
-  // =====================
-  $.fn.scrollspy.noConflict = function() {
-    $.fn.scrollspy = old
-    return this
-  }
-  // SCROLLSPY DATA-API
-  // ==================
-  $(window).on('load.bs.scrollspy.data-api', function() {
-    $('[data-spy="scroll"]').each(function() {
-      var $spy = $(this)
-      Plugin.call($spy, $spy.data())
+  }, r.prototype.process = function() {
+    var t, e = this.$scrollElement.scrollTop() + this.options.offset,
+      o = this.getScrollHeight(),
+      i = this.options.offset + o - this.$scrollElement.height(),
+      n = this.offsets,
+      r = this.targets,
+      s = this.activeTarget;
+    if (this.scrollHeight != o && this.refresh(), i <= e) return s != (t = r[r.length - 1]) && this.activate(t);
+    if (s && e < n[0]) return this.activeTarget = null, this.clear();
+    for (t = n.length; t--;) s != r[t] && e >= n[t] && (void 0 === n[t + 1] || e < n[t + 1]) && this.activate(r[t])
+  }, r.prototype.activate = function(t) {
+    this.activeTarget = t, this.clear();
+    t = this.selector + '[data-target="' + t + '"],' + this.selector + '[href="' + t + '"]', t = n(t).parents("li").addClass("rock-active");
+    t.parent(".rock-dropdown-menu").length && (t = t.closest("li.rock-dropdown").addClass("rock-active")), t.trigger("activate.rk.scrollspy")
+  }, r.prototype.clear = function() {
+    n(this.selector).parentsUntil(this.options.target, ".rock-active").removeClass("rock-active")
+  };
+  var t = n.fn.scrollspy;
+  n.fn.scrollspy = e, n.fn.scrollspy.Constructor = r, n.fn.scrollspy.noConflict = function() {
+    return n.fn.scrollspy = t, this
+  }, n(window).on("load.rk.scrollspy.data-api", function() {
+    n('[data-spy="scroll"]').each(function() {
+      var t = n(this);
+      e.call(t, t.data())
     })
   })
-}(jQuery);
-+ function($) {
-  'use strict';
-  var Tab = function(element) {
-    this.element = $(element)
+}(jQuery),
+function(s) {
+  "use strict";
+
+  function a(t) {
+    this.element = s(t)
   }
-  Tab.VERSION = '3.3.7'
-  Tab.TRANSITION_DURATION = 150
-  Tab.prototype.show = function() {
-    var $this = this.element
-    var $ul = $this.closest('ul:not(.rock-dropdown-menu)')
-    var selector = $this.data('target')
-    if (!selector) {
-      selector = $this.attr('href')
-      selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
-    }
-    if ($this.parent('li').hasClass('rock-active')) return
-    var $previous = $ul.find('.rock-active:last a')
-    var hideEvent = $.Event('hide.bs.tab', {
-      relatedTarget: $this[0]
-    })
-    var showEvent = $.Event('show.bs.tab', {
-      relatedTarget: $previous[0]
-    })
-    $previous.trigger(hideEvent)
-    $this.trigger(showEvent)
-    if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return
-    var $target = $(selector)
-    this.activate($this.closest('li'), $ul)
-    this.activate($target, $target.parent(), function() {
-      $previous.trigger({
-        type: 'hidden.bs.tab',
-        relatedTarget: $this[0]
-      })
-      $this.trigger({
-        type: 'shown.bs.tab',
-        relatedTarget: $previous[0]
-      })
-    })
-  }
-  Tab.prototype.activate = function(element, container, callback) {
-    var $active = container.find('> .active')
-    var transition = callback && $.support.transition && ($active.length && $active.hasClass('rock-fade') || !!container.find('> .fade').length)
-    function next() {
-      $active
-        .removeClass('rock-active')
-        .find('> .rock-dropdown-menu > .rock-active')
-        .removeClass('rock-active')
-        .end()
-        .find('[data-toggle="tab"]')
-        .attr('aria-expanded', false)
-      element
-        .addClass('rock-active')
-        .find('[data-toggle="tab"]')
-        .attr('aria-expanded', true)
-      if (transition) {
-        element[0].offsetWidth
-        element.addClass('rock-in')
-      } else {
-        element.removeClass('rock-fade')
-      }
-      if (element.parent('.rock-dropdown-menu').length) {
-        element
-          .closest('li.rock-dropdown')
-          .addClass('rock-active')
-          .end()
-          .find('[data-toggle="tab"]')
-          .attr('aria-expanded', true)
-      }
-      callback && callback()
-    }
-    $active.length && transition ?
-      $active
-      .one('bsTransitionEnd', next)
-      .emulateTransitionEnd(Tab.TRANSITION_DURATION) :
-      next()
-    $active.removeClass('rock-in')
-  }
-  function Plugin(option) {
+
+  function e(o) {
     return this.each(function() {
-      var $this = $(this)
-      var data = $this.data('bs.tab')
-      if (!data) $this.data('bs.tab', (data = new Tab(this)))
-      if (typeof option == 'string') data[option]()
+      var t = s(this),
+        e = t.data("rk.tab");
+      e || t.data("rk.tab", e = new a(this)), "string" == typeof o && e[o]()
     })
   }
-  var old = $.fn.tab
-  $.fn.tab = Plugin
-  $.fn.tab.Constructor = Tab
-  $.fn.tab.noConflict = function() {
-    $.fn.tab = old
-    return this
+  a.VERSION = "1.3", a.TRANSITION_DURATION = 150, a.prototype.show = function() {
+    var t, e, o, i = this.element,
+      n = i.closest("ul:not(.rock-dropdown-menu)"),
+      r = (r = i.data("target")) || (r = i.attr("href")) && r.replace(/.*(?=#[^\s]*$)/, "");
+    i.parent("li").hasClass("rock-active") || (t = n.find(".rock-active:last a"), e = s.Event("hide.rk.tab", {
+      relatedTarget: i[0]
+    }), o = s.Event("show.rk.tab", {
+      relatedTarget: t[0]
+    }), t.trigger(e), i.trigger(o), o.isDefaultPrevented() || e.isDefaultPrevented() || (r = s(r), this.activate(i.closest("li"), n), this.activate(r, r.parent(), function() {
+      t.trigger({
+        type: "hidden.rk.tab",
+        relatedTarget: i[0]
+      }), i.trigger({
+        type: "shown.rk.tab",
+        relatedTarget: t[0]
+      })
+    })))
+  }, a.prototype.activate = function(t, e, o) {
+    var i = e.find("> .rock-active"),
+      n = o && s.support.transition && (i.length && i.hasClass("rock-fade") || !!e.find("> .fade").length);
+
+    function r() {
+      i.removeClass("rock-active").find("> .rock-dropdown-menu > .rock-active").removeClass("rock-active").end().find('[data-toggle="tab"]').attr("aria-expanded", !1), t.addClass("rock-active").find('[data-toggle="tab"]').attr("aria-expanded", !0), n ? (t[0].offsetWidth, t.addClass("rock-in")) : t.removeClass("rock-fade"), t.parent(".rock-dropdown-menu").length && t.closest("li.rock-dropdown").addClass("rock-active").end().find('[data-toggle="tab"]').attr("aria-expanded", !0), o && o()
+    }
+    i.length && n ? i.one("bsTransitionEnd", r).emulateTransitionEnd(a.TRANSITION_DURATION) : r(), i.removeClass("rock-in")
+  };
+  var t = s.fn.tab;
+
+  function o(t) {
+    t.preventDefault(), e.call(s(this), "show")
   }
-  var clickHandler = function(e) {
-    e.preventDefault()
-    Plugin.call($(this), 'show')
+  s.fn.tab = e, s.fn.tab.Constructor = a, s.fn.tab.noConflict = function() {
+    return s.fn.tab = t, this
+  }, s(document).on("click.rk.tab.data-api", '[data-toggle="tab"]', o).on("click.rk.tab.data-api", '[data-toggle="pill"]', o)
+}(jQuery),
+function(s) {
+  "use strict";
+  var a = function(t, e) {
+    this.options = s.extend({}, a.DEFAULTS, e), this.$target = s(this.options.target).on("scroll.rk.affix.data-api", s.proxy(this.checkPosition, this)).on("click.rk.affix.data-api", s.proxy(this.checkPositionWithEventLoop, this)), this.$element = s(t), this.affixed = null, this.unpin = null, this.pinnedOffset = null, this.checkPosition()
+  };
+
+  function o(i) {
+    return this.each(function() {
+      var t = s(this),
+        e = t.data("rk.affix"),
+        o = "object" == typeof i && i;
+      e || t.data("rk.affix", e = new a(this, o)), "string" == typeof i && e[i]()
+    })
   }
-  $(document)
-    .on('click.bs.tab.data-api', '[data-toggle="tab"]', clickHandler)
-    .on('click.bs.tab.data-api', '[data-toggle="pill"]', clickHandler)
-}(jQuery);
-+ function($) {
-  'use strict';
-  var Affix = function(element, options) {
-    this.options = $.extend({}, Affix.DEFAULTS, options)
-    this.$target = $(this.options.target)
-      .on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this))
-      .on('click.bs.affix.data-api', $.proxy(this.checkPositionWithEventLoop, this))
-    this.$element = $(element)
-    this.affixed = null
-    this.unpin = null
-    this.pinnedOffset = null
-    this.checkPosition()
-  }
-  Affix.VERSION = '3.3.7'
-  Affix.RESET = 'affix affix-top affix-bottom'
-  Affix.DEFAULTS = {
+  a.VERSION = "1.3", a.RESET = "rock-affix rock-affix-top rock-affix-bottom", a.DEFAULTS = {
     offset: 0,
     target: window
-  }
-  Affix.prototype.getState = function(scrollHeight, height, offsetTop, offsetBottom) {
-    var scrollTop = this.$target.scrollTop()
-    var position = this.$element.offset()
-    var targetHeight = this.$target.height()
-    if (offsetTop != null && this.affixed == 'top') return scrollTop < offsetTop ? 'top' : false
-    if (this.affixed == 'bottom') {
-      if (offsetTop != null) return (scrollTop + this.unpin <= position.top) ? false : 'bottom'
-      return (scrollTop + targetHeight <= scrollHeight - offsetBottom) ? false : 'bottom'
-    }
-    var initializing = this.affixed == null
-    var colliderTop = initializing ? scrollTop : position.top
-    var colliderHeight = initializing ? targetHeight : height
-    if (offsetTop != null && scrollTop <= offsetTop) return 'top'
-    if (offsetBottom != null && (colliderTop + colliderHeight >= scrollHeight - offsetBottom)) return 'bottom'
-    return false
-  }
-  Affix.prototype.getPinnedOffset = function() {
-    if (this.pinnedOffset) return this.pinnedOffset
-    this.$element.removeClass(Affix.RESET).addClass('rock-affix')
-    var scrollTop = this.$target.scrollTop()
-    var position = this.$element.offset()
-    return (this.pinnedOffset = position.top - scrollTop)
-  }
-  Affix.prototype.checkPositionWithEventLoop = function() {
-    setTimeout($.proxy(this.checkPosition, this), 1)
-  }
-  Affix.prototype.checkPosition = function() {
-    if (!this.$element.is(':visible')) return
-    var height = this.$element.height()
-    var offset = this.options.offset
-    var offsetTop = offset.top
-    var offsetBottom = offset.bottom
-    var scrollHeight = Math.max($(document).height(), $(document.body).height())
-    if (typeof offset != 'object') offsetBottom = offsetTop = offset
-    if (typeof offsetTop == 'function') offsetTop = offset.top(this.$element)
-    if (typeof offsetBottom == 'function') offsetBottom = offset.bottom(this.$element)
-    var affix = this.getState(scrollHeight, height, offsetTop, offsetBottom)
-    if (this.affixed != affix) {
-      if (this.unpin != null) this.$element.css('top', '')
-      var affixType = 'affix' + (affix ? '-' + affix : '')
-      var e = $.Event(affixType + '.bs.affix')
-      this.$element.trigger(e)
-      if (e.isDefaultPrevented()) return
-      this.affixed = affix
-      this.unpin = affix == 'bottom' ? this.getPinnedOffset() : null
-      this.$element
-        .removeClass(Affix.RESET)
-        .addClass(affixType)
-        .trigger(affixType.replace('affix', 'affixed') + '.bs.affix')
-    }
-    if (affix == 'bottom') {
-      this.$element.offset({
-        top: scrollHeight - height - offsetBottom
+  }, a.prototype.getState = function(t, e, o, i) {
+    var n = this.$target.scrollTop(),
+      r = this.$element.offset(),
+      s = this.$target.height();
+    if (null != o && "top" == this.affixed) return n < o && "top";
+    if ("bottom" == this.affixed) return null != o ? !(n + this.unpin <= r.top) && "bottom" : !(n + s <= t - i) && "bottom";
+    var a = null == this.affixed,
+      r = a ? n : r.top;
+    return null != o && n <= o ? "top" : null != i && t - i <= r + (a ? s : e) && "bottom"
+  }, a.prototype.getPinnedOffset = function() {
+    if (this.pinnedOffset) return this.pinnedOffset;
+    this.$element.removeClass(a.RESET).addClass("rock-affix");
+    var t = this.$target.scrollTop(),
+      e = this.$element.offset();
+    return this.pinnedOffset = e.top - t
+  }, a.prototype.checkPositionWithEventLoop = function() {
+    setTimeout(s.proxy(this.checkPosition, this), 1)
+  }, a.prototype.checkPosition = function() {
+    if (this.$element.is(":visible")) {
+      var t = this.$element.height(),
+        e = this.options.offset,
+        o = e.top,
+        i = e.bottom,
+        n = Math.max(s(document).height(), s(document.body).height());
+      "object" != typeof e && (i = o = e), "function" == typeof o && (o = e.top(this.$element)), "function" == typeof i && (i = e.bottom(this.$element));
+      var r = this.getState(n, t, o, i);
+      if (this.affixed != r) {
+        null != this.unpin && this.$element.css("top", "");
+        e = "rock-affix" + (r ? "-" + r : ""), o = s.Event(e + ".rk.affix");
+        if (this.$element.trigger(o), o.isDefaultPrevented()) return;
+        this.affixed = r, this.unpin = "bottom" == r ? this.getPinnedOffset() : null, this.$element.removeClass(a.RESET).addClass(e).trigger(e.replace("rock-affix", "rock-affixed") + ".rk.affix")
+      }
+      "bottom" == r && this.$element.offset({
+        top: n - t - i
       })
     }
-  }
-  function Plugin(option) {
-    return this.each(function() {
-      var $this = $(this)
-      var data = $this.data('bs.affix')
-      var options = typeof option == 'object' && option
-      if (!data) $this.data('bs.affix', (data = new Affix(this, options)))
-      if (typeof option == 'string') data[option]()
-    })
-  }
-  var old = $.fn.affix
-  $.fn.affix = Plugin
-  $.fn.affix.Constructor = Affix
-  $.fn.affix.noConflict = function() {
-    $.fn.affix = old
-    return this
-  }
-  $(window).on('load', function() {
-    $('[data-spy="affix"]').each(function() {
-      var $spy = $(this)
-      var data = $spy.data()
-      data.offset = data.offset || {}
-      if (data.offsetBottom != null) data.offset.bottom = data.offsetBottom
-      if (data.offsetTop != null) data.offset.top = data.offsetTop
-      Plugin.call($spy, data)
+  };
+  var t = s.fn.affix;
+  s.fn.affix = o, s.fn.affix.Constructor = a, s.fn.affix.noConflict = function() {
+    return s.fn.affix = t, this
+  }, s(window).on("load", function() {
+    s('[data-spy="affix"]').each(function() {
+      var t = s(this),
+        e = t.data();
+      e.offset = e.offset || {}, null != e.offsetBottom && (e.offset.bottom = e.offsetBottom), null != e.offsetTop && (e.offset.top = e.offsetTop), o.call(t, e)
     })
   })
 }(jQuery);

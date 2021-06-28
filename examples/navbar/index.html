@@ -18,58 +18,240 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body>    
+	<section>
+	<!-- Fixed navbar -->
+    <nav class="rock-navbar rock-navbar-default rock-navbar-fixed-top">
+      <div class="rock-container">
+        <div class="rock-navbar-header">
+          <button type="button" class="rock-navbar-toggle rock-collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="rock-screenreader-only">Toggle navigation</span>
+          <span class="rock-icon-bar"></span>
+          <span class="rock-icon-bar"></span>
+          <span class="rock-icon-bar"></span>
+          </button>
+          <a class="rock-navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="rock-navbar-collapse rock-collapse">
+          <ul class="rock-nav rock-navbar-nav">
+            <li class="rock-active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="rock-dropdown">
+              <a href="#" class="rock-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="rock-caret"></span></a>
+              <ul class="rock-dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="rock-divider"></li>
+                <li class="rock-dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="rock-nav rock-navbar-nav rock-navbar-right">
+            <li><a href="../navbar/">Default</a></li>
+            <li><a href="../navbar-static-top/">Static top</a></li>
+            <li class="rock-active"><a href="./">Fixed top <span class="rock-screenreader-only">(current)</span></a></li>
+          </ul>
+        </div>
+        <!--/.rock-nav-collapse -->
+      </div>
+    </nav>
+
+	</section>
+    <p></hr /><p/>
     <div class="rock-container">
-      <!-- Static navbar -->
-      <nav class="rock-navbar navbar-default">
-        <div class="rock-container-fluid">
-          <div class="rock-navbar-header">
-            <button type="button" class="rock-navbar-toggle rock-collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <header style="height:80px;"></header>
+    <!------------- Navbar -------------->
+    <nav class="rock-navbar rock-navbar-inverse bs-dark" role="navigation">
+        <div class="rock-navbar-header">
+          <button type="button" class="rock-navbar-toggle rock-collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="rock-screenreader-only">Toggle navigation</span>
             <span class="rock-icon-bar"></span>
             <span class="rock-icon-bar"></span>
             <span class="rock-icon-bar"></span>
-            </button>
-            <a class="rock-navbar-brand" href="#">Project name</a>
-          </div>
-          <div id="navbar" class="rock-navbar-collapse rock-collapse">
-            <ul class="rock-nav rock-navbar-nav">
-              <li class="rock-active"><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-              <li class="rock-dropdown">
-                <a href="#" class="rock-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="rock-caret"></span></a>
-                <ul class="rock-dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="rock-divider"></li>
-                  <li class="rock-dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-            </ul>
-            <ul class="rock-nav rock-navbar-nav rock-navbar-right">
-              <li class="rock-active"><a href="./">Default <span class="rock-screenreader-only">(current)</span></a></li>
-              <li><a href="../navbar-static-top/">Static top</a></li>
-              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-            </ul>
-          </div>
-          <!--/.rock-nav-collapse -->
+          </button>
+          <a class="rock-navbar-brand" href="#">Logo</a>
         </div>
-        <!--/.rock-container-fluid -->
-      </nav>
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="rock-jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>
-          <a class="rock-button rock-button-lg rock-button-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
+
+        <div class="rock-collapse rock-navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="rock-nav rock-navbar-nav">
+            <li class="rock-active"><a href="#">Homepage <span class="rock-screenreader-only">(current)</span></a></li>
+            <li class="rock-dropdown">
+              <a href="#" class="rock-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explores <span class="rock-caret"></span></a>
+              <ul class="rock-dropdown-menu">
+                <li><a href="#">News</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Fashion</a></li>
+                <li role="separator" class="rock-divider"></li>
+                <li><a href="#">Gallery</a></li>
+                <li role="separator" class="rock-divider"></li>
+                <li><a href="#">Videos</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="rock-navbar-form rock-navbar-left rock-form-horizontal" role="search">
+              <div class="rock-input-group">
+                 <input type="text" class="rock-search-box" placeholder="Search">
+                 <button type="submit" class="rock-btn"><span class="rock-glyphicon glyphicon-search"></span></button>
+              </div>
+          </form>
+          <ul class="rock-nav navbar-nav rock-navbar-right">
+            <li class="rock-dropdown">
+              <a href="#" class="rock-dropdown-toggle rock-navbar-img" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Account 
+              <img src="http://placehold.it/150x150" class="rock-img-circle" alt="Profile Image" />
+              </a>
+              <ul class="rock-dropdown-menu">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">Followers</a></li>
+                <li role="separator" class="rock-divider"></li>
+                <li><a href="#">Settings</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <!----------- !Navbar End ------------>
+	<section>
+	<div class="rock-container">
+		<nav class="rock-navbar rock-navbar-icon-top rock-navbar-default">
+			<div class="rock-container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="rock-navbar-header">
+					<button type="button" class="rock-navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="rock-screenreader-only">Toggle navigation</span>
+						<span class="rock-icon-bar"></span>
+						<span class="rock-icon-bar"></span>
+						<span class="rock-icon-bar"></span>
+					</button>
+					<a class="rock-navbar-brand" href="#">Brand</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="rock-collapse rock-navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="rock-nav rock-navbar-nav">
+						<li class="rock-active"><a href="#">Home <span class="rock-screenreader-only">(current)</span></a></li>
+						<li><a href="#">Link</a></li>
+						<li class="rock-dropdown">
+							<a href="#" class="rock-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								<i class="rock-fa fa-book">
+									<span class="rock-badge rock-badge-warning">1</span>
+								</i>
+								Dropdown <span class="rock-caret"></span>
+							</a>
+							<ul class="rock-dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li role="separator" class="rock-divider"></li>
+								<li><a href="#">Separated link</a></li>
+								<li role="separator" class="rock-divider"></li>
+								<li><a href="#">One more separated link</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<i class="rock-fa fa-bell">
+									<span class="rock-badge rock-badge-primary">50</span>
+								</i>
+								Test
+							</a>
+						<li>
+						<li>
+							<a href="#">
+								<i class="rock-fa fa-globe">
+									<span class="rock-badge rock-badge-success">110</span>
+								</i>
+								Test
+							</a>
+						</li>
+					</ul>
+					<form class="rock-navbar-form navbar-left">
+						<div class="rock-form-group">
+							<input type="text" class="rock-form-control" placeholder="Search">
+						</div>
+						<button type="submit" class="rock-button rock-button-default">Submit</button>
+					</form>
+					<ul class="rock-nav rock-navbar-nav rock-navbar-right">
+						<li>
+							<a href="#">
+								<i class="rock-fa fa-envelope-o">
+									<span class="rock-badge badge-danger">11</span>
+								</i>
+								Messages
+							</a>
+						</li>
+						<li class="rock-dropdown">
+							<a href="#" class="rock-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								<i class="rock-fa fa-user-circle-o"></i>
+								Account <span class="rock-caret"></span>
+							</a>
+							<ul class="rock-dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li role="separator" class="rock-divider"></li>
+								<li><a href="#">Separated link</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+	</div>
+	</section>
+	<section>
+	<div class="rock-container">
+      <!-- The justified navigation menu is meant for single line per list item.
+        Multiple lines will require custom code not provided by Rockskeleton. -->
+      <div class="rock-masthead">
+        <h3 class="rock-text-muted">Project name</h3>
+        <nav>
+          <ul class="rock-nav rock-nav-justified">
+            <li class="rock-active"><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
       </div>
+      <!-- Jumbotron -->
+      <div class="rock-jumbotron">
+        <h1>Meggiseting stuff!</h1>
+        <p class="rock-lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+        <p><a class="rock-button rock-button-lg rock-button-success" href="#" role="button">Get started today</a></p>
+      </div>
+      <!-- Example row of columns -->
+      <div class="rock-row">
+        <div class="rock-col-lg-4">
+          <h2>Safari bug warning!</h2>
+          <p class="rock-text-danger">As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="rock-button rock-button-primary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="rock-col-lg-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="rock-button rock-button-primary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="rock-col-lg-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+          <p><a class="rock-button rock-button-primary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+      <!-- Site footer -->
+      <footer class="rock-footer">
+        <p>&copy; 2021 Meggis Torvard Frontend Developer.</p>
+      </footer>
     </div>
-    <!-- /container -->
+	</section>
     <!-- Rockskeleton core JavaScript
       ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
